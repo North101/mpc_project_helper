@@ -1,0 +1,1 @@
+(()=>{"use strict";chrome.tabs.onUpdated.addListener((function(e,a,i){var n;0==(null===(n=i.url)||void 0===n?void 0:n.indexOf("https://www.makeplayingcards.com/"))?chrome.action.enable(e):chrome.action.disable(e)}))})();
