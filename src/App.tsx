@@ -132,8 +132,8 @@ class App extends React.Component<{}, {
             dataSource={files}
             keyExpr="name"
             repaintChangesOnly={true}
-            allowItemDeleting={true}>
-            itemRender={this.onItemRender}
+            allowItemDeleting={true}
+            itemRender={this.onItemRender}>
             <ItemDragging
               allowReordering={true}
               group="files"
