@@ -1,7 +1,18 @@
-chrome.tabs.onUpdated.addListener((tabId: number, _changeInfo: chrome.tabs.TabChangeInfo, tab: chrome.tabs.Tab) => {
-  if (tab.url?.indexOf('https://www.makeplayingcards.com/') == 0) {
-    (chrome as any).action.enable(tabId);
-  } else {
-    (chrome as any).action.disable(tabId);
+chrome.action.onClicked.addListener((tab: any) => {
+  chrome.tabs.sendMessage(tab.id!, {
+    message: 'show',
+  });
+});
+
+chrome.runtime.onMessage.addListener((request) => {
+  if (request.message === 'download') {
+    chrome.downloads.download({
+      url: `data:application/json;charset=utf-8,${encodeURIComponent(JSON.stringify(request.value))}`,
+      filename: 'project.json',
+    });
+  } else if (request.message === 'open') {
+    chrome.tabs.create({
+      url: request.url,
+    });
   }
 });

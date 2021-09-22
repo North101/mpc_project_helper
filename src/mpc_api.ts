@@ -1,17 +1,25 @@
-interface Data {
+export interface Settings {
+  cardStock: string;
+  printType: string;
+  finish: string;
+  packaging: string;
+}
+
+export interface UploadedImage {
+  count: number;
+  front?: CompressedImageData;
+  back?: CompressedImageData;
+}
+
+export interface CompressedImageData {
   ID: string;
   SourceID: string;
   Exp: string;
-  Width: number;
-  Height: number;
+  Width: string;
+  Height: string;
 }
 
-interface Card {
-  front: Data;
-  back: Data;
-}
-
-const cardStockData = {
+export const cardStockData = {
   '(S27) Smooth': 'PA_016',
   '(S30) Standard Smooth': 'PA_014',
   '(S33) Superior Smooth': 'PA_059',
@@ -22,7 +30,7 @@ const cardStockData = {
   '(P10) Plastic': 'PA_017',
 }
 
-const printTypeData = {
+export const printTypeData = {
   'Full color print': '',
   'Holographic (front)': 'EF_055',
   'Holographic (front & back)': 'EF_120',
@@ -33,13 +41,13 @@ const printTypeData = {
   'Holographic (front) + silver gilt edge': 'EF_105',
 }
 
-const finishData = {
+export const finishData = {
   'MPC game card finish': 'PPR_0009',
   'BETA playing card finish': 'PPR_0149',
   'Gloss finish': 'PPR_0056',
 }
 
-const packagingData = {
+export const packagingData = {
   'Shrink-wrapped': 'PB_043',
   'Plain black velvet bag': 'PB_12387',
   'Plain double magnetic book box': 'PB_13100',
@@ -76,12 +84,17 @@ const packagingData = {
   'Uncut sheet': 'PB_049',
 }
 
-const parseHtml = (text: string) => {
+export const parseXml = (text: string) => {
+  const parser = new DOMParser();
+  return parser.parseFromString(text, "text/xml");
+}
+
+export const parseHtml = (text: string) => {
   const parser = new DOMParser();
   return parser.parseFromString(text, "text/html");
 }
 
-const xpath = (root: Document, xpath: string) => {
+export const xpath = (root: Document, xpath: string) => {
   return document.evaluate(
     xpath,
     root,
@@ -91,28 +104,21 @@ const xpath = (root: Document, xpath: string) => {
   ).singleNodeValue
 }
 
-interface Settings {
-  cardStock: string;
-  printType: string;
-  finish: string;
-  packaging: string;
-}
-
-const initProject = async (settings: Settings, count: number) => {
+export const initProject = async (settings: Settings, count: number) => {
   const r = await fetch('https://www.makeplayingcards.com/products/pro_item_process_flow.aspx?' + new URLSearchParams({
     // Card type
-    'itemid': 'C380050185D1C1AF',
+    itemid: 'C380050185D1C1AF',
     // Card Stock
-    'attachno': settings.cardStock,
+    attachno: settings.cardStock,
     // number of cards
-    'pcs': `${count}`,
+    pcs: `${count}`,
     // Print type
-    'producteffectno': settings.printType,
+    producteffectno: settings.printType,
     // Finish
-    'processno': settings.finish,
-     // Packaging
-    'packid': settings.packaging,
-    'qty': '1',
+    processno: settings.finish,
+    // Packaging
+    packid: settings.packaging,
+    qty: '1',
   }));
 
   const root = parseHtml(await r.text());
@@ -121,7 +127,7 @@ const initProject = async (settings: Settings, count: number) => {
     .replace('./dn_playingcards_front_dynamic.aspx?ssid=', '');
 }
 
-const saveFrontSettings = async (projectId: string, settings: Settings, count: number) => {
+export const saveFrontSettings = async (projectId: string, settings: Settings, count: number) => {
   const body = new FormData();
   // required to view Customize Front step
   body.append('__EVENTTARGET', 'btn_next_step');
@@ -143,23 +149,23 @@ const saveFrontSettings = async (projectId: string, settings: Settings, count: n
 
   // not sure if this is needed
   body.append('hidd_packing_condition_info', JSON.stringify({
-    'UnitNo': 'C380050185D1C1AF',
-    'PackingNo': settings['packaging'],
-    'PackingGroup': 'SHRINKWRAP',
-    'AttachNo': settings.cardStock,
-    'ProductEffectNo': settings.printType,
-    'Pieces': count,
+    UnitNo: 'C380050185D1C1AF',
+    PackingNo: settings.packaging,
+    PackingGroup: 'SHRINKWRAP',
+    AttachNo: settings.cardStock,
+    ProductEffectNo: settings.printType,
+    Pieces: count,
   }));
 
   return fetch('https://www.makeplayingcards.com/products/playingcard/design/dn_playingcards_mode_nf.aspx?' + new URLSearchParams({
-    'ssid': projectId,
+    ssid: projectId,
   }), {
     method: 'POST',
     body: body,
   });
 }
 
-const saveBackSettings = async (projectId: string, _settings: Settings, count: number) => {
+export const saveBackSettings = async (projectId: string, _settings: Settings, count: number) => {
   const body = new FormData();
   // required to view Customize Back step
   body.append('__EVENTTARGET', 'btn_next_step');
@@ -174,72 +180,79 @@ const saveBackSettings = async (projectId: string, _settings: Settings, count: n
   body.append('hidd_mode', 'ImageText');
 
   return fetch('https://www.makeplayingcards.com/products/playingcard/design/dn_playingcards_mode_nb.aspx?' + new URLSearchParams({
-    'ssid': projectId,
+    ssid: projectId,
   }), {
     method: 'POST',
     body: body,
   });
 }
 
-const uncompressImageData = (data: Data) => {
+export const uncompressImageData = (data: CompressedImageData) => {
   return {
-    'ID': data['SourceID'],
-    'Exp': data['Exp'],
-    'Owner': '',
-    'Path': 'https://www.makeplayingcards.com/PreviewFiles/Normal/temp',
-    'Width': data['Width'],
-    'Height': data['Height'],
-    'imageName': `${data['SourceID']}.${data['Exp']}`,
+    ID: data.SourceID,
+    Exp: data.Exp,
+    Owner: '',
+    Path: 'https://www.makeplayingcards.com/PreviewFiles/Normal/temp',
+    Width: data.Width,
+    Height: data.Height,
+    imageName: `${data.SourceID}.${data.Exp}`,
   }
 }
 
-const uncompressCropData = (data: Data) => {
+export const uncompressCropData = (data: CompressedImageData) => {
   return [{
-    'ID': data['ID'],
-    'SourceID': data['SourceID'],
-    'Exp': data['Exp'],
-    'X': 0,
-    'Y': 0,
-    'Width': 272,
-    'Height': 371,
-    'CropX': 0,
-    'CropY': 0,
-    'CropWidth': 272,
-    'CropHeight': 370,
-    'CropRotate': 0.0,
-    'Rotate': 0.0,
-    'Zoom': 1.0,
-    'Scale': 1.0,
-    'FlipHorizontal': 'N',
-    'FlipVertical': 'N',
-    'Sharpen': 'N',
-    'Filter': '',
-    'Brightness': 0,
-    'ThumbnailScale': 2.0221,
-    'AllowEdit': 'Y',
-    'AllowMove': 'Y',
-    'Alpha': 1.0,
-    'Resolution': 300,
-    'Index': 0,
-    'Quality': 'Y',
-    'AutoDirection': 'N',
-    'ApplyMask': 'N',
-    'IsEmpty': false,
+    ID: data.ID,
+    SourceID: data.SourceID,
+    Exp: data.Exp,
+    X: 0,
+    Y: 0,
+    Width: 272,
+    Height: 371,
+    CropX: 0,
+    CropY: 0,
+    CropWidth: 272,
+    CropHeight: 370,
+    CropRotate: 0.0,
+    Rotate: 0.0,
+    Zoom: 1.0,
+    Scale: 1.0,
+    FlipHorizontal: 'N',
+    FlipVertical: 'N',
+    Sharpen: 'N',
+    Filter: '',
+    Brightness: 0,
+    ThumbnailScale: 2.0221,
+    AllowEdit: 'Y',
+    AllowMove: 'Y',
+    Alpha: 1.0,
+    Resolution: 300,
+    Index: 0,
+    Quality: 'Y',
+    AutoDirection: 'N',
+    ApplyMask: 'N',
+    IsEmpty: false,
   }]
 }
 
-const saveSession = async (projectId: string, cards: Card[]) => {
+export const saveSession = async (projectId: string, cards: UploadedImage[]) => {
+  const expandedCards = cards.reduce<UploadedImage[]>((e, card) => {
+    for (let i = 0; i < card.count; i++) {
+      e.push(card);
+    }
+    return e;
+  }, []);
+
   const body = new FormData();
   // list of front images for the project
-  body.append('frontImageList', JSON.stringify(cards.map((sides) => uncompressImageData(sides.front))));
+  body.append('frontImageList', JSON.stringify(expandedCards.map((sides) => sides.front ? uncompressImageData(sides.front) : null)));
   // list of front images assigned to cards
-  body.append('frontCropInfo', JSON.stringify(cards.map((sides) => uncompressCropData(sides.front))));
+  body.append('frontCropInfo', JSON.stringify(expandedCards.map((sides) => sides.front ? uncompressCropData(sides.front) : null)));
   // page designer for multiple front cards
   body.append('frontDesignModePage', 'dn_playingcards_mode_nf.aspx');
   // list of back images for the project
-  body.append('backImageList', JSON.stringify(cards.map((sides) => uncompressImageData(sides.back))));
+  body.append('backImageList', JSON.stringify(expandedCards.map((sides) => sides.back ? uncompressImageData(sides.back) : null)));
   // list of back images assigned to cards
-  body.append('backCropInfo', JSON.stringify(cards.map((sides) => uncompressCropData(sides.back))));
+  body.append('backCropInfo', JSON.stringify(expandedCards.map((sides) => sides.back ? uncompressCropData(sides.back) : null)));
   // page designer for multiple back cards
   body.append('backDesignModePage', 'dn_playingcards_mode_nb.aspx');
   // no idea
@@ -248,22 +261,19 @@ const saveSession = async (projectId: string, cards: Card[]) => {
   body.append('mapinfo', '[]');
 
   return fetch('https://www.makeplayingcards.com/design/dn_keep_session.aspx?' + new URLSearchParams({
-    'ssid': projectId,
+    ssid: projectId,
   }), {
     method: 'POST',
     body: body,
   });
 }
 
-const createProject = async (settings: Settings, cards: Card[]) => {
-  const cardCount = cards.length;
-  console.log(`Cards: ${cardCount}`);
-
-  console.log('Creating Project');
+export const createProject = async (settings: Settings, cards: UploadedImage[]) => {
+  const cardCount = cards.reduce<number>((e, v) => {
+    return e + Math.max(v.count, 0);
+  }, 0);
   const projectId = await initProject(settings, cardCount);
-  console.log(`Project ID: ${projectId}`);
 
-  console.log('Saving Settings')
   await saveFrontSettings(projectId, settings, cardCount);
   await saveBackSettings(projectId, settings, cardCount);
   await saveSession(projectId, cards);
@@ -271,4 +281,54 @@ const createProject = async (settings: Settings, cards: Card[]) => {
   return `https://www.makeplayingcards.com/design/dn_preview_layout.aspx?ssid=${projectId}`;
 }
 
-export default createProject;
+export const uploadImage = async (side: string, image: File) => {
+  const body = new FormData();
+  body.append('fileData', image);
+  body.append('userName', '');
+  body.append('layer', side);
+  body.append('st', new Date().toISOString().replace('T', ' ').slice(0, 23));
+  body.append('pt', '14167');
+  body.append('ip', '');
+
+  const r = await fetch('https://www.makeplayingcards.com/uploader/up_product.aspx', {
+    method: 'POST',
+    body: body,
+  });
+  const root = parseHtml(await r.text());
+  return JSON.parse(xpath(root, '/html/body/form/input[@id="hidd_image_info"]/@value')!.textContent!);
+}
+
+
+export const analysisImage = async (side: string, index: number, value: any) => {
+  const body = new FormData();
+  body.append('photoindex', `${index}`);
+  body.append('source', JSON.stringify(value));
+  body.append('face', side);
+  body.append('width', '272');
+  body.append('height', '370');
+  body.append('dpi', '300');
+  body.append('auto', 'Y');
+  body.append('scale', '1');
+  body.append('filter', '');
+  body.append('productCode', 'FI_7999');
+  body.append('designCode', 'FP_031273');
+  body.append('sortNo', '0');
+  body.append('applyMask', 'N');
+
+  const r = await fetch('https://www.makeplayingcards.com/design/dn_product_analysis_photo.aspx', {
+    method: 'POST',
+    body: body,
+  });
+  const root = parseXml(await r.text());
+  return JSON.parse(xpath(root, '/Values/Value/text()')!.textContent!).CropInfo;
+}
+
+export const compressImageData = (analysedImage: any, uploadedImage: any): CompressedImageData => {
+  return {
+    ID: analysedImage.ID,
+    SourceID: analysedImage.SourceID,
+    Exp: uploadedImage.Exp,
+    Width: uploadedImage.Width,
+    Height: uploadedImage.Height,
+  }
+}

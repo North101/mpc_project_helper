@@ -17,7 +17,7 @@ object-assign
  * https://github.com/DevExpress/devextreme-react
  */
 
-/** @license React v0.20.0-rc.2
+/** @license React v0.20.2
  * scheduler.production.min.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -26,8 +26,8 @@ object-assign
  * LICENSE file in the root directory of this source tree.
  */
 
-/** @license React v16.14.0
- * react.production.min.js
+/** @license React v17.0.1
+ * react-dom.production.min.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -35,8 +35,8 @@ object-assign
  * LICENSE file in the root directory of this source tree.
  */
 
-/** @license React v17.0.0-rc.2
- * react-dom.production.min.js
+/** @license React v17.0.2
+ * react.production.min.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
  *

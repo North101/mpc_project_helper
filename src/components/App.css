@@ -8,6 +8,17 @@
   width: 640px;
 }
 
+.tabs {
+  display: none;
+}
+
+.tabs.shown {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: calc(100% - 45px);
+}
+
 .modal {
   position: absolute;
   height: 100%;
@@ -38,7 +49,7 @@
   margin: 2px;
 }
 
-.image-upload > input {
+#project-input, #image-input {
   display: none;
 }
 

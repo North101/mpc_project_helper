@@ -7,20 +7,25 @@
     "48": "icon48.png",
     "128": "icon128.png"
   },
-  "permissions": [
-    "tabs"
-  ],
-  "host_permissions": [
-    "https://www.makeplayingcards.com/"
-  ],
+  "permissions": ["tabs", "scripting", "downloads"],
+  "host_permissions": ["https://www.makeplayingcards.com/"],
   "background": {
     "service_worker": "background.js"
   },
+  "content_scripts": [
+    {
+      "matches": ["https://www.makeplayingcards.com/*"],
+      "js": ["content.js"]
+    }
+  ],
   "action": {
     "default_icon": {
       "16": "icon16.png",
       "48": "icon48.png"
-    },
-    "default_popup": "popup.html"
-  }
+    }
+  },
+  "web_accessible_resources": [{
+    "resources": ["icons/select.svg", "icons/upload.svg", "icons/clear.svg", "icons/add.svg"],
+    "matches": ["https://www.makeplayingcards.com/*"]
+  }]
 }
