@@ -106,7 +106,7 @@ class ListItem extends React.Component<ListItemProps, never> {
 
 interface CardListGroup {
   key: string;
-  items: Card[];
+  items: (Card | undefined)[];
 }
 
 let cardId = 0;
@@ -253,26 +253,19 @@ export default class ImagesTab extends React.Component<ImagesTabProps, ImagesTab
       card[side] = file;
     }
     for (const group of Object.values(groups)) {
-      if (group.items[0] === undefined) {
-        group.items.splice(0, 1);
-      }
       for (let i = 0; i < group.items.length; i++) {
-        const card = group.items[i] ??= {
-          id: cardId++,
-          count: 1,
-        };
+        const card = group.items[i];
+        if (!card) continue;
+
         for (const side of ['front', 'back'] as ('front' | 'back')[]) {
-          if (card[side] === undefined) {
-            for (let j = i + 1; j < group.items.length; j++) {
-              const nextCard = group.items[j] ??= {
-                id: cardId++,
-                count: 1,
-              };
-              if (nextCard[side] !== undefined) {
-                card[side] = nextCard[side];
-                break;
-              }
-            }
+          if (card[side]) continue;
+
+          for (let j = i + 1; j < group.items.length; j++) {
+            const nextCard = group.items[j];
+            if (!nextCard?.[side]) continue;
+
+            card[side] = nextCard[side];
+            break;
           }
         }
       }
@@ -281,7 +274,11 @@ export default class ImagesTab extends React.Component<ImagesTabProps, ImagesTab
     this.setState({
       files: cardSides,
       cards: Object.values(groups).reduce<Card[]>((list, group) => {
-        list.push(...group.items);
+        for (const card of group.items) {
+          if (card) {
+            list.push(card);
+          }
+        }
         return list;
       }, [...cards]),
       inputKey: inputKey + 1,
@@ -395,7 +392,6 @@ export default class ImagesTab extends React.Component<ImagesTabProps, ImagesTab
 
   render() {
     const { cards, state, inputKey } = this.state;
-    console.log(state);
     const loadingState = state?.id === 'loading' ? state : null;
 
     return (
