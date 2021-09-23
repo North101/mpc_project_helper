@@ -106,6 +106,8 @@ class ListItem extends React.Component<ListItemProps, never> {
 
 interface CardListGroup {
   key: string;
+  front?: CardSide;
+  back?: CardSide;
   items: (Card | undefined)[];
 }
 
@@ -219,7 +221,7 @@ export default class ImagesTab extends React.Component<ImagesTabProps, ImagesTab
     const selectedFiles = e.target.files;
     if (selectedFiles === null || selectedFiles.length === 0) return;
 
-    const re = /^(.+[^\d])(\d+)(a|b)?\.(png|jpg)$/;
+    const re = /^(.+[^\d])(?:(front|back)|(\d+)(a|b)?)\.(png|jpg)$/;
 
     const cardSides: CardSide[] = [...files];
     for (let i = 0; i < selectedFiles.length; i++) {
@@ -239,34 +241,35 @@ export default class ImagesTab extends React.Component<ImagesTabProps, ImagesTab
       if (!match) continue;
 
       const groupName = match[1];
-      const index = parseInt(match[2]);
-      const side = match[3] === 'b' ? 'back' : 'front';
+      const side = match[2] as ('front' | 'back');
 
       const group = groups[groupName] ??= {
         key: groupName,
         items: [],
       };
-      const card = group.items[index] ??= {
-        id: cardId++,
-        count: 1,
-      };
-      card[side] = file;
+      if (side) {
+        group[side] = file;
+      } else {
+        const index = parseInt(match[3]);
+        const side = match[4] === 'b' ? 'back' : 'front';
+        const card = group.items[index] ??= {
+          id: cardId++,
+          count: 1,
+        };
+        card[side] = file;
+      }
     }
     for (const group of Object.values(groups)) {
-      for (let i = 0; i < group.items.length; i++) {
+      const lastCardSide: {
+        front?: CardSide;
+        back?: CardSide;
+      } = {};
+      for (let i = group.items.length - 1; i >= 0; i--) {
         const card = group.items[i];
         if (!card) continue;
 
         for (const side of ['front', 'back'] as ('front' | 'back')[]) {
-          if (card[side]) continue;
-
-          for (let j = i + 1; j < group.items.length; j++) {
-            const nextCard = group.items[j];
-            if (!nextCard?.[side]) continue;
-
-            card[side] = nextCard[side];
-            break;
-          }
+          lastCardSide[side] = card[side] ??= group[side] ?? lastCardSide[side];
         }
       }
     }
