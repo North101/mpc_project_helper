@@ -5,13 +5,15 @@ import { List, ItemDragging } from "devextreme-react/list";
 import { LoadPanel } from "devextreme-react/load-panel";
 import { Popup, ToolbarItem } from "devextreme-react/popup";
 
-import { createProject, UploadedImage } from "../mpc_api";
+import { createProject, Settings, UploadedImage } from "../api/mpc_api";
 
 const ItemTemplate = (file: File, index: number) => {
   return <div>{file.name}</div>;
 }
 
-export interface ProjectTabProps { }
+export interface ProjectTabProps {
+  settings: Settings;
+}
 
 export interface ProjectTabState {
   files: File[];
@@ -73,6 +75,7 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
   }
 
   onUpload = async () => {
+    const { settings } = this.props;
     const { files } = this.state;
 
     this.setState({
@@ -87,12 +90,7 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
       for (const file of files) {
         cards.push(...JSON.parse(await file.text()));
       }
-      const projectUrl = await createProject({
-        cardStock: 'PA_014',
-        printType: '',
-        finish: 'PPR_0009',
-        packaging: 'PB_043',
-      }, cards);
+      const projectUrl = await createProject(settings, cards);
 
       this.setState({
         files: [],

@@ -1,0 +1,34 @@
+[
+  {
+    "code": "(S27) Smooth",
+    "name": "PA_016"
+  },
+  {
+    "code": "(S30) Standard Smooth",
+    "name": "PA_014"
+  },
+  {
+    "code": "(S33) Superior Smooth",
+    "name": "PA_059"
+  },
+  {
+    "code": "(M31) Linen",
+    "name": "PA_015"
+  },
+  {
+    "code": "(M30) Linen Air Light [min.1000]",
+    "name": "PA_164"
+  },
+  {
+    "code": "(M32) Linen Air [min.1000]",
+    "name": "PA_028"
+  },
+  {
+    "code": "(A35) Thick Standard",
+    "name": "PA_203"
+  },
+  {
+    "code": "(P10) Plastic",
+    "name": "PA_017"
+  }
+]

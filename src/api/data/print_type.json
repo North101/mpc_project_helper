@@ -1,0 +1,34 @@
+[
+  {
+    "code": "",
+    "name": "Full color print"
+  },
+  {
+    "code": "Holographic (front)",
+    "name": "EF_055"
+  },
+  {
+    "code": "Holographic (front & back)",
+    "name": "EF_120"
+  },
+  {
+    "code": "High gloss + full color print",
+    "name": "EF_020"
+  },
+  {
+    "code": "Gold gilt edge + full color print",
+    "name": "EF_041"
+  },
+  {
+    "code": "Silver gilt edge + full color print",
+    "name": "EF_042"
+  },
+  {
+    "code": "Holographic (front) + gold gilt edge",
+    "name": "EF_095"
+  },
+  {
+    "code": "Holographic (front) + silver gilt edge",
+    "name": "EF_105"
+  }
+]

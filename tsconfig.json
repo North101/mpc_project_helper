@@ -11,6 +11,7 @@
         "allowJs": true,
         "jsx": "react",
         "downlevelIteration": true,
+        "resolveJsonModule": true,
     },
     "include": [
         "./src/**/*",

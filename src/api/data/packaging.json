@@ -1,0 +1,138 @@
+[
+  {
+    "code": "Shrink-wrapped",
+    "name": "PB_043"
+  },
+  {
+    "code": "Plain black velvet bag",
+    "name": "PB_12387"
+  },
+  {
+    "code": "Plain double magnetic book box",
+    "name": "PB_13100"
+  },
+  {
+    "code": "Plain double tin box",
+    "name": "PB_12337"
+  },
+  {
+    "code": "Plain drawer box",
+    "name": "PB_10490"
+  },
+  {
+    "code": "Plain easy-flip box",
+    "name": "PB_10488"
+  },
+  {
+    "code": "Plain easy-flip side open box",
+    "name": "PB_12345"
+  },
+  {
+    "code": "Plain hinged tin box",
+    "name": "PB_8356"
+  },
+  {
+    "code": "Plain lux box",
+    "name": "PB_12017"
+  },
+  {
+    "code": "Plain magnetic book box",
+    "name": "PB_13090"
+  },
+  {
+    "code": "Plain white tuck box",
+    "name": "PB_8166"
+  },
+  {
+    "code": "Plain window tuck box",
+    "name": "PB_048"
+  },
+  {
+    "code": "Plain plastic box",
+    "name": "PB_045"
+  },
+  {
+    "code": "Plain rigid box",
+    "name": "PB_4292"
+  },
+  {
+    "code": "Plain plastic hinged case",
+    "name": "PB_229"
+  },
+  {
+    "code": "Plain tin box",
+    "name": "PB_050"
+  },
+  {
+    "code": "Custom black velvet bag",
+    "name": "PB_12388"
+  },
+  {
+    "code": "Custom double magnetic book box",
+    "name": "PB_13099"
+  },
+  {
+    "code": "Custom double sticker tin box",
+    "name": "PB_12335"
+  },
+  {
+    "code": "Custom double tin box",
+    "name": "PB_12336"
+  },
+  {
+    "code": "Custom drawer box",
+    "name": "PB_9981"
+  },
+  {
+    "code": "Custom easy-flip box",
+    "name": "PB_9983"
+  },
+  {
+    "code": "Custom easy-flip side open box",
+    "name": "PB_12344"
+  },
+  {
+    "code": "Custom hinged tin box",
+    "name": "PB_8366"
+  },
+  {
+    "code": "Custom labeled tin box",
+    "name": "PB_8362"
+  },
+  {
+    "code": "Custom lux box",
+    "name": "PB_12014"
+  },
+  {
+    "code": "Custom magnetic book box",
+    "name": "PB_13091"
+  },
+  {
+    "code": "Custom rigid box",
+    "name": "PB_4283"
+  },
+  {
+    "code": "Custom tuck box",
+    "name": "PB_861"
+  },
+  {
+    "code": "Custom tuck box (sealed base)",
+    "name": "PB_3281"
+  },
+  {
+    "code": "Custom plastic box",
+    "name": "PB_234"
+  },
+  {
+    "code": "Custom plastic hinged case",
+    "name": "PB_237"
+  },
+  {
+    "code": "Custom tin box",
+    "name": "PB_231"
+  },
+  {
+    "code": "Uncut sheet",
+    "name": "PB_049"
+  }
+]

@@ -6,12 +6,14 @@ import { Popup } from 'devextreme-react/popup';
 import "./App.css";
 import ProjectTab from './ProjectTab';
 import ImagesTab from './ImageTab';
+import { Settings } from '../api/mpc_api';
 
 export interface AppProps { }
 
 export interface AppState {
   visible: boolean;
   tabIndex: number;
+  settings: Settings;
 }
 
 export default class App extends React.Component<AppProps, AppState> {
@@ -26,6 +28,15 @@ export default class App extends React.Component<AppProps, AppState> {
     this.state = {
       visible: false,
       tabIndex: 0,
+      settings: {
+        product: 'FI_7999',
+        frontDesign: 'FP_031273',
+        backDesign: 'FP_031272',
+        cardStock: 'PA_014',
+        printType: '',
+        finish: 'PPR_0009',
+        packaging: 'PB_043',
+      },
     };
 
     chrome.runtime.onMessage.addListener((request) => {
@@ -48,7 +59,7 @@ export default class App extends React.Component<AppProps, AppState> {
   }
 
   render() {
-    const { visible, tabIndex } = this.state;
+    const { visible, tabIndex, settings } = this.state;
 
     return (
       <Popup
@@ -70,10 +81,10 @@ export default class App extends React.Component<AppProps, AppState> {
             focusStateEnabled={true}
           />
           <div className={`tabs ${tabIndex === 0 ? "shown" : ''}`}>
-            <ProjectTab />
+            <ProjectTab settings={settings} />
           </div>
           <div className={`tabs ${tabIndex === 1 ? "shown" : ''}`}>
-            <ImagesTab />
+            <ImagesTab settings={settings} />
           </div>
         </div>
       </Popup>

@@ -6,7 +6,7 @@ import { ItemDragging, List } from "devextreme-react/list";
 import { NumberBox } from "devextreme-react/number-box";
 import { Popup, ToolbarItem } from "devextreme-react/popup";
 
-import { uploadImage, analysisImage, compressImageData, CompressedImageData, UploadedImage } from "../mpc_api";
+import { uploadImage, analysisImage, compressImageData, CompressedImageData, UploadedImage, Settings } from "../api/mpc_api";
 import { LoadIndicator } from "devextreme-react/load-indicator";
 
 interface ListItemProps {
@@ -128,7 +128,9 @@ interface CardSide {
   file: File;
 }
 
-export interface ImagesTabProps { }
+export interface ImagesTabProps {
+  settings: Settings;
+}
 
 export interface ImagesTabState {
   files: CardSide[];
@@ -289,6 +291,7 @@ export default class ImagesTab extends React.Component<ImagesTabProps, ImagesTab
   }
 
   onUpload = async () => {
+    const { settings } = this.props;
     const { cards } = this.state;
 
     const maxValue = cards.reduce<Set<File>>((p, v) => {
@@ -324,7 +327,7 @@ export default class ImagesTab extends React.Component<ImagesTabProps, ImagesTab
             const uploadedImage = await uploadImage(side, cardSide.file);
 
             if (this.state.state?.id !== 'loading') return;
-            const analysedImage = await analysisImage(side, 0, uploadedImage);
+            const analysedImage = await analysisImage(settings, side, 0, uploadedImage);
 
             const compressedImageData = compressImageData(analysedImage, uploadedImage);
             cardData[side] = compressedImageData
