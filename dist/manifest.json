@@ -8,13 +8,19 @@
     "128": "icon128.png"
   },
   "permissions": ["tabs", "scripting", "downloads", "declarativeContent"],
-  "host_permissions": ["https://www.makeplayingcards.com/"],
+  "host_permissions": [
+    "https://www.makeplayingcards.com/",
+    "https://www.printerstudio.co.uk/"
+  ],
   "background": {
     "service_worker": "background.js"
   },
   "content_scripts": [
     {
-      "matches": ["https://www.makeplayingcards.com/*"],
+      "matches": [
+        "https://www.makeplayingcards.com/*",
+        "https://www.printerstudio.co.uk/*"
+      ],
       "js": ["content.js"]
     }
   ],
@@ -24,8 +30,18 @@
       "48": "icon48.png"
     }
   },
-  "web_accessible_resources": [{
-    "resources": ["icons/select.svg", "icons/upload.svg", "icons/clear.svg", "icons/add.svg"],
-    "matches": ["https://www.makeplayingcards.com/*"]
-  }]
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "icons/select.svg",
+        "icons/upload.svg",
+        "icons/clear.svg",
+        "icons/add.svg"
+      ],
+      "matches": [
+        "https://www.makeplayingcards.com/*",
+        "https://www.printerstudio.co.uk/*"
+      ]
+    }
+  ]
 }

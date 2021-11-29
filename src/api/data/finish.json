@@ -1,14 +1,17 @@
 [
   {
     "code": "MPC game card finish",
-    "name": "PPR_0009"
+    "name": "PPR_0009",
+    "product_code": "FI_7999"
   },
   {
     "code": "BETA playing card finish",
-    "name": "PPR_0149"
+    "name": "PPR_0149",
+    "product_code": "FI_7999"
   },
   {
     "code": "Gloss finish",
-    "name": "PPR_0056"
+    "name": "PPR_0056",
+    "product_code": "FI_7999"
   }
 ]

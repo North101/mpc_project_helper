@@ -29,6 +29,8 @@ export default class App extends React.Component<AppProps, AppState> {
       visible: false,
       tabIndex: 0,
       settings: {
+        url: 'https://www.makeplayingcards.com',
+        unit: 'C380050185D1C1AF',
         product: 'FI_7999',
         frontDesign: 'FP_031273',
         backDesign: 'FP_031272',
@@ -36,6 +38,16 @@ export default class App extends React.Component<AppProps, AppState> {
         printType: '',
         finish: 'PPR_0009',
         packaging: 'PB_043',
+
+        // url: 'https://www.printerstudio.co.uk',
+        // unit: '6229BAC504DC5BB4',
+        // product: 'FI_569',
+        // frontDesign: 'FP_000441',
+        // backDesign: 'FP_012232',
+        // cardStock: 'PA_007',
+        // printType: '',
+        // finish: 'PPR_0009',
+        // packaging: 'PB_018',
       },
     };
 

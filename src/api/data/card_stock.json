@@ -1,34 +1,42 @@
 [
   {
     "code": "(S27) Smooth",
-    "name": "PA_016"
+    "name": "PA_016",
+    "product_code": "FI_7999"
   },
   {
     "code": "(S30) Standard Smooth",
-    "name": "PA_014"
+    "name": "PA_014",
+    "product_code": "FI_7999"
   },
   {
     "code": "(S33) Superior Smooth",
-    "name": "PA_059"
+    "name": "PA_059",
+    "product_code": "FI_7999"
   },
   {
     "code": "(M31) Linen",
-    "name": "PA_015"
+    "name": "PA_015",
+    "product_code": "FI_7999"
   },
   {
     "code": "(M30) Linen Air Light [min.1000]",
-    "name": "PA_164"
+    "name": "PA_164",
+    "product_code": "FI_7999"
   },
   {
     "code": "(M32) Linen Air [min.1000]",
-    "name": "PA_028"
+    "name": "PA_028",
+    "product_code": "FI_7999"
   },
   {
     "code": "(A35) Thick Standard",
-    "name": "PA_203"
+    "name": "PA_203",
+    "product_code": "FI_7999"
   },
   {
     "code": "(P10) Plastic",
-    "name": "PA_017"
+    "name": "PA_017",
+    "product_code": "FI_7999"
   }
 ]

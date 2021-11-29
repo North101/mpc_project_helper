@@ -1,7 +1,18 @@
+import * as fetchRetry from 'fetch-retry';
+
 import * as mpcColors from './data/colors.json';
 import * as mpcFonts from './data/fonts.json';
 
+const fetch = fetchRetry(window.fetch);
+
+const url = (url: string, params: { [key: string]: string; }) => {
+  if (!params) return url;
+  return `${url}?${new URLSearchParams(params)}`;
+}
+
 export interface Settings {
+  url: string;
+  unit: string;
   product: string;
   frontDesign: string;
   backDesign: string;
@@ -46,9 +57,9 @@ export const xpath = (root: Document, xpath: string) => {
 }
 
 export const initProject = async (settings: Settings, cards: UploadedImage[]) => {
-  const r = await fetch('https://www.makeplayingcards.com/products/pro_item_process_flow.aspx?' + new URLSearchParams({
+  const r = await fetch(url(`${settings.url}/products/pro_item_process_flow.aspx`, {
     // Card type
-    itemid: 'C380050185D1C1AF',
+    itemid: settings.unit,
     // Card Stock
     attachno: settings.cardStock,
     // number of cards
@@ -60,7 +71,10 @@ export const initProject = async (settings: Settings, cards: UploadedImage[]) =>
     // Packaging
     packid: settings.packaging,
     qty: '1',
-  }));
+  }), {
+    retries: 5,
+    retryDelay: 500,
+  });
 
   const root = parseHtml(await r.text());
   return xpath(root, '/html/body/form[@id="form1"]/@action')!
@@ -92,7 +106,7 @@ export const saveFrontSettings = (projectId: string, settings: Settings, cards: 
 
   // not sure if this is needed
   body.append('hidd_packing_condition_info', JSON.stringify({
-    UnitNo: 'C380050185D1C1AF',
+    UnitNo: settings.unit,
     PackingNo: settings.packaging,
     PackingGroup: 'SHRINKWRAP',
     AttachNo: settings.cardStock,
@@ -100,15 +114,17 @@ export const saveFrontSettings = (projectId: string, settings: Settings, cards: 
     Pieces: count,
   }));
 
-  return fetch('https://www.makeplayingcards.com/products/playingcard/design/dn_playingcards_mode_nf.aspx?' + new URLSearchParams({
+  return fetch(url(`${settings.url}/products/playingcard/design/dn_playingcards_mode_nf.aspx`, {
     ssid: projectId,
   }), {
     method: 'POST',
     body: body,
+    retries: 5,
+    retryDelay: 500,
   });
 }
 
-export const saveBackSettings = (projectId: string, _settings: Settings, cards: UploadedImage[]) => {
+export const saveBackSettings = (projectId: string, settings: Settings, cards: UploadedImage[]) => {
   const count = cards.length
 
   const body = new FormData();
@@ -124,11 +140,13 @@ export const saveBackSettings = (projectId: string, _settings: Settings, cards: 
   body.append('hidd_design_count', `${count}`);
   body.append('hidd_mode', 'ImageText');
 
-  return fetch('https://www.makeplayingcards.com/products/playingcard/design/dn_playingcards_mode_nb.aspx?' + new URLSearchParams({
+  return fetch(url(`${settings.url}/products/playingcard/design/dn_playingcards_mode_nb.aspx`, {
     ssid: projectId,
   }), {
     method: 'POST',
     body: body,
+    retries: 5,
+    retryDelay: 500,
   });
 }
 
@@ -149,7 +167,7 @@ export const saveFrontImageStep = (projectId: string, settings: Settings, cards:
   body.append('hidd_designcount', `${cards.length}`);
   body.append('hidd_productgroup', '');
   body.append('hidd_unpick_info', '[{"SortNo":1,"X":0,"Y":0,"Width":272,"Height":370,"Rotate":0.0,"Alpha":1.0,"TipX":0,"TipY":0,"TipWidth":0,"Resolution":300,"AllowEdit":"Y","AllowMove":"Y","AutoDirection":"Y","ApplyMask":"N","RealX":0,"RealY":0,"RealWidth":816,"RealHeight":1110}]');
-  body.append('hidd_images_info', JSON.stringify(cards.map((sides) => sides.front ? uncompressImageData(sides.front) : null)));
+  body.append('hidd_images_info', JSON.stringify(cards.map((sides) => sides.front ? uncompressImageData(settings, sides.front) : null)));
   body.append('hidd_pixel_info', '{"ProductWidth":272,"ProductHeight":370,"ProductPadding":12,"PaddingLeft":0,"PaddingTop":0,"PaddingRight":0,"PaddingBottom":0,"SafeLeft":12,"SafeTop":12,"SafeRight":12,"SafeBottom":12,"Radius":0,"IsUnpick":"N","IsLapped":"N","IsPartImage":"N","LappedType":"A","LappedRow":0,"LappedCol":0,"Resolution":300,"AllowDesign":"Y","PreviewWidth":272,"PreviewHeight":370,"Filter":"","AllowEditFilter":"Y","ImageMode":"B","IsTextZoom":"Y"}');
   body.append('hidd_direction', 'V');
   body.append('hidd_backgroundColor', '');
@@ -160,17 +178,19 @@ export const saveFrontImageStep = (projectId: string, settings: Settings, cards:
   body.append('hidd_imageWidth', '272');
   body.append('hidd_authorize_modify', 'Y');
   body.append('hidd_webSiteCode', 'PC');
-  body.append('hidd_safe_area_link_url', 'https://www.makeplayingcards.com/pops/faq-photo.html');
+  body.append('hidd_safe_area_link_url', `${settings.url}/pops/faq-photo.html`);
 
-  return fetch('https://www.makeplayingcards.com/products/playingcard/design/dn_playingcards_front_dynamic.aspx?' + new URLSearchParams({
+  return fetch(url(`${settings.url}/products/playingcard/design/dn_playingcards_front_dynamic.aspx`, {
     ssid: projectId,
   }), {
     method: 'POST',
     body: body,
+    retries: 5,
+    retryDelay: 500,
   });
 }
 
-export const saveFrontTextStep = (projectId: string, cards: UploadedImage[]) => {
+export const saveFrontTextStep = (projectId: string, settings: Settings, cards: UploadedImage[]) => {
   const count = cards.length;
 
   const body = new FormData();
@@ -208,11 +228,13 @@ export const saveFrontTextStep = (projectId: string, cards: UploadedImage[]) => 
   body.append('hidd_using_new_version', 'Y');
   body.append('hidd_card_number_title', 'Card');
 
-  return fetch('https://www.makeplayingcards.com/design/dn_texteditor_front.aspx?' + new URLSearchParams({
+  return fetch(url(`${settings.url}/design/dn_texteditor_front.aspx`, {
     ssid: projectId,
   }), {
     method: 'POST',
     body: body,
+    retries: 5,
+    retryDelay: 500,
   });
 }
 
@@ -233,7 +255,7 @@ export const saveBackImageStep = (projectId: string, settings: Settings, cards: 
   body.append('hidd_totalcount', `${count}`);
   body.append('hidd_designcount', `${count}`);
   body.append('hidd_unpick_info', '[{"SortNo":1,"X":0,"Y":0,"Width":272,"Height":370,"Rotate":0.0,"Alpha":1.0,"TipX":0,"TipY":0,"TipWidth":0,"Resolution":300,"AllowEdit":"Y","AllowMove":"Y","AutoDirection":"Y","ApplyMask":"N","RealX":0,"RealY":0,"RealWidth":816,"RealHeight":1110}]');
-  body.append('hidd_images_info', JSON.stringify(cards.map((sides) => sides.back ? uncompressImageData(sides.back) : null)));
+  body.append('hidd_images_info', JSON.stringify(cards.map((sides) => sides.back ? uncompressImageData(settings, sides.back) : null)));
   body.append('hidd_pixel_info', '{"ProductWidth":248,"ProductHeight":346,"ProductPadding":12,"PaddingLeft":12,"PaddingTop":12,"PaddingRight":12,"PaddingBottom":12,"SafeLeft":12,"SafeTop":12,"SafeRight":12,"SafeBottom":12,"Radius":0,"IsUnpick":"N","IsLapped":"N","IsPartImage":"N","LappedType":"A","LappedRow":0,"LappedCol":0,"Resolution":300,"AllowDesign":"Y","PreviewWidth":272,"PreviewHeight":370,"Filter":"","AllowEditFilter":"Y","ImageMode":"B","IsTextZoom":"Y"}');
   body.append('hidd_direction', 'V');
   body.append('hidd_backgroundColor', '');
@@ -243,17 +265,19 @@ export const saveBackImageStep = (projectId: string, settings: Settings, cards: 
   body.append('hidd_userName', '');
   body.append('hidd_imageWidth', '272');
   body.append('hidd_webSiteCode', 'PC');
-  body.append('hidd_safe_area_link_url', 'https://www.makeplayingcards.com/pops/faq-photo.html');
+  body.append('hidd_safe_area_link_url', `${settings.url}/pops/faq-photo.html`);
 
-  return fetch('https://www.makeplayingcards.com/products/playingcard/design/dn_playingcards_back_dynamic.aspx?' + new URLSearchParams({
+  return fetch(url(`${settings.url}/products/playingcard/design/dn_playingcards_back_dynamic.aspx`, {
     ssid: projectId,
   }), {
     method: 'POST',
     body: body,
+    retries: 5,
+    retryDelay: 500,
   });
 }
 
-export const saveBackTextStep = (projectId: string, cards: UploadedImage[]) => {
+export const saveBackTextStep = (projectId: string, settings: Settings, cards: UploadedImage[]) => {
   const count = cards.length;
 
   const body = new FormData();
@@ -290,20 +314,22 @@ export const saveBackTextStep = (projectId: string, cards: UploadedImage[]) => {
   body.append('hidd_using_new_version', 'Y');
   body.append('hidd_card_number_title', 'Card');
 
-  return fetch('https://www.makeplayingcards.com/design/dn_texteditor_back.aspx?' + new URLSearchParams({
+  return fetch(url(`${settings.url}/design/dn_texteditor_back.aspx`, {
     ssid: projectId,
   }), {
     method: 'POST',
     body: body,
+    retries: 5,
+    retryDelay: 500,
   });
 }
 
-export const uncompressImageData = (data: CompressedImageData) => {
+export const uncompressImageData = (settings: Settings, data: CompressedImageData) => {
   return {
     ID: data.SourceID,
     Exp: data.Exp,
     Owner: '',
-    Path: 'https://www.makeplayingcards.com/PreviewFiles/Normal/temp',
+    Path: `${settings.url}/PreviewFiles/Normal/temp`,
     Width: data.Width,
     Height: data.Height,
     imageName: `${data.SourceID}.${data.Exp}`,
@@ -345,17 +371,17 @@ export const uncompressCropData = (data: CompressedImageData) => {
   }]
 }
 
-export const saveSession = (projectId: string, cards: UploadedImage[]) => {
+export const saveSession = (projectId: string, settings: Settings, cards: UploadedImage[]) => {
   const body = new FormData();
   // list of front images for the project
-  body.append('frontImageList', JSON.stringify(cards.map((sides) => sides.front ? uncompressImageData(sides.front) : null)));
+  body.append('frontImageList', JSON.stringify(cards.map((sides) => sides.front ? uncompressImageData(settings, sides.front) : null)));
   // list of front images assigned to cards
   body.append('frontCropInfo', JSON.stringify(cards.map((sides) => sides.front ? uncompressCropData(sides.front) : null)));
   // page designer for multiple front cards
   body.append('frontDesignModePage', 'dn_playingcards_mode_nf.aspx');
-  body.append('frontTextInfo',  [...new Array(cards.length)].map(() => '').join('%u25C7'));
+  body.append('frontTextInfo', [...new Array(cards.length)].map(() => '').join('%u25C7'));
   // list of back images for the project
-  body.append('backImageList', JSON.stringify(cards.map((sides) => sides.back ? uncompressImageData(sides.back) : null)));
+  body.append('backImageList', JSON.stringify(cards.map((sides) => sides.back ? uncompressImageData(settings, sides.back) : null)));
   // list of back images assigned to cards
   body.append('backCropInfo', JSON.stringify(cards.map((sides) => sides.back ? uncompressCropData(sides.back) : null)));
   body.append('backTextInfo', [...new Array(cards.length)].map(() => '').join('%u25C7'));
@@ -366,11 +392,13 @@ export const saveSession = (projectId: string, cards: UploadedImage[]) => {
   // no idea
   body.append('mapinfo', '[]');
 
-  return fetch('https://www.makeplayingcards.com/design/dn_keep_session.aspx?' + new URLSearchParams({
+  return fetch(url(`${settings.url}/design/dn_keep_session.aspx`, {
     ssid: projectId,
   }), {
     method: 'POST',
     body: body,
+    retries: 5,
+    retryDelay: 500,
   });
 }
 
@@ -381,21 +409,22 @@ export const createProject = async (settings: Settings, cards: UploadedImage[]) 
     }
     return e;
   }, []);
+  console.log(expandedCards);
 
   const projectId = await initProject(settings, expandedCards);
 
   await saveFrontSettings(projectId, settings, expandedCards);
   await saveBackSettings(projectId, settings, expandedCards);
   await saveFrontImageStep(projectId, settings, expandedCards);
-  await saveFrontTextStep(projectId, expandedCards);
+  await saveFrontTextStep(projectId, settings, expandedCards);
   await saveBackImageStep(projectId, settings, expandedCards);
-  await saveBackTextStep(projectId, expandedCards);
-  await saveSession(projectId, expandedCards);
+  await saveBackTextStep(projectId, settings, expandedCards);
+  await saveSession(projectId, settings, expandedCards);
 
-  return `https://www.makeplayingcards.com/design/dn_preview_layout.aspx?ssid=${projectId}`;
+  return `${settings.url}/design/dn_preview_layout.aspx?ssid=${projectId}`;
 }
 
-export const uploadImage = async (side: string, image: File) => {
+export const uploadImage = async (settings: Settings, side: string, image: File) => {
   const body = new FormData();
   body.append('fileData', image);
   body.append('userName', '');
@@ -404,9 +433,11 @@ export const uploadImage = async (side: string, image: File) => {
   body.append('pt', '14167');
   body.append('ip', '');
 
-  const r = await fetch('https://www.makeplayingcards.com/uploader/up_product.aspx', {
+  const r = await fetch(`${settings.url}/uploader/up_product.aspx`, {
     method: 'POST',
     body: body,
+    retries: 5,
+    retryDelay: 500,
   });
   const root = parseHtml(await r.text());
   return JSON.parse(xpath(root, '/html/body/form/input[@id="hidd_image_info"]/@value')!.textContent!);
@@ -418,20 +449,22 @@ export const analysisImage = async (settings: Settings, side: string, index: num
   body.append('photoindex', `${index}`);
   body.append('source', JSON.stringify(value));
   body.append('face', side);
-  body.append('width', '272');
-  body.append('height', '370');
+  body.append('width', '274');
+  body.append('height', '374');
   body.append('dpi', '300');
   body.append('auto', 'Y');
   body.append('scale', '1');
   body.append('filter', '');
   body.append('productCode', settings.product);
-  body.append('designCode', 'FP_031273');
+  body.append('designCode', side === 'front' ? settings.frontDesign : settings.backDesign);
   body.append('sortNo', '0');
   body.append('applyMask', 'N');
 
-  const r = await fetch('https://www.makeplayingcards.com/design/dn_product_analysis_photo.aspx', {
+  const r = await fetch(`${settings.url}/design/dn_product_analysis_photo.aspx`, {
     method: 'POST',
     body: body,
+    retries: 5,
+    retryDelay: 500,
   });
   const root = parseXml(await r.text());
   return JSON.parse(xpath(root, '/Values/Value/text()')!.textContent!).CropInfo;

@@ -6,6 +6,9 @@ chrome.runtime.onInstalled.addListener(() => {
       conditions: [
         new chrome.declarativeContent.PageStateMatcher({
           pageUrl: { urlMatches: 'https://www.makeplayingcards.com/*' },
+        }),
+        new chrome.declarativeContent.PageStateMatcher({
+          pageUrl: { urlMatches: 'https://www.printerstudio.co.uk/*' },
         })
       ],
       actions: [new (chrome.declarativeContent as any).ShowAction()],

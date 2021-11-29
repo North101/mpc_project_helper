@@ -223,7 +223,7 @@ export default class ImagesTab extends React.Component<ImagesTabProps, ImagesTab
     const selectedFiles = e.target.files;
     if (selectedFiles === null || selectedFiles.length === 0) return;
 
-    const re = /^(.+[^\d])(?:(front|back)|(\d+)(a|b)?)\.(png|jpg)$/;
+    const re = /^(.+?)(\d+)?\-?(?:(front|back|a|b|1|2))?\.(png|jpg)$/;
 
     const cardSides: CardSide[] = [...files];
     for (let i = 0; i < selectedFiles.length; i++) {
@@ -240,20 +240,21 @@ export default class ImagesTab extends React.Component<ImagesTabProps, ImagesTab
     } = {};
     for (const file of cardSides) {
       const match = file.file.name.match(re);
+      console.log(match);
       if (!match) continue;
 
       const groupName = match[1];
-      const side = match[2] as ('front' | 'back');
+      const side = match[3];
 
       const group = groups[groupName] ??= {
         key: groupName,
         items: [],
       };
-      if (side) {
+      if (!match[2] && (side === 'front' || side === 'back')) {
         group[side] = file;
       } else {
-        const index = parseInt(match[3]);
-        const side = match[4] === 'b' ? 'back' : 'front';
+        const index = parseInt(match[2]) || 0;
+        const side = match[3] === 'b' || match[3] === '2' || match[3] === 'back' ? 'back' : 'front';
         const card = group.items[index] ??= {
           id: cardId++,
           count: 1,
@@ -261,6 +262,7 @@ export default class ImagesTab extends React.Component<ImagesTabProps, ImagesTab
         card[side] = file;
       }
     }
+    console.log(groups);
     for (const group of Object.values(groups)) {
       const lastCardSide: {
         front?: CardSide;
@@ -279,9 +281,18 @@ export default class ImagesTab extends React.Component<ImagesTabProps, ImagesTab
     this.setState({
       files: cardSides,
       cards: Object.values(groups).reduce<Card[]>((list, group) => {
-        for (const card of group.items) {
-          if (card) {
-            list.push(card);
+        if (group.items.length === 0) {
+          list.push({
+            id: cardId++,
+            count: 1,
+            front: group.front,
+            back: group.back,
+          });
+        } else {
+          for (const card of group.items) {
+            if (card) {
+              list.push(card);
+            }
           }
         }
         return list;
@@ -324,7 +335,7 @@ export default class ImagesTab extends React.Component<ImagesTabProps, ImagesTab
             cardData[side] = files.get(id);
           } else {
             if (this.state.state?.id !== 'loading') return;
-            const uploadedImage = await uploadImage(side, cardSide.file);
+            const uploadedImage = await uploadImage(settings, side, cardSide.file);
 
             if (this.state.state?.id !== 'loading') return;
             const analysedImage = await analysisImage(settings, side, 0, uploadedImage);
