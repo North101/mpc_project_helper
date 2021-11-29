@@ -25,7 +25,7 @@ chrome.action.onClicked.addListener((tab: any) => {
 chrome.runtime.onMessage.addListener((request) => {
   if (request.message === 'download') {
     chrome.downloads.download({
-      url: `data:application/json;charset=utf-8,${encodeURIComponent(JSON.stringify(request.value))}`,
+      url: `data:text/plain;charset=utf-8,${encodeURIComponent(JSON.stringify(request.value))}`,
       filename: 'project.txt',
     });
   } else if (request.message === 'open') {
