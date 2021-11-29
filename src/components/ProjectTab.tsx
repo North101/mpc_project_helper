@@ -127,7 +127,7 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
 
     return (
       <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-        <input id="project-input" type="file" multiple={true} accept='.json' onChange={this.onSelectFiles} />
+        <input id="project-input" type="file" multiple={true} accept='.txt' onChange={this.onSelectFiles} />
         <div style={{ display: 'flex', justifyContent: 'end', paddingTop: 8, paddingBottom: 8, }}>
           <Button
             icon={`${chrome.runtime.getURL('icons/select.svg')}`}
