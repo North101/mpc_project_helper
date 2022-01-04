@@ -24,7 +24,7 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
 
     const { siteCode } = props;
     this.state = {
-      unit: unitData.find((it) => it.site_codes.includes(siteCode)),
+      unit: unitData.find((it) => it.siteCodes.includes(siteCode)),
     };
   }
 
@@ -43,16 +43,24 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
     });
   }
 
-  getSettings = () => {
+  getSettings = (): CardSettings | undefined => {
     const { unit } = this.state;
     if (!unit) return;
 
     return {
       url: location.origin,
       unit: unit.code,
-      product: unit.product_code,
-      frontDesign: unit.front_design_code,
-      backDesign: unit.back_design_code!,
+      product: unit.productCode,
+      frontDesign: unit.frontDesignCode,
+      backDesign: unit.backDesignCode,
+      width: unit.width,
+      height: unit.height,
+      dpi: unit.dpi,
+      filter: unit.filter,
+      auto: unit.auto,
+      scale: unit.scale,
+      sortNo: unit.sortNo,
+      applyMask: unit.applyMask,
     };
   }
 
@@ -68,7 +76,7 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
           <FloatingLabel controlId="floatingSelect1" label="Product">
             <Form.Select aria-label="Product" value={unit?.code} onChange={this.onChange}>
               <option>Select Product</option>
-              {unitData.filter((it) => it.site_codes.includes(siteCode)).map((it) => (
+              {unitData.filter((it) => it.siteCodes.includes(siteCode)).map((it) => (
                 <option value={it.code}>{it.name}</option>
               ))}
             </Form.Select>

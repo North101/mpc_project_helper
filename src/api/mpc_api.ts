@@ -16,14 +16,17 @@ export interface CardSettings {
   product: string;
   frontDesign: string;
   backDesign: string;
+  width: number;
+  height: number;
+  dpi: number;
+  filter: string;
+  auto: boolean;
+  scale: number;
+  sortNo: number;
+  applyMask: boolean;
 }
 
 export interface Settings extends CardSettings {
-  url: string;
-  unit: string;
-  product: string;
-  frontDesign: string;
-  backDesign: string;
   cardStock: string;
   printType: string;
   finish: string;
@@ -180,7 +183,7 @@ export const saveFrontImageStep = (projectId: string, settings: Settings, cards:
   body.append('hidd_direction', 'V');
   body.append('hidd_backgroundColor', '');
   body.append('hidd_image_format', 'png');
-  body.append('hidd_crop_info', JSON.stringify(cards.map((sides) => sides.front ? uncompressCropData(sides.front) : null)));
+  body.append('hidd_crop_info', JSON.stringify(cards.map((sides) => sides.front ? uncompressCropData(settings, sides.front) : null)));
   body.append('hidd_photo_cookie', 'Y');
   body.append('hidd_userName', '');
   body.append('hidd_imageWidth', '272');
@@ -268,7 +271,7 @@ export const saveBackImageStep = (projectId: string, settings: Settings, cards: 
   body.append('hidd_direction', 'V');
   body.append('hidd_backgroundColor', '');
   body.append('hidd_image_format', 'png');
-  body.append('hidd_crop_info', JSON.stringify(cards.map((sides) => sides.back ? uncompressCropData(sides.back) : null)));
+  body.append('hidd_crop_info', JSON.stringify(cards.map((sides) => sides.back ? uncompressCropData(settings, sides.back) : null)));
   body.append('hidd_photo_cookie', 'Y');
   body.append('hidd_userName', '');
   body.append('hidd_imageWidth', '272');
@@ -344,19 +347,19 @@ export const uncompressImageData = (settings: Settings, data: CompressedImageDat
   }
 }
 
-export const uncompressCropData = (data: CompressedImageData) => {
+export const uncompressCropData = (settings: Settings, data: CompressedImageData) => {
   return [{
     ID: data.ID,
     SourceID: data.SourceID,
     Exp: data.Exp,
     X: 0,
     Y: 0,
-    Width: 272,
-    Height: 371,
+    Width: data.Width,
+    Height: data.Height,
     CropX: 0,
     CropY: 0,
-    CropWidth: 272,
-    CropHeight: 370,
+    CropWidth: settings.width,
+    CropHeight: settings.height,
     CropRotate: 0.0,
     Rotate: 0.0,
     Zoom: 1.0,
@@ -364,17 +367,17 @@ export const uncompressCropData = (data: CompressedImageData) => {
     FlipHorizontal: 'N',
     FlipVertical: 'N',
     Sharpen: 'N',
-    Filter: '',
+    Filter: settings.filter,
     Brightness: 0,
     ThumbnailScale: 1.0,
     AllowEdit: 'Y',
     AllowMove: 'Y',
     Alpha: 1.0,
-    Resolution: 300,
+    Resolution: settings.dpi,
     Index: 0,
     Quality: 'Y',
     AutoDirection: 'N',
-    ApplyMask: 'N',
+    ApplyMask: settings.applyMask,
     IsEmpty: false,
   }]
 }
@@ -384,14 +387,14 @@ export const saveSession = (projectId: string, settings: Settings, cards: Upload
   // list of front images for the project
   body.append('frontImageList', JSON.stringify(cards.map((sides) => sides.front ? uncompressImageData(settings, sides.front) : null)));
   // list of front images assigned to cards
-  body.append('frontCropInfo', JSON.stringify(cards.map((sides) => sides.front ? uncompressCropData(sides.front) : null)));
+  body.append('frontCropInfo', JSON.stringify(cards.map((sides) => sides.front ? uncompressCropData(settings, sides.front) : null)));
   // page designer for multiple front cards
   body.append('frontDesignModePage', 'dn_playingcards_mode_nf.aspx');
   body.append('frontTextInfo', [...new Array(cards.length)].map(() => '').join('%u25C7'));
   // list of back images for the project
   body.append('backImageList', JSON.stringify(cards.map((sides) => sides.back ? uncompressImageData(settings, sides.back) : null)));
   // list of back images assigned to cards
-  body.append('backCropInfo', JSON.stringify(cards.map((sides) => sides.back ? uncompressCropData(sides.back) : null)));
+  body.append('backCropInfo', JSON.stringify(cards.map((sides) => sides.back ? uncompressCropData(settings, sides.back) : null)));
   body.append('backTextInfo', [...new Array(cards.length)].map(() => '').join('%u25C7'));
   // page designer for multiple back cards
   body.append('backDesignModePage', 'dn_playingcards_mode_nb.aspx');
@@ -457,16 +460,16 @@ export const analysisImage = async (settings: CardSettings, side: string, index:
   body.append('photoindex', `${index}`);
   body.append('source', JSON.stringify(value));
   body.append('face', side);
-  body.append('width', '274');
-  body.append('height', '374');
-  body.append('dpi', '300');
-  body.append('auto', 'Y');
-  body.append('scale', '1');
+  body.append('width', `${settings.width}`);
+  body.append('height', `${settings.height}`);
+  body.append('dpi', `${settings.dpi}`);
+  body.append('auto', settings.auto ? 'Y' : 'N');
+  body.append('scale', `${settings.scale}`);
   body.append('filter', '');
   body.append('productCode', settings.product);
   body.append('designCode', side === 'front' ? settings.frontDesign : settings.backDesign);
-  body.append('sortNo', '0');
-  body.append('applyMask', 'N');
+  body.append('sortNo', `${settings.sortNo}`);
+  body.append('applyMask', settings.applyMask ? 'Y' : 'N');
 
   const r = await fetch(`${settings.url}/design/dn_product_analysis_photo.aspx`, {
     method: 'POST',

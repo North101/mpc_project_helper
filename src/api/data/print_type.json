@@ -2,55 +2,55 @@
   {
     "code": "",
     "name": "Full color print",
-    "site_codes": ["mpc"],
-    "product_codes": ["FI_7999", "FI_569"]
+    "siteCodes": ["mpc"],
+    "productCodes": ["FI_7999", "FI_569"]
   },
   {
     "code": "EF_055",
     "name": "Holographic (front)",
-    "site_codes": ["mpc"],
-    "product_codes": ["FI_7999", "FI_569"]
+    "siteCodes": ["mpc"],
+    "productCodes": ["FI_7999", "FI_569"]
   },
   {
     "code": "EF_120",
     "name": "Holographic (front & back)",
-    "site_codes": ["mpc"],
-    "product_codes": ["FI_7999", "FI_569"]
+    "siteCodes": ["mpc"],
+    "productCodes": ["FI_7999", "FI_569"]
   },
   {
     "code": "EF_020",
     "name": "High gloss + full color print",
-    "site_codes": ["mpc"],
-    "product_codes": ["FI_7999", "FI_569"]
+    "siteCodes": ["mpc"],
+    "productCodes": ["FI_7999", "FI_569"]
   },
   {
     "code": "EF_041",
     "name": "Gold gilt edge + full color print",
-    "site_codes": ["mpc"],
-    "product_codes": ["FI_7999", "FI_569"]
+    "siteCodes": ["mpc"],
+    "productCodes": ["FI_7999", "FI_569"]
   },
   {
     "code": "EF_042",
     "name": "Silver gilt edge + full color print",
-    "site_codes": ["mpc"],
-    "product_codes": ["FI_7999", "FI_569"]
+    "siteCodes": ["mpc"],
+    "productCodes": ["FI_7999", "FI_569"]
   },
   {
     "code": "EF_095",
     "name": "Holographic (front) + gold gilt edge",
-    "site_codes": ["mpc"],
-    "product_codes": ["FI_7999", "FI_569"]
+    "siteCodes": ["mpc"],
+    "productCodes": ["FI_7999", "FI_569"]
   },
   {
     "code": "EF_105",
     "name": "Holographic (front) + silver gilt edge",
-    "site_codes": ["mpc"],
-    "product_codes": ["FI_7999", "FI_569"]
+    "siteCodes": ["mpc"],
+    "productCodes": ["FI_7999", "FI_569"]
   },
   {
     "code": "",
     "name": "Default",
-    "site_codes": ["ps"],
-    "product_codes": ["FI_569"]
+    "siteCodes": ["ps"],
+    "productCodes": ["FI_569"]
   }
 ]

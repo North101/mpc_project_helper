@@ -31,10 +31,18 @@ export interface Project {
 export interface Unit {
   code: string;
   name: string;
-  site_codes: string[];
-  product_code: string;
-  front_design_code: string;
-  back_design_code: string;
+  siteCodes: string[];
+  productCode: string;
+  frontDesignCode: string;
+  backDesignCode: string;
+  width: number;
+  height: number;
+  dpi: number;
+  filter: string;
+  auto: boolean;
+  scale: number;
+  sortNo: number;
+  applyMask: boolean;
 };
 
 export interface Item {
@@ -121,7 +129,7 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
             },
           });
           return;
-        } else if (!unit.site_codes.includes(siteCode)) {
+        } else if (!unit.siteCodes.includes(siteCode)) {
           this.setState({
             state: {
               id: 'error',
