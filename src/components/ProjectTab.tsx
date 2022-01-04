@@ -4,6 +4,7 @@ import { FileEarmarkPlus, Upload, XCircle } from "react-bootstrap-icons";
 import Button from "react-bootstrap/esm/Button";
 import Stack from "react-bootstrap/esm/Stack";
 import { is } from 'typescript-is';
+import siteData from "../api/data/site.json";
 import unitData from "../api/data/unit.json";
 import { createProject, Settings, UploadedImage } from "../api/mpc_api";
 import ErrorModal from "./ErrorModal";
@@ -92,6 +93,7 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
   onAdd = async (e: any) => {
     if (e.target.files == null) return;
 
+    const { siteCode } = this.props;
     const items = [
       ...this.state.items,
     ];
@@ -118,6 +120,24 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
               value: `${file.name}\n\nProject product type not found: ${unitCode}`,
             },
           });
+          return;
+        } else if (unit.site_code !== siteCode) {
+          const site = siteData.find((it) => it.code === unit.site_code);
+          if (site) {
+            this.setState({
+              state: {
+                id: 'error',
+                value: `${file.name}\n\nProject is only compatible with: ${site.url}`,
+              },
+            });
+          } else {
+            this.setState({
+              state: {
+                id: 'error',
+                value: `${file.name}\n\nProject is not compatible with: ${location.origin}`,
+              },
+            });
+          }
           return;
         }
 
