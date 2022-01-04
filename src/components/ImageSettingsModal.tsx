@@ -22,8 +22,9 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
   constructor(props: ImageSettingsModalProps) {
     super(props);
 
+    const { siteCode } = props;
     this.state = {
-      unit: unitData.filter((it) => it.site_code === props.siteCode)[0],
+      unit: unitData.find((it) => it.site_codes.includes(siteCode)),
     };
   }
 
@@ -67,7 +68,7 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
           <FloatingLabel controlId="floatingSelect1" label="Product">
             <Form.Select aria-label="Product" value={unit?.code} onChange={this.onChange}>
               <option>Select Product</option>
-              {unitData.filter((it) => it.site_code === siteCode).map((it) => (
+              {unitData.filter((it) => it.site_codes.includes(siteCode)).map((it) => (
                 <option value={it.code}>{it.name}</option>
               ))}
             </Form.Select>

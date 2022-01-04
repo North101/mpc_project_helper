@@ -31,7 +31,7 @@ export interface Project {
 export interface Unit {
   code: string;
   name: string;
-  site_code: string;
+  site_codes: string[];
   product_code: string;
   front_design_code: string;
   back_design_code: string;
@@ -121,23 +121,13 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
             },
           });
           return;
-        } else if (unit.site_code !== siteCode) {
-          const site = siteData.find((it) => it.code === unit.site_code);
-          if (site) {
-            this.setState({
-              state: {
-                id: 'error',
-                value: `${file.name}\n\nProject is only compatible with: ${site.url}`,
-              },
-            });
-          } else {
-            this.setState({
-              state: {
-                id: 'error',
-                value: `${file.name}\n\nProject is not compatible with: ${location.origin}`,
-              },
-            });
-          }
+        } else if (siteCode !in unit.site_codes) {
+          this.setState({
+            state: {
+              id: 'error',
+              value: `${file.name}\n\nProject is not compatible with: ${location.origin}`,
+            },
+          });
           return;
         }
 
@@ -261,6 +251,7 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
   }
 
   render() {
+    const { siteCode } = this.props;
     const { items, state } = this.state;
 
     return (
@@ -305,7 +296,7 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
             </Droppable>
           </DragDropContext>
         </Stack>
-        {is<SettingsState>(state) && <ProjectSettingsModal unit={state.unit} cards={state.cards} onUpload={this.onUpload} onClose={this.onStateClear} />}
+        {is<SettingsState>(state) && <ProjectSettingsModal siteCode={siteCode} unit={state.unit} cards={state.cards} onUpload={this.onUpload} onClose={this.onStateClear} />}
         {is<LoadingState>(state) && <LoadingModal onClose={this.onStateClear} />}
         {is<FinishedState>(state) && <ProjectSuccessModal value={state.value} onClose={this.onStateClear} />}
         {is<ErrorState>(state) && <ErrorModal value={state.value} onClose={this.onStateClear} />}

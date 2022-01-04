@@ -2,236 +2,283 @@
   {
     "code": "PB_043",
     "name": "Shrink-wrapped",
-    "product_code": "FI_7999"
+    "site_codes": ["mpc"],
+    "product_codes": ["FI_7999", "FI_569"]
   },
   {
     "code": "PB_12387",
     "name": "Plain black velvet bag",
-    "product_code": "FI_7999"
+    "site_codes": ["mpc"],
+    "product_codes": ["FI_7999", "FI_569"]
   },
   {
     "code": "PB_13100",
     "name": "Plain double magnetic book box",
-    "product_code": "FI_7999"
+    "site_codes": ["mpc"],
+    "product_codes": ["FI_7999", "FI_569"]
   },
   {
     "code": "PB_12337",
     "name": "Plain double tin box",
-    "product_code": "FI_7999"
+    "site_codes": ["mpc"],
+    "product_codes": ["FI_7999", "FI_569"]
   },
   {
     "code": "PB_10490",
     "name": "Plain drawer box",
-    "product_code": "FI_7999"
+    "site_codes": ["mpc"],
+    "product_codes": ["FI_7999", "FI_569"]
   },
   {
     "code": "PB_10488",
     "name": "Plain easy-flip box",
-    "product_code": "FI_7999"
+    "site_codes": ["mpc"],
+    "product_codes": ["FI_7999", "FI_569"]
   },
   {
     "code": "PB_12345",
     "name": "Plain easy-flip side open box",
-    "product_code": "FI_7999"
+    "site_codes": ["mpc"],
+    "product_codes": ["FI_7999", "FI_569"]
   },
   {
     "code": "PB_8356",
     "name": "Plain hinged tin box",
-    "product_code": "FI_7999"
+    "site_codes": ["mpc"],
+    "product_codes": ["FI_7999", "FI_569"]
   },
   {
     "code": "PB_12017",
     "name": "Plain lux box",
-    "product_code": "FI_7999"
+    "site_codes": ["mpc"],
+    "product_codes": ["FI_7999", "FI_569"]
   },
   {
     "code": "PB_13090",
     "name": "Plain magnetic book box",
-    "product_code": "FI_7999"
+    "site_codes": ["mpc"],
+    "product_codes": ["FI_7999", "FI_569"]
   },
   {
     "code": "PB_8166",
     "name": "Plain white tuck box",
-    "product_code": "FI_7999"
+    "site_codes": ["mpc"],
+    "product_codes": ["FI_7999", "FI_569"]
   },
   {
     "code": "PB_048",
     "name": "Plain window tuck box",
-    "product_code": "FI_7999"
+    "site_codes": ["mpc"],
+    "product_codes": ["FI_7999", "FI_569"]
   },
   {
     "code": "PB_045",
     "name": "Plain plastic box",
-    "product_code": "FI_7999"
+    "site_codes": ["mpc"],
+    "product_codes": ["FI_7999", "FI_569"]
   },
   {
     "code": "PB_4292",
     "name": "Plain rigid box",
-    "product_code": "FI_7999"
+    "site_codes": ["mpc"],
+    "product_codes": ["FI_7999", "FI_569"]
   },
   {
     "code": "PB_229",
     "name": "Plain plastic hinged case",
-    "product_code": "FI_7999"
+    "site_codes": ["mpc"],
+    "product_codes": ["FI_7999", "FI_569"]
   },
   {
     "code": "PB_050",
     "name": "Plain tin box",
-    "product_code": "FI_7999"
+    "site_codes": ["mpc"],
+    "product_codes": ["FI_7999", "FI_569"]
   },
   {
     "code": "PB_12388",
     "name": "Custom black velvet bag",
-    "product_code": "FI_7999"
+    "site_codes": ["mpc"],
+    "product_codes": ["FI_7999", "FI_569"]
   },
   {
     "code": "PB_13099",
     "name": "Custom double magnetic book box",
-    "product_code": "FI_7999"
+    "site_codes": ["mpc"],
+    "product_codes": ["FI_7999", "FI_569"]
   },
   {
     "code": "PB_12335",
     "name": "Custom double sticker tin box",
-    "product_code": "FI_7999"
+    "site_codes": ["mpc"],
+    "product_codes": ["FI_7999", "FI_569"]
   },
   {
     "code": "PB_12336",
     "name": "Custom double tin box",
-    "product_code": "FI_7999"
+    "site_codes": ["mpc"],
+    "product_codes": ["FI_7999", "FI_569"]
   },
   {
     "code": "PB_9981",
     "name": "Custom drawer box",
-    "product_code": "FI_7999"
+    "site_codes": ["mpc"],
+    "product_codes": ["FI_7999", "FI_569"]
   },
   {
     "code": "PB_9983",
     "name": "Custom easy-flip box",
-    "product_code": "FI_7999"
+    "site_codes": ["mpc"],
+    "product_codes": ["FI_7999", "FI_569"]
   },
   {
     "code": "PB_12344",
     "name": "Custom easy-flip side open box",
-    "product_code": "FI_7999"
+    "site_codes": ["mpc"],
+    "product_codes": ["FI_7999", "FI_569"]
   },
   {
     "code": "PB_8366",
     "name": "Custom hinged tin box",
-    "product_code": "FI_7999"
+    "site_codes": ["mpc"],
+    "product_codes": ["FI_7999", "FI_569"]
   },
   {
     "code": "PB_8362",
     "name": "Custom labeled tin box",
-    "product_code": "FI_7999"
+    "site_codes": ["mpc"],
+    "product_codes": ["FI_7999", "FI_569"]
   },
   {
     "code": "PB_12014",
     "name": "Custom lux box",
-    "product_code": "FI_7999"
+    "site_codes": ["mpc"],
+    "product_codes": ["FI_7999", "FI_569"]
   },
   {
     "code": "PB_13091",
     "name": "Custom magnetic book box",
-    "product_code": "FI_7999"
+    "site_codes": ["mpc"],
+    "product_codes": ["FI_7999", "FI_569"]
   },
   {
     "code": "PB_4283",
     "name": "Custom rigid box",
-    "product_code": "FI_7999"
+    "site_codes": ["mpc"],
+    "product_codes": ["FI_7999", "FI_569"]
   },
   {
     "code": "PB_861",
     "name": "Custom tuck box",
-    "product_code": "FI_7999"
+    "site_codes": ["mpc"],
+    "product_codes": ["FI_7999", "FI_569"]
   },
   {
     "code": "PB_3281",
     "name": "Custom tuck box (sealed base)",
-    "product_code": "FI_7999"
+    "site_codes": ["mpc"],
+    "product_codes": ["FI_7999", "FI_569"]
   },
   {
     "code": "PB_234",
     "name": "Custom plastic box",
-    "product_code": "FI_7999"
+    "site_codes": ["mpc"],
+    "product_codes": ["FI_7999", "FI_569"]
   },
   {
     "code": "PB_237",
     "name": "Custom plastic hinged case",
-    "product_code": "FI_7999"
+    "site_codes": ["mpc"],
+    "product_codes": ["FI_7999", "FI_569"]
   },
   {
     "code": "PB_231",
     "name": "Custom tin box",
-    "product_code": "FI_7999"
+    "site_codes": ["mpc"],
+    "product_codes": ["FI_7999", "FI_569"]
   },
   {
     "code": "PB_049",
     "name": "Uncut sheet",
-    "product_code": "FI_7999"
+    "site_codes": ["mpc"],
+    "product_codes": ["FI_7999", "FI_569"]
   },
   {
     "code": "PB_018",
     "name": "Shrink-wrapped",
-    "product_code": "FI_569"
+    "site_codes": ["ps"],
+    "product_codes": ["FI_569"]
   },
   {
     "code": "PB_10170",
     "name": "Plain black velvet bag",
-    "product_code": "FI_569"
+    "site_codes": ["ps"],
+    "product_codes": ["FI_569"]
   },
   {
     "code": "PB_8515",
     "name": "Plain white tuck box",
-    "product_code": "FI_569"
+    "site_codes": ["ps"],
+    "product_codes": ["FI_569"]
   },
   {
     "code": "PB_012",
     "name": "Plastic case",
-    "product_code": "FI_569"
+    "site_codes": ["ps"],
+    "product_codes": ["FI_569"]
   },
   {
     "code": "PB_065",
     "name": "White window tuck box",
-    "product_code": "FI_569"
+    "site_codes": ["ps"],
+    "product_codes": ["FI_569"]
   },
   {
     "code": "PB_10180",
     "name": "Plain plastic box",
-    "product_code": "FI_569"
+    "site_codes": ["ps"],
+    "product_codes": ["FI_569"]
   },
   {
     "code": "PB_10154",
     "name": "Plain plastic hinged case",
-    "product_code": "FI_569"
+    "site_codes": ["ps"],
+    "product_codes": ["FI_569"]
   },
   {
     "code": "PB_10171",
     "name": "Custom black velvet bag",
-    "product_code": "FI_569"
+    "site_codes": ["ps"],
+    "product_codes": ["FI_569"]
   },
   {
     "code": "PB_10143",
     "name": "Custom labeled tin box",
-    "product_code": "FI_569"
+    "site_codes": ["ps"],
+    "product_codes": ["FI_569"]
   },
   {
     "code": "PB_3357",
     "name": "Custom tuck box",
-    "product_code": "FI_569"
+    "site_codes": ["ps"],
+    "product_codes": ["FI_569"]
   },
   {
     "code": "PB_10095",
     "name": "Zip pouch",
-    "product_code": "FI_569"
+    "site_codes": ["ps"],
+    "product_codes": ["FI_569"]
   },
   {
     "code": "PB_10181",
     "name": "Custom plastic box",
-    "product_code": "FI_569"
+    "site_codes": ["ps"],
+    "product_codes": ["FI_569"]
   },
   {
     "code": "PB_10158",
     "name": "Custom plastic hinged case",
-    "product_code": "FI_569"
+    "site_codes": ["ps"],
+    "product_codes": ["FI_569"]
   }
 ]

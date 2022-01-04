@@ -13,6 +13,7 @@ import { Unit } from "./ProjectTab";
 
 
 interface ProjectSettingsModalProps {
+  siteCode: string;
   unit: Unit;
   cards: UploadedImage[],
   onUpload: (settings: Settings, cards: UploadedImage[]) => void;
@@ -30,12 +31,12 @@ export default class ProjectSettingsModal extends React.Component<ProjectSetting
   constructor(props: ProjectSettingsModalProps) {
     super(props);
 
-    const { unit } = props;
+    const { siteCode, unit } = props;
     this.state = {
-      cardStockCode: cardStockData.filter((it) => it.product_code === unit.product_code)[0]?.code,
-      printTypeCode: printTypeData.filter((it) => it.product_code === unit.product_code)[0]?.code,
-      finishCode: finishData.filter((it) => it.product_code === unit.product_code)[0]?.code,
-      packagingCode: packagingData.filter((it) => it.product_code === unit.product_code)[0]?.code,
+      cardStockCode: cardStockData.find((it) => it.product_codes.includes(unit.product_code) && it.site_codes.includes(siteCode))?.code,
+      printTypeCode: printTypeData.find((it) => it.product_codes.includes(unit.product_code) && it.site_codes.includes(siteCode))?.code,
+      finishCode: finishData.find((it) => it.product_codes.includes(unit.product_code) && it.site_codes.includes(siteCode))?.code,
+      packagingCode: packagingData.find((it) => it.product_codes.includes(unit.product_code) && it.site_codes.includes(siteCode))?.code,
     };
   }
 
@@ -93,7 +94,7 @@ export default class ProjectSettingsModal extends React.Component<ProjectSetting
   }
 
   render() {
-    const { unit } = this.props;
+    const { siteCode, unit } = this.props;
     const { cardStockCode, printTypeCode, finishCode, packagingCode } = this.state;
     const settings = this.getSettings();
 
@@ -105,7 +106,7 @@ export default class ProjectSettingsModal extends React.Component<ProjectSetting
             <FloatingLabel controlId="floatingSelect1" label="Product">
               <Form.Select aria-label="Product" value={unit.code} disabled={true}>
                 <option>Select Product</option>
-                {unitData.filter((it) => it.site_code === unit.site_code).map((it) => (
+                {unitData.filter((it) => it.site_codes.includes(siteCode)).map((it) => (
                   <option value={it.code}>{it.name}</option>
                 ))}
               </Form.Select>
@@ -113,7 +114,7 @@ export default class ProjectSettingsModal extends React.Component<ProjectSetting
             <FloatingLabel controlId="floatingSelect2" label="Card Stock">
               <Form.Select aria-label="Card Stock" value={cardStockCode} onChange={this.onCardStockChange}>
                 <option>Select Card Stock</option>
-                {cardStockData.filter((it) => it.product_code === unit.product_code).map((it) => (
+                {cardStockData.filter((it) => it.product_codes.includes(unit.product_code) && it.site_codes.includes(siteCode)).map((it) => (
                   <option value={it.code}>{it.name}</option>
                 ))}
               </Form.Select>
@@ -121,7 +122,7 @@ export default class ProjectSettingsModal extends React.Component<ProjectSetting
             <FloatingLabel controlId="floatingSelect3" label="Print Type">
               <Form.Select aria-label="Print Type" value={printTypeCode} onChange={this.onPrintTypeChange}>
                 <option>Select Print Type</option>
-                {printTypeData.filter((it) => it.product_code === unit.product_code).map((it) => (
+                {printTypeData.filter((it) => it.product_codes.includes(unit.product_code) && it.site_codes.includes(siteCode)).map((it) => (
                   <option value={it.code}>{it.name}</option>
                 ))}
               </Form.Select>
@@ -129,7 +130,7 @@ export default class ProjectSettingsModal extends React.Component<ProjectSetting
             <FloatingLabel controlId="floatingSelect4" label="Finish">
               <Form.Select aria-label="Finish" value={finishCode} onChange={this.onFinishChange}>
                 <option>Select Finish</option>
-                {finishData.filter((it) => it.product_code === unit.product_code).map((it) => (
+                {finishData.filter((it) => it.product_codes.includes(unit.product_code) && it.site_codes.includes(siteCode)).map((it) => (
                   <option value={it.code}>{it.name}</option>
                 ))}
               </Form.Select>
@@ -137,7 +138,7 @@ export default class ProjectSettingsModal extends React.Component<ProjectSetting
             <FloatingLabel controlId="floatingSelect5" label="Packaging">
               <Form.Select aria-label="Packaging" value={packagingCode} onChange={this.onPackagingChange}>
                 <option>Select Packaging</option>
-                {packagingData.filter((it) => it.product_code === unit.product_code).map((it) => (
+                {packagingData.filter((it) => it.product_codes.includes(unit.product_code) && it.site_codes.includes(siteCode)).map((it) => (
                   <option value={it.code}>{it.name}</option>
                 ))}
               </Form.Select>
