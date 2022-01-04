@@ -354,8 +354,8 @@ export const uncompressCropData = (settings: Settings, data: CompressedImageData
     Exp: data.Exp,
     X: 0,
     Y: 0,
-    Width: data.Width,
-    Height: data.Height,
+    Width: Math.round(data.Width / (data.Height / settings.height)),
+    Height: settings.height,
     CropX: 0,
     CropY: 0,
     CropWidth: settings.width,
@@ -377,7 +377,7 @@ export const uncompressCropData = (settings: Settings, data: CompressedImageData
     Index: 0,
     Quality: 'Y',
     AutoDirection: 'N',
-    ApplyMask: settings.applyMask,
+    ApplyMask: settings.applyMask ? 'Y' : 'N',
     IsEmpty: false,
   }]
 }
