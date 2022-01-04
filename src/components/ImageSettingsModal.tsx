@@ -26,15 +26,9 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
       unit: unitData.filter((it) => it.site_code === props.siteCode)[0],
     };
   }
-  onUpload = () => {
-    const { unit } = this.state;
-    this.props.onUpload({
-      url: location.origin,
-      unit: unit!.code,
-      product: unit!.product_code,
-      frontDesign: unit!.front_design_code,
-      backDesign: unit!.back_design_code!,
-    });
+
+  onUpload = (settings: CardSettings) => {
+    this.props.onUpload(settings);
   }
 
   onClose = () => {
@@ -48,10 +42,23 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
     });
   }
 
+  getSettings = () => {
+    const { unit } = this.state;
+    if (!unit) return;
+
+    return {
+      url: location.origin,
+      unit: unit.code,
+      product: unit.product_code,
+      frontDesign: unit.front_design_code,
+      backDesign: unit.back_design_code!,
+    };
+  }
 
   render() {
     const { siteCode } = this.props;
     const { unit } = this.state;
+    const settings = this.getSettings();
 
     return (
       <Modal show={true} centered={true}>
@@ -59,7 +66,7 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
         <Modal.Body>
           <FloatingLabel controlId="floatingSelect1" label="Product">
             <Form.Select aria-label="Product" value={unit?.code} onChange={this.onChange}>
-                <option>Select Product</option>
+              <option>Select Product</option>
               {unitData.filter((it) => it.site_code === siteCode).map((it) => (
                 <option value={it.code}>{it.name}</option>
               ))}
@@ -68,7 +75,7 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={this.onClose}>Close</Button>
-          <Button variant="success" onClick={this.onUpload} disabled={!unit}>Upload</Button>
+          <Button variant="success" onClick={() => this.onUpload(settings!)} disabled={!settings}>Upload</Button>
         </Modal.Footer>
       </Modal>
     );

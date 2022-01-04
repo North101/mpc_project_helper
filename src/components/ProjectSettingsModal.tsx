@@ -8,7 +8,7 @@ import finishData from "../api/data/finish.json";
 import packagingData from "../api/data/packaging.json";
 import printTypeData from "../api/data/print_type.json";
 import unitData from "../api/data/unit.json";
-import { Settings, UploadedImage } from "../api/mpc_api";
+import { CardSettings, Settings, UploadedImage } from "../api/mpc_api";
 import { Unit } from "./ProjectTab";
 
 
@@ -39,20 +39,9 @@ export default class ProjectSettingsModal extends React.Component<ProjectSetting
     };
   }
 
-  onUpload = () => {
-    const { unit, cards } = this.props;
-    const { printTypeCode, packagingCode, finishCode, cardStockCode } = this.state;
-    this.props.onUpload({
-      url: location.origin,
-      unit: unit.code,
-      product: unit.product_code,
-      frontDesign: unit.front_design_code,
-      backDesign: unit.back_design_code,
-      cardStock: cardStockCode!,
-      printType: printTypeCode!,
-      finish: finishCode!,
-      packaging: packagingCode!,
-    }, cards);
+  onUpload = (settings: Settings) => {
+    const { cards } = this.props;
+    this.props.onUpload(settings, cards);
   }
 
   onClose = () => {
@@ -83,10 +72,30 @@ export default class ProjectSettingsModal extends React.Component<ProjectSetting
     });
   }
 
+  getSettings = () => {
+    const { cardStockCode, printTypeCode, finishCode, packagingCode } = this.state;
+    if (cardStockCode === undefined || printTypeCode === undefined || finishCode === undefined || packagingCode === undefined) {
+      return;
+    }
+
+    const { unit } = this.props;
+    return {
+      url: location.origin,
+      unit: unit.code,
+      product: unit.product_code,
+      frontDesign: unit.front_design_code,
+      backDesign: unit.back_design_code,
+      cardStock: cardStockCode,
+      printType: printTypeCode,
+      finish: finishCode,
+      packaging: packagingCode,
+    };
+  }
 
   render() {
     const { unit } = this.props;
     const { cardStockCode, printTypeCode, finishCode, packagingCode } = this.state;
+    const settings = this.getSettings();
 
     return (
       <Modal show={true} centered={true}>
@@ -137,13 +146,7 @@ export default class ProjectSettingsModal extends React.Component<ProjectSetting
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={this.onClose}>Close</Button>
-          <Button
-            variant="success"
-            onClick={this.onUpload}
-            disabled={cardStockCode === undefined || !printTypeCode === undefined || !finishCode === undefined || !packagingCode === undefined
-            }>
-            Upload
-          </Button>
+          <Button variant="success" onClick={() => this.onUpload(settings!)} disabled={!settings}>Upload</Button>
         </Modal.Footer>
       </Modal>
     );
