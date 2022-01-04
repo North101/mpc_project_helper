@@ -233,7 +233,7 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
             ref={this.fileInput}
             type="file"
             multiple={true}
-            accept='.json'
+            accept='.txt'
             onChange={this.onAdd}
           />
           <Button variant="outline-primary" onClick={() => this.fileInput.current!.click()}>
