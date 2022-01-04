@@ -121,7 +121,7 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
             },
           });
           return;
-        } else if (siteCode !in unit.site_codes) {
+        } else if (!unit.site_codes.includes(siteCode)) {
           this.setState({
             state: {
               id: 'error',
