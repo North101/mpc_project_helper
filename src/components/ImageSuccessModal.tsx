@@ -1,6 +1,6 @@
 import * as React from "react";
-import { Form } from "react-bootstrap";
 import Button from "react-bootstrap/esm/Button";
+import Form from "react-bootstrap/esm/Form";
 import Modal from "react-bootstrap/esm/Modal";
 import { Project } from "./ProjectTab";
 
