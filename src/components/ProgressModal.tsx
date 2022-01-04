@@ -16,7 +16,7 @@ export default class ProgressModal extends React.Component<{ value: number; maxV
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={this.props.onClose}>Close</Button>
+          <Button variant="danger" onClick={this.props.onClose}>Cancel</Button>
         </Modal.Footer>
       </Modal>
     );
