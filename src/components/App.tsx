@@ -1,54 +1,28 @@
-import * as React from 'react';
-
-import Tabs from 'devextreme-react/tabs';
-import { Popup } from 'devextreme-react/popup';
+import * as React from "react";
+import Modal from "react-bootstrap/esm/Modal";
+import Tab from "react-bootstrap/esm/Tab";
+import Tabs from "react-bootstrap/esm/Tabs";
 
 import "./App.css";
-import ProjectTab from './ProjectTab';
-import ImagesTab from './ImageTab';
-import { Settings } from '../api/mpc_api';
+import ImageTab from "./ImageTab";
+import ProjectTab from "./ProjectTab";
 
-export interface AppProps { }
+import siteData from '../api/data/site.json';
 
-export interface AppState {
-  visible: boolean;
-  tabIndex: number;
-  settings: Settings;
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+interface AppProps { }
+
+interface AppState {
+  show: boolean;
 }
 
 export default class App extends React.Component<AppProps, AppState> {
-  static tabs = [
-    { id: 0, text: 'Project' },
-    { id: 1, text: 'Images' },
-  ];
-
   constructor(props: AppProps) {
     super(props);
 
     this.state = {
-      visible: false,
-      tabIndex: 0,
-      settings: {
-        url: 'https://www.makeplayingcards.com',
-        unit: 'C380050185D1C1AF',
-        product: 'FI_7999',
-        frontDesign: 'FP_031273',
-        backDesign: 'FP_031272',
-        cardStock: 'PA_014',
-        printType: '',
-        finish: 'PPR_0009',
-        packaging: 'PB_043',
-
-        // url: 'https://www.printerstudio.co.uk',
-        // unit: '6229BAC504DC5BB4',
-        // product: 'FI_569',
-        // frontDesign: 'FP_000441',
-        // backDesign: 'FP_012232',
-        // cardStock: 'PA_007',
-        // printType: '',
-        // finish: 'PPR_0009',
-        // packaging: 'PB_018',
-      },
+      show: false,
     };
 
     chrome.runtime.onMessage.addListener((request) => {
@@ -58,48 +32,36 @@ export default class App extends React.Component<AppProps, AppState> {
 
   show = () => {
     this.setState({
-      visible: true,
-    })
+      show: true,
+    });
   }
 
-  onTabsSelectionChanged = (args: any) => {
-    if (args.name == 'selectedIndex') {
-      this.setState({
-        tabIndex: args.value
-      });
-    }
+  onClose = () => {
+    this.setState({
+      show: false,
+    });
   }
 
   render() {
-    const { visible, tabIndex, settings } = this.state;
-
+    const { show } = this.state;
+    console.log(siteData, location.origin);
+    const siteCode = siteData.find((site) => site.url === location.origin)!.code;
     return (
-      <Popup
-        visible={visible}
-        title="MPC Project Helper"
-        onHiding={() => this.setState({
-          visible: false,
-        })}
-        dragEnabled={false}
-        closeOnOutsideClick={false}
-        width="90%"
-        height="90%"
-      >
-        <div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-          <Tabs
-            dataSource={App.tabs}
-            tabIndex={tabIndex}
-            onOptionChanged={this.onTabsSelectionChanged}
-            focusStateEnabled={true}
-          />
-          <div className={`tabs ${tabIndex === 0 ? "shown" : ''}`}>
-            <ProjectTab settings={settings} />
-          </div>
-          <div className={`tabs ${tabIndex === 1 ? "shown" : ''}`}>
-            <ImagesTab settings={settings} />
-          </div>
-        </div>
-      </Popup>
+      <Modal show={show} centered={true} scrollable={true} onHide={this.onClose} dialogClassName="my-modal">
+        <Modal.Header closeButton>
+          <Modal.Title>MPC Project Helper</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Tabs defaultActiveKey="project" id="uncontrolled-tab-example" className="mb-3">
+            <Tab eventKey="project" title="Project">
+              <ProjectTab siteCode={siteCode} />
+            </Tab>
+            <Tab eventKey="images" title="Images">
+              <ImageTab siteCode={siteCode} />
+            </Tab>
+          </Tabs>
+        </Modal.Body>
+      </Modal>
     );
   }
 }

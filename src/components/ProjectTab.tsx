@@ -1,83 +1,149 @@
 import * as React from "react";
-
-import { Button } from "devextreme-react/button";
-import { List, ItemDragging } from "devextreme-react/list";
-import { LoadPanel } from "devextreme-react/load-panel";
-import { Popup, ToolbarItem } from "devextreme-react/popup";
-
+import { DragDropContext, Droppable, DropResult } from "react-beautiful-dnd";
+import { FileEarmarkPlus, Upload, XCircle } from "react-bootstrap-icons";
+import Button from "react-bootstrap/esm/Button";
+import Stack from "react-bootstrap/esm/Stack";
+import { is } from 'typescript-is';
+import unitData from "../api/data/unit.json";
 import { createProject, Settings, UploadedImage } from "../api/mpc_api";
+import ErrorModal from "./ErrorModal";
+import LoadingModal from "./LoadingModal";
+import ProjectItem from "./ProjectItem";
+import ProjectSettingsModal from "./ProjectSettingsModal";
+import ProjectSuccessModal from "./ProjectSuccessModal";
 
-const ItemTemplate = (file: File, index: number) => {
-  return <div>{file.name}</div>;
+
+function reorder<T>(list: T[], startIndex: number, endIndex: number) {
+  const result = Array.from(list);
+  const [removed] = result.splice(startIndex, 1);
+  result.splice(endIndex, 0, removed);
+
+  return result;
+};
+
+export interface Project {
+  version: 1;
+  code: string,
+  cards: UploadedImage[];
 }
 
-export interface ProjectTabProps {
-  settings: Settings;
+export interface Unit {
+  code: string;
+  name: string;
+  site_code: string;
+  product_code: string;
+  front_design_code: string;
+  back_design_code: string;
+};
+
+export interface Item {
+  id: string;
+  name: string;
+  data: Project;
+  unit: Unit;
 }
 
-export interface ProjectTabState {
-  files: File[];
-  state: null | { id: 'loading', value: number } | { id: 'finished', value: string } | { id: 'error', value: any };
+interface SettingsState {
+  id: 'settings';
+  unit: Unit;
+  cards: UploadedImage[];
+}
+
+interface LoadingState {
+  id: 'loading';
+  value: number;
+}
+
+interface FinishedState {
+  id: 'finished';
+  value: string;
+}
+
+interface ErrorState {
+  id: 'error';
+  value: any;
+}
+
+interface ProjectTabProps {
+  siteCode: string;
+}
+
+interface ProjectTabState {
+  items: Item[];
+  state: null | LoadingState | FinishedState | ErrorState | SettingsState;
 }
 
 export default class ProjectTab extends React.Component<ProjectTabProps, ProjectTabState> {
+  static itemId = 0;
+
+  fileInput: React.RefObject<HTMLInputElement>;
+
   constructor(props: ProjectTabProps) {
     super(props);
 
+    this.fileInput = React.createRef<HTMLInputElement>();
+
     this.state = {
-      files: [],
       state: null,
-    }
+      items: [],
+    };
   }
 
-  onItemDragStart = (e: any) => {
-    e.itemData = this.state.files[e.fromIndex];
-  }
-
-  onItemAdd = (e: any) => {
-    const files = this.state.files;
-    this.setState({
-      files: [
-        ...files.slice(0, e.toIndex),
-        e.itemData, ...files.slice(e.toIndex),
-      ],
-    });
-  }
-
-  onItemRemove = (e: any) => {
-    const files = this.state.files;
-    this.setState({
-      files: [
-        ...files.slice(0, e.fromIndex),
-        ...files.slice(e.fromIndex + 1),
-      ],
-    });
-  }
-
-  onItemReorder = (e: any) => {
-    this.onItemRemove(e);
-    this.onItemAdd(e);
-  }
-
-  onSelectFiles = (e: React.ChangeEvent<HTMLInputElement>) => {
+  onAdd = async (e: any) => {
     if (e.target.files == null) return;
 
-    const files = [
-      ...this.state.files,
+    const items = [
+      ...this.state.items,
     ];
     for (let i = 0; i < e.target.files.length; i++) {
-      files.push(e.target.files[i]);
+      const file = e.target.files[i] as File;
+      try {
+        const data = JSON.parse(await file.text());
+        if (is<Project>(data)) {
+          const unitCode = data.code;
+          const unit = unitData.find((it) => it.code === unitCode);
+          if (unit) {
+            items.push({
+              id: `${++ProjectTab.itemId}`,
+              name: file.name,
+              data,
+              unit,
+            });
+          }
+        } else {
+          console.log('error');
+          console.log(data);
+        }
+      } catch (e) {
+        console.log(e);
+      }
     }
 
     this.setState({
-      files: files,
+      items: items,
     });
   }
 
-  onUpload = async () => {
-    const { settings } = this.props;
-    const { files } = this.state;
+  onItemRemove = (item: Item) => {
+    const items = this.state.items;
+    const index = items.indexOf(item);
+    if (index < 0) return;
 
+    this.setState({
+      items: [
+        ...items.slice(0, index),
+        ...items.slice(index + 1),
+      ],
+    });
+  }
+
+  onClear = () => {
+    this.setState({
+      items: []
+    });
+  }
+
+  onUpload = async (settings: Settings, cards: UploadedImage[]) => {
     this.setState({
       state: {
         id: 'loading',
@@ -86,14 +152,11 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
     });
 
     try {
-      const cards: UploadedImage[] = [];
-      for (const file of files) {
-        cards.push(...JSON.parse(await file.text()));
-      }
       const projectUrl = await createProject(settings, cards);
+      console.log(projectUrl);
 
       this.setState({
-        files: [],
+        items: [],
         state: {
           id: 'finished',
           value: projectUrl,
@@ -110,103 +173,104 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
     }
   }
 
-  onClear = () => {
+
+  onDragEnd = (result: DropResult) => {
+    if (!result.destination) {
+      return;
+    }
+
+    const items = reorder(
+      this.state.items,
+      result.source.index,
+      result.destination.index
+    );
+
     this.setState({
-      files: [],
+      items,
     });
   }
 
-  hideInfo = () => {
+  onStateClear = () => {
     this.setState({
       state: null,
     });
   }
 
+  onUploadClick = () => {
+    const { items } = this.state;
+    const unit = items.every((it) => it.unit.code === items[0].unit.code) ? items[0].unit : null;
+
+    if (unit) {
+      this.setState({
+        state: {
+          id: 'settings',
+          unit: unit,
+          cards: items.reduce((value, item) => {
+            value.push(...item.data.cards);
+            return value;
+          }, [] as UploadedImage[]),
+        }
+      });
+    } else {
+      this.setState({
+        state: {
+          id: 'error',
+          value: 'Not every project has the same product type',
+        }
+      });
+    }
+  }
+
   render() {
-    const { files, state } = this.state;
+    const { items, state } = this.state;
 
     return (
-      <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-        <input id="project-input" type="file" multiple={true} accept='.txt' onChange={this.onSelectFiles} />
-        <div style={{ display: 'flex', justifyContent: 'end', paddingTop: 8, paddingBottom: 8, }}>
-          <Button
-            icon={`${chrome.runtime.getURL('icons/select.svg')}`}
-            text="Select"
-            onClick={() => {
-              document.getElementById('project-input')?.click();
-            }}
+      <>
+        <div style={{ display: 'flex', rowGap: 4, columnGap: 4 }}>
+          <input
+            id="project-input"
+            key={Date.now()}
+            ref={this.fileInput}
+            type="file"
+            multiple={true}
+            accept='.json'
+            onChange={this.onAdd}
           />
-          <Button
-            icon={`${chrome.runtime.getURL('icons/clear.svg')}`}
-            text="Clear"
-            onClick={this.onClear}
-          />
+          <Button variant="outline-primary" onClick={() => this.fileInput.current!.click()}>
+            <FileEarmarkPlus />
+          </Button>
+          <Button variant="outline-primary" onClick={this.onClear}>
+            <XCircle />
+          </Button>
           <div style={{ flex: 1 }} />
-          <Button
-            icon={`${chrome.runtime.getURL('icons/upload.svg')}`}
-            text="Upload"
-            onClick={this.onUpload}
-          />
+          <Button variant="outline-primary" onClick={this.onUploadClick}>
+            <Upload />
+          </Button>
         </div>
-        <List
-          dataSource={files}
-          keyExpr="name"
-          repaintChangesOnly={true}
-          allowItemDeleting={true}
-          itemRender={ItemTemplate}
-        >
-          <ItemDragging
-            allowReordering={true}
-            group="files"
-            data="files"
-            onDragStart={this.onItemDragStart}
-            onAdd={this.onItemAdd}
-            onRemove={this.onItemRemove}
-            onReorder={this.onItemReorder}>
-          </ItemDragging>
-        </List>
-        <LoadPanel
-          shadingColor="rgba(0,0,0,0.4)"
-          visible={state?.id === 'loading'}
-          showIndicator={true}
-          shading={true}
-          showPane={true}
-          closeOnOutsideClick={false}
-        />
-        <Popup
-          visible={state?.id === 'finished'}
-          title="Upload Success"
-          showTitle={true}
-          dragEnabled={false}
-          closeOnOutsideClick={true}
-          showCloseButton={true}
-          onHiding={this.hideInfo}
-          width={300}
-          height={180}
-        >
-          <ToolbarItem
-            widget="dxButton"
-            toolbar="bottom"
-            location="before"
-            options={{
-              text: 'Open',
-              onClick: () => chrome.runtime.sendMessage({
-                message: 'open',
-                url: state?.value,
-              }),
-            }}
-          />
-          <ToolbarItem
-            widget="dxButton"
-            toolbar="bottom"
-            location="after"
-            options={{
-              text: 'Close',
-              onClick: this.hideInfo,
-            }}
-          />
-        </Popup>
-      </div >
+        <Stack gap={3} style={{ marginTop: 8, minHeight: 200 }}>
+          <DragDropContext onDragEnd={this.onDragEnd}>
+            <Droppable droppableId="droppable">
+              {(provided, snapshot) => (
+                <div
+                  {...provided.droppableProps}
+                  ref={provided.innerRef}
+                  style={{
+                    border: '1px solid #bbb',
+                    padding: 8,
+                  }}
+                >
+                  {items.map((item, index) => <ProjectItem item={item} index={index} onDelete={this.onItemRemove} />)}
+                  {provided.placeholder}
+                </div>
+              )}
+            </Droppable>
+          </DragDropContext>
+        </Stack>
+        {is<SettingsState>(state) && <ProjectSettingsModal unit={state.unit} cards={state.cards} onUpload={this.onUpload} onClose={this.onStateClear} />}
+        {is<LoadingState>(state) && <LoadingModal onClose={this.onStateClear} />}
+        {is<FinishedState>(state) && <ProjectSuccessModal value={state.value} onClose={this.onStateClear} />}
+        {is<ErrorState>(state) && <ErrorModal value={state.value} onClose={this.onStateClear} />}
+      </>
     );
   }
 }

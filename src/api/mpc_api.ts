@@ -1,7 +1,7 @@
-import * as fetchRetry from 'fetch-retry';
+import fetchRetry from 'fetch-retry';
 
-import * as mpcColors from './data/colors.json';
-import * as mpcFonts from './data/fonts.json';
+import mpcColors from './data/colors.json';
+import mpcFonts from './data/fonts.json';
 
 const fetch = fetchRetry(window.fetch);
 
@@ -10,7 +10,15 @@ const url = (url: string, params: { [key: string]: string; }) => {
   return `${url}?${new URLSearchParams(params)}`;
 }
 
-export interface Settings {
+export interface CardSettings {
+  url: string;
+  unit: string;
+  product: string;
+  frontDesign: string;
+  backDesign: string;
+}
+
+export interface Settings extends CardSettings {
   url: string;
   unit: string;
   product: string;
@@ -32,8 +40,8 @@ export interface CompressedImageData {
   ID: string;
   SourceID: string;
   Exp: string;
-  Width: string;
-  Height: string;
+  Width: number;
+  Height: number;
 }
 
 export const parseXml = (text: string) => {
@@ -424,7 +432,7 @@ export const createProject = async (settings: Settings, cards: UploadedImage[]) 
   return `${settings.url}/design/dn_preview_layout.aspx?ssid=${projectId}`;
 }
 
-export const uploadImage = async (settings: Settings, side: string, image: File) => {
+export const uploadImage = async (settings: CardSettings, side: string, image: File) => {
   const body = new FormData();
   body.append('fileData', image);
   body.append('userName', '');
@@ -444,7 +452,7 @@ export const uploadImage = async (settings: Settings, side: string, image: File)
 }
 
 
-export const analysisImage = async (settings: Settings, side: string, index: number, value: any) => {
+export const analysisImage = async (settings: CardSettings, side: string, index: number, value: any) => {
   const body = new FormData();
   body.append('photoindex', `${index}`);
   body.append('source', JSON.stringify(value));

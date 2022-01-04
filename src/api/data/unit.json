@@ -1,0 +1,20 @@
+[
+  {
+    "code": "C380050185D1C1AF",
+    "name": "Custom Game Cards (63 x 88mm)",
+    "site_code": "mpc",
+    "product_code": "FI_7999",
+    "front_design_code": "FP_031273",
+    "back_design_code": "FP_031272",
+    "default": true
+  },
+  {
+    "code": "6229BAC504DC5BB4",
+    "name": "Custom Game Cards (63 x 88mm)",
+    "site_code": "ps",
+    "product_code": "FI_569",
+    "front_design_code": "FP_000441",
+    "back_design_code": "FP_012232",
+    "default": true
+  }
+]

@@ -2,41 +2,42 @@
   {
     "code": "",
     "name": "Full color print",
+    "product_code": "FI_7999",
+    "default": true
+  },
+  {
+    "code": "EF_055",
+    "name": "Holographic (front)",
     "product_code": "FI_7999"
   },
   {
-    "code": "Holographic (front)",
-    "name": "EF_055",
+    "code": "EF_120",
+    "name": "Holographic (front & back)",
     "product_code": "FI_7999"
   },
   {
-    "code": "Holographic (front & back)",
-    "name": "EF_120",
+    "code": "EF_020",
+    "name": "High gloss + full color print",
     "product_code": "FI_7999"
   },
   {
-    "code": "High gloss + full color print",
-    "name": "EF_020",
+    "code": "EF_041",
+    "name": "Gold gilt edge + full color print",
     "product_code": "FI_7999"
   },
   {
-    "code": "Gold gilt edge + full color print",
-    "name": "EF_041",
+    "code": "EF_042",
+    "name": "Silver gilt edge + full color print",
     "product_code": "FI_7999"
   },
   {
-    "code": "Silver gilt edge + full color print",
-    "name": "EF_042",
+    "code": "EF_095",
+    "name": "Holographic (front) + gold gilt edge",
     "product_code": "FI_7999"
   },
   {
-    "code": "Holographic (front) + gold gilt edge",
-    "name": "EF_095",
-    "product_code": "FI_7999"
-  },
-  {
-    "code": "Holographic (front) + silver gilt edge",
-    "name": "EF_105",
+    "code": "EF_105",
+    "name": "Holographic (front) + silver gilt edge",
     "product_code": "FI_7999"
   }
 ]

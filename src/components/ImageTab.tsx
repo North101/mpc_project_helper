@@ -1,107 +1,48 @@
 import * as React from "react";
+import { DragDropContext, Droppable, DropResult } from "react-beautiful-dnd";
+import { FileEarmarkPlus, PlusCircle, Upload, XCircle } from "react-bootstrap-icons";
+import Button from "react-bootstrap/esm/Button";
+import Stack from "react-bootstrap/esm/Stack";
+import { is } from 'typescript-is';
+import { analysisImage, CardSettings, CompressedImageData, compressImageData, UploadedImage, uploadImage } from "../api/mpc_api";
+import ErrorModal from "./ErrorModal";
+import ImageItem from "./ImageItem";
+import ImageSettingsModal from "./ImageSettingsModal";
+import ImageSuccessModal from "./ImageSuccessModal";
+import ProgressModal from "./ProgressModal";
+import { Project } from "./ProjectTab";
 
-import { Button } from "devextreme-react/button";
-import { DropDownButton } from "devextreme-react/drop-down-button";
-import { ItemDragging, List } from "devextreme-react/list";
-import { NumberBox } from "devextreme-react/number-box";
-import { Popup, ToolbarItem } from "devextreme-react/popup";
 
-import { uploadImage, analysisImage, compressImageData, CompressedImageData, UploadedImage, Settings } from "../api/mpc_api";
-import { LoadIndicator } from "devextreme-react/load-indicator";
-
-interface ListItemProps {
-  files: CardSide[];
-  cards: Card[];
-  index: number;
-  updateCards: (cards: Card[]) => void,
+async function setStateAsync<P, S, K extends keyof S>(
+  component: React.Component<P, S>,
+  state:
+    ((prevState: Readonly<S>, props: Readonly<P>) => (Pick<S, K> | S | null)) |
+    Pick<S, K> |
+    S |
+    null
+) {
+  return new Promise(resolve => component.setState(state, () => resolve(null)));
 }
 
-class ListItem extends React.Component<ListItemProps, never> {
-  onCardSideChange = (args: any, side: 'front' | 'back') => {
-    const { cards, index, updateCards } = this.props;
-    updateCards([
-      ...cards.slice(0, index),
-      {
-        ...cards[index],
-        [side]: args.itemData,
-      },
-      ...cards.slice(index + 1),
-    ]);
-  }
+function reorder<T>(list: T[], startIndex: number, endIndex: number) {
+  const result = Array.from(list);
+  const [removed] = result.splice(startIndex, 1);
+  result.splice(endIndex, 0, removed);
 
-  onFrontChange = (args: any) => {
-    this.onCardSideChange(args, 'front');
-  }
+  return result;
+};
 
-  onBackChange = (args: any) => {
-    this.onCardSideChange(args, 'back');
-  }
+export interface CardSide {
+  id: number;
+  name: string;
+  file: File;
+}
 
-  onCountChange = (value: number) => {
-    const { cards, index, updateCards } = this.props;
-    const card = cards[index];
-    updateCards([
-      ...cards.slice(0, index),
-      {
-        ...card,
-        count: value,
-      },
-      ...cards.slice(index + 1),
-    ]);
-  }
-
-  render() {
-    const { files, cards, index } = this.props;
-    const card = cards[index];
-    return (
-      <div style={{ display: 'flex', }}>
-        <div style={{ flex: 1, padding: 2, }}>
-          <div style={{ display: 'flex', alignItems: 'center', padding: 2, }}>
-            <div style={{ width: 'unset', padding: 2, }}>Front</div>
-            <div style={{ flex: 1, width: 'unset', display: 'flex', justifyContent: 'end' }}>
-              <DropDownButton
-                useSelectMode={true}
-                displayExpr="name"
-                keyExpr="id"
-                width="100%"
-                dropDownOptions={{ height: 400 }}
-                dataSource={files}
-                text={card.front?.name}
-                selectedItemKey={card.front?.id}
-                onItemClick={this.onFrontChange}
-              />
-            </div>
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center', padding: 2, }}>
-            <div style={{ width: 'unset', padding: 2, }}>Back</div>
-            <div style={{ flex: 1, width: 'unset', display: 'flex', justifyContent: 'end', textAlign: 'start' }}>
-              <DropDownButton
-                useSelectMode={true}
-                displayExpr="name"
-                keyExpr="id"
-                width="100%"
-                dropDownOptions={{ height: 400 }}
-                dataSource={files}
-                text={card.back?.name}
-                selectedItemKey={card.back?.id}
-                onItemClick={this.onBackChange}
-              />
-            </div>
-          </div>
-        </div>
-        <div style={{ alignSelf: 'center', padding: 2, textAlign: 'center', }}>x</div>
-        <div style={{ alignSelf: 'center', padding: 2, textAlign: 'center', }}>
-          <NumberBox
-            width={70}
-            defaultValue={card.count}
-            min={1}
-            showSpinButtons={true}
-            onValueChange={this.onCountChange}
-          />
-        </div>
-      </div>
-    );
-  }
+export interface Card {
+  id: number;
+  count: number;
+  front?: CardSide;
+  back?: CardSide;
 }
 
 interface CardListGroup {
@@ -111,114 +52,56 @@ interface CardListGroup {
   items: (Card | undefined)[];
 }
 
-let cardId = 0;
-
-export interface Card {
-  id: number;
-  count: number;
-  front?: CardSide;
-  back?: CardSide;
+interface SettingsState {
+  id: 'settings',
 }
 
-let fileId = 0;
-
-interface CardSide {
-  id: number;
-  name: string;
-  file: File;
+interface LoadingState {
+  id: 'loading';
+  value: number;
+  maxValue: number;
 }
 
-export interface ImagesTabProps {
-  settings: Settings;
+interface FinishedState {
+  id: 'finished';
+  value: Project;
 }
 
-export interface ImagesTabState {
+interface ErrorState {
+  id: 'error';
+  value: any;
+}
+
+interface ImageTabProps {
+  siteCode: string;
+}
+
+interface ImageTabState {
   files: CardSide[];
   cards: Card[];
-  state: null | {
-    id: 'loading',
-    value: number,
-    maxValue: number;
-  } | {
-    id: 'finished',
-    value: UploadedImage[],
-  } | {
-    id: 'error',
-    value: unknown,
-  };
-  inputKey: number;
+  state: null | LoadingState | FinishedState | ErrorState | SettingsState;
 }
 
-export default class ImagesTab extends React.Component<ImagesTabProps, ImagesTabState> {
-  constructor(props: ImagesTabProps) {
+export default class ImageTab extends React.Component<ImageTabProps, ImageTabState> {
+  static cardId = 0;
+  static fileId = 0;
+
+  fileInput: React.RefObject<HTMLInputElement>;
+
+  constructor(props: ImageTabProps) {
     super(props);
 
+    this.fileInput = React.createRef<HTMLInputElement>();
+
     this.state = {
+      state: null,
       files: [],
       cards: [],
-      state: null,
-      inputKey: 0,
-    }
+    };
   }
 
-  addItem = (cards: Card[], index: number, itemData: Card) => {
-    return [
-      ...cards.slice(0, index),
-      itemData,
-      ...cards.slice(index),
-    ];
-  }
-
-  removeItem = (cards: Card[], index: number) => {
-    return [
-      ...cards.slice(0, index),
-      ...cards.slice(index + 1),
-    ];
-  }
-
-  onItemDragStart = (e: any) => {
-    e.itemData = this.state.cards[e.fromIndex];
-  }
-
-  onItemAdd = (e: any) => {
-    const { cards } = this.state;
-    this.setState({
-      cards: this.addItem(cards, e.toIndex, e.itemData),
-    });
-  }
-
-  onItemRemove = (e: any) => {
-    const { cards } = this.state;
-    this.setState({
-      cards: this.removeItem(cards, e.fromIndex),
-    });
-  }
-
-  onItemReorder = (e: any) => {
-    const { cards } = this.state;
-    this.setState({
-      cards: this.addItem(this.removeItem(cards, e.fromIndex), e.toIndex, e.itemData),
-    });
-  }
-
-  itemTemplate = (_card: Card, index: number) => {
+  onAdd = async (e: any) => {
     const { files, cards } = this.state;
-    return <ListItem
-      files={files}
-      cards={cards}
-      index={index}
-      updateCards={this.updateCards}
-    />
-  }
-
-  updateCards = (cards: Card[]) => {
-    this.setState({
-      cards,
-    });
-  }
-
-  onSelectFiles = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { files, cards, inputKey } = this.state;
 
     const selectedFiles = e.target.files;
     if (selectedFiles === null || selectedFiles.length === 0) return;
@@ -229,7 +112,7 @@ export default class ImagesTab extends React.Component<ImagesTabProps, ImagesTab
     for (let i = 0; i < selectedFiles.length; i++) {
       const file = selectedFiles[i];
       cardSides.push({
-        id: fileId++,
+        id: ImageTab.fileId++,
         name: file.name,
         file: file,
       });
@@ -256,7 +139,7 @@ export default class ImagesTab extends React.Component<ImagesTabProps, ImagesTab
         const index = parseInt(match[2]) || 0;
         const side = match[3] === 'b' || match[3] === '2' || match[3] === 'back' ? 'back' : 'front';
         const card = group.items[index] ??= {
-          id: cardId++,
+          id: ImageTab.cardId++,
           count: 1,
         };
         card[side] = file;
@@ -283,7 +166,7 @@ export default class ImagesTab extends React.Component<ImagesTabProps, ImagesTab
       cards: Object.values(groups).reduce<Card[]>((list, group) => {
         if (group.items.length === 0) {
           list.push({
-            id: cardId++,
+            id: ImageTab.cardId++,
             count: 1,
             front: group.front,
             back: group.back,
@@ -297,12 +180,54 @@ export default class ImagesTab extends React.Component<ImagesTabProps, ImagesTab
         }
         return list;
       }, [...cards]),
-      inputKey: inputKey + 1,
     });
   }
 
-  onUpload = async () => {
-    const { settings } = this.props;
+  onAddEmptyItem = () => {
+    const { cards } = this.state;
+
+    this.setState({
+      cards: [
+        ...cards,
+        {
+          id: ImageTab.fileId++,
+          count: 1,
+        }
+      ],
+    });
+  }
+
+  onItemChange = (index: number, item: Card) => {
+    const { cards } = this.state;
+
+    this.setState({
+      cards: [
+        ...cards.slice(0, index),
+        item,
+        ...cards.slice(index + 1),
+      ],
+    });
+  }
+
+  onItemRemove = (index: number) => {
+    const { cards } = this.state;
+
+    this.setState({
+      cards: [
+        ...cards.slice(0, index),
+        ...cards.slice(index + 1),
+      ],
+    });
+  }
+
+  onClear = () => {
+    this.setState({
+      cards: [],
+      files: [],
+    });
+  }
+
+  onUpload = async (settings: CardSettings) => {
     const { cards } = this.state;
 
     const maxValue = cards.reduce<Set<File>>((p, v) => {
@@ -311,33 +236,39 @@ export default class ImagesTab extends React.Component<ImagesTabProps, ImagesTab
       return p;
     }, new Set()).size;
 
-    this.setState({
+    await setStateAsync(this, {
       state: {
         id: 'loading',
         value: 0,
         maxValue,
       },
-    });
+    })
 
     const files = new Map<string, CompressedImageData>();
     const data: UploadedImage[] = [];
     try {
       for (const card of cards) {
+        console.log(card);
         const cardData: UploadedImage = {
           count: card.count,
         };
         for (const side of ['front', 'back'] as ('front' | 'back')[]) {
           const cardSide = card[side];
+          console.log(cardSide);
           if (!cardSide) continue;
 
           const id = `${cardSide.id}-${side}`;
+          console.log(files.has(id));
           if (files.has(id)) {
             cardData[side] = files.get(id);
           } else {
+            console.log(this.state.state?.id);
             if (this.state.state?.id !== 'loading') return;
+            console.log('uploading');
             const uploadedImage = await uploadImage(settings, side, cardSide.file);
 
             if (this.state.state?.id !== 'loading') return;
+            console.log('analysing');
             const analysedImage = await analysisImage(settings, side, 0, uploadedImage);
 
             const compressedImageData = compressImageData(analysedImage, uploadedImage);
@@ -345,7 +276,7 @@ export default class ImagesTab extends React.Component<ImagesTabProps, ImagesTab
             files.set(id, compressedImageData);
 
             if (this.state.state?.id !== 'loading') return;
-            this.setState({
+            await setStateAsync(this, {
               state: {
                 id: 'loading',
                 value: files.size,
@@ -362,7 +293,11 @@ export default class ImagesTab extends React.Component<ImagesTabProps, ImagesTab
         cards: [],
         state: {
           id: 'finished',
-          value: data,
+          value: {
+            version: 1,
+            code: settings.unit,
+            cards: data
+          },
         },
       });
       return;
@@ -378,142 +313,93 @@ export default class ImagesTab extends React.Component<ImagesTabProps, ImagesTab
     }
   }
 
-  onFileSelectClick = () => {
-    document.getElementById('image-input')?.click();
-  }
 
-  onAddItemsClick = () => {
+  onDragEnd = (result: DropResult) => {
+    if (!result.destination) {
+      return;
+    }
+
+    const cards = reorder(
+      this.state.cards,
+      result.source.index,
+      result.destination.index
+    );
+
     this.setState({
-      cards: [
-        ...this.state.cards,
-        {
-          id: cardId++,
-          count: 1,
-        },
-      ],
+      cards,
     });
   }
 
-  onClearItemsClick = () => {
-    this.setState({
-      files: [],
-      cards: [],
-    });
-  }
-
-  hideInfo = () => {
+  onStateClear = () => {
     this.setState({
       state: null,
     });
   }
 
   render() {
-    const { cards, state, inputKey } = this.state;
-    const loadingState = state?.id === 'loading' ? state : null;
+    const { siteCode } = this.props;
+    const { cards, files, state } = this.state;
 
     return (
-      <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-        <input id="image-input" key={inputKey} type="file" multiple={true} accept='.png,.jpg' onChange={this.onSelectFiles} />
-        <div style={{ display: 'flex', paddingTop: 8, paddingBottom: 8, }}>
-          <Button
-            icon={`${chrome.runtime.getURL('icons/select.svg')}`}
-            text="Select"
-            onClick={this.onFileSelectClick}
+      <>
+        <div style={{ display: 'flex', rowGap: 4, columnGap: 4 }}>
+          <input
+            id="image-input"
+            key={Date.now()}
+            ref={this.fileInput}
+            type="file"
+            multiple={true}
+            accept='.png, .jpg'
+            onChange={this.onAdd}
           />
-          <Button
-            icon={`${chrome.runtime.getURL('icons/add.svg')}`}
-            text="Add"
-            onClick={this.onAddItemsClick}
-          />
-          <Button
-            icon={`${chrome.runtime.getURL('icons/clear.svg')}`}
-            text="Clear"
-            onClick={this.onClearItemsClick}
-          />
+          <Button variant="outline-primary" onClick={() => this.fileInput.current!.click()}>
+            <FileEarmarkPlus />
+          </Button>
+          <Button variant="outline-primary" onClick={this.onAddEmptyItem}>
+            <PlusCircle />
+          </Button>
+          <Button variant="outline-primary" onClick={this.onClear}>
+            <XCircle />
+          </Button>
           <div style={{ flex: 1 }} />
-          <Button
-            icon={`${chrome.runtime.getURL('icons/upload.svg')}`}
-            text="Upload"
-            onClick={this.onUpload}
-          />
+          <Button variant="outline-primary" onClick={() => this.setState({
+            state: {
+              id: 'settings',
+            }
+          })}>
+            <Upload />
+          </Button>
         </div>
-        <List
-          selectionMode="none"
-          repaintChangesOnly={true}
-          dataSource={cards}
-          keyExpr="id"
-          allowItemDeleting={true}
-          itemRender={this.itemTemplate}
-        >
-          <ItemDragging
-            allowReordering={true}
-            onDragStart={this.onItemDragStart}
-            onAdd={this.onItemAdd}
-            onRemove={this.onItemRemove}
-            onReorder={this.onItemReorder}>
-          </ItemDragging>
-        </List>
-        <Popup
-          visible={loadingState ? true : false}
-          shadingColor="rgba(0,0,0,0.4)"
-          shading={true}
-          title={`Uploading ${((loadingState?.value ?? 0) / (loadingState?.maxValue ?? 1) * 100).toFixed(2)}%`}
-          showTitle={true}
-          dragEnabled={false}
-          closeOnOutsideClick={false}
-          showCloseButton={false}
-          width={300}
-          height={210}
-        >
-          <ToolbarItem
-            widget="dxButton"
-            toolbar="bottom"
-            location="center"
-            options={{
-              text: 'Cancel',
-              onClick: this.hideInfo,
-            }}
-          />
-          <div style={{ display: 'flex', flexDirection: 'column', padding: 8, alignItems: 'center' }}>
-            <LoadIndicator height={40} width={40} />
-            <div className="dx-loadpanel-message">Loading...</div>
-          </div>
-        </Popup>
-        <Popup
-          visible={state?.id === 'finished'}
-          title="Upload Success"
-          showTitle={true}
-          dragEnabled={false}
-          closeOnOutsideClick={true}
-          showCloseButton={true}
-          onHiding={this.hideInfo}
-          width={300}
-          height={180}
-        >
-          <ToolbarItem
-            widget="dxButton"
-            toolbar="bottom"
-            location="before"
-            options={{
-              text: 'Save',
-              onClick: () => chrome.runtime.sendMessage({
-                message: 'download',
-                value: state?.value,
-              }),
-            }}
-          />
-          <ToolbarItem
-            widget="dxButton"
-            toolbar="bottom"
-            location="after"
-            options={{
-              text: 'Close',
-              onClick: this.hideInfo,
-            }}
-          />
-        </Popup>
-      </div>
+        <Stack gap={3} style={{ marginTop: 8, minHeight: 200 }}>
+          <DragDropContext onDragEnd={this.onDragEnd}>
+            <Droppable droppableId="droppable">
+              {(provided, snapshot) => (
+                <div
+                  {...provided.droppableProps}
+                  ref={provided.innerRef}
+                  style={{
+                    border: '1px solid #bbb',
+                    padding: 8,
+                  }}
+                >
+                  {cards.map((card, index) => <ImageItem
+                    item={card}
+                    files={files}
+                    index={index}
+                    onChange={this.onItemChange}
+                    onDelete={this.onItemRemove}
+                  />)}
+                  {provided.placeholder}
+                </div>
+              )}
+            </Droppable>
+          </DragDropContext>
+        </Stack>
+        {is<SettingsState>(state) && <ImageSettingsModal siteCode={siteCode} onUpload={this.onUpload} onClose={this.onStateClear} />}
+        {is<LoadingState>(state) && <ProgressModal value={state.value} maxValue={state.maxValue} onClose={this.onStateClear} />}
+        {is<FinishedState>(state) && <ImageSuccessModal value={state.value} onClose={this.onStateClear} />}
+        {is<ErrorState>(state) && <ErrorModal value={state.value} onClose={this.onStateClear} />}
+      </>
     );
   }
 }
-
