@@ -10,10 +10,12 @@ export default class ProjectSuccessModal extends React.Component<{ value: string
       <Modal show={true} centered={true}>
         <Modal.Header>Success</Modal.Header>
         <Modal.Body>
-          Your project was successfully uploaded.
+          <p>Your project was successfully uploaded.</p>
           <Alert variant="warning">
-            Warning: MPC Helper is reverse engineered and makes not guaranties that it is bug free or that {location.origin} will make changes that break things.
-            Always check the uploaded project and its images before purchasing.
+            <Alert.Heading>Warning</Alert.Heading>
+            <p>MPC Project Helper is reverse engineered and makes no guaranties that it is bug free or that {location.origin} will make changes that will break it.</p>
+            <hr />
+            <p>Always check the uploaded project and its images before purchasing.</p>
           </Alert>
         </Modal.Body>
         <Modal.Footer>
