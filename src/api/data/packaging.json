@@ -2,8 +2,7 @@
   {
     "code": "PB_043",
     "name": "Shrink-wrapped",
-    "product_code": "FI_7999",
-    "default": true
+    "product_code": "FI_7999"
   },
   {
     "code": "PB_12387",
@@ -169,5 +168,70 @@
     "code": "PB_049",
     "name": "Uncut sheet",
     "product_code": "FI_7999"
+  },
+  {
+    "code": "PB_018",
+    "name": "Shrink-wrapped",
+    "product_code": "FI_569"
+  },
+  {
+    "code": "PB_10170",
+    "name": "Plain black velvet bag",
+    "product_code": "FI_569"
+  },
+  {
+    "code": "PB_8515",
+    "name": "Plain white tuck box",
+    "product_code": "FI_569"
+  },
+  {
+    "code": "PB_012",
+    "name": "Plastic case",
+    "product_code": "FI_569"
+  },
+  {
+    "code": "PB_065",
+    "name": "White window tuck box",
+    "product_code": "FI_569"
+  },
+  {
+    "code": "PB_10180",
+    "name": "Plain plastic box",
+    "product_code": "FI_569"
+  },
+  {
+    "code": "PB_10154",
+    "name": "Plain plastic hinged case",
+    "product_code": "FI_569"
+  },
+  {
+    "code": "PB_10171",
+    "name": "Custom black velvet bag",
+    "product_code": "FI_569"
+  },
+  {
+    "code": "PB_10143",
+    "name": "Custom labeled tin box",
+    "product_code": "FI_569"
+  },
+  {
+    "code": "PB_3357",
+    "name": "Custom tuck box",
+    "product_code": "FI_569"
+  },
+  {
+    "code": "PB_10095",
+    "name": "Zip pouch",
+    "product_code": "FI_569"
+  },
+  {
+    "code": "PB_10181",
+    "name": "Custom plastic box",
+    "product_code": "FI_569"
+  },
+  {
+    "code": "PB_10158",
+    "name": "Custom plastic hinged case",
+    "product_code": "FI_569"
   }
 ]

@@ -2,8 +2,7 @@
   {
     "code": "PPR_0009",
     "name": "MPC game card finish",
-    "product_code": "FI_7999",
-    "default": true
+    "product_code": "FI_7999"
   },
   {
     "code": "PPR_0149",
@@ -14,5 +13,10 @@
     "code": "PPR_0056",
     "name": "Gloss finish",
     "product_code": "FI_7999"
+  },
+  {
+    "code": "",
+    "name": "Default",
+    "product_code": "FI_569"
   }
 ]

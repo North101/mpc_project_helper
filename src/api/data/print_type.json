@@ -2,8 +2,7 @@
   {
     "code": "",
     "name": "Full color print",
-    "product_code": "FI_7999",
-    "default": true
+    "product_code": "FI_7999"
   },
   {
     "code": "EF_055",
@@ -39,5 +38,10 @@
     "code": "EF_105",
     "name": "Holographic (front) + silver gilt edge",
     "product_code": "FI_7999"
+  },
+  {
+    "code": "",
+    "name": "Default",
+    "product_code": "FI_569"
   }
 ]

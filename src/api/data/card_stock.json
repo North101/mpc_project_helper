@@ -2,8 +2,7 @@
   {
     "code": "PA_016",
     "name": "(S27) Smooth",
-    "product_code": "FI_7999",
-    "default": true
+    "product_code": "FI_7999"
   },
   {
     "code": "PA_014",
@@ -39,5 +38,25 @@
     "code": "PA_017",
     "name": "(P10) Plastic",
     "product_code": "FI_7999"
+  },
+  {
+    "code": "PA_007",
+    "name": "Standard (smooth)",
+    "product_code": "FI_569"
+  },
+  {
+    "code": "PA_008",
+    "name": "Premium (linen)",
+    "product_code": "FI_569"
+  },
+  {
+    "code": "PA_185",
+    "name": "Superior (smooth)",
+    "product_code": "FI_569"
+  },
+  {
+    "code": "PA_016",
+    "name": "Plastic (100%)",
+    "product_code": "FI_569"
   }
 ]

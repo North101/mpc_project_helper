@@ -32,10 +32,10 @@ export default class ProjectSettingsModal extends React.Component<ProjectSetting
 
     const { unit } = props;
     this.state = {
-      cardStockCode: cardStockData.find((it) => it.product_code === unit.product_code && it.default)?.code,
-      printTypeCode: printTypeData.find((it) => it.product_code === unit.product_code && it.default)?.code,
-      finishCode: finishData.find((it) => it.product_code === unit.product_code && it.default)?.code,
-      packagingCode: packagingData.find((it) => it.product_code === unit.product_code && it.default)?.code,
+      cardStockCode: cardStockData.filter((it) => it.product_code === unit.product_code)[0]?.code,
+      printTypeCode: printTypeData.filter((it) => it.product_code === unit.product_code)[0]?.code,
+      finishCode: finishData.filter((it) => it.product_code === unit.product_code)[0]?.code,
+      packagingCode: packagingData.filter((it) => it.product_code === unit.product_code)[0]?.code,
     };
   }
 
@@ -117,7 +117,7 @@ export default class ProjectSettingsModal extends React.Component<ProjectSetting
                 ))}
               </Form.Select>
             </FloatingLabel>
-            <FloatingLabel controlId="floatingSelect4" label="Product">
+            <FloatingLabel controlId="floatingSelect4" label="Finish">
               <Form.Select aria-label="Finish" value={finishCode} onChange={this.onFinishChange}>
                 <option>Select Finish</option>
                 {finishData.filter((it) => it.product_code === unit.product_code).map((it) => (

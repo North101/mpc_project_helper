@@ -23,7 +23,7 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
     super(props);
 
     this.state = {
-      unit: unitData.find((it) => it.site_code === props.siteCode && it.default),
+      unit: unitData.filter((it) => it.site_code === props.siteCode)[0],
     };
   }
   onUpload = () => {
