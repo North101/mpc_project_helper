@@ -99,23 +99,42 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
       const file = e.target.files[i] as File;
       try {
         const data = JSON.parse(await file.text());
-        if (is<Project>(data)) {
-          const unitCode = data.code;
-          const unit = unitData.find((it) => it.code === unitCode);
-          if (unit) {
-            items.push({
-              id: `${++ProjectTab.itemId}`,
-              name: file.name,
-              data,
-              unit,
-            });
-          }
-        } else {
-          console.log('error');
-          console.log(data);
+        if (!is<Project>(data)) {
+          this.setState({
+            state: {
+              id: 'error',
+              value: `${file.name}\n\nInvalid project file`,
+            }
+          });
+          return;
         }
+
+        const unitCode = data.code;
+        const unit = unitData.find((it) => it.code === unitCode);
+        if (!unit) {
+          this.setState({
+            state: {
+              id: 'error',
+              value: `${file.name}\n\nProject product type not found: ${unitCode}`,
+            },
+          });
+          return;
+        }
+
+        items.push({
+          id: `${++ProjectTab.itemId}`,
+          name: file.name,
+          data,
+          unit,
+        });
       } catch (e) {
-        console.log(e);
+        this.setState({
+          state: {
+            id: 'error',
+            value: `${file.name}\n\nCould not parse file`,
+          },
+        });
+        return;
       }
     }
 

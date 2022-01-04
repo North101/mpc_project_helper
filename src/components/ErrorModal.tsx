@@ -7,7 +7,7 @@ export default class ErrorModal extends React.Component<{ value: any; onClose: (
     return (
       <Modal show={true} centered={true}>
         <Modal.Header>Error</Modal.Header>
-        <Modal.Body>
+        <Modal.Body style={{ whiteSpace: 'pre-wrap' }}>
           {this.props.value}
         </Modal.Body>
         <Modal.Footer>
