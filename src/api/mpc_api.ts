@@ -363,7 +363,7 @@ export const uncompressCropData = (settings: Settings, data: CompressedImageData
     CropRotate: 0.0,
     Rotate: 0.0,
     Zoom: 1.0,
-    Scale: 1.0,
+    Scale: settings.scale,
     FlipHorizontal: 'N',
     FlipVertical: 'N',
     Sharpen: 'N',
@@ -375,7 +375,7 @@ export const uncompressCropData = (settings: Settings, data: CompressedImageData
     Alpha: 1.0,
     Resolution: settings.dpi,
     Index: 0,
-    Quality: 'Y',
+    Quality: (data.Height / settings.height * 100) >= settings.dpi ? 'Y' : 'N', // A guess
     AutoDirection: 'N',
     ApplyMask: settings.applyMask ? 'Y' : 'N',
     IsEmpty: false,
