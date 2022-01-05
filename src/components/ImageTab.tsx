@@ -372,13 +372,13 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
             onChange={this.onAdd}
           />
           <Button variant="outline-primary" onClick={() => this.fileInput.current!.click()}>
-            <FileEarmarkPlus />
+            <FileEarmarkPlus /> Add images
           </Button>
           <Button variant="outline-primary" onClick={this.onAddEmptyItem}>
-            <PlusCircle />
+            <PlusCircle /> Add empty card
           </Button>
           <Button variant="outline-primary" onClick={this.onClear}>
-            <XCircle />
+            <XCircle /> Clear
           </Button>
           <div style={{ flex: 1 }} />
           <Button variant="outline-primary" onClick={() => this.setState({
@@ -386,7 +386,7 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
               id: 'settings',
             }
           })}>
-            <Upload />
+            <Upload /> Upload
           </Button>
         </div>
         <Stack gap={3} style={{ marginTop: 8, minHeight: 200 }}>

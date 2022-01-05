@@ -274,14 +274,14 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
             onChange={this.onAdd}
           />
           <Button variant="outline-primary" onClick={() => this.fileInput.current!.click()}>
-            <FileEarmarkPlus />
+            <FileEarmarkPlus /> Add projects
           </Button>
           <Button variant="outline-primary" onClick={this.onClear}>
-            <XCircle />
+            <XCircle /> Clear
           </Button>
           <div style={{ flex: 1 }} />
           <Button variant="outline-primary" onClick={this.onUploadClick}>
-            <Upload />
+            <Upload /> Upload
           </Button>
         </div>
         <Stack gap={3} style={{ marginTop: 8, minHeight: 200 }}>
