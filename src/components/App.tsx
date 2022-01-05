@@ -46,7 +46,7 @@ export default class App extends React.Component<AppProps, AppState> {
     const { show } = this.state;
     const siteCode = siteData.find((site) => site.url === location.origin)!.code;
     return (
-      <Modal show={show} centered={true} scrollable={true} onHide={this.onClose} dialogClassName="my-modal">
+      <Modal show={show} centered scrollable onHide={this.onClose} dialogClassName="my-modal">
         <Modal.Header closeButton>
           <Modal.Title>MPC Project Helper</Modal.Title>
         </Modal.Header>

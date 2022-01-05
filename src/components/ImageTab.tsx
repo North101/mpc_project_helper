@@ -1,10 +1,11 @@
 import * as React from "react";
 import { DragDropContext, Droppable, DropResult } from "react-beautiful-dnd";
-import { FileEarmarkPlus, PlusCircle, Upload, XCircle } from "react-bootstrap-icons";
+import { CardImage, FileEarmarkPlus, PlusCircle, Upload, XCircle } from "react-bootstrap-icons";
 import Button from "react-bootstrap/esm/Button";
 import Stack from "react-bootstrap/esm/Stack";
 import { is } from 'typescript-is';
 import { analysisImage, CardSettings, CompressedImageData, compressImageData, createProject, Settings, UploadedImage, uploadImage } from "../api/mpc_api";
+import CardPreviewModal from "./CardPreviewModal";
 import ErrorModal from "./ErrorModal";
 import ImageItem from "./ImageItem";
 import ImageSettingsModal from "./ImageSettingsModal";
@@ -74,6 +75,10 @@ interface ErrorState {
   value: any;
 }
 
+interface PreviewState {
+  id: 'preview',
+}
+
 interface ImageTabProps {
   siteCode: string;
 }
@@ -81,7 +86,7 @@ interface ImageTabProps {
 interface ImageTabState {
   files: CardSide[];
   cards: Card[];
-  state: null | LoadingState | FinishedState | ErrorState | SettingsState;
+  state: null | LoadingState | FinishedState | ErrorState | SettingsState | PreviewState;
 }
 
 export default class ImageTab extends React.Component<ImageTabProps, ImageTabState> {
@@ -243,6 +248,14 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
         ...cards.slice(0, index),
         ...cards.slice(index + 1),
       ],
+    });
+  }
+
+  onPreview = () => {
+    this.setState({
+      state: {
+        id: 'preview'
+      },
     });
   }
 
@@ -419,6 +432,9 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
             <XCircle /> Clear
           </Button>
           <div style={{ flex: 1 }} />
+          <Button variant="outline-primary" onClick={this.onPreview}>
+            <CardImage /> Preview
+          </Button>
           <Button variant="outline-primary" onClick={() => this.setState({
             state: {
               id: 'settings',
@@ -472,6 +488,11 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
         />}
         {is<ErrorState>(state) && <ErrorModal
           value={state.value}
+          onClose={this.onStateClear}
+        />}
+        {is<PreviewState>(state) && <CardPreviewModal
+          siteCode={siteCode}
+          cards={cards}
           onClose={this.onStateClear}
         />}
       </>

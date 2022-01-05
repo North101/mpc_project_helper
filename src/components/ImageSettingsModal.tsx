@@ -1,5 +1,4 @@
 import * as React from "react";
-import { CodeSlash } from "react-bootstrap-icons";
 import Button from "react-bootstrap/esm/Button";
 import FloatingLabel from "react-bootstrap/esm/FloatingLabel";
 import Form from "react-bootstrap/esm/Form";

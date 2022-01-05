@@ -240,10 +240,10 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
         state: {
           id: 'settings',
           unit: unit,
-          cards: items.reduce((value, item) => {
+          cards: items.reduce<UploadedImage[]>((value, item) => {
             value.push(...item.data.cards);
             return value;
-          }, [] as UploadedImage[]),
+          }, []),
         }
       });
     } else {
