@@ -171,17 +171,18 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
         if (group.items.length === 0) {
           list.push({
             id: ImageTab.cardId++,
-            name: group.front?.name ?? group.back?.name,
+            name: group.key,
             front: group.front,
             back: group.back,
             count: 1,
           });
         } else {
+          const minDigits = `${group.items.length}`.length;
           const card = group.items[0];
           if (card) {
             list.push({
               ...card,
-              name: card.front?.name ?? card.back?.name,
+              name: `${group.key}${(0).toLocaleString('en-US', {minimumIntegerDigits: minDigits, useGrouping:false})}`,
               count: card.count,
             });
           }
@@ -194,7 +195,7 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
             if (card) {
               list.push({
                 ...card,
-                name: card.front?.name ?? card.back?.name,
+                name: `${group.key}${i.toLocaleString('en-US', {minimumIntegerDigits: minDigits, useGrouping:false})}`,
                 count: count,
               });
               count = 0;
