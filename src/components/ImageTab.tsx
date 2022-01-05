@@ -264,6 +264,7 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
     try {
       for (const card of cards) {
         const cardData: UploadedImage = {
+          name: card.name,
           count: card.count,
         };
         for (const side of ['front', 'back'] as ('front' | 'back')[]) {
