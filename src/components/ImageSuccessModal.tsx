@@ -7,6 +7,7 @@ import { Project } from "./ProjectTab";
 
 interface ImageSuccessModalProps {
   value: Project;
+  url?: string;
   onClose: () => void;
 }
 
@@ -36,11 +37,12 @@ export default class ImageSuccessModal extends React.Component<ImageSuccessModal
     document.body.appendChild(anchor);
     anchor.click();
     document.body.removeChild(anchor);
-
-    this.props.onClose();
   }
 
   render() {
+    const { url, onClose } = this.props;
+    const { filename } = this.state;
+  
     return (
       <Modal show={true} centered={true}>
         <Modal.Header>Success</Modal.Header>
@@ -55,14 +57,17 @@ export default class ImageSuccessModal extends React.Component<ImageSuccessModal
               required
               type="text"
               placeholder="Filename"
-              value={this.state.filename}
+              value={filename}
               onChange={this.onFilenameChange}
             />
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={this.props.onClose}>Close</Button>
+          <Button variant="danger" onClick={onClose}>Close</Button>
           <Button variant="success" onClick={this.onSave}>Save</Button>
+          {url && (
+            <Button variant="success" href={url} target="_blank">Open</Button>
+          )}
         </Modal.Footer>
       </Modal>
     );

@@ -4,7 +4,6 @@ import { FileEarmarkPlus, Upload, XCircle } from "react-bootstrap-icons";
 import Button from "react-bootstrap/esm/Button";
 import Stack from "react-bootstrap/esm/Stack";
 import { is } from 'typescript-is';
-import siteData from "../api/data/site.json";
 import unitData from "../api/data/unit.json";
 import { createProject, Settings, UploadedImage } from "../api/mpc_api";
 import ErrorModal from "./ErrorModal";

@@ -20,7 +20,7 @@ export default class ProjectSuccessModal extends React.Component<{ value: string
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={this.props.onClose}>Close</Button>
-          <Button variant="success" href={this.props.value}>Open</Button>
+          <Button variant="success" href={this.props.value} target="_blank">Open</Button>
         </Modal.Footer>
       </Modal>
     );

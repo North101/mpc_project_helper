@@ -4,7 +4,7 @@ import { FileEarmarkPlus, PlusCircle, Upload, XCircle } from "react-bootstrap-ic
 import Button from "react-bootstrap/esm/Button";
 import Stack from "react-bootstrap/esm/Stack";
 import { is } from 'typescript-is';
-import { analysisImage, CardSettings, CompressedImageData, compressImageData, UploadedImage, uploadImage } from "../api/mpc_api";
+import { analysisImage, CardSettings, CompressedImageData, compressImageData, createProject, Settings, UploadedImage, uploadImage } from "../api/mpc_api";
 import ErrorModal from "./ErrorModal";
 import ImageItem from "./ImageItem";
 import ImageSettingsModal from "./ImageSettingsModal";
@@ -66,6 +66,7 @@ interface LoadingState {
 interface FinishedState {
   id: 'finished';
   value: Project;
+  url?: string;
 }
 
 interface ErrorState {
@@ -182,7 +183,7 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
           if (card) {
             list.push({
               ...card,
-              name: `${group.key}${(0).toLocaleString('en-US', {minimumIntegerDigits: minDigits, useGrouping:false})}`,
+              name: `${group.key}${(0).toLocaleString('en-US', { minimumIntegerDigits: minDigits, useGrouping: false })}`,
               count: card.count,
             });
           }
@@ -195,7 +196,7 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
             if (card) {
               list.push({
                 ...card,
-                name: `${group.key}${i.toLocaleString('en-US', {minimumIntegerDigits: minDigits, useGrouping:false})}`,
+                name: `${group.key}${i.toLocaleString('en-US', { minimumIntegerDigits: minDigits, useGrouping: false })}`,
                 count: count,
               });
               count = 0;
@@ -252,9 +253,7 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
     });
   }
 
-  onUpload = async (settings: CardSettings) => {
-    const { cards } = this.state;
-
+  uploadCards = async (settings: CardSettings, cards: Card[]) => {
     const maxValue = cards.reduce<Set<File>>((p, v) => {
       if (v.front) p.add(v.front?.file);
       if (v.back) p.add(v.back?.file);
@@ -271,42 +270,49 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
 
     const files = new Map<string, CompressedImageData>();
     const data: UploadedImage[] = [];
-    try {
-      for (const card of cards) {
-        const cardData: UploadedImage = {
-          name: card.name,
-          count: card.count,
-        };
-        for (const side of ['front', 'back'] as ('front' | 'back')[]) {
-          const cardSide = card[side];
-          if (!cardSide) continue;
+    for (const card of cards) {
+      const cardData: UploadedImage = {
+        name: card.name,
+        count: card.count,
+      };
+      for (const side of ['front', 'back'] as ('front' | 'back')[]) {
+        const cardSide = card[side];
+        if (!cardSide) continue;
 
-          const id = `${cardSide.id}-${side}`;
-          if (files.has(id)) {
-            cardData[side] = files.get(id);
-          } else {
-            if (this.state.state?.id !== 'loading') return;
-            const uploadedImage = await uploadImage(settings, side, cardSide.file);
+        const id = `${cardSide.id}-${side}`;
+        if (files.has(id)) {
+          cardData[side] = files.get(id);
+        } else {
+          if (this.state.state?.id !== 'loading') return;
+          const uploadedImage = await uploadImage(settings, side, cardSide.file);
 
-            if (this.state.state?.id !== 'loading') return;
-            const analysedImage = await analysisImage(settings, side, 0, uploadedImage);
+          if (this.state.state?.id !== 'loading') return;
+          const analysedImage = await analysisImage(settings, side, 0, uploadedImage);
 
-            const compressedImageData = compressImageData(analysedImage, uploadedImage);
-            cardData[side] = compressedImageData
-            files.set(id, compressedImageData);
+          const compressedImageData = compressImageData(analysedImage, uploadedImage);
+          cardData[side] = compressedImageData
+          files.set(id, compressedImageData);
 
-            if (this.state.state?.id !== 'loading') return;
-            await setStateAsync(this, {
-              state: {
-                id: 'loading',
-                value: files.size,
-                maxValue,
-              },
-            });
-          }
+          if (this.state.state?.id !== 'loading') return;
+          await setStateAsync(this, {
+            state: {
+              id: 'loading',
+              value: files.size,
+              maxValue,
+            },
+          });
         }
-        data.push(cardData);
       }
+      data.push(cardData);
+    }
+
+    return data;
+  }
+
+  onCardUpload = async (settings: CardSettings, cards: Card[]) => {
+    try {
+      const data = await this.uploadCards(settings, cards);
+      if (data === undefined) return;
 
       this.setState({
         files: [],
@@ -316,7 +322,7 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
           value: {
             version: 1,
             code: settings.unit,
-            cards: data
+            cards: data,
           },
         },
       });
@@ -333,6 +339,37 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
     }
   }
 
+  onProjectUpload = async (settings: Settings, cards: Card[]) => {
+    try {
+      const data = await this.uploadCards(settings, cards);
+      if (data === undefined) return;
+
+      const projectUrl = await createProject(settings, data);
+      this.setState({
+        files: [],
+        cards: [],
+        state: {
+          id: 'finished',
+          value: {
+            version: 1,
+            code: settings.unit,
+            cards: data,
+          },
+          url: projectUrl,
+        },
+      });
+      return;
+    } catch (e) {
+      console.log(e);
+      this.setState({
+        state: {
+          id: 'error',
+          value: e,
+        },
+      });
+      return;
+    }
+  }
 
   onDragEnd = (result: DropResult) => {
     if (!result.destination) {
@@ -416,10 +453,27 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
             </Droppable>
           </DragDropContext>
         </Stack>
-        {is<SettingsState>(state) && <ImageSettingsModal siteCode={siteCode} onUpload={this.onUpload} onClose={this.onStateClear} />}
-        {is<LoadingState>(state) && <ProgressModal value={state.value} maxValue={state.maxValue} onClose={this.onStateClear} />}
-        {is<FinishedState>(state) && <ImageSuccessModal value={state.value} onClose={this.onStateClear} />}
-        {is<ErrorState>(state) && <ErrorModal value={state.value} onClose={this.onStateClear} />}
+        {is<SettingsState>(state) && <ImageSettingsModal
+          siteCode={siteCode}
+          cards={cards}
+          onCardUpload={this.onCardUpload}
+          onProjectUpload={this.onProjectUpload}
+          onClose={this.onStateClear}
+        />}
+        {is<LoadingState>(state) && <ProgressModal
+          value={state.value}
+          maxValue={state.maxValue}
+          onClose={this.onStateClear}
+        />}
+        {is<FinishedState>(state) && <ImageSuccessModal
+          value={state.value}
+          url={state.url}
+          onClose={this.onStateClear}
+        />}
+        {is<ErrorState>(state) && <ErrorModal
+          value={state.value}
+          onClose={this.onStateClear}
+        />}
       </>
     );
   }
