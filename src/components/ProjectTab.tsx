@@ -190,7 +190,6 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
 
     try {
       const projectUrl = await createProject(settings, cards);
-      console.log(projectUrl);
 
       this.setState({
         items: [],

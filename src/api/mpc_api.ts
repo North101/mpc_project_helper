@@ -420,7 +420,6 @@ export const createProject = async (settings: Settings, cards: UploadedImage[]) 
     }
     return e;
   }, []);
-  console.log(expandedCards);
 
   const projectId = await initProject(settings, expandedCards);
 

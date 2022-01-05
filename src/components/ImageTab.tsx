@@ -248,27 +248,21 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
     const data: UploadedImage[] = [];
     try {
       for (const card of cards) {
-        console.log(card);
         const cardData: UploadedImage = {
           count: card.count,
         };
         for (const side of ['front', 'back'] as ('front' | 'back')[]) {
           const cardSide = card[side];
-          console.log(cardSide);
           if (!cardSide) continue;
 
           const id = `${cardSide.id}-${side}`;
-          console.log(files.has(id));
           if (files.has(id)) {
             cardData[side] = files.get(id);
           } else {
-            console.log(this.state.state?.id);
             if (this.state.state?.id !== 'loading') return;
-            console.log('uploading');
             const uploadedImage = await uploadImage(settings, side, cardSide.file);
 
             if (this.state.state?.id !== 'loading') return;
-            console.log('analysing');
             const analysedImage = await analysisImage(settings, side, 0, uploadedImage);
 
             const compressedImageData = compressImageData(analysedImage, uploadedImage);

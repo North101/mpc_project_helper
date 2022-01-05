@@ -44,7 +44,6 @@ export default class App extends React.Component<AppProps, AppState> {
 
   render() {
     const { show } = this.state;
-    console.log(siteData, location.origin);
     const siteCode = siteData.find((site) => site.url === location.origin)!.code;
     return (
       <Modal show={show} centered={true} scrollable={true} onHide={this.onClose} dialogClassName="my-modal">
