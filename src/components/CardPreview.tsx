@@ -25,12 +25,15 @@ export default class CardPreview extends React.Component<CardPreviewProps, CardP
   render() {
     const { height, width, card } = this.props;
     return (
-      <div style={{ display: 'flex', gap: 4, border: '1px dashed', padding: 4, }}>
-        <div style={{ display: 'flex', height: height / 2, width: width / 2 }}>
-          <img src={card.front ? URL.createObjectURL(card.front.file) : ''}></img>
-        </div>
-        <div style={{ display: 'flex', height: height / 2, width: width / 2 }}>
-          <img src={card.back ? URL.createObjectURL(card.back.file) : ''}></img>
+      <div style={{ padding: 4, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4, border: '1px dashed' }}>
+        {card.name}
+        <div style={{ display: 'flex', gap: 4, }}>
+          <div style={{ display: 'flex', justifyItems: 'center', height: height / 2, width: width / 2 }}>
+            <img src={card.front ? URL.createObjectURL(card.front.file) : ''}></img>
+          </div>
+          <div style={{ display: 'flex', justifyItems: 'center', height: height / 2, width: width / 2 }}>
+            <img src={card.back ? URL.createObjectURL(card.back.file) : ''}></img>
+          </div>
         </div>
       </div>
     );
