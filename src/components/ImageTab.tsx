@@ -177,6 +177,15 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
             count: 1,
           });
         } else {
+          const card = group.items[0];
+          if (card) {
+            list.push({
+              ...card,
+              name: card.front?.name ?? card.back?.name,
+              count: card.count,
+            });
+          }
+
           let i = 1;
           let count = 0;
           while (i < group.items.length) {
