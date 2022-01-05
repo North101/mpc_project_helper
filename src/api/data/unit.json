@@ -13,7 +13,8 @@
     "auto": true,
     "scale": 1,
     "sortNo": 0,
-    "applyMask": false
+    "applyMask": false,
+    "maxCards": 612
   },
   {
     "code": "6229BAC504DC5BB4",
@@ -29,6 +30,7 @@
     "auto": true,
     "scale": 1,
     "sortNo": 0,
-    "applyMask": false
+    "applyMask": false,
+    "maxCards": 612
   }
 ]

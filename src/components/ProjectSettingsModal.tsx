@@ -113,41 +113,41 @@ export default class ProjectSettingsModal extends React.Component<ProjectSetting
           <div style={{ display: 'flex', flexDirection: 'column', rowGap: 8 }}>
             <FloatingLabel controlId="floatingSelect1" label="Product">
               <Form.Select aria-label="Product" value={unit.code} disabled={true}>
-                <option>Select Product</option>
+                <option key={""}>Select Product</option>
                 {unitData.filter((it) => it.siteCodes.includes(siteCode)).map((it) => (
-                  <option value={it.code}>{it.name}</option>
+                  <option key={it.code} value={it.code}>{it.name}</option>
                 ))}
               </Form.Select>
             </FloatingLabel>
             <FloatingLabel controlId="floatingSelect2" label="Card Stock">
               <Form.Select aria-label="Card Stock" value={cardStockCode} onChange={this.onCardStockChange}>
-                <option>Select Card Stock</option>
+                <option key={""}>Select Card Stock</option>
                 {cardStockData.filter((it) => it.productCodes.includes(unit.productCode) && it.siteCodes.includes(siteCode)).map((it) => (
-                  <option value={it.code}>{it.name}</option>
+                  <option key={it.code} value={it.code}>{it.name}</option>
                 ))}
               </Form.Select>
             </FloatingLabel>
             <FloatingLabel controlId="floatingSelect3" label="Print Type">
               <Form.Select aria-label="Print Type" value={printTypeCode} onChange={this.onPrintTypeChange}>
-                <option>Select Print Type</option>
+                <option key={""}>Select Print Type</option>
                 {printTypeData.filter((it) => it.productCodes.includes(unit.productCode) && it.siteCodes.includes(siteCode)).map((it) => (
-                  <option value={it.code}>{it.name}</option>
+                  <option key={it.code} value={it.code}>{it.name}</option>
                 ))}
               </Form.Select>
             </FloatingLabel>
             <FloatingLabel controlId="floatingSelect4" label="Finish">
               <Form.Select aria-label="Finish" value={finishCode} onChange={this.onFinishChange}>
-                <option>Select Finish</option>
+                <option key={""}>Select Finish</option>
                 {finishData.filter((it) => it.productCodes.includes(unit.productCode) && it.siteCodes.includes(siteCode)).map((it) => (
-                  <option value={it.code}>{it.name}</option>
+                  <option key={it.code} value={it.code}>{it.name}</option>
                 ))}
               </Form.Select>
             </FloatingLabel>
             <FloatingLabel controlId="floatingSelect5" label="Packaging">
               <Form.Select aria-label="Packaging" value={packagingCode} onChange={this.onPackagingChange}>
-                <option>Select Packaging</option>
+                <option key={""}>Select Packaging</option>
                 {packagingData.filter((it) => it.productCodes.includes(unit.productCode) && it.siteCodes.includes(siteCode)).map((it) => (
-                  <option value={it.code}>{it.name}</option>
+                  <option key={it.code} value={it.code}>{it.name}</option>
                 ))}
               </Form.Select>
             </FloatingLabel>

@@ -296,7 +296,12 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
                     padding: 8,
                   }}
                 >
-                  {items.map((item, index) => <ProjectItem item={item} index={index} onDelete={this.onItemRemove} />)}
+                  {items.map((item, index) => <ProjectItem
+                    key={item.id}
+                    item={item}
+                    index={index}
+                    onDelete={this.onItemRemove}
+                  />)}
                   {provided.placeholder}
                 </div>
               )}

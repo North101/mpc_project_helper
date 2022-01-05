@@ -34,6 +34,7 @@ export interface Settings extends CardSettings {
 }
 
 export interface UploadedImage {
+  name?: string;
   count: number;
   front?: CompressedImageData;
   back?: CompressedImageData;

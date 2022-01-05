@@ -22,6 +22,7 @@ export default class ImageSuccessModal extends React.Component<ImageSuccessModal
       filename: 'project.txt',
     }
   }
+
   onFilenameChange = (event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     this.setState({
       filename: event.currentTarget.value,

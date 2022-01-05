@@ -75,9 +75,9 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
         <Modal.Body>
           <FloatingLabel controlId="floatingSelect1" label="Product">
             <Form.Select aria-label="Product" value={unit?.code} onChange={this.onChange}>
-              <option>Select Product</option>
+              <option key={""}>Select Product</option>
               {unitData.filter((it) => it.siteCodes.includes(siteCode)).map((it) => (
-                <option value={it.code}>{it.name}</option>
+                <option key={it.code} value={it.code}>{it.name}</option>
               ))}
             </Form.Select>
           </FloatingLabel>

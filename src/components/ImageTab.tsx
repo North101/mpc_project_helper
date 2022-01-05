@@ -40,9 +40,10 @@ export interface CardSide {
 
 export interface Card {
   id: number;
-  count: number;
+  name?: string;
   front?: CardSide;
   back?: CardSide;
+  count: number;
 }
 
 interface CardListGroup {
@@ -108,7 +109,7 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
 
     const re = /^(.+?)(\d+)?\-?(?:(front|back|a|b|1|2))?\.(png|jpg)$/;
 
-    const cardSides: CardSide[] = [...files];
+    const cardSides: CardSide[] = [];
     for (let i = 0; i < selectedFiles.length; i++) {
       const file = selectedFiles[i];
       cardSides.push({
@@ -162,20 +163,34 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
     }
 
     this.setState({
-      files: cardSides,
+      files: [
+        ...files,
+        ...cardSides,
+      ],
       cards: Object.values(groups).reduce<Card[]>((list, group) => {
         if (group.items.length === 0) {
           list.push({
             id: ImageTab.cardId++,
-            count: 1,
+            name: group.front?.name ?? group.back?.name,
             front: group.front,
             back: group.back,
+            count: 1,
           });
         } else {
-          for (const card of group.items) {
+          let i = 1;
+          let count = 0;
+          while (i < group.items.length) {
+            const card = group.items[i];
+            count++;
             if (card) {
-              list.push(card);
+              list.push({
+                ...card,
+                name: card.front?.name ?? card.back?.name,
+                count: count,
+              });
+              count = 0;
             }
+            i++;
           }
         }
         return list;
@@ -377,6 +392,7 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
                   }}
                 >
                   {cards.map((card, index) => <ImageItem
+                    key={card.id}
                     item={card}
                     files={files}
                     index={index}

@@ -29,6 +29,14 @@ export default class ImageItem extends React.Component<ImageItemProps> {
     onChange(index, item);
   }
 
+  onNameChange = (event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { item } = this.props;
+    this.onChange({
+      ...item,
+      name: event.currentTarget.value,
+    });
+  }
+
   onFrontChange = (event: React.FormEvent<HTMLSelectElement>) => {
     const { item, files } = this.props;
     this.onChange({
@@ -86,18 +94,33 @@ export default class ImageItem extends React.Component<ImageItemProps> {
                 padding: 4,
                 rowGap: 4,
               }}>
-                <FloatingLabel controlId="floatingSelect1" label="Front">
-                  <Form.Select aria-label="Front" value={item.front?.id} onChange={this.onFrontChange}>
-                    <option>Empty</option>
-                    {files.map((file) => <option value={file.id}>{file.name}</option>)}
-                  </Form.Select>
+                <FloatingLabel controlId="floatingSelect1" label="Name">
+                  <Form.Control
+                    type="text"
+                    placeholder={item.front?.name ?? item.back?.name ?? 'Name'}
+                    value={item.name}
+                    onChange={this.onNameChange}
+                  />
                 </FloatingLabel>
-                <FloatingLabel controlId="floatingSelect2" label="Back">
-                  <Form.Select aria-label="Back" value={item.back?.id} onChange={this.onBackChange}>
-                    <option>Empty</option>
-                    {files.map((file) => <option value={file.id}>{file.name}</option>)}
-                  </Form.Select>
-                </FloatingLabel>
+                <div style={{
+                  flex: 1,
+                  display: 'flex',
+                  flexDirection: 'row',
+                  columnGap: 4,
+                }}>
+                  <FloatingLabel controlId="floatingSelect1" label="Front" style={{flex: 1}}>
+                    <Form.Select aria-label="Front" value={item.front?.id} onChange={this.onFrontChange}>
+                      <option key={""}>Empty</option>
+                      {files.map((file) => <option key={file.id} value={file.id}>{file.name}</option>)}
+                    </Form.Select>
+                  </FloatingLabel>
+                  <FloatingLabel controlId="floatingSelect2" label="Back" style={{flex: 1}}>
+                    <Form.Select aria-label="Back" value={item.back?.id} onChange={this.onBackChange}>
+                      <option key={""}>Empty</option>
+                      {files.map((file) => <option key={file.id} value={file.id}>{file.name}</option>)}
+                    </Form.Select>
+                  </FloatingLabel>
+                </div>
               </div>
               <div style={{
                 alignSelf: 'stretch',
