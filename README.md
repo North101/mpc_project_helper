@@ -25,6 +25,21 @@ If you have an MPC Project Helper `project.txt` file that you or someone else al
    my-project-02-front.png
    my-project-02-back.png
    ```
+   If you have a common front or back card you can leave off the number and name your files like this:
+   ```
+   my-project-back.png
+   my-project-01-front.png
+   my-project-02-front.png
+   my-project-03-front.png
+   my-project-03-back.png (this will take priority over my-project-back.png)
+   ```
+   If there are multiple cards with the same front/back in a row and you want to automatically set the count you can skip numbers and it will try and fill in the missing numbers with duplicates:
+   ```
+   my-project-02-front.png (01 is missing so it will count 02 twice)
+   my-project-02-back.png
+   my-project-05-front.png (03 and 04 are missing so it will count 05 three times)
+   my-project-05-back.png
+   ```
 12. Click the **Images** tab on the right and then **Select** on the left.
 13. Browse to the folder containing your images, use Command-A or Ctrl-A to select them all, and click **Open**.
 14. Review the list to confirm that card fronts and backs are paired up as desired.
