@@ -266,7 +266,7 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
       this.setState({
         state: {
           id: 'error',
-          value: 'Not every project has the same product type',
+          value: 'Every project must have the same product type',
         }
       });
     }
@@ -349,13 +349,13 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
             </Button>
           </ButtonGroup>
           <div style={{ flex: 1 }} />
-          <Button variant="outline-primary" onClick={this.onUploadClick}>
+          <Button variant="outline-primary" onClick={this.onUploadClick} disabled={!sameProduct}>
             <Upload /> Upload
           </Button>
         </div>
         {!sameProduct && (
           <Alert variant="warning" style={{ marginBottom: 0 }}>
-            Not all projects are the same product type
+            Every project must have the same product type
           </Alert>
         )}
         <this.renderProjects />
