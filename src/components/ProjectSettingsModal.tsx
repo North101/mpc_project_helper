@@ -9,11 +9,12 @@ import packagingData from "../api/data/packaging.json";
 import printTypeData from "../api/data/print_type.json";
 import unitData from "../api/data/unit.json";
 import { Settings, UploadedImage } from "../api/mpc_api";
+import { Site } from "./App";
 import { Unit } from "./ProjectTab";
 
 
 interface ProjectSettingsModalProps {
-  siteCode: string;
+  site: Site;
   unit: Unit;
   cards: UploadedImage[];
   onUpload: (settings: Settings, cards: UploadedImage[]) => void;
@@ -31,12 +32,12 @@ export default class ProjectSettingsModal extends React.Component<ProjectSetting
   constructor(props: ProjectSettingsModalProps) {
     super(props);
 
-    const { siteCode, unit } = props;
+    const { site, unit } = props;
     this.state = {
-      cardStockCode: cardStockData.find((it) => it.productCodes.includes(unit.productCode) && it.siteCodes.includes(siteCode))?.code,
-      printTypeCode: printTypeData.find((it) => it.productCodes.includes(unit.productCode) && it.siteCodes.includes(siteCode))?.code,
-      finishCode: finishData.find((it) => it.productCodes.includes(unit.productCode) && it.siteCodes.includes(siteCode))?.code,
-      packagingCode: packagingData.find((it) => it.productCodes.includes(unit.productCode) && it.siteCodes.includes(siteCode))?.code,
+      cardStockCode: cardStockData.find((it) => it.productCodes.includes(unit.productCode) && it.siteCodes.includes(site.code))?.code,
+      printTypeCode: printTypeData.find((it) => it.productCodes.includes(unit.productCode) && it.siteCodes.includes(site.code))?.code,
+      finishCode: finishData.find((it) => it.productCodes.includes(unit.productCode) && it.siteCodes.includes(site.code))?.code,
+      packagingCode: packagingData.find((it) => it.productCodes.includes(unit.productCode) && it.siteCodes.includes(site.code))?.code,
     };
   }
 
@@ -79,9 +80,9 @@ export default class ProjectSettingsModal extends React.Component<ProjectSetting
       return;
     }
 
-    const { unit } = this.props;
+    const { site, unit } = this.props;
     return {
-      url: location.origin,
+      url: site.url,
       unit: unit.code,
       product: unit.productCode,
       frontDesign: unit.frontDesignCode,
@@ -102,7 +103,7 @@ export default class ProjectSettingsModal extends React.Component<ProjectSetting
   }
 
   render() {
-    const { siteCode, unit } = this.props;
+    const { site, unit } = this.props;
     const { cardStockCode, printTypeCode, finishCode, packagingCode } = this.state;
     const settings = this.getSettings();
 
@@ -113,35 +114,35 @@ export default class ProjectSettingsModal extends React.Component<ProjectSetting
           <div style={{ display: 'flex', flexDirection: 'column', rowGap: 8 }}>
             <FloatingLabel controlId="floatingSelect1" label="Product">
               <Form.Select aria-label="Product" value={unit.code} disabled={true}>
-                {unitData.filter((it) => it.siteCodes.includes(siteCode)).map((it) => (
+                {unitData.filter((it) => it.siteCodes.includes(site.code)).map((it) => (
                   <option key={it.code} value={it.code}>{it.name}</option>
                 ))}
               </Form.Select>
             </FloatingLabel>
             <FloatingLabel controlId="floatingSelect2" label="Card Stock">
               <Form.Select aria-label="Card Stock" value={cardStockCode} onChange={this.onCardStockChange}>
-                {cardStockData.filter((it) => it.productCodes.includes(unit.productCode) && it.siteCodes.includes(siteCode)).map((it) => (
+                {cardStockData.filter((it) => it.productCodes.includes(unit.productCode) && it.siteCodes.includes(site.code)).map((it) => (
                   <option key={it.code} value={it.code}>{it.name}</option>
                 ))}
               </Form.Select>
             </FloatingLabel>
             <FloatingLabel controlId="floatingSelect3" label="Print Type">
               <Form.Select aria-label="Print Type" value={printTypeCode} onChange={this.onPrintTypeChange}>
-                {printTypeData.filter((it) => it.productCodes.includes(unit.productCode) && it.siteCodes.includes(siteCode)).map((it) => (
+                {printTypeData.filter((it) => it.productCodes.includes(unit.productCode) && it.siteCodes.includes(site.code)).map((it) => (
                   <option key={it.code} value={it.code}>{it.name}</option>
                 ))}
               </Form.Select>
             </FloatingLabel>
             <FloatingLabel controlId="floatingSelect4" label="Finish">
               <Form.Select aria-label="Finish" value={finishCode} onChange={this.onFinishChange}>
-                {finishData.filter((it) => it.productCodes.includes(unit.productCode) && it.siteCodes.includes(siteCode)).map((it) => (
+                {finishData.filter((it) => it.productCodes.includes(unit.productCode) && it.siteCodes.includes(site.code)).map((it) => (
                   <option key={it.code} value={it.code}>{it.name}</option>
                 ))}
               </Form.Select>
             </FloatingLabel>
             <FloatingLabel controlId="floatingSelect5" label="Packaging">
               <Form.Select aria-label="Packaging" value={packagingCode} onChange={this.onPackagingChange}>
-                {packagingData.filter((it) => it.productCodes.includes(unit.productCode) && it.siteCodes.includes(siteCode)).map((it) => (
+                {packagingData.filter((it) => it.productCodes.includes(unit.productCode) && it.siteCodes.includes(site.code)).map((it) => (
                   <option key={it.code} value={it.code}>{it.name}</option>
                 ))}
               </Form.Select>

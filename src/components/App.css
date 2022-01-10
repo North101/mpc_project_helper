@@ -13,3 +13,8 @@ hr.solid {
 #project-input, #image-input {
   display: none;
 }
+
+.list-group-numbered>li::before {
+  width: 40px;
+  text-align: end;
+}

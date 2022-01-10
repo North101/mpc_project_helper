@@ -5,50 +5,34 @@ import Button from "react-bootstrap/esm/Button";
 import FloatingLabel from "react-bootstrap/esm/FloatingLabel";
 import Form from "react-bootstrap/esm/Form";
 import ListGroup from "react-bootstrap/esm/ListGroup";
-import { Card, CardSide } from "./ImageTab";
+import { UploadedImage } from "../api/mpc_api";
+import { Item } from "./ProjectTab";
 
 
 const getItemStyle = (isDragging: boolean, draggableStyle: any): React.CSSProperties => ({
   display: 'flex',
   flexDirection: 'row',
-  gap: 4,
   userSelect: "none",
   padding: 16,
   opacity: isDragging ? 0.5 : 1,
   borderTopWidth: 1,
   borderRadius: 0,
+  gap: 4,
 
   ...draggableStyle,
 });
 
-interface ImageItemProps {
+interface ProjectCardItemProps {
   index: number;
-  item: Card;
-  files: CardSide[];
-  onChange: (index: number, item: Card) => void;
+  item: UploadedImage;
+  onChange: (index: number, item: UploadedImage) => void;
   onDelete: (index: number) => void;
 }
 
-export default class ImageItem extends React.Component<ImageItemProps> {
-  onChange = (item: Card) => {
+export default class ProjectCardItem extends React.Component<ProjectCardItemProps> {
+  onChange = (item: UploadedImage) => {
     const { index, onChange } = this.props;
     onChange(index, item);
-  }
-
-  onFrontChange = (event: React.FormEvent<HTMLSelectElement>) => {
-    const { item, files } = this.props;
-    this.onChange({
-      ...item,
-      front: files.find((file) => `${file.id}` === event.currentTarget.value),
-    });
-  }
-
-  onBackChange = (event: React.FormEvent<HTMLSelectElement>) => {
-    const { item, files } = this.props;
-    this.onChange({
-      ...item,
-      back: files.find((file) => `${file.id}` === event.currentTarget.value),
-    });
   }
 
   onCountChange = (event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -65,9 +49,9 @@ export default class ImageItem extends React.Component<ImageItemProps> {
   }
 
   render() {
-    const { index, item, files } = this.props;
+    const { index, item } = this.props;
     return (
-      <Draggable key={item.id} draggableId={`${item.id}`} index={index}>
+      <Draggable draggableId={`${item.front?.ID}|${item.front?.SourceID}|${item.back?.ID}|${item.back?.SourceID}|${item.count}`} index={index}>
         {(provided, snapshot) => (
           <ListGroup.Item
             ref={provided.innerRef}
@@ -77,6 +61,7 @@ export default class ImageItem extends React.Component<ImageItemProps> {
               snapshot.isDragging,
               provided.draggableProps.style,
             )}
+            as="li"
           >
             <GripVertical style={{ alignSelf: 'center' }} />
             <div style={{
@@ -86,16 +71,10 @@ export default class ImageItem extends React.Component<ImageItemProps> {
               padding: 4,
             }}>{index + 1}</div>
             <FloatingLabel controlId="floatingSelect1" label="Front" style={{ flex: 1 }}>
-              <Form.Select aria-label="Front" value={item.front?.id} onChange={this.onFrontChange}>
-                <option key={""} value="">Empty</option>
-                {files.map((file) => <option key={file.id} value={file.id}>{file.name}</option>)}
-              </Form.Select>
+              <Form.Control aria-label="Front" value={item.front?.Name ?? item.front?.ID} disabled />
             </FloatingLabel>
             <FloatingLabel controlId="floatingSelect2" label="Back" style={{ flex: 1 }}>
-              <Form.Select aria-label="Back" value={item.back?.id} onChange={this.onBackChange}>
-                <option key={""} value="">Empty</option>
-                {files.map((file) => <option key={file.id} value={file.id}>{file.name}</option>)}
-              </Form.Select>
+              <Form.Control aria-label="Back" value={item.back?.Name ?? item.back?.ID} disabled />
             </FloatingLabel>
             <FloatingLabel controlId="floatingCount" label="Count" style={{ width: 80 }}>
               <Form.Control

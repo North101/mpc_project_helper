@@ -1,25 +1,22 @@
 import * as React from "react";
 import { DragDropContext, Droppable, DropResult } from "react-beautiful-dnd";
 import { FileEarmarkPlus, Upload, XCircle } from "react-bootstrap-icons";
+import Alert from "react-bootstrap/esm/Alert";
 import Button from "react-bootstrap/esm/Button";
-import Stack from "react-bootstrap/esm/Stack";
+import ButtonGroup from "react-bootstrap/esm/ButtonGroup";
+import ListGroup from "react-bootstrap/esm/ListGroup";
 import { is } from 'typescript-is';
 import unitData from "../api/data/unit.json";
 import { createProject, Settings, UploadedImage } from "../api/mpc_api";
+import { remove, reorder, replace } from "../util";
+import { Site } from "./App";
 import ErrorModal from "./ErrorModal";
 import LoadingModal from "./LoadingModal";
+import ProjectCardList from "./ProjectCardList";
 import ProjectItem from "./ProjectItem";
 import ProjectSettingsModal from "./ProjectSettingsModal";
 import ProjectSuccessModal from "./ProjectSuccessModal";
 
-
-function reorder<T>(list: T[], startIndex: number, endIndex: number) {
-  const result = Array.from(list);
-  const [removed] = result.splice(startIndex, 1);
-  result.splice(endIndex, 0, removed);
-
-  return result;
-};
 
 export interface Project {
   version: 1;
@@ -73,12 +70,13 @@ interface ErrorState {
 }
 
 interface ProjectTabProps {
-  siteCode: string;
+  site: Site;
 }
 
 interface ProjectTabState {
-  items: Item[];
   state: null | LoadingState | FinishedState | ErrorState | SettingsState;
+  view: 'projects' | 'images';
+  items: Item[];
 }
 
 export default class ProjectTab extends React.Component<ProjectTabProps, ProjectTabState> {
@@ -93,6 +91,7 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
 
     this.state = {
       state: null,
+      view: 'projects',
       items: [],
     };
   }
@@ -100,7 +99,7 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
   onAdd = async (e: any) => {
     if (e.target.files == null) return;
 
-    const { siteCode } = this.props;
+    const { site } = this.props;
     const items = [
       ...this.state.items,
     ];
@@ -128,7 +127,7 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
             },
           });
           return;
-        } else if (!unit.siteCodes.includes(siteCode)) {
+        } else if (!unit.siteCodes.includes(site.code)) {
           this.setState({
             state: {
               id: 'error',
@@ -160,16 +159,19 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
     });
   }
 
-  onItemRemove = (item: Item) => {
+  onItemChange = (index: number, item: Item) => {
+    const { items } = this.state;
+    this.setState({
+      items: replace(items, index, item),
+    });
+  }
+
+  onItemRemove = (index: number) => {
     const items = this.state.items;
-    const index = items.indexOf(item);
     if (index < 0) return;
 
     this.setState({
-      items: [
-        ...items.slice(0, index),
-        ...items.slice(index + 1),
-      ],
+      items: remove(items, index),
     });
   }
 
@@ -207,7 +209,6 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
       return;
     }
   }
-
 
   onDragEnd = (result: DropResult) => {
     if (!result.destination) {
@@ -256,13 +257,55 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
     }
   }
 
+  renderProjects = () => {
+    const { view, items } = this.state;
+    if (view === 'projects') {
+      return (
+        <DragDropContext onDragEnd={this.onDragEnd}>
+          <Droppable droppableId="droppable">
+            {(provided, snapshot) => (
+              <ListGroup
+                {...provided.droppableProps}
+                ref={provided.innerRef}
+                as="ol"
+              >
+                {items.map((item, index) => <ProjectItem
+                  key={item.id}
+                  item={item}
+                  index={index}
+                  onDelete={this.onItemRemove}
+                />)}
+                {provided.placeholder}
+              </ListGroup>
+            )}
+          </Droppable>
+        </DragDropContext>
+      );
+    } else if (view === 'images') {
+      return (
+        <ListGroup as="ol">
+          {items.map((project, index) => <ProjectCardList
+            key={project.id}
+            index={index}
+            project={project}
+            onChange={this.onItemChange}
+            onDelete={this.onItemRemove}
+          />)}
+        </ListGroup>
+      );
+    }
+    return null;
+  }
+
   render() {
-    const { siteCode } = this.props;
-    const { items, state } = this.state;
+    const { site } = this.props;
+    const { items, state, view } = this.state;
+
+    const sameProduct = items.every((item) => item.unit.code === items[0]?.unit.code);
 
     return (
-      <>
-        <div style={{ display: 'flex', rowGap: 4, columnGap: 4 }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+        <div style={{ display: 'flex', gap: 4 }}>
           <input
             id="project-input"
             key={Date.now()}
@@ -278,40 +321,34 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
           <Button variant="outline-primary" onClick={this.onClear}>
             <XCircle /> Clear
           </Button>
+          <ButtonGroup>
+            <Button variant="outline-primary" active={view === 'projects'} onClick={() => this.setState({
+              view: 'projects',
+            })}>
+              Projects
+            </Button>
+            <Button variant="outline-primary" active={view === 'images'} onClick={() => this.setState({
+              view: 'images',
+            })}>
+              Images
+            </Button>
+          </ButtonGroup>
           <div style={{ flex: 1 }} />
           <Button variant="outline-primary" onClick={this.onUploadClick}>
             <Upload /> Upload
           </Button>
         </div>
-        <Stack gap={3} style={{ marginTop: 8, minHeight: 200 }}>
-          <DragDropContext onDragEnd={this.onDragEnd}>
-            <Droppable droppableId="droppable">
-              {(provided, snapshot) => (
-                <div
-                  {...provided.droppableProps}
-                  ref={provided.innerRef}
-                  style={{
-                    border: '1px solid #bbb',
-                    padding: 8,
-                  }}
-                >
-                  {items.map((item, index) => <ProjectItem
-                    key={item.id}
-                    item={item}
-                    index={index}
-                    onDelete={this.onItemRemove}
-                  />)}
-                  {provided.placeholder}
-                </div>
-              )}
-            </Droppable>
-          </DragDropContext>
-        </Stack>
-        {is<SettingsState>(state) && <ProjectSettingsModal siteCode={siteCode} unit={state.unit} cards={state.cards} onUpload={this.onUpload} onClose={this.onStateClear} />}
+        {!sameProduct && (
+          <Alert variant="warning" style={{ marginBottom: 0 }}>
+            Not all projects are the same product type
+          </Alert>
+        )}
+        <this.renderProjects />
+        {is<SettingsState>(state) && <ProjectSettingsModal site={site} unit={state.unit} cards={state.cards} onUpload={this.onUpload} onClose={this.onStateClear} />}
         {is<LoadingState>(state) && <LoadingModal onClose={this.onStateClear} />}
         {is<FinishedState>(state) && <ProjectSuccessModal value={state.value} onClose={this.onStateClear} />}
         {is<ErrorState>(state) && <ErrorModal value={state.value} onClose={this.onStateClear} />}
-      </>
+      </div>
     );
   }
 }

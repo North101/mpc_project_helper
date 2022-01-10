@@ -11,6 +11,12 @@ import siteData from '../api/data/site.json';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+export interface Site {
+  code: string;
+  name: string;
+  url: string;
+}
+
 interface AppProps { }
 
 interface AppState {
@@ -44,21 +50,27 @@ export default class App extends React.Component<AppProps, AppState> {
 
   render() {
     const { show } = this.state;
-    const siteCode = siteData.find((site) => site.url === location.origin)!.code;
+    const site = siteData.find((site) => site.url === location.origin);
     return (
-      <Modal show={show} centered scrollable onHide={this.onClose} dialogClassName="my-modal">
+      <Modal show={show} fullscreen centered scrollable onHide={this.onClose} dialogClassName="my-modal">
         <Modal.Header closeButton>
           <Modal.Title>MPC Project Helper</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Tabs defaultActiveKey="project" id="uncontrolled-tab-example" className="mb-3">
-            <Tab eventKey="project" title="Project">
-              <ProjectTab siteCode={siteCode} />
-            </Tab>
-            <Tab eventKey="images" title="Images">
-              <ImageTab siteCode={siteCode} />
-            </Tab>
-          </Tabs>
+          {site ? (
+            <Tabs defaultActiveKey="project" id="uncontrolled-tab-example" className="mb-3">
+              <Tab eventKey="project" title="Project">
+                <ProjectTab site={site} />
+              </Tab>
+              <Tab eventKey="images" title="Images">
+                <ImageTab site={site} />
+              </Tab>
+            </Tabs>
+          ) : (
+            <div>
+              MPC Project Helper is not compatible with {location.origin}
+            </div>
+          )}
         </Modal.Body>
       </Modal>
     );

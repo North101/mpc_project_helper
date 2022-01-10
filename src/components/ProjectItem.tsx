@@ -1,37 +1,43 @@
 import * as React from "react";
 import { Draggable } from "react-beautiful-dnd";
-import { Trash } from "react-bootstrap-icons";
+import { GripVertical, Trash } from "react-bootstrap-icons";
 import Button from "react-bootstrap/esm/Button";
-
+import FloatingLabel from "react-bootstrap/esm/FloatingLabel";
+import Form from "react-bootstrap/esm/Form";
+import ListGroup from "react-bootstrap/esm/ListGroup";
 import { Item } from "./ProjectTab";
 
 
 interface ProjectItemProps {
   index: number;
   item: Item;
-  onDelete: (item: Item) => void;
+  onDelete: (index: number) => void;
 }
 
 const getItemStyle = (isDragging: boolean, draggableStyle: any): React.CSSProperties => ({
+  display: 'flex',
   userSelect: "none",
-  padding: 8,
+  padding: 16,
   opacity: isDragging ? 0.5 : 1,
+  borderTopWidth: 1,
+  borderRadius: 0,
+  gap: 4,
 
-  ...draggableStyle
+  ...draggableStyle,
 });
 
 export default class ProjectItem extends React.Component<ProjectItemProps> {
   onDelete = () => {
-    const { item, onDelete } = this.props;
-    onDelete(item);
+    const { index, onDelete } = this.props;
+    onDelete(index);
   }
 
   render() {
     const { index, item } = this.props;
     return (
-      <Draggable key={item.id} draggableId={item.id} index={index}>
+      <Draggable draggableId={item.id} index={index}>
         {(provided, snapshot) => (
-          <div
+          <ListGroup.Item
             ref={provided.innerRef}
             {...provided.draggableProps}
             {...provided.dragHandleProps}
@@ -39,20 +45,34 @@ export default class ProjectItem extends React.Component<ProjectItemProps> {
               snapshot.isDragging,
               provided.draggableProps.style,
             )}
+            as="li"
           >
-            <div style={{ display: 'flex' }}>
-              <div style={{ width: 40, alignSelf: 'center', }}>{index + 1}</div>
-              <div style={{ flex: 1, alignSelf: 'center', }}>
-                <div>{item.name}</div>
-                <div>Product: {item.unit.name}</div>
-              </div>
-              <div style={{ width: 40, alignSelf: 'center', }}>x {item.data.cards.reduce((v, card) => v + (card.count ?? 1), 0)}</div>
-              <Button variant="outline-primary" onClick={this.onDelete}>
-                <Trash />
-              </Button>
-            </div>
-            <hr className="solid" />
-          </div>
+            <GripVertical style={{ alignSelf: 'center' }} />
+            <div style={{
+              alignSelf: 'center',
+              textAlign: 'right',
+              minWidth: 30,
+              padding: 4,
+            }}>{index + 1}</div>
+            <FloatingLabel controlId="floatingSelect1" label="Filename" style={{ flex: 1 }}>
+              <Form.Control aria-label="Filename" value={item.name} disabled />
+            </FloatingLabel>
+            <FloatingLabel controlId="floatingSelect2" label="Product" style={{ flex: 1 }}>
+              <Form.Control aria-label="Product" value={item.unit.name} disabled />
+            </FloatingLabel>
+            <FloatingLabel controlId="floatingCount" label="Count" style={{ width: 80 }}>
+              <Form.Control
+                required
+                type="number"
+                placeholder="Count"
+                defaultValue={item.data.cards.reduce((value, card) => value + card.count, 0)}
+                disabled
+              />
+            </FloatingLabel>
+            <Button variant="outline-primary" onClick={this.onDelete}>
+              <Trash />
+            </Button>
+          </ListGroup.Item>
         )}
       </Draggable>
     );

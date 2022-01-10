@@ -26,7 +26,7 @@ export default class CardPreview extends React.Component<CardPreviewProps, CardP
     const { height, width, card } = this.props;
     return (
       <div style={{ width: width + 16, padding: 4, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4, border: '1px dashed' }}>
-        <span style={{ textOverflow: 'clip', overflow: 'hidden', whiteSpace: 'nowrap', width: '100%' }}>{card.name}</span>
+        <span style={{ textOverflow: 'clip', overflow: 'hidden', whiteSpace: 'nowrap', width: '100%' }}>{card.front?.name ?? card.back?.name}</span>
         <div style={{ display: 'flex', gap: 4, }}>
           <div style={{ display: 'flex', justifyContent: 'center', height: height / 2, width: width / 2 }}>
             <img src={card.front ? URL.createObjectURL(card.front.file) : ''}></img>
