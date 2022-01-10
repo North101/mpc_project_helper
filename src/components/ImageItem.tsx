@@ -102,7 +102,7 @@ export default class ImageItem extends React.Component<ImageItemProps> {
                 required
                 type="number"
                 placeholder="Count"
-                defaultValue={item.count}
+                value={item.count}
                 onChange={this.onCountChange}
               />
             </FloatingLabel>

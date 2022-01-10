@@ -3,7 +3,6 @@ import { DragDropContext, Droppable, DropResult } from "react-beautiful-dnd";
 import { CardImage, FileEarmarkPlus, PlusCircle, Upload, XCircle } from "react-bootstrap-icons";
 import Button from "react-bootstrap/esm/Button";
 import ListGroup from "react-bootstrap/esm/ListGroup";
-import Stack from "react-bootstrap/esm/Stack";
 import { is } from 'typescript-is';
 import { analysisImage, CardSettings, CompressedImageData, compressImageData, createProject, Settings, UploadedImage, uploadImage } from "../api/mpc_api";
 import { remove, reorder, replace, setStateAsync } from "../util";

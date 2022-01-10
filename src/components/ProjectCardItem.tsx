@@ -5,8 +5,7 @@ import Button from "react-bootstrap/esm/Button";
 import FloatingLabel from "react-bootstrap/esm/FloatingLabel";
 import Form from "react-bootstrap/esm/Form";
 import ListGroup from "react-bootstrap/esm/ListGroup";
-import { UploadedImage } from "../api/mpc_api";
-import { Item } from "./ProjectTab";
+import { ProjectCard } from "./ProjectTab";
 
 
 const getItemStyle = (isDragging: boolean, draggableStyle: any): React.CSSProperties => ({
@@ -24,13 +23,13 @@ const getItemStyle = (isDragging: boolean, draggableStyle: any): React.CSSProper
 
 interface ProjectCardItemProps {
   index: number;
-  item: UploadedImage;
-  onChange: (index: number, item: UploadedImage) => void;
+  item: ProjectCard;
+  onChange: (index: number, item: ProjectCard) => void;
   onDelete: (index: number) => void;
 }
 
 export default class ProjectCardItem extends React.Component<ProjectCardItemProps> {
-  onChange = (item: UploadedImage) => {
+  onChange = (item: ProjectCard) => {
     const { index, onChange } = this.props;
     onChange(index, item);
   }
@@ -51,7 +50,7 @@ export default class ProjectCardItem extends React.Component<ProjectCardItemProp
   render() {
     const { index, item } = this.props;
     return (
-      <Draggable draggableId={`${item.front?.ID}|${item.front?.SourceID}|${item.back?.ID}|${item.back?.SourceID}|${item.count}`} index={index}>
+      <Draggable draggableId={`${item.id}`} index={index}>
         {(provided, snapshot) => (
           <ListGroup.Item
             ref={provided.innerRef}
@@ -81,7 +80,7 @@ export default class ProjectCardItem extends React.Component<ProjectCardItemProp
                 required
                 type="number"
                 placeholder="Count"
-                defaultValue={item.count}
+                value={item.count}
                 onChange={this.onCountChange}
               />
             </FloatingLabel>

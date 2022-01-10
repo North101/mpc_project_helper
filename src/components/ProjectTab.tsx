@@ -18,10 +18,18 @@ import ProjectSettingsModal from "./ProjectSettingsModal";
 import ProjectSuccessModal from "./ProjectSuccessModal";
 
 
+export interface ProjectCard extends UploadedImage {
+  id: number;
+}
+
 export interface Project {
   version: 1;
-  code: string,
+  code: string;
   cards: UploadedImage[];
+}
+
+export interface ParsedProject extends Project {
+  cards: ProjectCard[];
 }
 
 export interface Unit {
@@ -44,7 +52,7 @@ export interface Unit {
 export interface Item {
   id: string;
   name: string;
-  data: Project;
+  data: ParsedProject;
   unit: Unit;
 }
 
@@ -81,6 +89,7 @@ interface ProjectTabState {
 
 export default class ProjectTab extends React.Component<ProjectTabProps, ProjectTabState> {
   static itemId = 0;
+  static cardId = 0;
 
   fileInput: React.RefObject<HTMLInputElement>;
 
@@ -140,7 +149,13 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
         items.push({
           id: `${++ProjectTab.itemId}`,
           name: file.name,
-          data,
+          data: {
+            ...data,
+            cards: data.cards.map((card) => ({
+              id: ProjectTab.cardId++,
+              ...card,
+            })),
+          },
           unit,
         });
       } catch (e) {

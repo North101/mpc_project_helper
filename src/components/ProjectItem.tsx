@@ -65,7 +65,7 @@ export default class ProjectItem extends React.Component<ProjectItemProps> {
                 required
                 type="number"
                 placeholder="Count"
-                defaultValue={item.data.cards.reduce((value, card) => value + card.count, 0)}
+                value={item.data.cards.reduce((value, card) => value + card.count, 0)}
                 disabled
               />
             </FloatingLabel>

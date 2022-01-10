@@ -5,10 +5,9 @@ import Button from "react-bootstrap/esm/Button";
 import FloatingLabel from "react-bootstrap/esm/FloatingLabel";
 import Form from "react-bootstrap/esm/Form";
 import ListGroup from "react-bootstrap/esm/ListGroup";
-import { UploadedImage } from "../api/mpc_api";
 import { reorder, replace, remove } from "../util";
 import ProjectCardItem from "./ProjectCardItem";
-import { Item } from "./ProjectTab";
+import { ProjectCard, Item } from "./ProjectTab";
 
 
 interface ProjectCardListProps {
@@ -54,7 +53,7 @@ export default class ProjectCardList extends React.Component<ProjectCardListProp
     });
   }
 
-  onItemChange = (index: number, item: UploadedImage) => {
+  onItemChange = (index: number, item: ProjectCard) => {
     const { project } = this.props;
     const cards = project.data.cards;
 
@@ -82,6 +81,7 @@ export default class ProjectCardList extends React.Component<ProjectCardListProp
 
   render() {
     const { index, project } = this.props;
+    console.log(project)
     return (
       <ListGroup.Item as="li" style={{
         display: 'flex',
@@ -116,7 +116,7 @@ export default class ProjectCardList extends React.Component<ProjectCardListProp
               required
               type="number"
               placeholder="Count"
-              defaultValue={project.data.cards.reduce((value, card) => value + card.count, 0)}
+              value={project.data.cards.reduce((value, card) => value + card.count, 0)}
               disabled
             />
           </FloatingLabel>
@@ -136,7 +136,7 @@ export default class ProjectCardList extends React.Component<ProjectCardListProp
                 as="ol"
               >
                 {project.data.cards.map((item, index) => <ProjectCardItem
-                  key={ProjectCardList.itemId++}
+                  key={item.id}
                   item={item}
                   index={index}
                   onChange={this.onItemChange}
