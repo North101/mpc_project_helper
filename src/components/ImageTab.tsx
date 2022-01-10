@@ -164,7 +164,6 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
             count: 1,
           });
         } else {
-          const minDigits = `${group.items.length}`.length;
           const card = group.items[0];
           if (card) {
             list.push({
@@ -273,7 +272,10 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
           if (this.state.state?.id !== 'loading') return;
           const analysedImage = await analysisImage(settings, side, 0, uploadedImage);
 
-          const compressedImageData = compressImageData(analysedImage, uploadedImage);
+          const compressedImageData = {
+            Name: cardSide.name,
+            ...compressImageData(analysedImage, uploadedImage),
+          };
           cardData[side] = compressedImageData
           files.set(id, compressedImageData);
 
@@ -382,7 +384,7 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
     const { cards, files, state } = this.state;
 
     return (
-      <div style={{ display: 'flex', gap: 8 }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
         <div style={{ display: 'flex', gap: 4 }}>
           <input
             id="image-input"
