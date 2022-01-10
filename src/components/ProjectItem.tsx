@@ -8,12 +8,6 @@ import ListGroup from "react-bootstrap/esm/ListGroup";
 import { Item } from "./ProjectTab";
 
 
-interface ProjectItemProps {
-  index: number;
-  item: Item;
-  onDelete: (index: number) => void;
-}
-
 const getItemStyle = (isDragging: boolean, draggableStyle: any): React.CSSProperties => ({
   display: 'flex',
   userSelect: "none",
@@ -25,6 +19,12 @@ const getItemStyle = (isDragging: boolean, draggableStyle: any): React.CSSProper
 
   ...draggableStyle,
 });
+
+interface ProjectItemProps {
+  index: number;
+  item: Item;
+  onDelete: (index: number) => void;
+}
 
 export default class ProjectItem extends React.Component<ProjectItemProps> {
   onDelete = () => {

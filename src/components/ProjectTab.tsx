@@ -298,15 +298,25 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
       );
     } else if (view === 'images') {
       return (
-        <ListGroup as="ol">
-          {items.map((project, index) => <ProjectCardList
-            key={project.id}
-            index={index}
-            project={project}
-            onChange={this.onItemChange}
-            onDelete={this.onItemRemove}
-          />)}
-        </ListGroup>
+        <DragDropContext onDragEnd={this.onDragEnd}>
+          <Droppable droppableId="droppable">
+            {(provided, snapshot) => (
+              <ListGroup
+                {...provided.droppableProps}
+                ref={provided.innerRef}
+                as="ol"
+              >
+                {items.map((project, index) => <ProjectCardList
+                  key={project.id}
+                  index={index}
+                  project={project}
+                  onChange={this.onItemChange}
+                  onDelete={this.onItemRemove}
+                />)}
+              </ListGroup>
+            )}
+          </Droppable>
+        </DragDropContext>
       );
     }
     return null;
