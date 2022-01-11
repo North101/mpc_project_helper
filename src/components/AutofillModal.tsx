@@ -25,7 +25,7 @@ const basicAutofill: AutofillType = {
   name: 'Basic',
   description: '',
   process: (cardSides: CardSide[]) => {
-    const re = /^(.+?(?:-x(\d+))?)(?:(\-front|\-back|a|b|\-1|\-2))\.(png|jpg)$/;
+    const re = /^(.+?(?:\-x(\d+))?)(?:\-(front|back|a|b|1|2))\.(png|jpg)$/;
 
     const groups: {
       [key: string]: Card;
@@ -60,7 +60,7 @@ const north101Autofill: AutofillType = {
   name: 'North101 Autofill',
   description: '',
   process: (cardSides: CardSide[]) => {
-    const re = /^(.+?)(\d+)?(?:(\-front|\-back|a|b|\-1|\-2))?\.(png|jpg)$/;
+    const re = /^(.+?)(?:\-(\d+))?(?:\-(front|back|a|b|1|2))?\.(png|jpg)$/;
 
     const groups: {
       [key: string]: CardListGroup,
