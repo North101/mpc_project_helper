@@ -3,10 +3,9 @@ import FloatingLabel from "react-bootstrap/esm/FloatingLabel";
 import Form from "react-bootstrap/esm/Form";
 import Modal from "react-bootstrap/esm/Modal";
 import unitData from "../api/data/unit.json";
-import { Site } from "./App";
+import { Card } from "../types/card";
+import { Site, Unit } from "../types/mpc";
 import CardPreview from "./CardPreview";
-import { Card } from "./ImageTab";
-import { Unit } from "./ProjectTab";
 
 
 interface CardPreviewModalProps {

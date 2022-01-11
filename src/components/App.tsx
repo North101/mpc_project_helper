@@ -1,21 +1,12 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import * as React from "react";
 import Modal from "react-bootstrap/esm/Modal";
 import Tab from "react-bootstrap/esm/Tab";
 import Tabs from "react-bootstrap/esm/Tabs";
-
+import siteData from '../api/data/site.json';
 import "./App.css";
 import ImageTab from "./ImageTab";
 import ProjectTab from "./ProjectTab";
-
-import siteData from '../api/data/site.json';
-
-import 'bootstrap/dist/css/bootstrap.min.css';
-
-export interface Site {
-  code: string;
-  name: string;
-  url: string;
-}
 
 interface AppProps { }
 

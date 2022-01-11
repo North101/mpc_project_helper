@@ -574,7 +574,6 @@ export const uploadImage = async (settings: CardSettings, side: string, image: F
   return JSON.parse(xpath(root, '/html/body/form/input[@id="hidd_image_info"]/@value')!.textContent!);
 }
 
-
 export const analysisImage = async (settings: CardSettings, side: string, index: number, value: any) => {
   const body = new FormData();
   body.append('photoindex', `${index}`);

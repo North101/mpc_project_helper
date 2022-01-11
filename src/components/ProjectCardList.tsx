@@ -5,10 +5,9 @@ import Button from "react-bootstrap/esm/Button";
 import FloatingLabel from "react-bootstrap/esm/FloatingLabel";
 import Form from "react-bootstrap/esm/Form";
 import ListGroup from "react-bootstrap/esm/ListGroup";
+import { ParsedProject, ProjectCard } from "../types/project";
 import { reorder, replace, remove } from "../util";
 import ProjectCardItem from "./ProjectCardItem";
-import { ProjectCard, Item } from "./ProjectTab";
-
 
 const getItemStyle = (isDragging: boolean, draggableStyle: any): React.CSSProperties => ({
   display: 'flex',
@@ -25,15 +24,15 @@ const getItemStyle = (isDragging: boolean, draggableStyle: any): React.CSSProper
 
 interface ProjectCardListProps {
   index: number;
-  project: Item;
-  onChange: (index: number, project: Item) => void;
+  project: ParsedProject;
+  onChange: (index: number, project: ParsedProject) => void;
   onDelete: (index: number) => void;
 }
 
 export default class ProjectCardList extends React.Component<ProjectCardListProps> {
   static itemId = 0;
 
-  onChange = (project: Item) => {
+  onChange = (project: ParsedProject) => {
     const { index, onChange } = this.props;
 
     onChange(index, project);
@@ -52,43 +51,34 @@ export default class ProjectCardList extends React.Component<ProjectCardListProp
 
     const { project } = this.props;
     const cards = reorder(
-      project.data.cards,
+      project.cards,
       result.source.index,
       result.destination.index
     );
 
     this.onChange({
       ...project,
-      data: {
-        ...project.data,
-        cards,
-      },
+      cards,
     });
   }
 
   onItemChange = (index: number, item: ProjectCard) => {
     const { project } = this.props;
-    const cards = project.data.cards;
+    const cards = project.cards;
 
     this.onChange({
       ...project,
-      data: {
-        ...project.data,
-        cards: replace(cards, index, item),
-      },
+      cards: replace(cards, index, item),
     });
   }
 
   onItemRemove = (index: number) => {
     const { project } = this.props;
-    const cards = project.data.cards;
+    const cards = project.cards;
 
     this.onChange({
       ...project,
-      data: {
-        ...project.data,
-        cards: remove(cards, index),
-      },
+      cards: remove(cards, index),
     });
   }
 
@@ -130,7 +120,7 @@ export default class ProjectCardList extends React.Component<ProjectCardListProp
                   required
                   type="number"
                   placeholder="Count"
-                  value={project.data.cards.reduce((value, card) => value + card.count, 0)}
+                  value={project.cards.reduce((value, card) => value + card.count, 0)}
                   disabled
                 />
               </FloatingLabel>
@@ -149,7 +139,7 @@ export default class ProjectCardList extends React.Component<ProjectCardListProp
                     }}
                     as="ol"
                   >
-                    {project.data.cards.map((item, index) => <ProjectCardItem
+                    {project.cards.map((item, index) => <ProjectCardItem
                       key={item.id}
                       item={item}
                       index={index}

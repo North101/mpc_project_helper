@@ -8,53 +8,15 @@ import ListGroup from "react-bootstrap/esm/ListGroup";
 import { is } from 'typescript-is';
 import unitData from "../api/data/unit.json";
 import { createProject, Settings, UploadedImage } from "../api/mpc_api";
+import { Site, Unit } from "../types/mpc";
+import { ParsedProject, Project } from "../types/project";
 import { remove, reorder, replace } from "../util";
-import { Site } from "./App";
 import ErrorModal from "./ErrorModal";
 import LoadingModal from "./LoadingModal";
 import ProjectCardList from "./ProjectCardList";
 import ProjectItem from "./ProjectItem";
 import ProjectSettingsModal from "./ProjectSettingsModal";
 import ProjectSuccessModal from "./ProjectSuccessModal";
-
-
-export interface ProjectCard extends UploadedImage {
-  id: number;
-}
-
-export interface Project {
-  version: 1;
-  code: string;
-  cards: UploadedImage[];
-}
-
-export interface ParsedProject extends Project {
-  cards: ProjectCard[];
-}
-
-export interface Unit {
-  code: string;
-  name: string;
-  siteCodes: string[];
-  productCode: string;
-  frontDesignCode: string;
-  backDesignCode: string;
-  width: number;
-  height: number;
-  dpi: number;
-  filter: string;
-  auto: boolean;
-  scale: number;
-  sortNo: number;
-  applyMask: boolean;
-};
-
-export interface Item {
-  id: string;
-  name: string;
-  data: ParsedProject;
-  unit: Unit;
-}
 
 interface SettingsState {
   id: 'settings';
@@ -85,7 +47,7 @@ interface ProjectTabProps {
 interface ProjectTabState {
   state: null | LoadingState | FinishedState | ErrorState | SettingsState;
   view: 'projects' | 'images';
-  items: Item[];
+  items: ParsedProject[];
 }
 
 export default class ProjectTab extends React.Component<ProjectTabProps, ProjectTabState> {
@@ -148,16 +110,14 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
         }
 
         items.push({
+          ...data,
           id: `${++ProjectTab.itemId}`,
           name: file.name,
-          data: {
-            ...data,
-            cards: data.cards.map((card) => ({
-              id: ProjectTab.cardId++,
-              ...card,
-            })),
-          },
           unit,
+          cards: data.cards.map((card) => ({
+            id: ProjectTab.cardId++,
+            ...card,
+          })),
         });
       } catch (e) {
         this.setState({
@@ -175,7 +135,7 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
     });
   }
 
-  onItemChange = (index: number, item: Item) => {
+  onItemChange = (index: number, item: ParsedProject) => {
     const { items } = this.state;
     this.setState({
       items: replace(items, index, item),
@@ -259,7 +219,7 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
           name: items.length === 1 ? items[0].name : undefined,
           unit: unit,
           cards: items.reduce<UploadedImage[]>((value, item) => {
-            value.push(...item.data.cards);
+            value.push(...item.cards);
             return value;
           }, []),
         }

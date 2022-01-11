@@ -9,9 +9,8 @@ import packagingData from "../api/data/packaging.json";
 import printTypeData from "../api/data/print_type.json";
 import unitData from "../api/data/unit.json";
 import { CardSettings, Settings } from "../api/mpc_api";
-import { Site } from "./App";
-import { Card } from "./ImageTab";
-import { Unit } from "./ProjectTab";
+import { Site, Unit } from "../types/mpc";
+import { Card } from "../types/card";
 
 
 interface ImageSettingsModalProps {

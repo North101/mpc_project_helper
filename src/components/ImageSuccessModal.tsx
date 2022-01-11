@@ -2,7 +2,7 @@ import * as React from "react";
 import Button from "react-bootstrap/esm/Button";
 import Form from "react-bootstrap/esm/Form";
 import Modal from "react-bootstrap/esm/Modal";
-import { Project } from "./ProjectTab";
+import { Project } from "../types/project";
 
 
 interface ImageSuccessModalProps {

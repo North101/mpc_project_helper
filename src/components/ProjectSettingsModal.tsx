@@ -9,9 +9,7 @@ import packagingData from "../api/data/packaging.json";
 import printTypeData from "../api/data/print_type.json";
 import unitData from "../api/data/unit.json";
 import { Settings, UploadedImage } from "../api/mpc_api";
-import { Site } from "./App";
-import { Unit } from "./ProjectTab";
-
+import { Site, Unit } from "../types/mpc";
 
 interface ProjectSettingsModalProps {
   site: Site;

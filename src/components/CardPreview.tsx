@@ -1,5 +1,5 @@
 import React from "react";
-import { Card } from "./ImageTab";
+import { Card } from "../types/card";
 
 interface CardPreviewProps {
   height: number;

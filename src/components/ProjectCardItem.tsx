@@ -5,8 +5,7 @@ import Button from "react-bootstrap/esm/Button";
 import FloatingLabel from "react-bootstrap/esm/FloatingLabel";
 import Form from "react-bootstrap/esm/Form";
 import ListGroup from "react-bootstrap/esm/ListGroup";
-import { ProjectCard } from "./ProjectTab";
-
+import { ProjectCard } from "../types/project";
 
 const getItemStyle = (isDragging: boolean, draggableStyle: any): React.CSSProperties => ({
   display: 'flex',

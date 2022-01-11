@@ -3,7 +3,6 @@ import Button from "react-bootstrap/esm/Button";
 import Modal from "react-bootstrap/esm/Modal";
 import ProgressBar from "react-bootstrap/esm/ProgressBar";
 
-
 export default class ProgressModal extends React.Component<{ value: number; maxValue: number; onClose: () => void; }> {
   render() {
     return (

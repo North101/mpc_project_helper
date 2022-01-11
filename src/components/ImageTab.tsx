@@ -5,35 +5,16 @@ import Button from "react-bootstrap/esm/Button";
 import ListGroup from "react-bootstrap/esm/ListGroup";
 import { is } from 'typescript-is';
 import { analysisImage, CardSettings, CompressedImageData, compressImageData, createProject, Settings, UploadedImage, uploadImage } from "../api/mpc_api";
+import { Card, CardListGroup, CardSide } from "../types/card";
+import { Project } from "../types/project";
+import { Site } from "../types/mpc";
 import { remove, reorder, replace, setStateAsync } from "../util";
-import { Site } from "./App";
 import CardPreviewModal from "./CardPreviewModal";
 import ErrorModal from "./ErrorModal";
 import ImageItem from "./ImageItem";
 import ImageSettingsModal from "./ImageSettingsModal";
 import ImageSuccessModal from "./ImageSuccessModal";
 import ProgressModal from "./ProgressModal";
-import { Project } from "./ProjectTab";
-
-export interface CardSide {
-  id: number;
-  name: string;
-  file: File;
-}
-
-export interface Card {
-  id: number;
-  front?: CardSide;
-  back?: CardSide;
-  count: number;
-}
-
-interface CardListGroup {
-  key: string;
-  front?: CardSide;
-  back?: CardSide;
-  items: (Card | undefined)[];
-}
 
 interface SettingsState {
   id: 'settings',

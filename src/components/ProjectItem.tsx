@@ -5,8 +5,7 @@ import Button from "react-bootstrap/esm/Button";
 import FloatingLabel from "react-bootstrap/esm/FloatingLabel";
 import Form from "react-bootstrap/esm/Form";
 import ListGroup from "react-bootstrap/esm/ListGroup";
-import { Item } from "./ProjectTab";
-
+import { ParsedProject } from "../types/project";
 
 const getItemStyle = (isDragging: boolean, draggableStyle: any): React.CSSProperties => ({
   display: 'flex',
@@ -22,7 +21,7 @@ const getItemStyle = (isDragging: boolean, draggableStyle: any): React.CSSProper
 
 interface ProjectItemProps {
   index: number;
-  item: Item;
+  item: ParsedProject;
   onDelete: (index: number) => void;
 }
 
@@ -65,7 +64,7 @@ export default class ProjectItem extends React.Component<ProjectItemProps> {
                 required
                 type="number"
                 placeholder="Count"
-                value={item.data.cards.reduce((value, card) => value + card.count, 0)}
+                value={item.cards.reduce((value, card) => value + card.count, 0)}
                 disabled
               />
             </FloatingLabel>
