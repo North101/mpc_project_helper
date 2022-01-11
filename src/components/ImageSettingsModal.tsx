@@ -25,6 +25,7 @@ interface ImageSettingsModalProps {
 interface ImageSettingsModalState {
   unit?: Unit;
   uploadProject: boolean;
+  name?: string;
   cardStockCode?: string;
   printTypeCode?: string;
   finishCode?: string;
@@ -40,6 +41,7 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
     this.state = {
       unit: unit,
       uploadProject: false,
+      name: undefined,
       cardStockCode: cardStockData.find((it) => unit && it.productCodes.includes(unit.productCode) && it.siteCodes.includes(site.code))?.code,
       printTypeCode: printTypeData.find((it) => unit && it.productCodes.includes(unit.productCode) && it.siteCodes.includes(site.code))?.code,
       finishCode: finishData.find((it) => unit && it.productCodes.includes(unit.productCode) && it.siteCodes.includes(site.code))?.code,
@@ -96,6 +98,12 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
     });
   }
 
+  onNameChange = (event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    this.setState({
+      name: event.currentTarget.value,
+    });
+  }
+
   getCardSettings = (): CardSettings | undefined => {
     const { site } = this.props;
     const { unit } = this.state;
@@ -120,7 +128,7 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
 
   getProjectSettings = (): Settings | undefined => {
     const { site } = this.props;
-    const { unit, cardStockCode, printTypeCode, finishCode, packagingCode } = this.state;
+    const { unit, name, cardStockCode, printTypeCode, finishCode, packagingCode } = this.state;
     if (unit === undefined || cardStockCode === undefined || printTypeCode === undefined || finishCode === undefined || packagingCode === undefined) {
       return;
     }
@@ -131,6 +139,7 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
       product: unit.productCode,
       frontDesign: unit.frontDesignCode,
       backDesign: unit.backDesignCode,
+      name: name,
       cardStock: cardStockCode,
       printType: printTypeCode,
       finish: finishCode,
@@ -148,7 +157,7 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
 
   render() {
     const { site } = this.props;
-    const { unit, uploadProject, cardStockCode, printTypeCode, finishCode, packagingCode } = this.state;
+    const { unit, uploadProject, name, cardStockCode, printTypeCode, finishCode, packagingCode } = this.state;
     const cardSettings = this.getCardSettings();
     const projectSettings = this.getProjectSettings();
 
@@ -172,6 +181,9 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
             />
             {uploadProject && (
               <>
+                <FloatingLabel controlId="floatingText" label="Project Name">
+                  <Form.Control aria-label="ProjectName" value={name} onChange={this.onNameChange} />
+                </FloatingLabel>
                 <FloatingLabel controlId="floatingSelect2" label="Card Stock">
                   <Form.Select aria-label="Card Stock" value={cardStockCode} onChange={this.onCardStockChange}>
                     {cardStockData.filter((it) => unit && it.productCodes.includes(unit.productCode) && it.siteCodes.includes(site.code)).map((it) => (

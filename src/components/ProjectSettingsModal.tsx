@@ -16,12 +16,14 @@ import { Unit } from "./ProjectTab";
 interface ProjectSettingsModalProps {
   site: Site;
   unit: Unit;
+  name?: string;
   cards: UploadedImage[];
   onUpload: (settings: Settings, cards: UploadedImage[]) => void;
   onClose: () => void;
 }
 
 interface ProjectSettingsModalState {
+  name?: string;
   cardStockCode?: string;
   printTypeCode?: string;
   finishCode?: string;
@@ -32,8 +34,9 @@ export default class ProjectSettingsModal extends React.Component<ProjectSetting
   constructor(props: ProjectSettingsModalProps) {
     super(props);
 
-    const { site, unit } = props;
+    const { site, unit, name } = props;
     this.state = {
+      name: name,
       cardStockCode: cardStockData.find((it) => it.productCodes.includes(unit.productCode) && it.siteCodes.includes(site.code))?.code,
       printTypeCode: printTypeData.find((it) => it.productCodes.includes(unit.productCode) && it.siteCodes.includes(site.code))?.code,
       finishCode: finishData.find((it) => it.productCodes.includes(unit.productCode) && it.siteCodes.includes(site.code))?.code,
@@ -74,8 +77,14 @@ export default class ProjectSettingsModal extends React.Component<ProjectSetting
     });
   }
 
+  onNameChange = (event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    this.setState({
+      name: event.currentTarget.value,
+    });
+  }
+
   getSettings = (): Settings | undefined => {
-    const { cardStockCode, printTypeCode, finishCode, packagingCode } = this.state;
+    const { name, cardStockCode, printTypeCode, finishCode, packagingCode } = this.state;
     if (cardStockCode === undefined || printTypeCode === undefined || finishCode === undefined || packagingCode === undefined) {
       return;
     }
@@ -83,6 +92,7 @@ export default class ProjectSettingsModal extends React.Component<ProjectSetting
     const { site, unit } = this.props;
     return {
       url: site.url,
+      name: name,
       unit: unit.code,
       product: unit.productCode,
       frontDesign: unit.frontDesignCode,
@@ -104,7 +114,7 @@ export default class ProjectSettingsModal extends React.Component<ProjectSetting
 
   render() {
     const { site, unit } = this.props;
-    const { cardStockCode, printTypeCode, finishCode, packagingCode } = this.state;
+    const { name, cardStockCode, printTypeCode, finishCode, packagingCode } = this.state;
     const settings = this.getSettings();
 
     return (
@@ -118,6 +128,9 @@ export default class ProjectSettingsModal extends React.Component<ProjectSetting
                   <option key={it.code} value={it.code}>{it.name}</option>
                 ))}
               </Form.Select>
+            </FloatingLabel>
+            <FloatingLabel controlId="floatingText" label="Project Name">
+              <Form.Control aria-label="ProjectName" value={name} onChange={this.onNameChange} />
             </FloatingLabel>
             <FloatingLabel controlId="floatingSelect2" label="Card Stock">
               <Form.Select aria-label="Card Stock" value={cardStockCode} onChange={this.onCardStockChange}>

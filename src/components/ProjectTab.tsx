@@ -58,6 +58,7 @@ export interface Item {
 
 interface SettingsState {
   id: 'settings';
+  name?: string;
   unit: Unit;
   cards: UploadedImage[];
 }
@@ -249,12 +250,13 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
 
   onUploadClick = () => {
     const { items } = this.state;
-    const unit = items.every((it) => it.unit.code === items[0].unit.code) ? items[0].unit : null;
+    const unit = items.every((it) => it.unit.code === items[0]?.unit.code) ? items[0].unit : null;
 
     if (unit) {
       this.setState({
         state: {
           id: 'settings',
+          name: items.length === 1 ? items[0].name : undefined,
           unit: unit,
           cards: items.reduce<UploadedImage[]>((value, item) => {
             value.push(...item.data.cards);
@@ -325,7 +327,6 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
   render() {
     const { site } = this.props;
     const { items, state, view } = this.state;
-
     const sameProduct = items.every((item) => item.unit.code === items[0]?.unit.code);
 
     return (
@@ -369,7 +370,7 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
           </Alert>
         )}
         <this.renderProjects />
-        {is<SettingsState>(state) && <ProjectSettingsModal site={site} unit={state.unit} cards={state.cards} onUpload={this.onUpload} onClose={this.onStateClear} />}
+        {is<SettingsState>(state) && <ProjectSettingsModal site={site} unit={state.unit} name={state.name} cards={state.cards} onUpload={this.onUpload} onClose={this.onStateClear} />}
         {is<LoadingState>(state) && <LoadingModal onClose={this.onStateClear} />}
         {is<FinishedState>(state) && <ProjectSuccessModal value={state.value} onClose={this.onStateClear} />}
         {is<ErrorState>(state) && <ErrorModal value={state.value} onClose={this.onStateClear} />}

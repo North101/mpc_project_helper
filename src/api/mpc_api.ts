@@ -27,6 +27,7 @@ export interface CardSettings {
 }
 
 export interface Settings extends CardSettings {
+  name?: string;
   cardStock: string;
   printType: string;
   finish: string;
@@ -403,6 +404,9 @@ export const saveSession = (projectId: string, settings: Settings, cards: Upload
   body.append('expand', 'null');
   // no idea
   body.append('mapinfo', '[]');
+  if (settings.name) {
+    body.append('name', settings.name);
+  }
 
   return fetch(url(`${settings.url}/design/dn_keep_session.aspx`, {
     ssid: projectId,
