@@ -2,149 +2,39 @@ import React from "react";
 import Button from "react-bootstrap/esm/Button";
 import FloatingLabel from "react-bootstrap/esm/FloatingLabel";
 import Form from "react-bootstrap/esm/Form";
-import ListGroup from "react-bootstrap/esm/ListGroup";
 import Modal from "react-bootstrap/esm/Modal";
-import { Card, CardListGroup, CardSide } from "../types/card";
+import { Card, CardSide } from "../types/card";
+import AutofillCardList from "./AutofillCardList";
+import AutofillNorth101 from "./AutofilltTypeNorth101";
+import AutofillBasic from "./AutofillTypeBasic";
+import AutofillNone from "./AutofillTypeNone";
 
 interface AutofillType {
   id: string;
   name: string;
   description: string;
-  process: (cardSides: CardSide[]) => Card[];
+  view: typeof AutofillNone;
 }
 
 const noAutofill: AutofillType = {
   id: 'none',
   name: 'No Autofill',
   description: '',
-  process: () => [],
+  view: AutofillNone,
 }
 
 const basicAutofill: AutofillType = {
   id: 'basic',
   name: 'Basic',
   description: '',
-  process: (cardSides: CardSide[]) => {
-    const re = /^(.+?(?:\-x(\d+))?)(?:\-(front|back|a|b|1|2))\.(png|jpg)$/;
-
-    const groups: {
-      [key: string]: Card;
-    } = {};
-    for (const cardSide of cardSides) {
-      const match = cardSide.file.name.match(re);
-      console.log(match);
-      if (!match) continue;
-
-      const name = match[1];
-      const count = match[2] ? parseInt(match[2]) : 1;
-      const side = match[3]?.replace('-', '');
-      const card = groups[name] ??= {
-        id: AutofillModal.cardId++,
-        count,
-      }
-      if (['front', 'a', '1'].includes(side)) {
-        card.front = cardSide;
-      } else if (['back', 'b', '2'].includes(side)) {
-        card.back = cardSide;
-      } else {
-        console.log(side);
-      }
-    }
-
-    return Object.values(groups);
-  },
+  view: AutofillBasic,
 }
 
 const north101Autofill: AutofillType = {
   id: 'north101',
   name: 'North101\'s Autofill',
   description: '',
-  process: (cardSides: CardSide[]) => {
-    const re = /^(.+?)(?:\-(\d+))?(?:\-(front|back|a|b|1|2))?\.(png|jpg)$/;
-
-    const groups: {
-      [key: string]: CardListGroup,
-    } = {};
-    for (const cardSide of cardSides) {
-      const match = cardSide.file.name.match(re);
-      console.log(match);
-      if (!match) continue;
-
-      const name = match[1];
-      const index = parseInt(match[2]) || 0;
-      const side = match[3]?.replace('-', '');
-
-      const group = groups[name] ??= {
-        key: name,
-        items: [],
-      };
-      if (!index && (side === 'front' || side === 'back')) {
-        group[side] = cardSide;
-      } else {
-        const card = group.items[index] ??= {
-          id: AutofillModal.cardId++,
-          count: 1,
-        };
-        if (['front', 'a', '1'].includes(side)) {
-          card.front = cardSide;
-        } else if (['back', 'b', '2'].includes(side)) {
-          card.back = cardSide;
-        } else {
-          console.log(side);
-        }
-      }
-    }
-    console.log(groups);
-    for (const group of Object.values(groups)) {
-      const lastCardSide: {
-        front?: CardSide;
-        back?: CardSide;
-      } = {};
-      for (let i = group.items.length - 1; i >= 0; i--) {
-        const card = group.items[i];
-        if (!card) continue;
-
-        for (const side of ['front', 'back'] as ('front' | 'back')[]) {
-          lastCardSide[side] = card[side] ??= group[side] ?? lastCardSide[side];
-        }
-      }
-    }
-
-    return Object.values(groups).reduce<Card[]>((list, group) => {
-      if (group.items.length === 0) {
-        list.push({
-          id: AutofillModal.cardId++,
-          front: group.front,
-          back: group.back,
-          count: 1,
-        });
-      } else {
-        const card = group.items[0];
-        if (card) {
-          list.push({
-            ...card,
-            count: card.count,
-          });
-        }
-
-        let i = 1;
-        let count = 0;
-        while (i < group.items.length) {
-          const card = group.items[i];
-          count++;
-          if (card) {
-            list.push({
-              ...card,
-              count: count,
-            });
-            count = 0;
-          }
-          i++;
-        }
-      }
-      return list;
-    }, []);
-  }
+  view: AutofillNorth101,
 }
 
 interface AutofillModalProps {
@@ -172,17 +62,22 @@ export default class AutofillModal extends React.Component<AutofillModalProps, A
 
     this.state = {
       autofill: basicAutofill,
-      cards: basicAutofill.process(props.cardSides),
+      cards: [],
     };
   }
 
   onAutofillChange = (event: React.FormEvent<HTMLSelectElement>) => {
-    const { cardSides } = this.props;
-    const autofill = this.autofillOptions.find((it) => it.id === event.currentTarget.value) ?? this.autofillOptions[0];
+    const autofill = this.autofillOptions.find((it) => it.id === event.currentTarget.value);
+    if (autofill === undefined) return;
 
     this.setState({
       autofill,
-      cards: autofill.process(cardSides),
+    });
+  }
+
+  onChange = (cards: Card[]) => {
+    this.setState({
+      cards,
     });
   }
 
@@ -201,6 +96,7 @@ export default class AutofillModal extends React.Component<AutofillModalProps, A
   render() {
     const { cardSides } = this.props;
     const { autofill, cards } = this.state;
+
     return (
       <Modal show centered fullscreen scrollable onHide={this.onClose} dialogClassName="my-modal">
         <Modal.Header closeButton>Autofill Options</Modal.Header>
@@ -213,46 +109,9 @@ export default class AutofillModal extends React.Component<AutofillModalProps, A
                 ))}
               </Form.Select>
             </FloatingLabel>
-            <Form.Text>
-              {autofill.description}
-            </Form.Text>
-            <ListGroup as="ol">
-              {cards.map((card, index) => (
-                <ListGroup.Item
-                  key={index}
-                  style={{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    gap: 4,
-                    padding: 16,
-                    borderTopWidth: 1,
-                    borderRadius: 0,
-                  }}
-                  as="li"
-                >
-                  <div style={{
-                    alignSelf: 'center',
-                    textAlign: 'right',
-                    minWidth: 30,
-                    padding: 4,
-                  }}>{index + 1}</div>
-                  <FloatingLabel controlId="floatingSelect1" label="Front" style={{ flex: 1 }}>
-                    <Form.Control value={card.front?.name} disabled />
-                  </FloatingLabel>
-                  <FloatingLabel controlId="floatingSelect2" label="Back" style={{ flex: 1 }}>
-                    <Form.Control value={card.back?.name} disabled />
-                  </FloatingLabel>
-                  <FloatingLabel controlId="floatingCount" label="Count" style={{ width: 80 }}>
-                    <Form.Control
-                      type="number"
-                      placeholder="Count"
-                      value={card.count}
-                      disabled
-                    />
-                  </FloatingLabel>
-                </ListGroup.Item>
-              ))}
-            </ListGroup>
+            <Form.Text>{autofill.description}</Form.Text>
+            <autofill.view cardSides={cardSides} onChange={this.onChange} />
+            <AutofillCardList cards={cards} />
           </div>
         </Modal.Body>
         <Modal.Footer>
