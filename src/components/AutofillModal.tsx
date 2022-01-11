@@ -57,7 +57,7 @@ const basicAutofill: AutofillType = {
 
 const north101Autofill: AutofillType = {
   id: 'north101',
-  name: 'North101 Autofill',
+  name: 'North101\'s Autofill',
   description: '',
   process: (cardSides: CardSide[]) => {
     const re = /^(.+?)(?:\-(\d+))?(?:\-(front|back|a|b|1|2))?\.(png|jpg)$/;
