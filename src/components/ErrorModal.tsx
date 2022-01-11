@@ -5,7 +5,7 @@ import Modal from "react-bootstrap/esm/Modal";
 export default class ErrorModal extends React.Component<{ value: any; onClose: () => void; }> {
   render() {
     return (
-      <Modal show={true} centered={true}>
+      <Modal show centered>
         <Modal.Header>Error</Modal.Header>
         <Modal.Body style={{ whiteSpace: 'pre-wrap' }}>
           {this.props.value}

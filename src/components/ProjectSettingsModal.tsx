@@ -116,12 +116,12 @@ export default class ProjectSettingsModal extends React.Component<ProjectSetting
     const settings = this.getSettings();
 
     return (
-      <Modal show={true} centered={true}>
+      <Modal show centered>
         <Modal.Header>Project Settings</Modal.Header>
         <Modal.Body>
           <div style={{ display: 'flex', flexDirection: 'column', rowGap: 8 }}>
             <FloatingLabel controlId="floatingSelect1" label="Product">
-              <Form.Select aria-label="Product" value={unit.code} disabled={true}>
+              <Form.Select aria-label="Product" value={unit.code} disabled>
                 {unitData.filter((it) => it.siteCodes.includes(site.code)).map((it) => (
                   <option key={it.code} value={it.code}>{it.name}</option>
                 ))}

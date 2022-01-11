@@ -7,7 +7,7 @@ import Modal from "react-bootstrap/esm/Modal";
 export default class ProjectSuccessModal extends React.Component<{ value: string; onClose: () => void; }> {
   render() {
     return (
-      <Modal show={true} centered={true}>
+      <Modal show centered>
         <Modal.Header>Success</Modal.Header>
         <Modal.Body>
           <p>Your project was successfully uploaded.</p>

@@ -44,7 +44,7 @@ export default class ImageSuccessModal extends React.Component<ImageSuccessModal
     const { filename } = this.state;
   
     return (
-      <Modal show={true} centered={true}>
+      <Modal show centered>
         <Modal.Header>Success</Modal.Header>
         <Modal.Body>
           <div style={{

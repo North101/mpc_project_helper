@@ -6,7 +6,7 @@ import Spinner from "react-bootstrap/esm/Spinner";
 export default class LoadingModal extends React.Component<{ onClose: () => void; }> {
   render() {
     return (
-      <Modal show={true} centered={true}>
+      <Modal show centered>
         <Modal.Header>Uploading...</Modal.Header>
         <Modal.Body>
           <div style={{ display: 'flex', justifyContent: 'center', padding: 8 }}>

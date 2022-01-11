@@ -15,9 +15,15 @@ import ImageItem from "./ImageItem";
 import ImageSettingsModal from "./ImageSettingsModal";
 import ImageSuccessModal from "./ImageSuccessModal";
 import ProgressModal from "./ProgressModal";
+import AutofillModal from "./AutofillModal";
+
+interface AutofillState {
+  id: 'autofill';
+  cardSides: CardSide[];
+}
 
 interface SettingsState {
-  id: 'settings',
+  id: 'settings';
 }
 
 interface LoadingState {
@@ -38,7 +44,7 @@ interface ErrorState {
 }
 
 interface PreviewState {
-  id: 'preview',
+  id: 'preview';
 }
 
 interface ImageTabProps {
@@ -48,7 +54,7 @@ interface ImageTabProps {
 interface ImageTabState {
   files: CardSide[];
   cards: Card[];
-  state: null | LoadingState | FinishedState | ErrorState | SettingsState | PreviewState;
+  state: null | LoadingState | FinishedState | ErrorState | SettingsState | PreviewState | AutofillState;
 }
 
 export default class ImageTab extends React.Component<ImageTabProps, ImageTabState> {
@@ -87,88 +93,25 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
       });
     }
 
-    const groups: {
-      [key: string]: CardListGroup,
-    } = {};
-    for (const file of cardSides) {
-      const match = file.file.name.match(re);
-      console.log(match);
-      if (!match) continue;
-
-      const groupName = match[1];
-      const side = match[3];
-
-      const group = groups[groupName] ??= {
-        key: groupName,
-        items: [],
-      };
-      if (!match[2] && (side === 'front' || side === 'back')) {
-        group[side] = file;
-      } else {
-        const index = parseInt(match[2]) || 0;
-        const side = match[3] === 'b' || match[3] === '2' || match[3] === 'back' ? 'back' : 'front';
-        const card = group.items[index] ??= {
-          id: ImageTab.cardId++,
-          count: 1,
-        };
-        card[side] = file;
-      }
-    }
-    console.log(groups);
-    for (const group of Object.values(groups)) {
-      const lastCardSide: {
-        front?: CardSide;
-        back?: CardSide;
-      } = {};
-      for (let i = group.items.length - 1; i >= 0; i--) {
-        const card = group.items[i];
-        if (!card) continue;
-
-        for (const side of ['front', 'back'] as ('front' | 'back')[]) {
-          lastCardSide[side] = card[side] ??= group[side] ?? lastCardSide[side];
-        }
-      }
-    }
-
     this.setState({
-      files: [
-        ...files,
-        ...cardSides,
-      ],
-      cards: Object.values(groups).reduce<Card[]>((list, group) => {
-        if (group.items.length === 0) {
-          list.push({
-            id: ImageTab.cardId++,
-            front: group.front,
-            back: group.back,
-            count: 1,
-          });
-        } else {
-          const card = group.items[0];
-          if (card) {
-            list.push({
-              ...card,
-              count: card.count,
-            });
-          }
+      state: {
+        id: 'autofill',
+        cardSides,
+      },
+    });
+  }
 
-          let i = 1;
-          let count = 0;
-          while (i < group.items.length) {
-            const card = group.items[i];
-            count++;
-            if (card) {
-              list.push({
-                ...card,
-                count: count,
-              });
-              count = 0;
-            }
-            i++;
-          }
-        }
-        return list;
-      }, [...cards]),
+  onAddCards = (cardSides: CardSide[], cards: Card[]) => {
+    this.setState({
+      state: null,
+      files: [
+        ...this.state.files,
+        ...cardSides
+      ],
+      cards: [
+        ...this.state.cards,
+        ...cards,
+      ],
     });
   }
 
@@ -371,7 +314,7 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
             key={Date.now()}
             ref={this.fileInput}
             type="file"
-            multiple={true}
+            multiple
             accept='.png, .jpg'
             onChange={this.onAdd}
           />
@@ -417,6 +360,11 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
             )}
           </Droppable>
         </DragDropContext>
+        {state?.id === 'autofill' && <AutofillModal
+          cardSides={state.cardSides}
+          onAdd={this.onAddCards}
+          onClose={this.onStateClear}
+        />}
         {is<SettingsState>(state) && <ImageSettingsModal
           site={site}
           cards={cards}

@@ -297,7 +297,7 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
             key={Date.now()}
             ref={this.fileInput}
             type="file"
-            multiple={true}
+            multiple
             accept='.txt'
             onChange={this.onAdd}
           />

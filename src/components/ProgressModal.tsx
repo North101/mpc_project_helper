@@ -6,7 +6,7 @@ import ProgressBar from "react-bootstrap/esm/ProgressBar";
 export default class ProgressModal extends React.Component<{ value: number; maxValue: number; onClose: () => void; }> {
   render() {
     return (
-      <Modal show={true} centered={true}>
+      <Modal show centered>
         <Modal.Header>Uploading...</Modal.Header>
         <Modal.Body>
           <ProgressBar now={this.props.value} max={this.props.maxValue} />

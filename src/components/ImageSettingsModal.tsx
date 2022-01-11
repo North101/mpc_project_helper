@@ -161,7 +161,7 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
     const projectSettings = this.getProjectSettings();
 
     return (
-      <Modal show={true} centered={true}>
+      <Modal show centered>
         <Modal.Header>Card Settings</Modal.Header>
         <Modal.Body>
           <div style={{ display: 'flex', flexDirection: 'column', rowGap: 8 }}>

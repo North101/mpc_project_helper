@@ -44,7 +44,7 @@ export default class CardPreviewModal extends React.Component<CardPreviewModalPr
     const { unit } = this.state;
 
     return (
-      <Modal show={true} centered={true} onHide={this.onClose} scrollable dialogClassName="my-modal">
+      <Modal show centered onHide={this.onClose} scrollable dialogClassName="my-modal">
         <Modal.Header closeButton>Card Preview</Modal.Header>
         <Modal.Body>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
