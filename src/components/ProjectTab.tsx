@@ -20,7 +20,7 @@ import ProjectSuccessModal from "./ProjectSuccessModal";
 
 interface SettingsState {
   id: 'settings';
-  name?: string;
+  name: string | undefined;
   unit: Unit;
   cards: UploadedImage[];
 }
@@ -211,6 +211,7 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
   onUploadClick = () => {
     const { items } = this.state;
     const unit = items.every((it) => it.unit.code === items[0]?.unit.code) ? items[0].unit : null;
+    console.log(unit);
 
     if (unit) {
       this.setState({
@@ -222,14 +223,14 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
             value.push(...item.cards);
             return value;
           }, []),
-        }
+        },
       });
     } else {
       this.setState({
         state: {
           id: 'error',
           value: 'Every project must have the same product type',
-        }
+        },
       });
     }
   }
@@ -288,6 +289,7 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
     const { site } = this.props;
     const { items, state, view } = this.state;
     const sameProduct = items.every((item) => item.unit.code === items[0]?.unit.code);
+    console.log(state);
 
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
@@ -330,7 +332,16 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
           </Alert>
         )}
         <this.renderProjects />
-        {is<SettingsState>(state) && <ProjectSettingsModal site={site} unit={state.unit} name={state.name} cards={state.cards} onUpload={this.onUpload} onClose={this.onStateClear} />}
+        {is<SettingsState>(state) && (
+          <ProjectSettingsModal
+            site={site}
+            unit={state.unit}
+            name={state.name}
+            cards={state.cards}
+            onUpload={this.onUpload}
+            onClose={this.onStateClear}
+          />
+        )}
         {is<LoadingState>(state) && <LoadingModal onClose={this.onStateClear} />}
         {is<FinishedState>(state) && <ProjectSuccessModal value={state.value} onClose={this.onStateClear} />}
         {is<ErrorState>(state) && <ErrorModal value={state.value} onClose={this.onStateClear} />}
