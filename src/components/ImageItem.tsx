@@ -88,13 +88,13 @@ export default class ImageItem extends React.Component<ImageItemProps> {
             <FloatingLabel controlId="floatingSelect1" label="Front" style={{ flex: 1 }}>
               <Form.Select aria-label="Front" value={item.front?.id} onChange={this.onFrontChange}>
                 <option key={""} value="">Empty</option>
-                {files.map((file) => <option key={file.id} value={file.id}>{file.name}</option>)}
+                {files.map((cardSide) => <option key={cardSide.id} value={cardSide.id}>{cardSide.file.name}</option>)}
               </Form.Select>
             </FloatingLabel>
             <FloatingLabel controlId="floatingSelect2" label="Back" style={{ flex: 1 }}>
               <Form.Select aria-label="Back" value={item.back?.id} onChange={this.onBackChange}>
                 <option key={""} value="">Empty</option>
-                {files.map((file) => <option key={file.id} value={file.id}>{file.name}</option>)}
+                {files.map((cardSide) => <option key={cardSide.id} value={cardSide.id}>{cardSide.file.name}</option>)}
               </Form.Select>
             </FloatingLabel>
             <FloatingLabel controlId="floatingCount" label="Count" style={{ width: 80 }}>

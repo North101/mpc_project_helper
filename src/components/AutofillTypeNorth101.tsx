@@ -9,7 +9,7 @@ export default class AutofillNorth101 extends AutofillNone {
 
   process = () => {
     const { cardSides } = this.props;
-    const re = /^(.+?)(?:\-(\d+))?(?:\-(front|back|a|b|1|2))?\.(png|jpg)$/;
+    const re = /^(.+?)(?:(?:\s|\-|_|\.)(\d+))?(?:(?:\s|\-|_|\.)(front|back|a|b|1|2))\.(png|jpg)$/;
 
     const groups: {
       [key: string]: CardListGroup,
@@ -21,7 +21,7 @@ export default class AutofillNorth101 extends AutofillNone {
 
       const name = match[1];
       const index = parseInt(match[2]) || 0;
-      const side = match[3]?.replace('-', '');
+      const side = match[3];
 
       const group = groups[name] ??= {
         key: name,

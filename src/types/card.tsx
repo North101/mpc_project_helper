@@ -1,6 +1,5 @@
 export interface CardSide {
   id: number;
-  name: string;
   file: File;
 }
 

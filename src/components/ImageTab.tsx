@@ -76,19 +76,14 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
   }
 
   onAdd = async (e: any) => {
-    const { files, cards } = this.state;
-
     const selectedFiles = e.target.files;
     if (selectedFiles === null || selectedFiles.length === 0) return;
-
-    const re = /^(.+?)(\d+)?\-?(?:(front|back|a|b|1|2))?\.(png|jpg)$/;
 
     const cardSides: CardSide[] = [];
     for (let i = 0; i < selectedFiles.length; i++) {
       const file = selectedFiles[i];
       cardSides.push({
         id: ImageTab.fileId++,
-        name: file.name,
         file: file,
       });
     }
@@ -196,7 +191,7 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
           const analysedImage = await analysisImage(settings, side, 0, uploadedImage);
 
           const compressedImageData = {
-            Name: cardSide.name,
+            Name: cardSide.file.name,
             ...compressImageData(analysedImage, uploadedImage),
           };
           cardData[side] = compressedImageData

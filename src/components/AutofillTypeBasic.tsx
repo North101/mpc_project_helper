@@ -4,6 +4,9 @@ import Form from "react-bootstrap/esm/Form";
 import { Card, CardSide } from "../types/card";
 import AutofillNone, { AutofillNoneProps } from "./AutofillTypeNone";
 
+const defaultFrontMatcher = /^front.(png|jpg)$/
+const defaultBackMatcher = /^back.(png|jpg)$/
+
 interface AutofillBasicState {
   defaultFront?: CardSide;
   defaultBack?: CardSide;
@@ -13,9 +16,10 @@ export default class AutofillBasic extends AutofillNone<AutofillBasicState> {
   constructor(props: AutofillNoneProps) {
     super(props);
 
+    const { cardSides } = props;
     this.state = {
-      defaultFront: undefined,
-      defaultBack: undefined,
+      defaultFront: cardSides.find((it) => it.file.name.match(defaultFrontMatcher)),
+      defaultBack: cardSides.find((it) => it.file.name.match(defaultBackMatcher)),
     };
   }
 
@@ -50,7 +54,7 @@ export default class AutofillBasic extends AutofillNone<AutofillBasicState> {
     const { cardSides } = this.props;
     const { defaultFront, defaultBack } = this.state;
 
-    const re = /^(.+?(?:\-x(\d+))?)(?:\-(front|back|a|b|1|2))\.(png|jpg)$/;
+    const re = /^(.+?(?:(?:\s|\-|_|\.)x(\d+))?)(?:(?:\s|\-|_|\.)(front|back|a|b|1|2))\.(png|jpg)$/;
 
     const groups: {
       [key: string]: Card;
@@ -62,7 +66,7 @@ export default class AutofillBasic extends AutofillNone<AutofillBasicState> {
 
       const name = match[1];
       const count = match[2] ? parseInt(match[2]) : 1;
-      const side = match[3]?.replace('-', '');
+      const side = match[3];
       const card = groups[name] ??= {
         id: AutofillNone.cardId++,
         front: defaultFront,
@@ -91,7 +95,7 @@ export default class AutofillBasic extends AutofillNone<AutofillBasicState> {
           <Form.Select value={defaultFront?.id} onChange={this.onDefaultFrontChange}>
             <option>None</option>
             {cardSides.map((it) => (
-              <option key={it.id} value={it.id}>{it.name}</option>
+              <option key={it.id} value={it.id}>{it.file.name}</option>
             ))}
           </Form.Select>
         </FloatingLabel>
@@ -99,7 +103,7 @@ export default class AutofillBasic extends AutofillNone<AutofillBasicState> {
           <Form.Select value={defaultBack?.id} onChange={this.onDefaultBackChange}>
             <option>None</option>
             {cardSides.map((it) => (
-              <option key={it.id} value={it.id}>{it.name}</option>
+              <option key={it.id} value={it.id}>{it.file.name}</option>
             ))}
           </Form.Select>
         </FloatingLabel>
