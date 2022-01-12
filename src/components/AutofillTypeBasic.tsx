@@ -2,24 +2,25 @@ import React from "react";
 import FloatingLabel from "react-bootstrap/esm/FloatingLabel";
 import Form from "react-bootstrap/esm/Form";
 import { Card, CardSide } from "../types/card";
-import AutofillNone, { AutofillNoneProps } from "./AutofillTypeNone";
-
-const defaultFrontMatcher = /^front.(png|jpg)$/
-const defaultBackMatcher = /^back.(png|jpg)$/
+import { AutofillNone, AutofillType, AutofillNoneProps } from "./AutofillTypeNone";
 
 interface AutofillBasicState {
   defaultFront?: CardSide;
   defaultBack?: CardSide;
 }
 
-export default class AutofillBasic extends AutofillNone<AutofillBasicState> {
+class AutofillBasic extends AutofillNone<AutofillBasicState> {
+  cardMatcher = /^(.+?(?:(?:\s|\-|_|\.)x(\d+))?)(?:(?:\s|\-|_|\.)(front|back|a|b|1|2))\.(png|jpg)$/;
+  defaultFrontMatcher = /^front.(png|jpg)$/
+  defaultBackMatcher = /^back.(png|jpg)$/
+
   constructor(props: AutofillNoneProps) {
     super(props);
 
     const { cardSides } = props;
     this.state = {
-      defaultFront: cardSides.find((it) => it.file.name.match(defaultFrontMatcher)),
-      defaultBack: cardSides.find((it) => it.file.name.match(defaultBackMatcher)),
+      defaultFront: cardSides.find((it) => it.file.name.match(this.defaultFrontMatcher)),
+      defaultBack: cardSides.find((it) => it.file.name.match(this.defaultBackMatcher)),
     };
   }
 
@@ -54,13 +55,11 @@ export default class AutofillBasic extends AutofillNone<AutofillBasicState> {
     const { cardSides } = this.props;
     const { defaultFront, defaultBack } = this.state;
 
-    const re = /^(.+?(?:(?:\s|\-|_|\.)x(\d+))?)(?:(?:\s|\-|_|\.)(front|back|a|b|1|2))\.(png|jpg)$/;
-
     const groups: {
       [key: string]: Card;
     } = {};
     for (const cardSide of cardSides) {
-      const match = cardSide.file.name.match(re);
+      const match = cardSide.file.name.match(this.cardMatcher);
       console.log(match);
       if (!match) continue;
 
@@ -111,3 +110,17 @@ export default class AutofillBasic extends AutofillNone<AutofillBasicState> {
     );
   }
 }
+
+const autofillTypeBasic: AutofillType = {
+  id: 'basic',
+  name: 'Basic',
+  description: `\
+Matches <anything>{separator}{count}{separator}{side}.{ext}
+seperator: - _ . {space}
+count: x{number} (optional)
+side: front back a b 1 2
+ext: png jpg\
+`,
+  view: AutofillBasic,
+}
+export default autofillTypeBasic;

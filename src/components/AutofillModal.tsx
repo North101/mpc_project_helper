@@ -5,50 +5,9 @@ import Form from "react-bootstrap/esm/Form";
 import Modal from "react-bootstrap/esm/Modal";
 import { Card, CardSide } from "../types/card";
 import AutofillCardList from "./AutofillCardList";
-import AutofillBasic from "./AutofillTypeBasic";
-import AutofillNone from "./AutofillTypeNone";
-import AutofillNorth101 from "./AutofillTypeNorth101";
-
-interface AutofillType {
-  id: string;
-  name: string;
-  description: string;
-  view: typeof AutofillNone;
-}
-
-const noAutofill: AutofillType = {
-  id: 'none',
-  name: 'No Autofill',
-  description: 'You\'re on your own',
-  view: AutofillNone,
-}
-
-const basicAutofill: AutofillType = {
-  id: 'basic',
-  name: 'Basic',
-  description: `\
-Matches <anything>{separator}{count}{separator}{side}.{ext}
-seperator: - _ . {space}
-count: x{number} (optional)
-side: front back a b 1 2
-ext: png jpg\
-`,
-  view: AutofillBasic,
-}
-
-const north101Autofill: AutofillType = {
-  id: 'north101',
-  name: 'North101\'s Autofill',
-  description: `\
-Matches {group}{separator}{index}{separator}{side}.{ext}
-seperator: - _ . {space}
-group: anything
-index: number
-side: front back a b 1 2
-ext: png jpg\
-`,
-  view: AutofillNorth101,
-}
+import autofillTypeBasic from "./AutofillTypeBasic";
+import autofillTypeNone, { AutofillType } from "./AutofillTypeNone";
+import autofillTypeNorth101 from "./AutofillTypeNorth101";
 
 interface AutofillModalProps {
   cardSides: CardSide[];
@@ -65,16 +24,16 @@ export default class AutofillModal extends React.Component<AutofillModalProps, A
   static cardId = 0;
 
   autofillOptions = [
-    noAutofill,
-    basicAutofill,
-    north101Autofill,
+    autofillTypeNone,
+    autofillTypeBasic,
+    autofillTypeNorth101,
   ];
 
   constructor(props: AutofillModalProps) {
     super(props);
 
     this.state = {
-      autofill: basicAutofill,
+      autofill: autofillTypeBasic,
       cards: [],
     };
   }

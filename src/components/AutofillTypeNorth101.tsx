@@ -1,7 +1,9 @@
 import { Card, CardListGroup, CardSide } from "../types/card";
-import AutofillNone from "./AutofillTypeNone";
+import { AutofillType, AutofillNone } from "./AutofillTypeNone";
 
-export default class AutofillNorth101 extends AutofillNone {
+class AutofillNorth101 extends AutofillNone {
+  cardMatcher = /^(.+?)(?:(?:\s|\-|_|\.)(\d+))?(?:(?:\s|\-|_|\.)(front|back|a|b|1|2))\.(png|jpg)$/;
+
   onChange = () => {
     const { onChange } = this.props;
     onChange(this.process());
@@ -9,13 +11,12 @@ export default class AutofillNorth101 extends AutofillNone {
 
   process = () => {
     const { cardSides } = this.props;
-    const re = /^(.+?)(?:(?:\s|\-|_|\.)(\d+))?(?:(?:\s|\-|_|\.)(front|back|a|b|1|2))\.(png|jpg)$/;
 
     const groups: {
       [key: string]: CardListGroup,
     } = {};
     for (const cardSide of cardSides) {
-      const match = cardSide.file.name.match(re);
+      const match = cardSide.file.name.match(this.cardMatcher);
       console.log(match);
       if (!match) continue;
 
@@ -103,3 +104,18 @@ export default class AutofillNorth101 extends AutofillNone {
     return null;
   }
 }
+
+const autofillTypeNorth101: AutofillType = {
+  id: 'north101',
+  name: 'North101\'s Autofill',
+  description: `\
+Matches {group}{separator}{index}{separator}{side}.{ext}
+seperator: - _ . {space}
+group: anything
+index: number (optional)
+side: front back a b 1 2
+ext: png jpg\
+`,
+  view: AutofillNorth101,
+}
+export default autofillTypeNorth101;
