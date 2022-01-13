@@ -1,7 +1,7 @@
 import { Card, CardListGroup, CardSide } from "../types/card";
 import { AutofillType, AutofillNone } from "./AutofillTypeNone";
 
-class AutofillNorth101 extends AutofillNone {
+export class AutofillNorth101 extends AutofillNone {
   cardMatcher = /^(.+?)(?:(?:\s|\-|_|\.)(\d+))?(?:(?:\s|\-|_|\.)(front|back|a|b|1|2))\.(png|jpg)$/;
 
   onChange = () => {
@@ -108,14 +108,5 @@ class AutofillNorth101 extends AutofillNone {
 const autofillTypeNorth101: AutofillType = {
   id: 'north101',
   name: 'North101\'s Autofill',
-  description: `\
-Matches {group}{separator}{index}{separator}{side}.{ext}
-seperator: - _ . {space}
-group: anything
-index: number (optional)
-side: front back a b 1 2
-ext: png jpg\
-`,
-  view: AutofillNorth101,
 }
 export default autofillTypeNorth101;

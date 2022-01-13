@@ -5,9 +5,9 @@ import Form from "react-bootstrap/esm/Form";
 import Modal from "react-bootstrap/esm/Modal";
 import { Card, CardSide } from "../types/card";
 import AutofillCardList from "./AutofillCardList";
-import autofillTypeBasic from "./AutofillTypeBasic";
-import autofillTypeNone, { AutofillType } from "./AutofillTypeNone";
-import autofillTypeNorth101 from "./AutofillTypeNorth101";
+import autofillTypeBasic, { AutofillBasic } from "./AutofillTypeBasic";
+import autofillTypeNone, { AutofillNone, AutofillType } from "./AutofillTypeNone";
+import autofillTypeNorth101, { AutofillNorth101 } from "./AutofillTypeNorth101";
 
 interface AutofillModalProps {
   cardSides: CardSide[];
@@ -69,6 +69,15 @@ export default class AutofillModal extends React.Component<AutofillModalProps, A
     const { cardSides } = this.props;
     const { autofill, cards } = this.state;
 
+    let autofillView: JSX.Element | null = null;
+    if (autofill.id === 'none') {
+      autofillView = <AutofillNone cardSides={cardSides} onChange={this.onChange} />
+    } else if (autofill.id === 'basic') {
+      autofillView = <AutofillBasic cardSides={cardSides} onChange={this.onChange} />
+    } else if (autofill.id === 'north101') {
+      autofillView = <AutofillNorth101 cardSides={cardSides} onChange={this.onChange} />
+    }
+
     return (
       <Modal show centered fullscreen scrollable onHide={this.onClose} dialogClassName="my-modal">
         <Modal.Header closeButton>Autofill Options</Modal.Header>
@@ -81,8 +90,7 @@ export default class AutofillModal extends React.Component<AutofillModalProps, A
                 ))}
               </Form.Select>
             </FloatingLabel>
-            <Form.Text style={{ whiteSpace: 'pre-line', padding: '0 8px' }}>{autofill.description}</Form.Text>
-            <autofill.view cardSides={cardSides} onChange={this.onChange} />
+            {autofillView}
             <AutofillCardList cards={cards} />
           </div>
         </Modal.Body>

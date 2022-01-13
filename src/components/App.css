@@ -18,3 +18,12 @@ hr.solid {
   width: 40px;
   text-align: end;
 }
+
+.filename-part:hover {
+  background: lightgrey;
+}
+
+.tooltip-inner {
+  max-width: unset !important;
+  text-align: left !important;
+}

@@ -1,15 +1,17 @@
 import React from "react";
 import FloatingLabel from "react-bootstrap/esm/FloatingLabel";
 import Form from "react-bootstrap/esm/Form";
+import OverlayTrigger from "react-bootstrap/esm/OverlayTrigger";
+import Tooltip from "react-bootstrap/esm/Tooltip";
 import { Card, CardSide } from "../types/card";
-import { AutofillNone, AutofillType, AutofillNoneProps } from "./AutofillTypeNone";
+import { AutofillNone, AutofillNoneProps, AutofillType } from "./AutofillTypeNone";
 
 interface AutofillBasicState {
   defaultFront?: CardSide;
   defaultBack?: CardSide;
 }
 
-class AutofillBasic extends AutofillNone<AutofillBasicState> {
+export class AutofillBasic extends AutofillNone<AutofillBasicState> {
   cardMatcher = /^(.+?(?:(?:\s|\-|_|\.)x(\d+))?)(?:(?:\s|\-|_|\.)(front|back|a|b|1|2))\.(png|jpg)$/;
   defaultFrontMatcher = /^front.(png|jpg)$/
   defaultBackMatcher = /^back.(png|jpg)$/
@@ -89,23 +91,79 @@ class AutofillBasic extends AutofillNone<AutofillBasicState> {
     const { defaultFront, defaultBack } = this.state;
 
     return (
-      <div style={{ display: 'flex', gap: 4 }}>
-        <FloatingLabel label="Default Front" style={{ flex: 1 }}>
-          <Form.Select value={defaultFront?.id} onChange={this.onDefaultFrontChange}>
-            <option>None</option>
-            {cardSides.map((it) => (
-              <option key={it.id} value={it.id}>{it.file.name}</option>
-            ))}
-          </Form.Select>
-        </FloatingLabel>
-        <FloatingLabel label="Default Back" style={{ flex: 1 }}>
-          <Form.Select value={defaultBack?.id} onChange={this.onDefaultBackChange}>
-            <option>None</option>
-            {cardSides.map((it) => (
-              <option key={it.id} value={it.id}>{it.file.name}</option>
-            ))}
-          </Form.Select>
-        </FloatingLabel>
+      <div>
+        <Form.Text>
+          <span>Filename structure (hover for more info):</span><br />
+          <OverlayTrigger
+            placement='bottom'
+            overlay={
+              <Tooltip>
+                Literally anything
+              </Tooltip>
+            }
+          >
+            <span className="filename-part">{'<anything>'}</span>
+          </OverlayTrigger>
+          <OverlayTrigger
+            placement='bottom'
+            overlay={
+              <Tooltip>
+                <span>Optional</span><br />
+                <span>seperator: -, _, ., {'<space>'}</span><br />
+                <span>count: number. the number of times you want this duplicated in the project</span>
+              </Tooltip>
+            }
+          >
+            <span className="filename-part">{'<{seperator}x{count}>'}</span>
+          </OverlayTrigger>
+          <OverlayTrigger
+            placement='bottom'
+            overlay={
+              <Tooltip>
+                <span>Required</span><br />
+                <span>seperator: -, _, ., {'<space>'}</span><br />
+                <span>side: front, back, 1, 2, a, b</span>
+              </Tooltip>
+            }
+          >
+            <span className="filename-part">{'<{seperator}{side}>'}</span>
+          </OverlayTrigger>
+          <OverlayTrigger
+            placement='bottom'
+            overlay={
+              <Tooltip>
+                <span>Required</span><br />
+                <span>ext: .png, .jpg</span>
+              </Tooltip>
+            }
+          >
+            <span className="filename-part">{'.{ext}'}</span>
+          </OverlayTrigger>
+          <br />
+          <span>e.g.</span><br />
+          <span>my-filename x2 front.png</span><br />
+          <span>my-filename x2 back.png</span><br />
+          <span>my-filename-1.png</span><br />
+          <span>my-filename-2.png</span><br />
+        </Form.Text>
+        <div style={{ display: 'flex', gap: 4, marginTop: 8 }}>
+          <FloatingLabel label="Default Front" style={{ flex: 1 }}>
+            <Form.Select value={defaultFront?.id} onChange={this.onDefaultFrontChange}>
+              <option>None</option>
+              {cardSides.map((it) => (
+                <option key={it.id} value={it.id}>{it.file.name}</option>
+              ))}
+            </Form.Select>
+          </FloatingLabel>
+          <FloatingLabel label="Default Back" style={{ flex: 1 }}>
+            <Form.Select value={defaultBack?.id} onChange={this.onDefaultBackChange}>
+              <option>None</option>
+              {cardSides.map((it) => (
+                <option key={it.id} value={it.id}>{it.file.name}</option>
+              ))}
+            </Form.Select>
+          </FloatingLabel>
+        </div>
       </div>
     );
   }
@@ -114,13 +172,5 @@ class AutofillBasic extends AutofillNone<AutofillBasicState> {
 const autofillTypeBasic: AutofillType = {
   id: 'basic',
   name: 'Basic',
-  description: `\
-Matches <anything>{separator}{count}{separator}{side}.{ext}
-seperator: - _ . {space}
-count: x{number} (optional)
-side: front back a b 1 2
-ext: png jpg\
-`,
-  view: AutofillBasic,
 }
 export default autofillTypeBasic;
