@@ -34,7 +34,7 @@ export default class ProjectSettingsModal extends React.Component<ProjectSetting
 
     const { site, unit, name } = props;
     this.state = {
-      name: name,
+      name: name?.substring(0, 32),
       cardStockCode: cardStockData.find((it) => it.productCodes.includes(unit.productCode) && it.siteCodes.includes(site.code))?.code,
       printTypeCode: printTypeData.find((it) => it.productCodes.includes(unit.productCode) && it.siteCodes.includes(site.code))?.code,
       finishCode: finishData.find((it) => it.productCodes.includes(unit.productCode) && it.siteCodes.includes(site.code))?.code,
@@ -77,7 +77,7 @@ export default class ProjectSettingsModal extends React.Component<ProjectSetting
 
   onNameChange = (event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     this.setState({
-      name: event.currentTarget.value,
+      name: event.currentTarget.value.substring(0, 32),
     });
   }
 
@@ -119,7 +119,7 @@ export default class ProjectSettingsModal extends React.Component<ProjectSetting
       <Modal show centered>
         <Modal.Header>Project Settings</Modal.Header>
         <Modal.Body>
-          <div style={{ display: 'flex', flexDirection: 'column', rowGap: 8 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             <FloatingLabel controlId="floatingSelect1" label="Product">
               <Form.Select aria-label="Product" value={unit.code} disabled>
                 {unitData.filter((it) => it.siteCodes.includes(site.code)).map((it) => (

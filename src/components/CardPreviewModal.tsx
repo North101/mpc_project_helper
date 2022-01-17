@@ -47,7 +47,7 @@ export default class CardPreviewModal extends React.Component<CardPreviewModalPr
       <Modal show centered onHide={this.onClose} scrollable dialogClassName="my-modal">
         <Modal.Header closeButton>Card Preview</Modal.Header>
         <Modal.Body>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8, flex: '1 1 1px', overflowY: 'scroll' }}>
             <FloatingLabel controlId="floatingSelect1" label="Product">
               <Form.Select aria-label="Product" value={unit?.code} onChange={this.onUnitChange}>
                 {unitData.filter((it) => it.siteCodes.includes(site.code)).map((it) => (

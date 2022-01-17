@@ -50,7 +50,7 @@ export default class ImageSuccessModal extends React.Component<ImageSuccessModal
           <div style={{
             display: 'flex',
             flexDirection: 'column',
-            rowGap: 4,
+            gap: 4,
           }}>
             Your images were successfully uploaded
             <Form.Control

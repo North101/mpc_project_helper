@@ -99,7 +99,7 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
 
   onNameChange = (event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     this.setState({
-      name: event.currentTarget.value,
+      name: event.currentTarget.value.substring(0, 32),
     });
   }
 
@@ -164,7 +164,7 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
       <Modal show centered>
         <Modal.Header>Card Settings</Modal.Header>
         <Modal.Body>
-          <div style={{ display: 'flex', flexDirection: 'column', rowGap: 8 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             <FloatingLabel controlId="floatingSelect1" label="Product">
               <Form.Select aria-label="Product" value={unit?.code} onChange={this.onUnitChange}>
                 {unitData.filter((it) => it.siteCodes.includes(site.code)).map((it) => (
