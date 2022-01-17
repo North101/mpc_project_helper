@@ -8,6 +8,7 @@ const config = {
     content: path.join(__dirname, "src/content.tsx"),
     background: path.join(__dirname, "src/background.ts"),
   },
+  devtool: "source-map",
   output: { path: path.join(__dirname, "dist"), filename: "[name].js" },
   module: {
     rules: [
@@ -78,7 +79,7 @@ const config = {
     new CopyPlugin({
       patterns: [{ from: "public", to: "." }],
     }),
-  ]
+  ],
 };
 
 module.exports = config;

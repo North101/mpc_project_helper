@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
-    "start": "webpack --watch"
+    "build": "webpack --mode production",
+    "dev": "webpack --mode development",
+    "start": "webpack --mode development --watch"
   },
   "keywords": [],
   "license": "ISC",

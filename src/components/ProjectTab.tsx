@@ -3,7 +3,6 @@ import { DragDropContext, Droppable, DropResult } from "react-beautiful-dnd";
 import { FileEarmarkPlus, Upload, XCircle } from "react-bootstrap-icons";
 import Alert from "react-bootstrap/esm/Alert";
 import Button from "react-bootstrap/esm/Button";
-import ButtonGroup from "react-bootstrap/esm/ButtonGroup";
 import ListGroup from "react-bootstrap/esm/ListGroup";
 import { is } from 'typescript-is';
 import unitData from "../api/data/unit.json";
@@ -13,6 +12,7 @@ import { ParsedProject, Project } from "../types/project";
 import { remove, reorder, replace } from "../util";
 import ErrorModal from "./ErrorModal";
 import LoadingModal from "./LoadingModal";
+import ProjectEditModal from "./ProjectEditModal";
 import ProjectItem from "./ProjectItem";
 import ProjectSettingsModal from "./ProjectSettingsModal";
 import ProjectSuccessModal from "./ProjectSuccessModal";
@@ -39,12 +39,18 @@ interface ErrorState {
   value: any;
 }
 
+interface ItemEditState {
+  id: 'item-edit',
+  index: number,
+  item: ParsedProject,
+}
+
 interface ProjectTabProps {
   site: Site;
 }
 
 interface ProjectTabState {
-  state: null | LoadingState | FinishedState | ErrorState | SettingsState;
+  state: null | LoadingState | FinishedState | ErrorState | SettingsState | ItemEditState;
   items: ParsedProject[];
 }
 
@@ -135,8 +141,19 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
   onItemChange = (index: number, item: ParsedProject) => {
     const { items } = this.state;
     this.setState({
+      state: null,
       items: replace(items, index, item),
     });
+  }
+
+  onItemEdit = (index: number, item: ParsedProject) => {
+    this.setState({
+      state: {
+        id: 'item-edit',
+        index: index,
+        item: item,
+      },
+    })
   }
 
   onItemRemove = (index: number) => {
@@ -236,6 +253,7 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
     const { site } = this.props;
     const { items, state } = this.state;
     const sameProduct = items.every((item) => item.unit.code === items[0]?.unit.code);
+    console.log(state);
 
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
@@ -277,6 +295,7 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
                   key={item.id}
                   item={item}
                   index={index}
+                  onEdit={this.onItemEdit}
                   onDelete={this.onItemRemove}
                 />)}
                 {provided.placeholder}
@@ -294,9 +313,23 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
             onClose={this.onStateClear}
           />
         )}
-        {is<LoadingState>(state) && <LoadingModal onClose={this.onStateClear} />}
-        {is<FinishedState>(state) && <ProjectSuccessModal value={state.value} onClose={this.onStateClear} />}
-        {is<ErrorState>(state) && <ErrorModal value={state.value} onClose={this.onStateClear} />}
+        {is<LoadingState>(state) && <LoadingModal
+          onClose={this.onStateClear}
+        />}
+        {is<FinishedState>(state) && <ProjectSuccessModal
+          value={state.value}
+          onClose={this.onStateClear}
+        />}
+        {is<ErrorState>(state) && <ErrorModal
+          value={state.value}
+          onClose={this.onStateClear}
+        />}
+        {is<ItemEditState>(state) && <ProjectEditModal
+          index={state.index}
+          item={state.item}
+          onSave={this.onItemChange}
+          onClose={this.onStateClear}
+        />}
       </div>
     );
   }

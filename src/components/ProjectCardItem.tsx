@@ -33,6 +33,32 @@ export default class ProjectCardItem extends React.Component<ProjectCardItemProp
     onChange(index, item);
   }
 
+  onFrontChange = (event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { item } = this.props;
+    if (!item.front) return;
+  
+    this.onChange({
+      ...item,
+      front: {
+        ...item.front,
+        Name: event.currentTarget.value,
+      },
+    });
+  }
+
+  onBackChange = (event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { item } = this.props;
+    if (!item.back) return;
+
+    this.onChange({
+      ...item,
+      back: {
+        ...item.back,
+        Name: event.currentTarget.value,
+      },
+    });
+  }
+
   onCountChange = (event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { item } = this.props;
     this.onChange({
@@ -69,10 +95,20 @@ export default class ProjectCardItem extends React.Component<ProjectCardItemProp
               padding: 4,
             }}>{index + 1}</div>
             <FloatingLabel controlId="floatingSelect1" label="Front" style={{ flex: 1 }}>
-              <Form.Control aria-label="Front" value={item.front?.Name ?? item.front?.ID} disabled />
+              <Form.Control
+                aria-label="Front"
+                value={item.front?.Name ?? item.front?.ID}
+                onChange={this.onFrontChange}
+                disabled={!item.front}
+              />
             </FloatingLabel>
             <FloatingLabel controlId="floatingSelect2" label="Back" style={{ flex: 1 }}>
-              <Form.Control aria-label="Back" value={item.back?.Name ?? item.back?.ID} disabled />
+              <Form.Control
+                aria-label="Back"
+                value={item.back?.Name ?? item.back?.ID}
+                onChange={this.onBackChange}
+                disabled={!item.back}
+              />
             </FloatingLabel>
             <FloatingLabel controlId="floatingCount" label="Count" style={{ width: 80 }}>
               <Form.Control

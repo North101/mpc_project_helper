@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Draggable } from "react-beautiful-dnd";
-import { GripVertical, Trash } from "react-bootstrap-icons";
+import { GripVertical, PencilSquare, Trash } from "react-bootstrap-icons";
 import Button from "react-bootstrap/esm/Button";
 import FloatingLabel from "react-bootstrap/esm/FloatingLabel";
 import Form from "react-bootstrap/esm/Form";
@@ -22,10 +22,15 @@ const getItemStyle = (isDragging: boolean, draggableStyle: any): React.CSSProper
 interface ProjectItemProps {
   index: number;
   item: ParsedProject;
+  onEdit: (index: number, item: ParsedProject) => void;
   onDelete: (index: number) => void;
 }
 
 export default class ProjectItem extends React.Component<ProjectItemProps> {
+  onEdit = () => {
+    const { index, item, onEdit } = this.props;
+    onEdit(index, item);
+  }
   onDelete = () => {
     const { index, onDelete } = this.props;
     onDelete(index);
@@ -68,6 +73,9 @@ export default class ProjectItem extends React.Component<ProjectItemProps> {
                 disabled
               />
             </FloatingLabel>
+            <Button variant="outline-primary" onClick={this.onEdit}>
+              <PencilSquare />
+            </Button>
             <Button variant="outline-primary" onClick={this.onDelete}>
               <Trash />
             </Button>
