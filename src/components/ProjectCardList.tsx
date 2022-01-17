@@ -60,29 +60,36 @@ export default class ProjectCardList extends React.Component<ProjectCardListProp
   render() {
     const { project } = this.props;
     return (
-      <DragDropContext onDragEnd={this.onDragEnd}>
-        <Droppable droppableId={project.id}>
-          {(provided, snapshot) => (
-            <ListGroup
-              {...provided.droppableProps}
-              ref={provided.innerRef}
-              style={{
-                marginTop: 8,
-              }}
-              as="ol"
-            >
-              {project.cards.map((item, index) => <ProjectCardItem
-                key={item.id}
-                item={item}
-                index={index}
-                onChange={this.onItemChange}
-                onDelete={this.onItemRemove}
-              />)}
-              {provided.placeholder}
-            </ListGroup>
-          )}
-        </Droppable>
-      </DragDropContext>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 8, flex: 1 }}>
+        <div style={{ flex: '1 1 1px', overflowY: 'scroll', }}>
+          <DragDropContext onDragEnd={this.onDragEnd}>
+            <Droppable droppableId={project.id}>
+              {(provided, snapshot) => (
+                <ListGroup
+                  {...provided.droppableProps}
+                  ref={provided.innerRef}
+                  style={{
+                    marginTop: 8,
+                  }}
+                  as="ol"
+                >
+                  {project.cards.map((item, index) => <ProjectCardItem
+                    key={item.id}
+                    item={item}
+                    index={index}
+                    onChange={this.onItemChange}
+                    onDelete={this.onItemRemove}
+                  />)}
+                  {provided.placeholder}
+                </ListGroup>
+              )}
+            </Droppable>
+          </DragDropContext>
+        </div>
+        <div style={{ textAlign: 'right' }}>
+          Card Count: {project.cards.reduce((value, card) => value + card.count, 0)}
+        </div>
+      </div>
     );
   }
 }

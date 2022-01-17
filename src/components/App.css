@@ -32,7 +32,7 @@ hr.solid {
   overflow: hidden !important;
 }
 
-.modal-body, .tab-content, .tab-pane.active {
+.modal-content, .modal-body, .tab-content, .tab-pane.active {
   flex: 1;
   display: flex !important;
   flex-direction: column;
