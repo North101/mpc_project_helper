@@ -256,7 +256,7 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
     console.log(state);
 
     return (
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 8, flex: 1 }}>
         <div style={{ display: 'flex', gap: 4 }}>
           <input
             id="project-input"
@@ -283,26 +283,33 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
             Every project must have the same product type
           </Alert>
         )}
-        <DragDropContext onDragEnd={this.onDragEnd}>
-          <Droppable droppableId="droppable">
-            {(provided, snapshot) => (
-              <ListGroup
-                {...provided.droppableProps}
-                ref={provided.innerRef}
-                as="ol"
-              >
-                {items.map((item, index) => <ProjectItem
-                  key={item.id}
-                  item={item}
-                  index={index}
-                  onEdit={this.onItemEdit}
-                  onDelete={this.onItemRemove}
-                />)}
-                {provided.placeholder}
-              </ListGroup>
-            )}
-          </Droppable>
-        </DragDropContext>
+        <div style={{ flex: '1 1 1px', overflowY: 'scroll' }}>
+          <DragDropContext onDragEnd={this.onDragEnd}>
+            <Droppable droppableId="droppable">
+              {(provided, snapshot) => (
+                <ListGroup
+                  {...provided.droppableProps}
+                  ref={provided.innerRef}
+                  as="ol"
+                >
+                  {items.map((item, index) => <ProjectItem
+                    key={item.id}
+                    item={item}
+                    index={index}
+                    onEdit={this.onItemEdit}
+                    onDelete={this.onItemRemove}
+                  />)}
+                  {provided.placeholder}
+                </ListGroup>
+              )}
+            </Droppable>
+          </DragDropContext>
+        </div>
+        <div style={{ textAlign: 'right' }}>
+          Card Count: {items.reduce<number>((value, item) => {
+            return item.cards.reduce<number>((value, card) => value + card.count, value);
+          }, 0)}
+        </div>
         {is<SettingsState>(state) && (
           <ProjectSettingsModal
             site={site}

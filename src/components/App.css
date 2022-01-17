@@ -27,3 +27,13 @@ hr.solid {
   max-width: unset !important;
   text-align: left !important;
 }
+
+.modal-body {
+  overflow: hidden !important;
+}
+
+.modal-body, .tab-content, .tab-pane.active {
+  flex: 1;
+  display: flex !important;
+  flex-direction: column;
+}

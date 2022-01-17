@@ -302,7 +302,7 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
     const { cards, files, state } = this.state;
 
     return (
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 8, flex: 1 }}>
         <div style={{ display: 'flex', gap: 4 }}>
           <input
             id="image-input"
@@ -334,27 +334,32 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
             <Upload /> Upload
           </Button>
         </div>
-        <DragDropContext onDragEnd={this.onDragEnd}>
-          <Droppable droppableId="droppable">
-            {(provided, snapshot) => (
-              <ListGroup
-                {...provided.droppableProps}
-                ref={provided.innerRef}
-                as="ol"
-              >
-                {cards.map((card, index) => <ImageItem
-                  key={card.id}
-                  item={card}
-                  files={files}
-                  index={index}
-                  onChange={this.onItemChange}
-                  onDelete={this.onItemRemove}
-                />)}
-                {provided.placeholder}
-              </ListGroup>
-            )}
-          </Droppable>
-        </DragDropContext>
+        <div style={{ flex: '1 1 1px', overflowY: 'scroll', }}>
+          <DragDropContext onDragEnd={this.onDragEnd}>
+            <Droppable droppableId="droppable">
+              {(provided, snapshot) => (
+                <ListGroup
+                  {...provided.droppableProps}
+                  ref={provided.innerRef}
+                  as="ol"
+                >
+                  {cards.map((card, index) => <ImageItem
+                    key={card.id}
+                    item={card}
+                    files={files}
+                    index={index}
+                    onChange={this.onItemChange}
+                    onDelete={this.onItemRemove}
+                  />)}
+                  {provided.placeholder}
+                </ListGroup>
+              )}
+            </Droppable>
+          </DragDropContext>
+        </div>
+        <div style={{ textAlign: 'right' }}>
+          Card Count: {cards.reduce((value, card) => value + card.count, 0)}
+        </div>
         {state?.id === 'autofill' && <AutofillModal
           cardSides={state.cardSides}
           onAdd={this.onAddCards}
