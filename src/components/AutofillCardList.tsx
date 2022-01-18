@@ -12,7 +12,7 @@ export default class AutofillCardList extends React.Component<AutofillCardListPr
   render() {
     const { cards } = this.props;
     return (
-      <ListGroup as="ol">
+      <ListGroup as="ol" style={{ flex: 1 }}>
         {cards.map((card, index) => (
           <ListGroup.Item
             key={index}

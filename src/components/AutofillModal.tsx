@@ -82,7 +82,7 @@ export default class AutofillModal extends React.Component<AutofillModalProps, A
       <Modal show centered fullscreen scrollable onHide={this.onClose} dialogClassName="my-modal">
         <Modal.Header closeButton>Autofill Options</Modal.Header>
         <Modal.Body>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 8, flex: '1 1 1px', overflowY: 'scroll' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8, flex: 1 }}>
             <FloatingLabel label="Autotfill">
               <Form.Select aria-label="Autotfill" value={autofill.id} onChange={this.onAutofillChange}>
                 {this.autofillOptions.map((it) => (
@@ -90,8 +90,10 @@ export default class AutofillModal extends React.Component<AutofillModalProps, A
                 ))}
               </Form.Select>
             </FloatingLabel>
-            {autofillView}
-            <AutofillCardList cards={cards} />
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 8, flex: '1 1 1px', overflowY: 'scroll' }}>
+              {autofillView}
+              <AutofillCardList cards={cards} />
+            </div>
           </div>
         </Modal.Body>
         <Modal.Footer>

@@ -37,3 +37,7 @@ hr.solid {
   display: flex !important;
   flex-direction: column;
 }
+
+.accordion-button {
+  padding: 0.75em;
+}
