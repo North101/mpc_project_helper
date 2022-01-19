@@ -1,4 +1,5 @@
 import * as React from "react";
+import { PencilSquare } from "react-bootstrap-icons";
 import Button from "react-bootstrap/esm/Button";
 import Modal from "react-bootstrap/esm/Modal";
 import { ParsedProject } from "../types/project";
@@ -45,7 +46,9 @@ export default class ProjectEditModal extends React.Component<ProjectEditModalPr
     const { item } = this.state;
     return (
       <Modal show centered onHide={this.onClose} scrollable dialogClassName="my-modal">
-        <Modal.Header closeButton>Edit Project</Modal.Header>
+        <Modal.Header closeButton style={{ alignItems: 'center', gap: 4 }}>
+          <PencilSquare /> {item.name}
+        </Modal.Header>
         <Modal.Body>
           <ProjectCardList
             project={item}
@@ -53,7 +56,7 @@ export default class ProjectEditModal extends React.Component<ProjectEditModalPr
           />
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="danger" onClick={this.onClose}>Close</Button>
+          <Button variant="danger" onClick={this.onClose}>Cancel</Button>
           <Button variant="success" onClick={this.onSave}>Save</Button>
         </Modal.Footer>
       </Modal>

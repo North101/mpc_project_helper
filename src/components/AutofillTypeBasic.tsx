@@ -7,6 +7,19 @@ import Tooltip from "react-bootstrap/esm/Tooltip";
 import { Card, CardSide } from "../types/card";
 import { AutofillNone, AutofillNoneProps, AutofillType } from "./AutofillTypeNone";
 
+export const FilenameTooltip = (props: any) => {
+  return (
+    <>
+      <OverlayTrigger
+        placement='bottom'
+        overlay={<Tooltip>{props.children}</Tooltip>}
+      >
+        <span className="filename-part">{props.text}</span>
+      </OverlayTrigger>
+    </>
+  )
+}
+
 interface AutofillBasicState {
   defaultFront?: CardSide;
   defaultBack?: CardSide;
@@ -97,59 +110,112 @@ export class AutofillBasic extends AutofillNone<AutofillBasicState> {
           <Accordion.Item eventKey="0">
             <Accordion.Header style={{ padding: 0 }}>Description</Accordion.Header>
             <Accordion.Body>
-              <span>Filename structure (hover for more info):</span><br />
-              <OverlayTrigger
-                placement='bottom'
-                overlay={
-                  <Tooltip>
+              <p>A basic autofill that will match front and back images and (optionally) a count</p>
+              <p>
+                <span>An image with the filename </span>
+                <span style={{ color: 'blue', textDecoration: 'underline' }}>
+                  <FilenameTooltip text={'<side>'}>
+                    <span style={{ fontWeight: 'bold' }}>Required</span><br />
+                    side: front, back
+                  </FilenameTooltip>
+                  <FilenameTooltip text={'.<ext>'}>
+                    <span style={{ fontWeight: 'bold' }}>Required</span><br />
+                    ext: .png, .jpg
+                  </FilenameTooltip>
+                </span>
+                <span> will be automatically set as the default front or back image</span>
+              </p>
+              <p>
+                <span>Filename structure (hover for more info): </span>
+                <span style={{ color: 'blue', textDecoration: 'underline' }}>
+                  <FilenameTooltip text={'<anything>'}>
                     Literally anything
-                  </Tooltip>
-                }
-              >
-                <span className="filename-part">{'<anything>'}</span>
-              </OverlayTrigger>
-              <OverlayTrigger
-                placement='bottom'
-                overlay={
-                  <Tooltip>
-                    <span>Optional</span><br />
-                    <span>seperator: -, _, ., {'<space>'}</span><br />
-                    <span>count: number. the number of times you want this duplicated in the project</span>
-                  </Tooltip>
-                }
-              >
-                <span className="filename-part">{'<{seperator}x{count}>'}</span>
-              </OverlayTrigger>
-              <OverlayTrigger
-                placement='bottom'
-                overlay={
-                  <Tooltip>
-                    <span>Required</span><br />
-                    <span>seperator: -, _, ., {'<space>'}</span><br />
-                    <span>side: front, back, 1, 2, a, b</span>
-                  </Tooltip>
-                }
-              >
-                <span className="filename-part">{'<{seperator}{side}>'}</span>
-              </OverlayTrigger>
-              <OverlayTrigger
-                placement='bottom'
-                overlay={
-                  <Tooltip>
-                    <span>Required</span><br />
-                    <span>ext: .png, .jpg</span>
-                  </Tooltip>
-                }
-              >
-                <span className="filename-part">{'.{ext}'}</span>
-              </OverlayTrigger>
-              <br />
-              <span>e.g.</span><br />
-              <span>my-filename x2 front.png</span><br />
-              <span>my-filename x2 back.png</span><br />
-              <span>my-filename-1.png</span><br />
-              <span>my-filename-2.png</span><br />
-
+                  </FilenameTooltip>
+                  <FilenameTooltip text={'-x<count>'}>
+                    <span style={{ fontWeight: 'bold' }}>Optional</span><br />
+                    seperator: -, _, ., {'<space>'}<br />
+                    count: number. the number of times you want this duplicated in the project
+                  </FilenameTooltip>
+                  <FilenameTooltip text={'-<side>'}>
+                    <span style={{ fontWeight: 'bold' }}>Required</span><br />
+                    seperator: -, _, ., {'<space>'}<br />
+                    side:<br />
+                    <ul>
+                      <li>front, 1, a: will be assigned as the front image</li>
+                      <li>back, 2, b: will be assigned as the back image</li>
+                    </ul>
+                  </FilenameTooltip>
+                  <FilenameTooltip text={'.<ext>'}>
+                    <span style={{ fontWeight: 'bold' }}>Required</span><br />
+                    ext: .png, .jpg
+                  </FilenameTooltip>
+                </span>
+              </p>
+              <div>
+                e.g.<br />
+                <ul>
+                  <li>
+                    <span style={{ color: 'blue', textDecoration: 'underline' }}>
+                      01-card
+                      <FilenameTooltip text={'-x2'}>
+                        <span style={{ fontWeight: 'bold' }}>{'-x<count>'}</span><br />
+                        Sets the count to 2
+                      </FilenameTooltip>
+                      <FilenameTooltip text={'-front'}>
+                        <span style={{ fontWeight: 'bold' }}>{'-<side>'}</span><br />
+                        This is the front image for 01-card-x2
+                      </FilenameTooltip>
+                      <FilenameTooltip text={'.jpg'}>
+                        <span style={{ fontWeight: 'bold' }}>{'.<ext>'}</span><br />
+                        The file type
+                      </FilenameTooltip>
+                    </span>
+                  </li>
+                  <li>
+                    <span style={{ color: 'blue', textDecoration: 'underline' }}>
+                      01-card
+                      <FilenameTooltip text={'-x2'}>
+                        <span style={{ fontWeight: 'bold' }}>{'-<count>'}</span><br />
+                        Sets the count to 2
+                      </FilenameTooltip>
+                      <FilenameTooltip text={'-back'}>
+                        <span style={{ fontWeight: 'bold' }}>{'-<side>'}</span><br />
+                        This is the back image for 01-card-x2
+                      </FilenameTooltip>
+                      <FilenameTooltip text={'.png'}>
+                        <span style={{ fontWeight: 'bold' }}>{'.<ext>'}</span><br />
+                        The file type
+                      </FilenameTooltip>
+                    </span>
+                  </li>
+                  <li>
+                    <span style={{ color: 'blue', textDecoration: 'underline' }}>
+                      my-filename
+                      <FilenameTooltip text={'-front'}>
+                        <span style={{ fontWeight: 'bold' }}>{'-<side>'}</span><br />
+                        This is the front image for my-filename
+                      </FilenameTooltip>
+                      <FilenameTooltip text={'.png'}>
+                        <span style={{ fontWeight: 'bold' }}>{'.<ext>'}</span><br />
+                        The file type
+                      </FilenameTooltip>
+                    </span>
+                  </li>
+                  <li>
+                    <span style={{ color: 'blue', textDecoration: 'underline' }}>
+                      my-filename
+                      <FilenameTooltip text={'-front'}>
+                        <span style={{ fontWeight: 'bold' }}>{'-<side>'}</span><br />
+                        This is the back image for my-filename
+                      </FilenameTooltip>
+                      <FilenameTooltip text={'.png'}>
+                        <span style={{ fontWeight: 'bold' }}>{'.{ext>'}</span><br />
+                        The file type
+                      </FilenameTooltip>
+                    </span>
+                  </li>
+                </ul>
+              </div>
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>
@@ -171,7 +237,7 @@ export class AutofillBasic extends AutofillNone<AutofillBasicState> {
             </Form.Select>
           </FloatingLabel>
         </div>
-      </div>
+      </div >
     );
   }
 }

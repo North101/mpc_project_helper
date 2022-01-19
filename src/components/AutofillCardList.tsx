@@ -33,10 +33,10 @@ export default class AutofillCardList extends React.Component<AutofillCardListPr
               padding: 4,
             }}>{index + 1}</div>
             <FloatingLabel controlId="floatingSelect1" label="Front" style={{ flex: 1 }}>
-              <Form.Control value={card.front?.file.name} disabled />
+              <Form.Control value={card.front?.file.name ?? ''} disabled />
             </FloatingLabel>
             <FloatingLabel controlId="floatingSelect2" label="Back" style={{ flex: 1 }}>
-              <Form.Control value={card.back?.file.name} disabled />
+              <Form.Control value={card.back?.file.name ?? ''} disabled />
             </FloatingLabel>
             <FloatingLabel controlId="floatingCount" label="Count" style={{ width: 80 }}>
               <Form.Control

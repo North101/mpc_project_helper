@@ -1,5 +1,8 @@
+import React from "react";
+import Accordion from "react-bootstrap/esm/Accordion";
 import { Card, CardListGroup, CardSide } from "../types/card";
 import { AutofillType, AutofillNone } from "./AutofillTypeNone";
+import { FilenameTooltip } from "./AutofillTypeBasic";
 
 export class AutofillNorth101 extends AutofillNone {
   cardMatcher = /^(.+?)(?:(?:\s|\-|_|\.)(\d+))?(?:(?:\s|\-|_|\.)(front|back|a|b|1|2))\.(png|jpg)$/;
@@ -101,7 +104,44 @@ export class AutofillNorth101 extends AutofillNone {
   }
 
   render() {
-    return null;
+    return (
+      <Accordion>
+        <Accordion.Item eventKey="0">
+          <Accordion.Header style={{ padding: 0 }}>Description</Accordion.Header>
+          <Accordion.Body>
+            <p>A autofill that will match groups of cards by index, front and back images</p>
+            <p>
+              <span>Filename structure (hover for more info): </span>
+              <span style={{ color: 'blue', textDecoration: 'underline' }}>
+                <FilenameTooltip text={'<group>'}>
+                  <span style={{ fontWeight: 'bold' }}>Required</span><br />
+                  group: Literally anything
+                </FilenameTooltip>
+                <FilenameTooltip text={'-<index>'}>
+                  <span style={{ fontWeight: 'bold' }}>Optional</span><br />
+                  seperator: -, _, ., {'<space>'}<br />
+                  index: The index (starting at 1). Skipping an index will increase the count of the next card by the number of skips.<br/>
+                  If no index is provided then it will be assigned as the default front / back image for that group.
+                </FilenameTooltip>
+                <FilenameTooltip text={'-<side>'}>
+                  <span style={{ fontWeight: 'bold' }}>Required</span><br />
+                  seperator: -, _, ., {'<space>'}<br />
+                  side:<br />
+                  <ul>
+                    <li>front, 1, a: will be assigned as the front image</li>
+                    <li>back, 2, b: will be assigned as the back image</li>
+                  </ul>
+                </FilenameTooltip>
+                <FilenameTooltip text={'.<ext>'}>
+                  <span style={{ fontWeight: 'bold' }}>Required</span><br />
+                  ext: .png, .jpg
+                </FilenameTooltip>
+              </span>
+            </p>
+          </Accordion.Body>
+        </Accordion.Item>
+      </Accordion>
+    );
   }
 }
 
