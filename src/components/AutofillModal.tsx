@@ -8,7 +8,6 @@ import AutofillCardList from "./AutofillCardList";
 import autofillTypeALeP, { AutofillALeP } from "./AutofillTypeALEP";
 import autofillTypeBasic, { AutofillBasic } from "./AutofillTypeBasic";
 import autofillTypeNone, { AutofillNone, AutofillType } from "./AutofillTypeNone";
-import autofillTypeNorth101, { AutofillNorth101 } from "./AutofillTypeNorth101";
 
 interface AutofillModalProps {
   cardSides: CardSide[];
@@ -27,7 +26,6 @@ export default class AutofillModal extends React.Component<AutofillModalProps, A
   autofillOptions = [
     autofillTypeNone,
     autofillTypeBasic,
-    autofillTypeNorth101,
     autofillTypeALeP,
   ];
 
@@ -76,8 +74,6 @@ export default class AutofillModal extends React.Component<AutofillModalProps, A
       autofillView = <AutofillNone cardSides={cardSides} onChange={this.onChange} />
     } else if (autofill.id === 'basic') {
       autofillView = <AutofillBasic cardSides={cardSides} onChange={this.onChange} />
-    } else if (autofill.id === 'north101') {
-      autofillView = <AutofillNorth101 cardSides={cardSides} onChange={this.onChange} />
     } else if (autofill.id === 'alep') {
       autofillView = <AutofillALeP cardSides={cardSides} onChange={this.onChange} />
     }

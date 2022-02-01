@@ -5,7 +5,7 @@ import Form from "react-bootstrap/esm/Form";
 import { Card } from "../types/card";
 import { AutofillNone, AutofillNoneProps, AutofillType } from "./AutofillTypeNone";
 
-const sides: { [key: string]: 'front' | 'back'; } = {
+const sideMap: { [key: string]: 'front' | 'back'; } = {
   '1': 'front',
   '2': 'back',
 }
@@ -66,15 +66,17 @@ export class AutofillALeP extends AutofillNone<AutofillALePState> {
       const match = cardSide.file.name.match(this.cardMatcher);
       if (!match) continue;
 
-      const name = match[1];
-      const side = sides[match[2].toLowerCase()];
+      const groupName = match[1];
+      const side = sideMap[match[2].toLowerCase()];
+      if (!side) continue;
+  
       const authenticityId = match[3].toLowerCase();
       if (side === 'back' && backAuthenticity.id !== authenticityId) continue;
   
-      const card = groups[name] ?? {
+      const card = groups[groupName] ?? {
         id: AutofillNone.cardId++,
         count: 1,
-      }
+      };
       if (side === 'front') {
         card.front = cardSide;
       } else if (side === 'back') {
@@ -82,7 +84,7 @@ export class AutofillALeP extends AutofillNone<AutofillALePState> {
       } else {
         continue;
       }
-      groups[name] = card;
+      groups[groupName] = card;
     }
 
     return Object.values(groups);

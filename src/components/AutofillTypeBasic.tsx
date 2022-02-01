@@ -7,6 +7,15 @@ import Tooltip from "react-bootstrap/esm/Tooltip";
 import { Card, CardSide } from "../types/card";
 import { AutofillNone, AutofillNoneProps, AutofillType } from "./AutofillTypeNone";
 
+const sideMap: { [key: string]: 'front' | 'back'; } = {
+  '1': 'front',
+  'front': 'front',
+  'a': 'front',
+  '2': 'back',
+  'back': 'back',
+  'b': 'back',
+}
+
 const sideData: {
   id: 'front' | 'back';
   name: string;
@@ -39,7 +48,7 @@ interface AutofillBasicState {
 }
 
 export class AutofillBasic extends AutofillNone<AutofillBasicState> {
-  cardMatcher = /^(.+?(?:(?:\s|\-|_|\.)x(\d+))?)(?:(?:(?:\s|\-|_|\.)(front|back|[AaBb12]))|((?<=\d)[AaBb]))?\.(png|jpg)$/;
+  cardMatcher = /^((.+?(?:(?:\s|\-|_|\.)x(\d+))?)(?:(?:(?:\s|\-|_|\.)(front|back|[AaBb12]))|((?<=\d)[AaBb])))?\.(png|jpg)$/;
   defaultFrontMatcher = /^front.(png|jpg)$/
   defaultBackMatcher = /^back.(png|jpg)$/
 
@@ -101,24 +110,27 @@ export class AutofillBasic extends AutofillNone<AutofillBasicState> {
       if (!match) continue;
 
       const name = match[1];
-      const count = match[2] ? parseInt(match[2]) : 1;
-      const side = (match[3] ?? match[4])?.toLowerCase();
-      if (!side && ['front', 'back'].includes(name)) continue;
+      if (['front', 'back'].includes(name)) continue;
 
-      const card = groups[name] ?? {
+      const groupName = match[2];
+      const count = parseInt(match[3]) || 1;
+      const side = sideMap[(match[4] ?? match[5])?.toLowerCase()] ?? defaultSide;
+      if (!side) continue;
+
+      const card = groups[groupName] ?? {
         id: AutofillNone.cardId++,
         front: defaultFront,
         back: defaultBack,
         count,
-      }
-      if (['front', 'a', '1'].includes(side) || (!side && defaultSide === 'front')) {
+      };
+      if (side === 'front') {
         card.front = cardSide;
-      } else if (['back', 'b', '2'].includes(side) || (!side && defaultSide === 'back')) {
+      } else if (side === 'back') {
         card.back = cardSide;
       } else {
         continue;
       }
-      groups[name] = card;
+      groups[groupName] = card;
     }
 
     return Object.values(groups);
