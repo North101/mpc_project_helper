@@ -32,9 +32,7 @@ export async function setStateAsync<P, S, K extends keyof S>(
   return new Promise(resolve => component.setState(state, () => resolve(null)));
 }
 
-export async function analyseCard(file: File) {
-  const img = document.createElement("img");
-
+export async function analyseCard(img: HTMLImageElement, file: File) {
   const promise = new Promise<{ width: number; height: number; }>((resolve, reject) => {
     img.onload = () => {
       const width = img.naturalWidth;

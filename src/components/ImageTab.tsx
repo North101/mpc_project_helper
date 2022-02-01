@@ -94,15 +94,19 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
       }
     });
 
+    const img = document.createElement("img");
     const cardSides: CardSide[] = [];
     for (let i = 0; i < total; i++) {
-      if (this.state.state?.id !== 'loading') return;
+      if (this.state.state?.id !== 'loading') {
+        img.remove();
+        return;
+      }
 
       const file = selectedFiles[i];
       cardSides.push({
         id: ImageTab.fileId++,
         file: file,
-        info: await analyseCard(file),
+        info: await analyseCard(img, file),
       });
       await setStateAsync(this, {
         state: {
