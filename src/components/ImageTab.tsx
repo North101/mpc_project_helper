@@ -2,20 +2,22 @@ import * as React from "react";
 import { DragDropContext, Droppable, DropResult } from "react-beautiful-dnd";
 import { CardImage, FileEarmarkPlus, PlusCircle, Upload, XCircle } from "react-bootstrap-icons";
 import Button from "react-bootstrap/esm/Button";
+import Dropdown from "react-bootstrap/esm/Dropdown";
 import ListGroup from "react-bootstrap/esm/ListGroup";
 import { is } from 'typescript-is';
+import unitData from "../api/data/unit.json";
 import { analysisImage, CardSettings, CompressedImageData, compressImageData, createProject, Settings, UploadedImage, uploadImage } from "../api/mpc_api";
-import { Card, CardListGroup, CardSide } from "../types/card";
+import { Card, CardSide } from "../types/card";
+import { Site, Unit } from "../types/mpc";
 import { Project } from "../types/project";
-import { Site } from "../types/mpc";
-import { remove, reorder, replace, setStateAsync } from "../util";
+import { analyseCard, remove, reorder, replace, setStateAsync } from "../util";
+import AutofillModal from "./AutofillModal";
 import CardPreviewModal from "./CardPreviewModal";
 import ErrorModal from "./ErrorModal";
 import ImageItem from "./ImageItem";
 import ImageSettingsModal from "./ImageSettingsModal";
 import ImageSuccessModal from "./ImageSuccessModal";
 import ProgressModal from "./ProgressModal";
-import AutofillModal from "./AutofillModal";
 
 interface AutofillState {
   id: 'autofill';
@@ -28,6 +30,7 @@ interface SettingsState {
 
 interface LoadingState {
   id: 'loading';
+  title: string;
   value: number;
   maxValue: number;
 }
@@ -54,6 +57,7 @@ interface ImageTabProps {
 interface ImageTabState {
   files: CardSide[];
   cards: Card[];
+  unit?: Unit;
   state: null | LoadingState | FinishedState | ErrorState | SettingsState | PreviewState | AutofillState;
 }
 
@@ -72,23 +76,48 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
       state: null,
       files: [],
       cards: [],
+      unit: undefined,
     };
   }
 
   onAdd = async (e: any) => {
     const selectedFiles = e.target.files;
-    if (selectedFiles === null || selectedFiles.length === 0) return;
+    const total = selectedFiles?.length ?? 0;
+    if (total === 0) return;
+
+    await setStateAsync(this, {
+      state: {
+        id: 'loading',
+        title: 'Analysing images...',
+        value: 0,
+        maxValue: total,
+      }
+    });
 
     const cardSides: CardSide[] = [];
-    for (let i = 0; i < selectedFiles.length; i++) {
+    for (let i = 0; i < total; i++) {
+      if (this.state.state?.id !== 'loading') return;
+
       const file = selectedFiles[i];
       cardSides.push({
         id: ImageTab.fileId++,
         file: file,
+        info: await analyseCard(file),
+      });
+      await setStateAsync(this, {
+        state: {
+          id: 'loading',
+          title: 'Analysing images...',
+          value: i + 1,
+          maxValue: total,
+        }
       });
     }
+    cardSides.sort((a, b) => {
+      return a.file.name.localeCompare(b.file.name);
+    })
 
-    this.setState({
+    await setStateAsync(this, {
       state: {
         id: 'autofill',
         cardSides,
@@ -165,6 +194,7 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
     await setStateAsync(this, {
       state: {
         id: 'loading',
+        title: 'Uploading...',
         value: 0,
         maxValue,
       },
@@ -201,6 +231,7 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
           await setStateAsync(this, {
             state: {
               id: 'loading',
+              title: 'Uploading...',
               value: files.size,
               maxValue,
             },
@@ -297,9 +328,16 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
     });
   }
 
+  onProductChange = (eventKey: any) => {
+    const unit = unitData.find((it) => it.code == eventKey);
+    this.setState({
+      unit,
+    })
+  }
+
   render() {
     const { site } = this.props;
-    const { cards, files, state } = this.state;
+    const { cards, files, unit, state } = this.state;
 
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: 8, flex: 1 }}>
@@ -323,6 +361,16 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
             <XCircle /> Clear
           </Button>
           <div style={{ flex: 1 }} />
+          <Dropdown onSelect={this.onProductChange}>
+            <Dropdown.Toggle variant="outline-primary">
+              {unit?.name ?? 'Select Product'}
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              {unitData.filter((it) => it.siteCodes.includes(site.code)).map((it) => (
+                <Dropdown.Item key={it.code} eventKey={it.code} active={it.code === unit?.code}>{it.name}</Dropdown.Item>
+              ))}
+            </Dropdown.Menu>
+          </Dropdown>
           <Button variant="outline-primary" onClick={this.onPreview}>
             <CardImage /> Preview
           </Button>
@@ -347,6 +395,7 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
                     key={card.id}
                     item={card}
                     files={files}
+                    unit={unit}
                     index={index}
                     onChange={this.onItemChange}
                     onDelete={this.onItemRemove}
@@ -357,8 +406,11 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
             </Droppable>
           </DragDropContext>
         </div>
-        <div style={{ textAlign: 'right' }}>
-          Card Count: {cards.reduce((value, card) => value + card.count, 0)}
+        <div style={{display: 'flex'}}>
+          <div style={{flex: 1}}/>
+          <div>
+            Card Count: {cards.reduce((value, card) => value + card.count, 0)}
+          </div>
         </div>
         {state?.id === 'autofill' && <AutofillModal
           cardSides={state.cardSides}
@@ -367,6 +419,7 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
         />}
         {is<SettingsState>(state) && <ImageSettingsModal
           site={site}
+          unit={unit}
           cards={cards}
           onCardUpload={this.onCardUpload}
           onProjectUpload={this.onProjectUpload}
@@ -374,6 +427,7 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
         />}
         {
           is<LoadingState>(state) && <ProgressModal
+            title={state.title}
             value={state.value}
             maxValue={state.maxValue}
             onClose={this.onStateClear}
@@ -395,6 +449,7 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
         {
           is<PreviewState>(state) && <CardPreviewModal
             site={site}
+            unit={unit}
             cards={cards}
             onClose={this.onStateClear}
           />

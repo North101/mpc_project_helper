@@ -7,26 +7,39 @@ import Tooltip from "react-bootstrap/esm/Tooltip";
 import { Card, CardSide } from "../types/card";
 import { AutofillNone, AutofillNoneProps, AutofillType } from "./AutofillTypeNone";
 
+const sideData: {
+  id: 'front' | 'back';
+  name: string;
+}[] = [
+  {
+    id: 'front',
+    name: 'Front',
+  },
+  {
+    id: 'back',
+    name: 'Back',
+  },
+];
+
 export const FilenameTooltip = (props: any) => {
   return (
-    <>
-      <OverlayTrigger
-        placement='bottom'
-        overlay={<Tooltip>{props.children}</Tooltip>}
-      >
-        <span className="filename-part">{props.text}</span>
-      </OverlayTrigger>
-    </>
+    <OverlayTrigger
+      placement='bottom'
+      overlay={<Tooltip>{props.children}</Tooltip>}
+    >
+      <span className="filename-part">{props.text}</span>
+    </OverlayTrigger>
   )
 }
 
 interface AutofillBasicState {
+  defaultSide?: 'front' | 'back';
   defaultFront?: CardSide;
   defaultBack?: CardSide;
 }
 
 export class AutofillBasic extends AutofillNone<AutofillBasicState> {
-  cardMatcher = /^(.+?(?:(?:\s|\-|_|\.)x(\d+))?)(?:(?:\s|\-|_|\.)(front|back|a|b|1|2))\.(png|jpg)$/;
+  cardMatcher = /^(.+?(?:(?:\s|\-|_|\.)x(\d+))?)(?:(?:(?:\s|\-|_|\.)(front|back|[AaBb12]))|((?<=\d)[AaBb]))?\.(png|jpg)$/;
   defaultFrontMatcher = /^front.(png|jpg)$/
   defaultBackMatcher = /^back.(png|jpg)$/
 
@@ -35,6 +48,7 @@ export class AutofillBasic extends AutofillNone<AutofillBasicState> {
 
     const { cardSides } = props;
     this.state = {
+      defaultSide: undefined,
       defaultFront: cardSides.find((it) => it.file.name.match(this.defaultFrontMatcher)),
       defaultBack: cardSides.find((it) => it.file.name.match(this.defaultBackMatcher)),
     };
@@ -43,6 +57,14 @@ export class AutofillBasic extends AutofillNone<AutofillBasicState> {
   onChange = () => {
     const { onChange } = this.props;
     onChange(this.process());
+  }
+
+  onDefaultSideChange = (event: React.FormEvent<HTMLSelectElement>) => {
+    const defaultSide = sideData.find((it) => it.id === event.currentTarget.value)?.id;
+
+    this.setState({
+      defaultSide,
+    }, () => this.onChange());
   }
 
   onDefaultFrontChange = (event: React.FormEvent<HTMLSelectElement>) => {
@@ -69,32 +91,34 @@ export class AutofillBasic extends AutofillNone<AutofillBasicState> {
 
   process = () => {
     const { cardSides } = this.props;
-    const { defaultFront, defaultBack } = this.state;
+    const { defaultSide, defaultFront, defaultBack } = this.state;
 
     const groups: {
       [key: string]: Card;
     } = {};
     for (const cardSide of cardSides) {
       const match = cardSide.file.name.match(this.cardMatcher);
-      console.log(match);
       if (!match) continue;
 
       const name = match[1];
       const count = match[2] ? parseInt(match[2]) : 1;
-      const side = match[3];
-      const card = groups[name] ??= {
+      const side = (match[3] ?? match[4])?.toLowerCase();
+      if (!side && ['front', 'back'].includes(name)) continue;
+
+      const card = groups[name] ?? {
         id: AutofillNone.cardId++,
         front: defaultFront,
         back: defaultBack,
         count,
       }
-      if (['front', 'a', '1'].includes(side)) {
+      if (['front', 'a', '1'].includes(side) || (!side && defaultSide === 'front')) {
         card.front = cardSide;
-      } else if (['back', 'b', '2'].includes(side)) {
+      } else if (['back', 'b', '2'].includes(side) || (!side && defaultSide === 'back')) {
         card.back = cardSide;
       } else {
-        console.log(side);
+        continue;
       }
+      groups[name] = card;
     }
 
     return Object.values(groups);
@@ -102,7 +126,7 @@ export class AutofillBasic extends AutofillNone<AutofillBasicState> {
 
   render() {
     const { cardSides } = this.props;
-    const { defaultFront, defaultBack } = this.state;
+    const { defaultSide, defaultFront, defaultBack } = this.state;
 
     return (
       <div>
@@ -137,7 +161,7 @@ export class AutofillBasic extends AutofillNone<AutofillBasicState> {
                     count: number. the number of times you want this duplicated in the project
                   </FilenameTooltip>
                   <FilenameTooltip text={'-<side>'}>
-                    <span style={{ fontWeight: 'bold' }}>Required</span><br />
+                    <span style={{ fontWeight: 'bold' }}>Optional (default: front)</span><br />
                     seperator: -, _, ., {'<space>'}<br />
                     side:<br />
                     <ul>
@@ -220,6 +244,14 @@ export class AutofillBasic extends AutofillNone<AutofillBasicState> {
           </Accordion.Item>
         </Accordion>
         <div style={{ display: 'flex', gap: 4, marginTop: 8, flex: '1 1 1px', overflowY: 'scroll' }}>
+          <FloatingLabel label="Default Side" style={{ flex: 1 }}>
+            <Form.Select value={defaultSide} onChange={this.onDefaultSideChange}>
+              <option>None</option>
+              {sideData.map((it) => (
+                <option key={it.id} value={it.id}>{it.name}</option>
+              ))}
+            </Form.Select>
+          </FloatingLabel>
           <FloatingLabel label="Default Front" style={{ flex: 1 }}>
             <Form.Select value={defaultFront?.id} onChange={this.onDefaultFrontChange}>
               <option>None</option>

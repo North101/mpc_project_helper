@@ -3,11 +3,11 @@ import Button from "react-bootstrap/esm/Button";
 import Modal from "react-bootstrap/esm/Modal";
 import ProgressBar from "react-bootstrap/esm/ProgressBar";
 
-export default class ProgressModal extends React.Component<{ value: number; maxValue: number; onClose: () => void; }> {
+export default class ProgressModal extends React.Component<{ title: string; value: number; maxValue: number; onClose: () => void; }> {
   render() {
     return (
       <Modal show centered>
-        <Modal.Header>Uploading...</Modal.Header>
+        <Modal.Header>{this.props.title}</Modal.Header>
         <Modal.Body>
           <ProgressBar now={this.props.value} max={this.props.maxValue} />
           <div style={{ display: 'flex', justifyContent: 'end' }}>

@@ -10,6 +10,7 @@ import CardPreview from "./CardPreview";
 
 interface CardPreviewModalProps {
   site: Site;
+  unit?: Unit;
   cards: Card[];
   onClose: () => void;
 }
@@ -22,9 +23,9 @@ export default class CardPreviewModal extends React.Component<CardPreviewModalPr
   constructor(props: CardPreviewModalProps) {
     super(props);
 
-    const { site } = props;
+    const { unit, site } = props;
     this.state = {
-      unit: unitData.find((it) => it.siteCodes.includes(site.code)),
+      unit: unit ?? unitData.find((it) => it.siteCodes.includes(site.code)),
     }
   }
 

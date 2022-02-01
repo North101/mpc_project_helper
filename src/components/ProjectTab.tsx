@@ -225,7 +225,6 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
   onUploadClick = () => {
     const { items } = this.state;
     const unit = items.every((it) => it.unit.code === items[0]?.unit.code) ? items[0].unit : null;
-    console.log(unit);
 
     if (unit) {
       this.setState({
@@ -253,7 +252,6 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
     const { site } = this.props;
     const { items, state } = this.state;
     const sameProduct = items.every((item) => item.unit.code === items[0]?.unit.code);
-    console.log(state);
 
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: 8, flex: 1 }}>

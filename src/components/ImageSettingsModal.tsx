@@ -15,6 +15,7 @@ import { Card } from "../types/card";
 
 interface ImageSettingsModalProps {
   site: Site;
+  unit?: Unit;
   cards: Card[];
   onCardUpload: (settings: CardSettings, cards: Card[]) => void;
   onProjectUpload: (settings: Settings, cards: Card[]) => void;
@@ -36,7 +37,7 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
     super(props);
 
     const { site } = props;
-    const unit = unitData.find((it) => it.siteCodes.includes(site.code));
+    const unit = props.unit ?? unitData.find((it) => it.siteCodes.includes(site.code));
     this.state = {
       unit: unit,
       uploadProject: false,

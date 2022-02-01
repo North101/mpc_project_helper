@@ -1,6 +1,10 @@
 export interface CardSide {
   id: number;
   file: File;
+  info: {
+    width: number;
+    height: number;
+  };
 }
 
 export interface Card {

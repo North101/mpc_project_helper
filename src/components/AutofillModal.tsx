@@ -5,6 +5,7 @@ import Form from "react-bootstrap/esm/Form";
 import Modal from "react-bootstrap/esm/Modal";
 import { Card, CardSide } from "../types/card";
 import AutofillCardList from "./AutofillCardList";
+import autofillTypeALeP, { AutofillALeP } from "./AutofillTypeALEP";
 import autofillTypeBasic, { AutofillBasic } from "./AutofillTypeBasic";
 import autofillTypeNone, { AutofillNone, AutofillType } from "./AutofillTypeNone";
 import autofillTypeNorth101, { AutofillNorth101 } from "./AutofillTypeNorth101";
@@ -27,6 +28,7 @@ export default class AutofillModal extends React.Component<AutofillModalProps, A
     autofillTypeNone,
     autofillTypeBasic,
     autofillTypeNorth101,
+    autofillTypeALeP,
   ];
 
   constructor(props: AutofillModalProps) {
@@ -76,6 +78,8 @@ export default class AutofillModal extends React.Component<AutofillModalProps, A
       autofillView = <AutofillBasic cardSides={cardSides} onChange={this.onChange} />
     } else if (autofill.id === 'north101') {
       autofillView = <AutofillNorth101 cardSides={cardSides} onChange={this.onChange} />
+    } else if (autofill.id === 'alep') {
+      autofillView = <AutofillALeP cardSides={cardSides} onChange={this.onChange} />
     }
 
     return (
@@ -92,7 +96,7 @@ export default class AutofillModal extends React.Component<AutofillModalProps, A
             </FloatingLabel>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8, flex: '1 1 1px', overflowY: 'scroll' }}>
               {autofillView}
-              <AutofillCardList cards={cards} />
+              <AutofillCardList cards={cards} onChange={this.onChange} />
             </div>
           </div>
         </Modal.Body>

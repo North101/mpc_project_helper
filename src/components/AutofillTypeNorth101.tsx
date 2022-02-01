@@ -20,7 +20,6 @@ export class AutofillNorth101 extends AutofillNone {
     } = {};
     for (const cardSide of cardSides) {
       const match = cardSide.file.name.match(this.cardMatcher);
-      console.log(match);
       if (!match) continue;
 
       const name = match[1];
