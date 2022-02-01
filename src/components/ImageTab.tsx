@@ -80,10 +80,10 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
     };
   }
 
-  onAdd = async (e: any) => {
-    const selectedFiles = e.target.files;
-    const total = selectedFiles?.length ?? 0;
-    if (total === 0) return;
+  onAdd = async (e: React.FormEvent<HTMLInputElement>) => {
+    const selectedFiles = e.currentTarget.files;
+    const total = selectedFiles?.length;
+    if (!total) return;
 
     await setStateAsync(this, {
       state: {
@@ -94,29 +94,30 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
       }
     });
 
-    const img = document.createElement("img");
-    const cardSides: CardSide[] = [];
+    let count = 0;
+    const promiseList: Promise<CardSide>[] = [];
     for (let i = 0; i < total; i++) {
-      if (this.state.state?.id !== 'loading') {
-        img.remove();
-        return;
-      }
-
-      const file = selectedFiles[i];
-      cardSides.push({
+      promiseList.push(analyseCard(selectedFiles[i]).then(({file, width, height}) => ({
         id: ImageTab.fileId++,
         file: file,
-        info: await analyseCard(img, file),
-      });
-      await setStateAsync(this, {
-        state: {
-          id: 'loading',
-          title: 'Analysing images...',
-          value: i + 1,
-          maxValue: total,
-        }
-      });
+        info: {
+          width,
+          height,
+        },
+      })).then((it) => {
+        this.setState({
+          state: {
+            id: 'loading',
+            title: 'Analysing images...',
+            value: ++count,
+            maxValue: total,
+          }
+        });
+        return it;
+      }));
     }
+
+    const cardSides = await Promise.all(promiseList);
     cardSides.sort((a, b) => {
       return a.file.name.localeCompare(b.file.name);
     })

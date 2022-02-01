@@ -32,16 +32,21 @@ export async function setStateAsync<P, S, K extends keyof S>(
   return new Promise(resolve => component.setState(state, () => resolve(null)));
 }
 
-export async function analyseCard(img: HTMLImageElement, file: File) {
-  const promise = new Promise<{ width: number; height: number; }>((resolve, reject) => {
-    img.onload = () => {
-      const width = img.naturalWidth;
-      const height = img.naturalHeight;
-      resolve({ width, height });
-    };
-    img.onerror = reject;
-  });
-  img.src = URL.createObjectURL(file);
+export function analyseCard(file: File) {
+  const img = document.createElement("img");
+  try {
+    const promise = new Promise<{ file: File, width: number; height: number; }>((resolve, reject) => {
+      img.onload = () => {
+        const width = img.naturalWidth;
+        const height = img.naturalHeight;
+        resolve({ file, width, height });
+      };
+      img.onerror = reject;
+    });
+    img.src = URL.createObjectURL(file);
 
-  return await promise;
+    return promise;
+  } finally {
+    img.remove();
+  }
 }
