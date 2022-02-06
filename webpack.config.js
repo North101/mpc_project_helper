@@ -1,7 +1,8 @@
 const webpack = require("webpack");
 const path = require("path");
 const CopyPlugin = require("copy-webpack-plugin");
-const typescriptIsTransformer = require('typescript-is/lib/transform-inline/transformer').default
+const typescriptIsTransformer = require('typescript-is/lib/transform-inline/transformer').default;
+const WebpackExtensionManifestPlugin = require('webpack-extension-manifest-plugin');
 
 const config = {
   entry: {
@@ -78,6 +79,12 @@ const config = {
   plugins: [
     new CopyPlugin({
       patterns: [{ from: "public", to: "." }],
+    }),
+    new WebpackExtensionManifestPlugin({
+      config: './manifest.json',
+      pkgJsonProps: [
+        'version'
+      ],
     }),
   ],
 };
