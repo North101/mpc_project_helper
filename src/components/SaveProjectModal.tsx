@@ -5,22 +5,24 @@ import Modal from "react-bootstrap/esm/Modal";
 import { Project } from "../types/project";
 
 
-interface ImageSuccessModalProps {
+interface SaveProjectModalProps {
+  message?: string;
   value: Project;
+  filename?: string;
   url?: string;
   onClose: () => void;
 }
 
-interface ImageSuccessModalState {
+interface SaveProjectModalState {
   filename: string;
 }
 
-export default class ImageSuccessModal extends React.Component<ImageSuccessModalProps, ImageSuccessModalState> {
-  constructor(props: ImageSuccessModalProps) {
+export default class SaveProjectModal extends React.Component<SaveProjectModalProps, SaveProjectModalState> {
+  constructor(props: SaveProjectModalProps) {
     super(props)
 
     this.state = {
-      filename: 'project.txt',
+      filename: props.filename ?? 'project.txt',
     }
   }
 
@@ -40,7 +42,7 @@ export default class ImageSuccessModal extends React.Component<ImageSuccessModal
   }
 
   render() {
-    const { url, onClose } = this.props;
+    const { message, url, onClose } = this.props;
     const { filename } = this.state;
   
     return (
@@ -52,7 +54,7 @@ export default class ImageSuccessModal extends React.Component<ImageSuccessModal
             flexDirection: 'column',
             gap: 4,
           }}>
-            Your images were successfully uploaded
+            {message}
             <Form.Control
               required
               type="text"

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { DragDropContext, Droppable, DropResult } from "react-beautiful-dnd";
-import { FileEarmarkPlus, Upload, XCircle } from "react-bootstrap-icons";
+import { FileEarmarkPlus, Save, Upload, XCircle } from "react-bootstrap-icons";
 import Alert from "react-bootstrap/esm/Alert";
 import Button from "react-bootstrap/esm/Button";
 import ListGroup from "react-bootstrap/esm/ListGroup";
@@ -8,9 +8,10 @@ import { is } from 'typescript-is';
 import unitData from "../api/data/unit.json";
 import { createProject, Settings, UploadedImage } from "../api/mpc_api";
 import { Site, Unit } from "../types/mpc";
-import { ParsedProject, Project } from "../types/project";
+import { ParsedProject, Project, ProjectCard } from "../types/project";
 import { remove, reorder, replace } from "../util";
 import ErrorModal from "./ErrorModal";
+import SaveProjectModal from "./SaveProjectModal";
 import LoadingModal from "./LoadingModal";
 import ProjectEditModal from "./ProjectEditModal";
 import ProjectItem from "./ProjectItem";
@@ -27,6 +28,10 @@ interface SettingsState {
 interface LoadingState {
   id: 'loading';
   value: number;
+}
+
+interface ExportState {
+  id: 'export';
 }
 
 interface FinishedState {
@@ -50,7 +55,7 @@ interface ProjectTabProps {
 }
 
 interface ProjectTabState {
-  state: null | LoadingState | FinishedState | ErrorState | SettingsState | ItemEditState;
+  state: null | LoadingState | FinishedState | ErrorState | SettingsState | ItemEditState | ExportState;
   items: ParsedProject[];
 }
 
@@ -216,6 +221,14 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
     });
   }
 
+  onExport = () => {
+    this.setState({
+      state: {
+        id: 'export',
+      },
+    });
+  }
+
   onStateClear = () => {
     this.setState({
       state: null,
@@ -272,6 +285,9 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
             <XCircle /> Clear
           </Button>
           <div style={{ flex: 1 }} />
+          <Button variant="outline-primary" onClick={this.onExport} disabled={!sameProduct}>
+            <Save /> Export
+          </Button>
           <Button variant="outline-primary" onClick={this.onUploadClick} disabled={!sameProduct}>
             <Upload /> Upload
           </Button>
@@ -319,6 +335,17 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
           />
         )}
         {is<LoadingState>(state) && <LoadingModal
+          onClose={this.onStateClear}
+        />}
+        {is<ExportState>(state) && <SaveProjectModal
+          value={{
+            version: 1,
+            code: items[0].code,
+            cards: items.reduce<ProjectCard[]>((item, value) => {
+              item.push(...value.cards);
+              return item;
+            }, []),
+          }}
           onClose={this.onStateClear}
         />}
         {is<FinishedState>(state) && <ProjectSuccessModal

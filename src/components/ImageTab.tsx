@@ -16,7 +16,7 @@ import CardPreviewModal from "./CardPreviewModal";
 import ErrorModal from "./ErrorModal";
 import ImageItem from "./ImageItem";
 import ImageSettingsModal from "./ImageSettingsModal";
-import ImageSuccessModal from "./ImageSuccessModal";
+import SaveProjectModal from "./SaveProjectModal";
 import ProgressModal from "./ProgressModal";
 
 interface AutofillState {
@@ -439,7 +439,8 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
           />
         }
         {
-          is<FinishedState>(state) && <ImageSuccessModal
+          is<FinishedState>(state) && <SaveProjectModal
+            message='Your images were successfully uploaded'
             value={state.value}
             url={state.url}
             onClose={this.onStateClear}
