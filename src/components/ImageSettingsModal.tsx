@@ -11,6 +11,7 @@ import unitData from "../api/data/unit.json";
 import { CardSettings, Settings } from "../api/mpc_api";
 import { Site, Unit } from "../types/mpc";
 import { Card } from "../types/card";
+import Alert from "react-bootstrap/esm/Alert";
 
 
 interface ImageSettingsModalProps {
@@ -156,10 +157,12 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
   }
 
   render() {
-    const { site } = this.props;
+    const { cards, site } = this.props;
     const { unit, uploadProject, name, cardStockCode, printTypeCode, finishCode, packagingCode } = this.state;
     const cardSettings = this.getCardSettings();
     const projectSettings = this.getProjectSettings();
+    const count = cards.reduce((value, it) => value + it.count, 0);
+    const tooManyCards = unit ? count > unit.maxCards : false;
 
     return (
       <Modal show centered>
@@ -173,6 +176,11 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
                 ))}
               </Form.Select>
             </FloatingLabel>
+            {unit && tooManyCards && (
+              <Alert variant={uploadProject ? "danger" : "warning"} style={{ margin: 0 }}>
+                You are trying to create a project with {count} cards but the max is {unit.maxCards}.
+              </Alert>
+            )}
             <Form.Check
               type='checkbox'
               label='Upload project?'
@@ -222,7 +230,7 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
             <Button variant="success" onClick={() => this.onCardUpload(cardSettings!)} disabled={!cardSettings}>Upload</Button>
           )}
           {uploadProject && (
-            <Button variant="success" onClick={() => this.onProjectUpload(projectSettings!)} disabled={!projectSettings}>Upload</Button>
+            <Button variant="success" onClick={() => this.onProjectUpload(projectSettings!)} disabled={!projectSettings || tooManyCards}>Upload</Button>
           )}
         </Modal.Footer>
       </Modal>
