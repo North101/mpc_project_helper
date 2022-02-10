@@ -237,8 +237,8 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
 
   onUploadClick = () => {
     const { items } = this.state;
-    const unit = items.every((it) => it.unit.code === items[0]?.unit.code) ? items[0].unit : null;
-
+    const unit = items.length > 0 && items.every((it) => it.unit.code === items[0]?.unit.code) ? items[0]?.unit : null;
+  
     if (unit) {
       this.setState({
         state: {
@@ -264,7 +264,11 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
   render() {
     const { site } = this.props;
     const { items, state } = this.state;
-    const sameProduct = items.every((item) => item.unit.code === items[0]?.unit.code);
+    const unit = items.length > 0 && items.every((it) => it.unit.code === items[0].unit.code) ? items[0]?.unit : null;
+    const count = items.reduce<number>((value, item) => {
+      return value + item.cards.reduce<number>((v, card) => v + card.count, 0);
+    }, 0);
+    const tooManyCards = unit !== null && count > unit.maxCards;
 
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: 8, flex: 1 }}>
@@ -285,14 +289,14 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
             <XCircle /> Clear
           </Button>
           <div style={{ flex: 1 }} />
-          <Button variant="outline-primary" onClick={this.onExport} disabled={!sameProduct}>
+          <Button variant="outline-primary" onClick={this.onExport} disabled={unit === null}>
             <Save /> Export
           </Button>
-          <Button variant="outline-primary" onClick={this.onUploadClick} disabled={!sameProduct}>
+          <Button variant="outline-primary" onClick={this.onUploadClick} disabled={unit === null}>
             <Upload /> Upload
           </Button>
         </div>
-        {!sameProduct && (
+        {items.length > 0 && unit === null && (
           <Alert variant="warning" style={{ marginBottom: 0 }}>
             Every project must have the same product type
           </Alert>
@@ -320,9 +324,7 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
           </DragDropContext>
         </div>
         <div style={{ textAlign: 'right' }}>
-          Card Count: {items.reduce<number>((value, item) => {
-            return item.cards.reduce<number>((value, card) => value + card.count, value);
-          }, 0)}
+          Card Count: <span style={{ color: tooManyCards ? 'red' : undefined }}>{count}</span>
         </div>
         {is<SettingsState>(state) && (
           <ProjectSettingsModal

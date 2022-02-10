@@ -19,4 +19,5 @@ export interface Unit {
   scale: number;
   sortNo: number;
   applyMask: boolean;
+  maxCards: number;
 };

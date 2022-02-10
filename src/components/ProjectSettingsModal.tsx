@@ -1,4 +1,5 @@
 import * as React from "react";
+import Alert from "react-bootstrap/esm/Alert";
 import Button from "react-bootstrap/esm/Button";
 import FloatingLabel from "react-bootstrap/esm/FloatingLabel";
 import Form from "react-bootstrap/esm/Form";
@@ -111,9 +112,11 @@ export default class ProjectSettingsModal extends React.Component<ProjectSetting
   }
 
   render() {
-    const { site, unit } = this.props;
+    const { cards, site, unit } = this.props;
     const { name, cardStockCode, printTypeCode, finishCode, packagingCode } = this.state;
     const settings = this.getSettings();
+    const count = cards.reduce((value, it) => value + it.count, 0)
+    const tooManyCards = count > unit.maxCards;
 
     return (
       <Modal show centered>
@@ -127,6 +130,11 @@ export default class ProjectSettingsModal extends React.Component<ProjectSetting
                 ))}
               </Form.Select>
             </FloatingLabel>
+            {tooManyCards && (
+              <Alert variant="danger" style={{ margin: 0 }}>
+                You are trying to create a project with {count} cards but the max is {unit.maxCards}.
+              </Alert>
+            )}
             <FloatingLabel controlId="floatingText" label="Project Name">
               <Form.Control aria-label="ProjectName" value={name} onChange={this.onNameChange} />
             </FloatingLabel>
@@ -162,7 +170,7 @@ export default class ProjectSettingsModal extends React.Component<ProjectSetting
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={this.onClose}>Close</Button>
-          <Button variant="success" onClick={() => this.onUpload(settings!)} disabled={!settings}>Upload</Button>
+          <Button variant="success" onClick={() => this.onUpload(settings!)} disabled={!settings || tooManyCards}>Upload</Button>
         </Modal.Footer>
       </Modal>
     );
