@@ -7,7 +7,7 @@
     "48": "icon48.png",
     "128": "icon128.png"
   },
-  "permissions": ["tabs", "scripting", "downloads", "declarativeContent"],
+  "permissions": ["tabs", "declarativeContent"],
   "host_permissions": [
     "https://www.makeplayingcards.com/",
     "https://www.printerstudio.co.uk/"
