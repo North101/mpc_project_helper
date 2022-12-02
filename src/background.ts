@@ -9,9 +9,12 @@ chrome.runtime.onInstalled.addListener(() => {
         }),
         new chrome.declarativeContent.PageStateMatcher({
           pageUrl: { urlMatches: 'https://www.printerstudio.co.uk/*' },
+        }),
+        new chrome.declarativeContent.PageStateMatcher({
+          pageUrl: { urlMatches: 'https://www.printerstudio.com/*' },
         })
       ],
-      actions: [new (chrome.declarativeContent as any).ShowAction()],
+      actions: [new chrome.declarativeContent.ShowAction()],
     }]);
   });
 });

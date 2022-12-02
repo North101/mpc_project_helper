@@ -1,26 +1,532 @@
 [
   {
+    "code": "PPR_0001",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_8007",
+      "FI_8011"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PPR_0246",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_8007",
+      "FI_8011"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PPR_0103",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_8854"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PPR_0264",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_8854"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PPR_0182",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_8866"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PPR_0270",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_8866"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PPR_0002",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_6037",
+      "FI_6038"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PPR_0247",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_6037",
+      "FI_6038"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PPR_0003",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_8003",
+      "FI_8009"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PPR_0248",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_8003",
+      "FI_8009"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PPR_0004",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_8006"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PPR_0249",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_8006"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PPR_0005",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_8001",
+      "FI_8343"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PPR_0250",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_8001",
+      "FI_8343"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PPR_0006",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_8542"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PPR_0251",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_8542"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PPR_0007",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PPR_0252",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PPR_0097",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_8836"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PPR_0263",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_8836"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PPR_0008",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_8332"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PPR_0253",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_8332"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
     "code": "PPR_0009",
     "name": "MPC game card finish",
-    "siteCodes": ["mpc"],
-    "productCodes": ["FI_7999", "FI_569"]
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
   },
   {
-    "code": "PPR_0149",
-    "name": "BETA playing card finish",
-    "siteCodes": ["mpc"],
-    "productCodes": ["FI_7999", "FI_569"]
+    "code": "PPR_0254",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
   },
   {
-    "code": "PPR_0056",
-    "name": "Gloss finish",
-    "siteCodes": ["mpc"],
-    "productCodes": ["FI_7999", "FI_569"]
+    "code": "PPR_0010",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_8543"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
   },
   {
-    "code": "",
-    "name": "Default",
-    "siteCodes": ["ps"],
-    "productCodes": ["FI_569"]
+    "code": "PPR_0255",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_8543"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PPR_0011",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PPR_0256",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PPR_0126",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_8883"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PPR_0265",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_8883"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PPR_0012",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_8459"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PPR_0257",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_8459"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PPR_0013",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_5073",
+      "FI_8988",
+      "FI_8990"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PPR_0258",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_5073",
+      "FI_8988",
+      "FI_8990"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PPR_0132",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_8884"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PPR_0266",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_8884"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PPR_0015",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_8002",
+      "FI_8005"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PPR_0260",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_8002",
+      "FI_8005"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PPR_0138",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_8892"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PPR_0267",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_8892"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PPR_0016",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_2134",
+      "FI_2135"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PPR_0261",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_2134",
+      "FI_2135"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PPR_0014",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_8012"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PPR_0259",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_8012"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PPR_0171",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_9009"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PPR_0269",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_9009"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PPR_0017",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_8590"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PPR_0262",
+    "name": "MPC game card finish",
+    "productCodes": [
+      "FI_8590"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
   }
 ]

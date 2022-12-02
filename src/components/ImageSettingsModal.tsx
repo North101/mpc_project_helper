@@ -111,7 +111,7 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
     if (!unit) return;
 
     return {
-      url: site.url,
+      url: window.location.origin,
       unit: unit.code,
       product: unit.productCode,
       frontDesign: unit.frontDesignCode,
@@ -124,18 +124,26 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
       scale: unit.scale,
       sortNo: unit.sortNo,
       applyMask: unit.applyMask,
+      productWidth: unit.productWidth,
+      productHeight: unit.productHeight,
+      productPadding: unit.productPadding,
+      padding: unit.padding,
+      safe: unit.safe,
+      unpick: unit.unpick,
+      x: unit.x,
+      y: unit.y,
+      lappedType: unit.lappedType,
     };
   }
 
   getProjectSettings = (): Settings | undefined => {
-    const { site } = this.props;
     const { unit, name, cardStockCode, printTypeCode, finishCode, packagingCode } = this.state;
     if (unit === undefined || cardStockCode === undefined || printTypeCode === undefined || finishCode === undefined || packagingCode === undefined) {
       return;
     }
 
     return {
-      url: site.url,
+      url: window.location.origin,
       unit: unit.code,
       product: unit.productCode,
       frontDesign: unit.frontDesignCode,
@@ -153,6 +161,15 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
       scale: unit.scale,
       sortNo: unit.sortNo,
       applyMask: unit.applyMask,
+      productWidth: unit.productWidth,
+      productHeight: unit.productHeight,
+      productPadding: unit.productPadding,
+      padding: unit.padding,
+      safe: unit.safe,
+      unpick: unit.unpick,
+      x: unit.x,
+      y: unit.y,
+      lappedType: unit.lappedType,
     };
   }
 

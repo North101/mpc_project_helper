@@ -4,10 +4,10 @@ import FloatingLabel from "react-bootstrap/esm/FloatingLabel";
 import Form from "react-bootstrap/esm/Form";
 import OverlayTrigger from "react-bootstrap/esm/OverlayTrigger";
 import Tooltip from "react-bootstrap/esm/Tooltip";
-import { Card, CardSide } from "../types/card";
+import { Card, CardSide, CardFace, CardFaces } from "../types/card";
 import { AutofillNone, AutofillNoneProps, AutofillType } from "./AutofillTypeNone";
 
-const sideMap: { [key: string]: 'front' | 'back'; } = {
+const sideMap: { [key: string]: CardFace; } = {
   '1': 'front',
   'front': 'front',
   'a': 'front',
@@ -17,7 +17,7 @@ const sideMap: { [key: string]: 'front' | 'back'; } = {
 }
 
 const sideData: {
-  id: 'front' | 'back';
+  id: CardFace;
   name: string;
 }[] = [
   {
@@ -42,7 +42,7 @@ export const FilenameTooltip = (props: any) => {
 }
 
 interface AutofillBasicState {
-  defaultSide?: 'front' | 'back';
+  defaultSide?: CardFace;
   defaultFront?: CardSide;
   defaultBack?: CardSide;
 }
@@ -110,7 +110,7 @@ export class AutofillBasic extends AutofillNone<AutofillBasicState> {
       if (!match) continue;
 
       const name = match[1];
-      if (['front', 'back'].includes(name)) continue;
+      if (CardFaces.includes(name as CardFace)) continue;
 
       const groupName = match[2];
       const count = parseInt(match[3]) || 1;

@@ -1,7 +1,6 @@
 const webpack = require("webpack");
 const path = require("path");
 const CopyPlugin = require("copy-webpack-plugin");
-const typescriptIsTransformer = require('typescript-is/lib/transform-inline/transformer').default;
 const WebpackExtensionManifestPlugin = require('webpack-extension-manifest-plugin');
 
 const config = {
@@ -24,14 +23,9 @@ const config = {
         exclude: /\.module\.css$/,
       },
       {
-        test: /\.ts(x)?$/,
-        loader: 'ts-loader',
+        test: /\.tsx?$/,
         exclude: /node_modules/,
-        options: {
-          getCustomTransformers: program => ({
-            before: [typescriptIsTransformer(program)]
-          })
-        }
+        loader: 'ts-loader'
       },
       {
         test: /\.css$/,
@@ -66,9 +60,6 @@ const config = {
   },
   resolve: {
     extensions: [".js", ".jsx", ".tsx", ".ts"],
-    alias: {
-      "react-dom": "@hot-loader/react-dom",
-    },
     fallback: {
       util: require.resolve("util/"),
     }

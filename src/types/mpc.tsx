@@ -1,7 +1,7 @@
 export interface Site {
   code: string;
   name: string;
-  url: string;
+  urls: string[];
 }
 
 export interface Unit {
@@ -20,4 +20,13 @@ export interface Unit {
   sortNo: number;
   applyMask: boolean;
   maxCards: number;
+  productWidth: number;
+  productHeight: number;
+  productPadding: number;
+  padding: number;
+  safe: number;
+  unpick: boolean;
+  x: number;
+  y: number;
+  lappedType: string;
 };

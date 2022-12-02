@@ -10,7 +10,8 @@
   "permissions": ["tabs", "declarativeContent"],
   "host_permissions": [
     "https://www.makeplayingcards.com/",
-    "https://www.printerstudio.co.uk/"
+    "https://www.printerstudio.co.uk/",
+    "https://www.printerstudio.com/"
   ],
   "background": {
     "service_worker": "background.js"
@@ -19,7 +20,8 @@
     {
       "matches": [
         "https://www.makeplayingcards.com/*",
-        "https://www.printerstudio.co.uk/*"
+        "https://www.printerstudio.co.uk/*",
+        "https://www.printerstudio.com/*"
       ],
       "js": ["content.js"]
     }
@@ -40,7 +42,8 @@
       ],
       "matches": [
         "https://www.makeplayingcards.com/*",
-        "https://www.printerstudio.co.uk/*"
+        "https://www.printerstudio.co.uk/*",
+        "https://www.printerstudio.com/*"
       ]
     }
   ]

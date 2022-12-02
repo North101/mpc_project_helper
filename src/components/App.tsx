@@ -41,7 +41,7 @@ export default class App extends React.Component<AppProps, AppState> {
 
   render() {
     const { show } = this.state;
-    const site = siteData.find((site) => site.url === location.origin);
+    const site = siteData.find((site) => site.urls.includes(location.origin));
     return (
       <Modal show={show} fullscreen centered onHide={this.onClose} dialogClassName="my-modal">
         <Modal.Header closeButton>

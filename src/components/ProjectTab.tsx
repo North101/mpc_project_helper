@@ -4,11 +4,10 @@ import { FileEarmarkPlus, Save, Upload, XCircle } from "react-bootstrap-icons";
 import Alert from "react-bootstrap/esm/Alert";
 import Button from "react-bootstrap/esm/Button";
 import ListGroup from "react-bootstrap/esm/ListGroup";
-import { is } from 'typescript-is';
 import unitData from "../api/data/unit.json";
 import { createProject, Settings, UploadedImage } from "../api/mpc_api";
 import { Site, Unit } from "../types/mpc";
-import { ParsedProject, Project, ProjectCard } from "../types/project";
+import { ParsedProject, ProjectCard } from "../types/project";
 import { remove, reorder, replace } from "../util";
 import ErrorModal from "./ErrorModal";
 import SaveProjectModal from "./SaveProjectModal";
@@ -25,13 +24,25 @@ interface SettingsState {
   cards: UploadedImage[];
 }
 
+const isSettingsState = (item: any): item is SettingsState => {
+  return item instanceof Object && item['id'] === 'settings';
+}
+
 interface LoadingState {
   id: 'loading';
   value: number;
 }
 
+const isLoadingState = (item: any): item is LoadingState => {
+  return item instanceof Object && item['id'] === 'loading';
+}
+
 interface ExportState {
   id: 'export';
+}
+
+const isExportState = (item: any): item is ExportState => {
+  return item instanceof Object && item['id'] === 'export';
 }
 
 interface FinishedState {
@@ -39,15 +50,26 @@ interface FinishedState {
   value: string;
 }
 
+const isFinishedState = (item: any): item is FinishedState => {
+  return item instanceof Object && item['id'] === 'finished';
+}
+
 interface ErrorState {
   id: 'error';
   value: any;
+}
+const isErrorState = (item: any): item is ErrorState => {
+  return item instanceof Object && item['id'] === 'error';
 }
 
 interface ItemEditState {
   id: 'item-edit',
   index: number,
   item: ParsedProject,
+}
+
+const isItemEditState = (item: any): item is ItemEditState => {
+  return item instanceof Object && item['id'] === 'item-edit';
 }
 
 interface ProjectTabProps {
@@ -87,7 +109,7 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
       const file = e.target.files[i] as File;
       try {
         const data = JSON.parse(await file.text());
-        if (!is<Project>(data)) {
+        if (false) {
           this.setState({
             state: {
               id: 'error',
@@ -122,7 +144,7 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
           id: `${++ProjectTab.projectId}`,
           name: file.name,
           unit,
-          cards: data.cards.map((card) => ({
+          cards: data.cards.map((card: any) => ({
             id: ProjectTab.cardId++,
             ...card,
           })),
@@ -326,7 +348,7 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
         <div style={{ textAlign: 'right' }}>
           Card Count: <span style={{ color: tooManyCards ? 'red' : undefined }}>{count}</span>
         </div>
-        {is<SettingsState>(state) && (
+        {isSettingsState(state) && (
           <ProjectSettingsModal
             site={site}
             unit={state.unit}
@@ -336,10 +358,10 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
             onClose={this.onStateClear}
           />
         )}
-        {is<LoadingState>(state) && <LoadingModal
+        {isLoadingState(state) && <LoadingModal
           onClose={this.onStateClear}
         />}
-        {is<ExportState>(state) && <SaveProjectModal
+        {isExportState(state) && <SaveProjectModal
           value={{
             version: 1,
             code: items[0].code,
@@ -350,15 +372,15 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
           }}
           onClose={this.onStateClear}
         />}
-        {is<FinishedState>(state) && <ProjectSuccessModal
+        {isFinishedState(state) && <ProjectSuccessModal
           value={state.value}
           onClose={this.onStateClear}
         />}
-        {is<ErrorState>(state) && <ErrorModal
+        {isErrorState(state) && <ErrorModal
           value={state.value}
           onClose={this.onStateClear}
         />}
-        {is<ItemEditState>(state) && <ProjectEditModal
+        {isItemEditState(state) && <ProjectEditModal
           index={state.index}
           item={state.item}
           onSave={this.onItemChange}

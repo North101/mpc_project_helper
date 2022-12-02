@@ -1,5 +1,5 @@
 import * as React from "react";
-import * as ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 
 import App from "./components/App";
 import "./popup.css";
@@ -16,4 +16,10 @@ head.appendChild(link);
 const app = document.createElement('div');
 app.id = 'mpc-project-helper';
 document.body.appendChild(app);
-ReactDOM.render(<App />, app);
+
+const root = ReactDOM.createRoot(app);
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);

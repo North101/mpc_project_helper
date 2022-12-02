@@ -1,284 +1,8217 @@
 [
   {
+    "code": "PB_041",
+    "name": "Shrink-wrapped",
+    "productCodes": [
+      "FI_8007",
+      "FI_8011"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_6106",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8007",
+      "FI_8011"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_265",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8007",
+      "FI_8011"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8220",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8007",
+      "FI_8011"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_916",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8007",
+      "FI_8011"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_6060",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8007",
+      "FI_8011"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_2607",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8007",
+      "FI_8011"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_5566",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8007",
+      "FI_8011"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_2136",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8007",
+      "FI_8011"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8223",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8007",
+      "FI_8011"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_919",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8007",
+      "FI_8011"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8221",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8007",
+      "FI_8011"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_917",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8007",
+      "FI_8011"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_4658",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8007",
+      "FI_8011"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_1294",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8007",
+      "FI_8011"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8885",
+    "name": "Shrink-wrapped",
+    "productCodes": [
+      "FI_8854"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_9385",
+    "name": "Plain sleeve box",
+    "productCodes": [
+      "FI_8854"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_9132",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8854"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_9381",
+    "name": "Plain rigid box",
+    "productCodes": [
+      "FI_8854"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_9377",
+    "name": "Custom rigid box",
+    "productCodes": [
+      "FI_8854"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_9386",
+    "name": "Custom sleeve box",
+    "productCodes": [
+      "FI_8854"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8887",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8854"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_9178",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_12266",
+      "FI_12559",
+      "FI_12560",
+      "FI_7852",
+      "FI_8854"
+    ],
+    "siteCodes": [
+      "mpc",
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_8933",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8854"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_9330",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8854"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_9085",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8854"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_9231",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8854"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8986",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8854"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_9277",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8854"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_9032",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8854"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_9395",
+    "name": "Shrink-wrapped",
+    "productCodes": [
+      "FI_8866"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_9642",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8866"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_9397",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8866"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_9688",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8866"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_9443",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8866"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_9787",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8866"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_9542",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8866"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_9741",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8866"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_9496",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8866"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_9834",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8866"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_9589",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8866"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_028",
+    "name": "Shrink-wrapped",
+    "productCodes": [
+      "FI_6037",
+      "FI_6038"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3674",
+    "name": "Plain sleeve box",
+    "productCodes": [
+      "FI_6037",
+      "FI_6038"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_4836",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_6037",
+      "FI_6038"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3650",
+    "name": "Plain rigid box",
+    "productCodes": [
+      "FI_6037",
+      "FI_6038"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3646",
+    "name": "Custom rigid box",
+    "productCodes": [
+      "FI_6037",
+      "FI_6038"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3679",
+    "name": "Custom sleeve box",
+    "productCodes": [
+      "FI_6037",
+      "FI_6038"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_146",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_6037",
+      "FI_6038"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8104",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_6037",
+      "FI_6038"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_798",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_6037",
+      "FI_6038"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_6101",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_6037",
+      "FI_6038"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_2645",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_6037",
+      "FI_6038"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_5607",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_6037",
+      "FI_6038"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_2174",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_6037",
+      "FI_6038"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_4705",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_6037",
+      "FI_6038"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_1338",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_6037",
+      "FI_6038"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_039",
+    "name": "Shrink-wrapped",
+    "productCodes": [
+      "FI_8003",
+      "FI_8009"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_6537",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8003"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8861",
+    "name": "Custom booster pack",
+    "productCodes": [
+      "FI_8003"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_305",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8003"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8264",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8003"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_961",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8003"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_6153",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8003"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_2693",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8003"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_5658",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8003"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_2221",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8003"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8265",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8003"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_962",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8003"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_4764",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8003"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_1392",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8003"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_042",
+    "name": "Shrink-wrapped",
+    "productCodes": [
+      "FI_8006"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_7046",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8006"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3660",
+    "name": "Plain rigid box",
+    "productCodes": [
+      "FI_8006"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3654",
+    "name": "Custom rigid box",
+    "productCodes": [
+      "FI_8006"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_354",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8006"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_4358",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8006"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_1017",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8006"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_6208",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8006"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_2744",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8006"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_5710",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8006"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_2270",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8006"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_4360",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8006"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_1019",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8006"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_4825",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8006"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_1449",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8006"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_037",
+    "name": "Shrink-wrapped",
+    "productCodes": [
+      "FI_8001",
+      "FI_8343"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_7431",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8001",
+      "FI_8343"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8342",
+    "name": "Plain rigid box",
+    "productCodes": [
+      "FI_8001",
+      "FI_8343"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8862",
+    "name": "Custom booster pack",
+    "productCodes": [
+      "FI_8001",
+      "FI_8343"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8331",
+    "name": "Custom rigid box",
+    "productCodes": [
+      "FI_8001",
+      "FI_8343"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_399",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8001",
+      "FI_8343"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_4413",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8001",
+      "FI_8343"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_1068",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8001",
+      "FI_8343"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_6256",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8001",
+      "FI_8343"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_2789",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8001",
+      "FI_8343"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_4414",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8001",
+      "FI_8343"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_1069",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8001",
+      "FI_8343"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_4880",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8001",
+      "FI_8343"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_1500",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8001",
+      "FI_8343"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3666",
+    "name": "Shrink-wrapped",
+    "productCodes": [
+      "FI_8542"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12396",
+    "name": "Plain black velvet bag",
+    "productCodes": [
+      "FI_8542"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_13108",
+    "name": "Plain double magnetic book box",
+    "productCodes": [
+      "FI_8542"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_13106",
+    "name": "Plain double magnetic book box(large)",
+    "productCodes": [
+      "FI_8542"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_11988",
+    "name": "Plain drawer box",
+    "productCodes": [
+      "FI_8542"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_11982",
+    "name": "Plain easy-flip box",
+    "productCodes": [
+      "FI_8542"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12347",
+    "name": "Plain easy-flip side open box",
+    "productCodes": [
+      "FI_8542"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8360",
+    "name": "Plain hinged tin box",
+    "productCodes": [
+      "FI_8542"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_13101",
+    "name": "Plain magnetic book box",
+    "productCodes": [
+      "FI_8542"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8307",
+    "name": "Plain sleeve box",
+    "productCodes": [
+      "FI_8542"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_7104",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8542"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8320",
+    "name": "Plain rigid box",
+    "productCodes": [
+      "FI_8542"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8303",
+    "name": "Plain tin box",
+    "productCodes": [
+      "FI_8542"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12395",
+    "name": "Custom black velvet bag",
+    "productCodes": [
+      "FI_8542"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8305",
+    "name": "Custom booster pack",
+    "productCodes": [
+      "FI_8542"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_13107",
+    "name": "Custom double magnetic book box",
+    "productCodes": [
+      "FI_8542"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_13105",
+    "name": "Custom double magnetic book box(large)",
+    "productCodes": [
+      "FI_8542"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_11986",
+    "name": "Custom drawer box",
+    "productCodes": [
+      "FI_8542"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_11980",
+    "name": "Custom easy-flip box",
+    "productCodes": [
+      "FI_8542"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12346",
+    "name": "Custom easy-flip side open box",
+    "productCodes": [
+      "FI_8542"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8368",
+    "name": "Custom hinged tin box",
+    "productCodes": [
+      "FI_8542"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8364",
+    "name": "Custom labeled tin box",
+    "productCodes": [
+      "FI_8542"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_13102",
+    "name": "Custom magnetic book box",
+    "productCodes": [
+      "FI_8542"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8309",
+    "name": "Custom rigid box",
+    "productCodes": [
+      "FI_8542"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8308",
+    "name": "Custom sleeve box",
+    "productCodes": [
+      "FI_8542"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3686",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8542"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8304",
+    "name": "Custom tin box",
+    "productCodes": [
+      "FI_8542"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_7155",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8542"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3733",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8542"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_7213",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8542"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3787",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8542"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_7265",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8542"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3835",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8542"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_7316",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8542"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3882",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8542"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_7366",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8542"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3929",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8542"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_001",
+    "name": "Shrink-wrapped",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12398",
+    "name": "Plain black velvet bag",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_13112",
+    "name": "Plain double magnetic book box",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_13110",
+    "name": "Plain double magnetic book box(large)",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12328",
+    "name": "Plain double tin box",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_11996",
+    "name": "Plain drawer box",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_11978",
+    "name": "Plain easy-flip box",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12349",
+    "name": "Plain easy-flip side open box",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8358",
+    "name": "Plain hinged tin box",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_13103",
+    "name": "Plain magnetic book box",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_4383",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_015",
+    "name": "Plain window tuck box",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_13135",
+    "name": "Plain double rigid box",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_003",
+    "name": "Plain plastic box",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3629",
+    "name": "Plain rigid box",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_227",
+    "name": "Plain plastic hinged case",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_035",
+    "name": "Plain tin box",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12397",
+    "name": "Custom black velvet bag",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_13111",
+    "name": "Custom double magnetic book box",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_13109",
+    "name": "Custom double magnetic book box(large)",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_13136",
+    "name": "Custom double rigid box",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12326",
+    "name": "Custom double sticker tin box",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12327",
+    "name": "Custom double tin box",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_11994",
+    "name": "Custom drawer box",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_11976",
+    "name": "Custom easy-flip box",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12348",
+    "name": "Custom easy-flip side open box",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8367",
+    "name": "Custom hinged tin box",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8363",
+    "name": "Custom labeled tin box",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_13104",
+    "name": "Custom magnetic book box",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3620",
+    "name": "Custom rigid box",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_104",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_21756",
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc",
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_233",
+    "name": "Custom plastic box",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_236",
+    "name": "Custom plastic hinged case",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_230",
+    "name": "Custom tin box",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_033",
+    "name": "Uncut sheet",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_7901",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_591",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_6318",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_2846",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12032",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12170",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_5762",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_2323",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_5412",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_1993",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12309",
+    "name": "Plain double plastic hinged case",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_7904",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3630",
+    "name": "Plain rigid box",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12306",
+    "name": "Custom double plastic hinged case",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3621",
+    "name": "Custom rigid box",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_594",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_4948",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_1563",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8369",
+    "name": "Shrink-wrapped",
+    "productCodes": [
+      "FI_8836"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12400",
+    "name": "Plain black velvet bag",
+    "productCodes": [
+      "FI_8836"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8617",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8836"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8875",
+    "name": "Plain rigid box",
+    "productCodes": [
+      "FI_8836"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8860",
+    "name": "Plain tin box",
+    "productCodes": [
+      "FI_8836"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12399",
+    "name": "Custom black velvet bag",
+    "productCodes": [
+      "FI_8836"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8866",
+    "name": "Custom rigid box",
+    "productCodes": [
+      "FI_8836"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8372",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8836"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8884",
+    "name": "Custom tin box",
+    "productCodes": [
+      "FI_8836"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8664",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8836"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8419",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8836"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8763",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8836"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8518",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8836"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8717",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8836"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8472",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8836"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8668",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8836"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8423",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8836"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8665",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8836"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8420",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8836"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8810",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8836"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8565",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8836"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_480",
+    "name": "Shrink-wrapped",
+    "productCodes": [
+      "FI_8332"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_7849",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8332"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_482",
+    "name": "Plain window tuck box",
+    "productCodes": [
+      "FI_8332"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_9995",
+    "name": "Plain tin box",
+    "productCodes": [
+      "FI_8332"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_9993",
+    "name": "Custom labeled tin box",
+    "productCodes": [
+      "FI_8332"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_538",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8332"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_9994",
+    "name": "Custom tin box",
+    "productCodes": [
+      "FI_8332"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_4594",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8332"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_1235",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8332"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_6366",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8332"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_2890",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8332"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_5805",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8332"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_2367",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8332"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_4598",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8332"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_1239",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8332"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_4596",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8332"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_1237",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8332"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_5002",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8332"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_1613",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8332"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
     "code": "PB_043",
     "name": "Shrink-wrapped",
-    "siteCodes": ["mpc"],
-    "productCodes": ["FI_7999", "FI_569"]
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
   },
   {
     "code": "PB_12387",
     "name": "Plain black velvet bag",
-    "siteCodes": ["mpc"],
-    "productCodes": ["FI_7999", "FI_569"]
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
   },
   {
     "code": "PB_13100",
     "name": "Plain double magnetic book box",
-    "siteCodes": ["mpc"],
-    "productCodes": ["FI_7999", "FI_569"]
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_13098",
+    "name": "Plain double magnetic book box(large)",
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
   },
   {
     "code": "PB_12337",
     "name": "Plain double tin box",
-    "siteCodes": ["mpc"],
-    "productCodes": ["FI_7999", "FI_569"]
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
   },
   {
     "code": "PB_10490",
     "name": "Plain drawer box",
-    "siteCodes": ["mpc"],
-    "productCodes": ["FI_7999", "FI_569"]
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
   },
   {
     "code": "PB_10488",
     "name": "Plain easy-flip box",
-    "siteCodes": ["mpc"],
-    "productCodes": ["FI_7999", "FI_569"]
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
   },
   {
     "code": "PB_12345",
     "name": "Plain easy-flip side open box",
-    "siteCodes": ["mpc"],
-    "productCodes": ["FI_7999", "FI_569"]
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
   },
   {
     "code": "PB_8356",
     "name": "Plain hinged tin box",
-    "siteCodes": ["mpc"],
-    "productCodes": ["FI_7999", "FI_569"]
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
   },
   {
     "code": "PB_12017",
     "name": "Plain lux box",
-    "siteCodes": ["mpc"],
-    "productCodes": ["FI_7999", "FI_569"]
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
   },
   {
     "code": "PB_13090",
     "name": "Plain magnetic book box",
-    "siteCodes": ["mpc"],
-    "productCodes": ["FI_7999", "FI_569"]
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
   },
   {
-    "code": "PB_8166",
+    "code": "PB_5408",
     "name": "Plain white tuck box",
-    "siteCodes": ["mpc"],
-    "productCodes": ["FI_7999", "FI_569"]
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
   },
   {
     "code": "PB_048",
     "name": "Plain window tuck box",
-    "siteCodes": ["mpc"],
-    "productCodes": ["FI_7999", "FI_569"]
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125",
+      "FI_9896",
+      "FI_9897"
+    ],
+    "siteCodes": [
+      "mpc",
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_13139",
+    "name": "Plain double rigid box",
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
   },
   {
     "code": "PB_045",
     "name": "Plain plastic box",
-    "siteCodes": ["mpc"],
-    "productCodes": ["FI_7999", "FI_569"]
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
   },
   {
     "code": "PB_4292",
     "name": "Plain rigid box",
-    "siteCodes": ["mpc"],
-    "productCodes": ["FI_7999", "FI_569"]
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
   },
   {
     "code": "PB_229",
     "name": "Plain plastic hinged case",
-    "siteCodes": ["mpc"],
-    "productCodes": ["FI_7999", "FI_569"]
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
   },
   {
     "code": "PB_050",
     "name": "Plain tin box",
-    "siteCodes": ["mpc"],
-    "productCodes": ["FI_7999", "FI_569"]
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
   },
   {
     "code": "PB_12388",
     "name": "Custom black velvet bag",
-    "siteCodes": ["mpc"],
-    "productCodes": ["FI_7999", "FI_569"]
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
   },
   {
     "code": "PB_13099",
     "name": "Custom double magnetic book box",
-    "siteCodes": ["mpc"],
-    "productCodes": ["FI_7999", "FI_569"]
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_13097",
+    "name": "Custom double magnetic book box(large)",
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_13140",
+    "name": "Custom double rigid box",
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
   },
   {
     "code": "PB_12335",
     "name": "Custom double sticker tin box",
-    "siteCodes": ["mpc"],
-    "productCodes": ["FI_7999", "FI_569"]
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
   },
   {
     "code": "PB_12336",
     "name": "Custom double tin box",
-    "siteCodes": ["mpc"],
-    "productCodes": ["FI_7999", "FI_569"]
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
   },
   {
     "code": "PB_9981",
     "name": "Custom drawer box",
-    "siteCodes": ["mpc"],
-    "productCodes": ["FI_7999", "FI_569"]
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
   },
   {
     "code": "PB_9983",
     "name": "Custom easy-flip box",
-    "siteCodes": ["mpc"],
-    "productCodes": ["FI_7999", "FI_569"]
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
   },
   {
     "code": "PB_12344",
     "name": "Custom easy-flip side open box",
-    "siteCodes": ["mpc"],
-    "productCodes": ["FI_7999", "FI_569"]
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
   },
   {
     "code": "PB_8366",
     "name": "Custom hinged tin box",
-    "siteCodes": ["mpc"],
-    "productCodes": ["FI_7999", "FI_569"]
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
   },
   {
     "code": "PB_8362",
     "name": "Custom labeled tin box",
-    "siteCodes": ["mpc"],
-    "productCodes": ["FI_7999", "FI_569"]
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
   },
   {
     "code": "PB_12014",
     "name": "Custom lux box",
-    "siteCodes": ["mpc"],
-    "productCodes": ["FI_7999", "FI_569"]
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
   },
   {
     "code": "PB_13091",
     "name": "Custom magnetic book box",
-    "siteCodes": ["mpc"],
-    "productCodes": ["FI_7999", "FI_569"]
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
   },
   {
     "code": "PB_4283",
     "name": "Custom rigid box",
-    "siteCodes": ["mpc"],
-    "productCodes": ["FI_7999", "FI_569"]
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
   },
   {
-    "code": "PB_861",
+    "code": "PB_199",
     "name": "Custom tuck box",
-    "siteCodes": ["mpc"],
-    "productCodes": ["FI_7999", "FI_569"]
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
   },
   {
-    "code": "PB_3281",
+    "code": "PB_3280",
     "name": "Custom tuck box (sealed base)",
-    "siteCodes": ["mpc"],
-    "productCodes": ["FI_7999", "FI_569"]
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
   },
   {
     "code": "PB_234",
     "name": "Custom plastic box",
-    "siteCodes": ["mpc"],
-    "productCodes": ["FI_7999", "FI_569"]
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
   },
   {
     "code": "PB_237",
     "name": "Custom plastic hinged case",
-    "siteCodes": ["mpc"],
-    "productCodes": ["FI_7999", "FI_569"]
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
   },
   {
     "code": "PB_231",
     "name": "Custom tin box",
-    "siteCodes": ["mpc"],
-    "productCodes": ["FI_7999", "FI_569"]
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
   },
   {
     "code": "PB_049",
     "name": "Uncut sheet",
-    "siteCodes": ["mpc"],
-    "productCodes": ["FI_7999", "FI_569"]
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8166",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_861",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3281",
+    "name": "Custom tuck box (sealed base)",
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_6422",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_2942",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3285",
+    "name": "Custom tuck box (sealed base)",
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12078",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12217",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12304",
+    "name": "Custom tuck box (sealed base)",
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_5857",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_2417",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3284",
+    "name": "Custom tuck box (sealed base)",
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_5463",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_2040",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3283",
+    "name": "Custom tuck box (sealed base)",
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12024",
+    "name": "Plain double plastic hinged case",
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8169",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_4293",
+    "name": "Plain rigid box",
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12022",
+    "name": "Custom double plastic hinged case",
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_4284",
+    "name": "Custom rigid box",
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_864",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_5065",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_1671",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3282",
+    "name": "Custom tuck box (sealed base)",
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3667",
+    "name": "Shrink-wrapped",
+    "productCodes": [
+      "FI_8543"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_7424",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8543"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3983",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8543"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_7476",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8543"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_4031",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8543"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_7533",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8543"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_4084",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8543"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_7585",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8543"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_4132",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8543"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_7635",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_21661",
+      "FI_21665",
+      "FI_8543"
+    ],
+    "siteCodes": [
+      "mpc",
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_4179",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8543"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_7477",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8543"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_4032",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8543"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_7686",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8543"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_4226",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8543"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_004",
+    "name": "Shrink-wrapped",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12394",
+    "name": "Plain black velvet bag",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12392",
+    "name": "Plain double magnetic book box",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12391",
+    "name": "Plain double magnetic book box(large)",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12312",
+    "name": "Plain double tin box",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_11992",
+    "name": "Plain drawer box",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_11974",
+    "name": "Plain easy-flip box",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12343",
+    "name": "Plain easy-flip side open box",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8354",
+    "name": "Plain hinged tin box",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12016",
+    "name": "Plain lux box",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_13092",
+    "name": "Plain magnetic book box",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_4280",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_016",
+    "name": "Plain window tuck box",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_006",
+    "name": "Plain plastic box",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3593",
+    "name": "Plain rigid box",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_228",
+    "name": "Plain plastic hinged case",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_036",
+    "name": "Plain tin box",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12393",
+    "name": "Custom black velvet bag",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12390",
+    "name": "Custom double magnetic book box",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12389",
+    "name": "Custom double magnetic book box(large)",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12314",
+    "name": "Custom double sticker tin box",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12313",
+    "name": "Custom double tin box",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_11990",
+    "name": "Custom drawer box",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_11972",
+    "name": "Custom easy-flip box",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12342",
+    "name": "Custom easy-flip side open box",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8365",
+    "name": "Custom hinged tin box",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8361",
+    "name": "Custom labeled tin box",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12013",
+    "name": "Custom lux box",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_13093",
+    "name": "Custom magnetic book box",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3584",
+    "name": "Custom rigid box",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_057",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3223",
+    "name": "Custom tuck box (sealed base)",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_235",
+    "name": "Custom plastic box",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_238",
+    "name": "Custom plastic hinged case",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_232",
+    "name": "Custom tin box",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_034",
+    "name": "Uncut sheet",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_7954",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_645",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3224",
+    "name": "Custom tuck box (sealed base)",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_6474",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_2990",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3228",
+    "name": "Custom tuck box (sealed base)",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12124",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12264",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12305",
+    "name": "Custom tuck box (sealed base)",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_5908",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_2464",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3227",
+    "name": "Custom tuck box (sealed base)",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_5513",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_2087",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3226",
+    "name": "Custom tuck box (sealed base)",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12023",
+    "name": "Plain double plastic hinged case",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_7957",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3594",
+    "name": "Plain rigid box",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12021",
+    "name": "Custom double plastic hinged case",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3585",
+    "name": "Custom rigid box",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_648",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_5123",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_1725",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3225",
+    "name": "Custom tuck box (sealed base)",
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_9996",
+    "name": "Shrink-wrapped",
+    "productCodes": [
+      "FI_8883"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_11239",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8883"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_10504",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8883"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_11288",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8883"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_10553",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8883"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_11387",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8883"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_10652",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8883"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_11340",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8883"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_10605",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8883"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_11292",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8883"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_10557",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8883"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_11289",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8883"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_10554",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8883"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_11434",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8883"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_10699",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8883"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3286",
+    "name": "Shrink-wrapped",
+    "productCodes": [
+      "FI_8459"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_6781",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8459"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3293",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8459"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_6834",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8459"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3342",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8459"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_6892",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8459"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3396",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8459"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_6944",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8459"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3444",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8459"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_6992",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8459"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3489",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8459"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_6837",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8459"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3345",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8459"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_6835",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8459"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3343",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8459"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_7044",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8459"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3538",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8459"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_023",
+    "name": "Shrink-wrapped",
+    "productCodes": [
+      "FI_12554",
+      "FI_4332",
+      "FI_4333",
+      "FI_5073",
+      "FI_6989",
+      "FI_8988",
+      "FI_8990"
+    ],
+    "siteCodes": [
+      "mpc",
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_12318",
+    "name": "Plain black velvet bag",
+    "productCodes": [
+      "FI_5073",
+      "FI_8988",
+      "FI_8990"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12018",
+    "name": "Plain lux box",
+    "productCodes": [
+      "FI_5073",
+      "FI_8988",
+      "FI_8990"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12380",
+    "name": "Plain magnetic book box",
+    "productCodes": [
+      "FI_5073",
+      "FI_8988",
+      "FI_8990"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12379",
+    "name": "Plain magnetic book box(large)",
+    "productCodes": [
+      "FI_5073",
+      "FI_8988",
+      "FI_8990"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12319",
+    "name": "Plain purple velvet bag",
+    "productCodes": [
+      "FI_5073",
+      "FI_8988",
+      "FI_8990"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8065",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_5073",
+      "FI_8988",
+      "FI_8990"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_027",
+    "name": "Plain window tuck box",
+    "productCodes": [
+      "FI_12550",
+      "FI_12553",
+      "FI_5073",
+      "FI_6037",
+      "FI_6038",
+      "FI_8988",
+      "FI_8990"
+    ],
+    "siteCodes": [
+      "mpc",
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_13141",
+    "name": "Plain double rigid box",
+    "productCodes": [
+      "FI_5073",
+      "FI_8988",
+      "FI_8990"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3606",
+    "name": "Plain rigid box",
+    "productCodes": [
+      "FI_5073",
+      "FI_8988",
+      "FI_8990"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_9985",
+    "name": "Plain tin box",
+    "productCodes": [
+      "FI_5073",
+      "FI_8988",
+      "FI_8990"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12320",
+    "name": "Custom black velvet bag",
+    "productCodes": [
+      "FI_5073",
+      "FI_8988",
+      "FI_8990"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_13142",
+    "name": "Custom double rigid box",
+    "productCodes": [
+      "FI_5073",
+      "FI_8988",
+      "FI_8990"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_9987",
+    "name": "Custom labeled tin box",
+    "productCodes": [
+      "FI_5073",
+      "FI_8988",
+      "FI_8990"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12015",
+    "name": "Custom lux box",
+    "productCodes": [
+      "FI_5073",
+      "FI_8988",
+      "FI_8990"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12384",
+    "name": "Custom magnetic book box",
+    "productCodes": [
+      "FI_5073",
+      "FI_8988",
+      "FI_8990"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12383",
+    "name": "Custom magnetic book box(large)",
+    "productCodes": [
+      "FI_5073",
+      "FI_8988",
+      "FI_8990"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12321",
+    "name": "Custom purple velvet bag",
+    "productCodes": [
+      "FI_5073",
+      "FI_8988",
+      "FI_8990"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3602",
+    "name": "Custom rigid box",
+    "productCodes": [
+      "FI_5073",
+      "FI_8988",
+      "FI_8990"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_758",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_5073",
+      "FI_8988",
+      "FI_8990"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_9986",
+    "name": "Custom tin box",
+    "productCodes": [
+      "FI_12557",
+      "FI_12558",
+      "FI_2134",
+      "FI_2135",
+      "FI_5073",
+      "FI_8988",
+      "FI_8990"
+    ],
+    "siteCodes": [
+      "mpc",
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_6529",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_5073",
+      "FI_8988",
+      "FI_8990"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3042",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_5073",
+      "FI_8988",
+      "FI_8990"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_6737",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_5073",
+      "FI_8988",
+      "FI_8990"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3243",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_5073",
+      "FI_8988",
+      "FI_8990"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12315",
+    "name": "Plain double tin box",
+    "productCodes": [
+      "FI_5073",
+      "FI_8988",
+      "FI_8990"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8070",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_5073",
+      "FI_8988",
+      "FI_8990"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3608",
+    "name": "Plain rigid box",
+    "productCodes": [
+      "FI_5073",
+      "FI_8988",
+      "FI_8990"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12316",
+    "name": "Custom double tin box",
+    "productCodes": [
+      "FI_5073",
+      "FI_8988",
+      "FI_8990"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3604",
+    "name": "Custom rigid box",
+    "productCodes": [
+      "FI_5073",
+      "FI_8988",
+      "FI_8990"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_763",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_5073",
+      "FI_8988",
+      "FI_8990"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8066",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_5073",
+      "FI_8988",
+      "FI_8990"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3607",
+    "name": "Plain rigid box",
+    "productCodes": [
+      "FI_5073",
+      "FI_8988",
+      "FI_8990"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3603",
+    "name": "Custom rigid box",
+    "productCodes": [
+      "FI_5073",
+      "FI_8988",
+      "FI_8990"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_759",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_5073",
+      "FI_8988",
+      "FI_8990"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_5187",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_5073",
+      "FI_8988",
+      "FI_8990"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_1784",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_5073",
+      "FI_8988",
+      "FI_8990"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_9997",
+    "name": "Shrink-wrapped",
+    "productCodes": [
+      "FI_8884"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_10989",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8884"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_10744",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8884"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_11038",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8884"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_10793",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8884"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_11136",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8884"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_10891",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8884"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_11090",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8884"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_10845",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8884"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_11041",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8884"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_10796",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8884"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_11039",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8884"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_10794",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8884"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_11184",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8884"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_10939",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8884"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_6602",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8009"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_311",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8009"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8271",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8009"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_968",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8009"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_6162",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8009"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_2701",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8009"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_5666",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8009"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_2229",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8009"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8274",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8009"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_971",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8009"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8272",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8009"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_969",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8009"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_4773",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8009"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_1400",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8009"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_038",
+    "name": "Shrink-wrapped",
+    "productCodes": [
+      "FI_8002",
+      "FI_8005"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12010",
+    "name": "Plain easy-flip box",
+    "productCodes": [
+      "FI_8002",
+      "FI_8005"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_7795",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8002",
+      "FI_8005"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3615",
+    "name": "Plain rigid box",
+    "productCodes": [
+      "FI_8002",
+      "FI_8005"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12009",
+    "name": "Custom easy-flip box",
+    "productCodes": [
+      "FI_8002",
+      "FI_8005"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3610",
+    "name": "Custom rigid box",
+    "productCodes": [
+      "FI_8002",
+      "FI_8005"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_483",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8002",
+      "FI_8005"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_4530",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8002",
+      "FI_8005"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_1176",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8002",
+      "FI_8005"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_6618",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8002",
+      "FI_8005"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3125",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8002",
+      "FI_8005"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_6000",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8002",
+      "FI_8005"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_2550",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8002",
+      "FI_8005"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_5288",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8002",
+      "FI_8005"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_1878",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8002",
+      "FI_8005"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_13094",
+    "name": "Plain round tin box",
+    "productCodes": [
+      "FI_8002"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_13096",
+    "name": "Custom round sticker tin box",
+    "productCodes": [
+      "FI_8002"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_13095",
+    "name": "Custom round tin box",
+    "productCodes": [
+      "FI_8002"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_10492",
+    "name": "Shrink-wrapped",
+    "productCodes": [
+      "FI_8892"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_11998",
+    "name": "Plain drawer box",
+    "productCodes": [
+      "FI_8892"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_11984",
+    "name": "Plain easy-flip box",
+    "productCodes": [
+      "FI_8892"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12382",
+    "name": "Plain magnetic book box",
+    "productCodes": [
+      "FI_8892"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12381",
+    "name": "Plain magnetic book box(large)",
+    "productCodes": [
+      "FI_8892"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12311",
+    "name": "Plain plastic hinged case",
+    "productCodes": [
+      "FI_8892"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12334",
+    "name": "Plain tin box",
+    "productCodes": [
+      "FI_8892"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_11772",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8892"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_11478",
+    "name": "Plain rigid box",
+    "productCodes": [
+      "FI_8892"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_11997",
+    "name": "Custom drawer box",
+    "productCodes": [
+      "FI_8892"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_11983",
+    "name": "Custom easy-flip box",
+    "productCodes": [
+      "FI_8892"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12386",
+    "name": "Custom magnetic book box",
+    "productCodes": [
+      "FI_8892"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12385",
+    "name": "Custom magnetic book box(large)",
+    "productCodes": [
+      "FI_8892"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12308",
+    "name": "Custom plastic hinged case",
+    "productCodes": [
+      "FI_8892"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_11475",
+    "name": "Custom rigid box",
+    "productCodes": [
+      "FI_8892"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12332",
+    "name": "Custom sticker tin box",
+    "productCodes": [
+      "FI_8892"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12333",
+    "name": "Custom tin box",
+    "productCodes": [
+      "FI_8892"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_11527",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8892"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_11871",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8892"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_11626",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8892"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_11825",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8892"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_11580",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8892"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_11773",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8892"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_11528",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8892"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_11918",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8892"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_11673",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8892"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_007",
+    "name": "Shrink-wrapped",
+    "productCodes": [
+      "FI_2134",
+      "FI_2135"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8007",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_2134",
+      "FI_2135"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_017",
+    "name": "Plain window tuck box",
+    "productCodes": [
+      "FI_2134",
+      "FI_2135"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3642",
+    "name": "Plain rigid box",
+    "productCodes": [
+      "FI_2134",
+      "FI_2135"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3638",
+    "name": "Custom rigid box",
+    "productCodes": [
+      "FI_2134",
+      "FI_2135"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_699",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_2134",
+      "FI_2135"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_6680",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_2134",
+      "FI_2135"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3182",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_2134",
+      "FI_2135"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_9943",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_2134",
+      "FI_2135"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_9897",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_2134",
+      "FI_2135"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8010",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_2134",
+      "FI_2135"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3643",
+    "name": "Plain rigid box",
+    "productCodes": [
+      "FI_2134",
+      "FI_2135"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3639",
+    "name": "Custom rigid box",
+    "productCodes": [
+      "FI_2134",
+      "FI_2135"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_702",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_2134",
+      "FI_2135"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_8008",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_2134",
+      "FI_2135"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_700",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_2134",
+      "FI_2135"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_5356",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_2134",
+      "FI_2135"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_1941",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_2134",
+      "FI_2135"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_040",
+    "name": "Shrink-wrapped",
+    "productCodes": [
+      "FI_8012"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12012",
+    "name": "Plain easy-flip box",
+    "productCodes": [
+      "FI_8012"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_7761",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8012"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12011",
+    "name": "Custom easy-flip box",
+    "productCodes": [
+      "FI_8012"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_446",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8012"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_4472",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8012"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_1122",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8012"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_6566",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8012"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_3077",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8012"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_5950",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8012"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_2503",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8012"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_5230",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8012"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_1824",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8012"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12350",
+    "name": "Shrink-wrapped",
+    "productCodes": [
+      "FI_9009"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12947",
+    "name": "Plain rigid box",
+    "productCodes": [
+      "FI_9009"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12830",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_9009"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12955",
+    "name": "Custom rigid box",
+    "productCodes": [
+      "FI_9009"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12557",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_9009"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12869",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_9009"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12596",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_9009"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12908",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_9009"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12635",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_9009"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12713",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_9009"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12440",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_9009"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12791",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_9009"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_12518",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_9009"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_4282",
+    "name": "Shrink-wrapped",
+    "productCodes": [
+      "FI_8590"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_10486",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8590"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_9998",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8590"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_10287",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8590"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_10044",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8590"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_10386",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8590"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_10143",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_12555",
+      "FI_12556",
+      "FI_1618",
+      "FI_569",
+      "FI_8590"
+    ],
+    "siteCodes": [
+      "mpc",
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_10340",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8590"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_10097",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8590"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_10433",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_8590"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_10190",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_8590"
+    ],
+    "siteCodes": [
+      "mpc"
+    ]
+  },
+  {
+    "code": "PB_071",
+    "name": "Shrink-wrapped",
+    "productCodes": [
+      "FI_21757"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_4999",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_21757"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_5728",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_21757"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_5052",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_21757"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_5781",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_21757"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_5098",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_21757"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_5827",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_21757"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_5145",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_21757"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_5874",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_21757"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_029",
+    "name": "Shrink-wrapped",
+    "productCodes": [
+      "FI_12550",
+      "FI_12553",
+      "FI_6037",
+      "FI_6038"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_782",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_12550",
+      "FI_12553",
+      "FI_6037",
+      "FI_6038"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_5927",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_12550",
+      "FI_12553",
+      "FI_6037",
+      "FI_6038"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_869",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_12550",
+      "FI_12553",
+      "FI_6037",
+      "FI_6038"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_6027",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_12550",
+      "FI_12553",
+      "FI_6037",
+      "FI_6038"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_849",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_12550",
+      "FI_12553",
+      "FI_6037",
+      "FI_6038"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_6007",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_12550",
+      "FI_12553",
+      "FI_6037",
+      "FI_6038"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_947",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_12550",
+      "FI_12553",
+      "FI_6037",
+      "FI_6038"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_6105",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_12550",
+      "FI_12553",
+      "FI_6037",
+      "FI_6038"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_022",
+    "name": "Plastic case",
+    "productCodes": [
+      "FI_12554",
+      "FI_4332",
+      "FI_4333",
+      "FI_6989"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_10165",
+    "name": "Custom black velvet bag",
+    "productCodes": [
+      "FI_12554",
+      "FI_4332",
+      "FI_4333",
+      "FI_6989"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_10145",
+    "name": "Custom labeled tin box",
+    "productCodes": [
+      "FI_12554",
+      "FI_4332",
+      "FI_4333",
+      "FI_6989"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_10177",
+    "name": "Custom plastic box",
+    "productCodes": [
+      "FI_12554",
+      "FI_4332",
+      "FI_4333",
+      "FI_6989"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_10156",
+    "name": "Custom plastic hinged case",
+    "productCodes": [
+      "FI_12554",
+      "FI_4332",
+      "FI_4333",
+      "FI_6989"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_1994",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_12554",
+      "FI_4332",
+      "FI_4333",
+      "FI_6989"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_10164",
+    "name": "Plain black velvet bag",
+    "productCodes": [
+      "FI_12554",
+      "FI_4332",
+      "FI_4333",
+      "FI_6989"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_10176",
+    "name": "Plain plastic box",
+    "productCodes": [
+      "FI_12554",
+      "FI_4332",
+      "FI_4333",
+      "FI_6989"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_10153",
+    "name": "Plain plastic hinged case",
+    "productCodes": [
+      "FI_12554",
+      "FI_4332",
+      "FI_4333",
+      "FI_6989"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_7152",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_12554",
+      "FI_4332",
+      "FI_4333",
+      "FI_6989"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_075",
+    "name": "Window tuck box",
+    "productCodes": [
+      "FI_12554",
+      "FI_4332",
+      "FI_4333",
+      "FI_6989"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_10096",
+    "name": "Zip pouch",
+    "productCodes": [
+      "FI_12554",
+      "FI_4332",
+      "FI_4333",
+      "FI_6989"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_2097",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_12554",
+      "FI_4332",
+      "FI_4333",
+      "FI_6989"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_7255",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_12554",
+      "FI_4332",
+      "FI_4333",
+      "FI_6989"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_2050",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_12554",
+      "FI_4332",
+      "FI_4333",
+      "FI_6989"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_7208",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_12554",
+      "FI_4332",
+      "FI_4333",
+      "FI_6989"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_2199",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_12554",
+      "FI_4332",
+      "FI_4333",
+      "FI_6989"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_7357",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_12554",
+      "FI_4332",
+      "FI_4333",
+      "FI_6989"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_080",
+    "name": "Shrink-wrapped",
+    "productCodes": [
+      "FI_21661",
+      "FI_21665"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_10167",
+    "name": "Custom black velvet bag",
+    "productCodes": [
+      "FI_21661",
+      "FI_21665"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_2321",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_21661",
+      "FI_21665"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_10166",
+    "name": "Plain black velvet bag",
+    "productCodes": [
+      "FI_21661",
+      "FI_21665"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_7489",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_21661",
+      "FI_21665"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_096",
+    "name": "Window tuck box",
+    "productCodes": [
+      "FI_21661",
+      "FI_21665"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_2394",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_21661",
+      "FI_21665"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_7542",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_21661",
+      "FI_21665"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_2445",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_21661",
+      "FI_21665"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_7588",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_21661",
+      "FI_21665"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_2492",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_21661",
+      "FI_21665"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_047",
+    "name": "Plastic case",
+    "productCodes": [
+      "FI_9896",
+      "FI_9897"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_10169",
+    "name": "Custom black velvet bag",
+    "productCodes": [
+      "FI_9896",
+      "FI_9897"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_10144",
+    "name": "Custom labeled tin box",
+    "productCodes": [
+      "FI_9896",
+      "FI_9897"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_10179",
+    "name": "Custom plastic box",
+    "productCodes": [
+      "FI_9896",
+      "FI_9897"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_10157",
+    "name": "Custom plastic hinged case",
+    "productCodes": [
+      "FI_9896",
+      "FI_9897"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_3005",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_9896",
+      "FI_9897"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_10168",
+    "name": "Plain black velvet bag",
+    "productCodes": [
+      "FI_9896",
+      "FI_9897"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_10178",
+    "name": "Plain plastic box",
+    "productCodes": [
+      "FI_9896",
+      "FI_9897"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_10155",
+    "name": "Plain plastic hinged case",
+    "productCodes": [
+      "FI_9896",
+      "FI_9897"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_8171",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_9896",
+      "FI_9897"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_077",
+    "name": "Window tuck box",
+    "productCodes": [
+      "FI_9896",
+      "FI_9897"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_10094",
+    "name": "Zip pouch",
+    "productCodes": [
+      "FI_9896",
+      "FI_9897"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_2827",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_9896",
+      "FI_9897"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_7985",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_9896",
+      "FI_9897"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_2775",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_9896",
+      "FI_9897"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_7933",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_9896",
+      "FI_9897"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_2880",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_9896",
+      "FI_9897"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_8038",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_9896",
+      "FI_9897"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
   },
   {
     "code": "PB_018",
     "name": "Shrink-wrapped",
-    "siteCodes": ["ps"],
-    "productCodes": ["FI_569"]
-  },
-  {
-    "code": "PB_10170",
-    "name": "Plain black velvet bag",
-    "siteCodes": ["ps"],
-    "productCodes": ["FI_569"]
-  },
-  {
-    "code": "PB_8515",
-    "name": "Plain white tuck box",
-    "siteCodes": ["ps"],
-    "productCodes": ["FI_569"]
-  },
-  {
-    "code": "PB_012",
-    "name": "Plastic case",
-    "siteCodes": ["ps"],
-    "productCodes": ["FI_569"]
-  },
-  {
-    "code": "PB_065",
-    "name": "White window tuck box",
-    "siteCodes": ["ps"],
-    "productCodes": ["FI_569"]
-  },
-  {
-    "code": "PB_10180",
-    "name": "Plain plastic box",
-    "siteCodes": ["ps"],
-    "productCodes": ["FI_569"]
-  },
-  {
-    "code": "PB_10154",
-    "name": "Plain plastic hinged case",
-    "siteCodes": ["ps"],
-    "productCodes": ["FI_569"]
+    "productCodes": [
+      "FI_12555",
+      "FI_12556",
+      "FI_1618",
+      "FI_569"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
   },
   {
     "code": "PB_10171",
     "name": "Custom black velvet bag",
-    "siteCodes": ["ps"],
-    "productCodes": ["FI_569"]
-  },
-  {
-    "code": "PB_10143",
-    "name": "Custom labeled tin box",
-    "siteCodes": ["ps"],
-    "productCodes": ["FI_569"]
-  },
-  {
-    "code": "PB_3357",
-    "name": "Custom tuck box",
-    "siteCodes": ["ps"],
-    "productCodes": ["FI_569"]
-  },
-  {
-    "code": "PB_10095",
-    "name": "Zip pouch",
-    "siteCodes": ["ps"],
-    "productCodes": ["FI_569"]
+    "productCodes": [
+      "FI_12555",
+      "FI_12556",
+      "FI_1618",
+      "FI_569"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
   },
   {
     "code": "PB_10181",
     "name": "Custom plastic box",
-    "siteCodes": ["ps"],
-    "productCodes": ["FI_569"]
+    "productCodes": [
+      "FI_12555",
+      "FI_12556",
+      "FI_1618",
+      "FI_569"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
   },
   {
     "code": "PB_10158",
     "name": "Custom plastic hinged case",
-    "siteCodes": ["ps"],
-    "productCodes": ["FI_569"]
+    "productCodes": [
+      "FI_12555",
+      "FI_12556",
+      "FI_1618",
+      "FI_569"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_3357",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_12555",
+      "FI_12556",
+      "FI_1618",
+      "FI_569"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_10170",
+    "name": "Plain black velvet bag",
+    "productCodes": [
+      "FI_12555",
+      "FI_12556",
+      "FI_1618",
+      "FI_569"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_10180",
+    "name": "Plain plastic box",
+    "productCodes": [
+      "FI_12555",
+      "FI_12556",
+      "FI_1618",
+      "FI_569"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_10154",
+    "name": "Plain plastic hinged case",
+    "productCodes": [
+      "FI_12555",
+      "FI_12556",
+      "FI_1618",
+      "FI_569"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_8515",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_12555",
+      "FI_12556",
+      "FI_1618",
+      "FI_569"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_012",
+    "name": "Plastic case",
+    "productCodes": [
+      "FI_12555",
+      "FI_12556",
+      "FI_1618",
+      "FI_569"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_065",
+    "name": "Window tuck box",
+    "productCodes": [
+      "FI_12555",
+      "FI_12556",
+      "FI_1618",
+      "FI_569"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_10095",
+    "name": "Zip pouch",
+    "productCodes": [
+      "FI_12555",
+      "FI_12556",
+      "FI_1618",
+      "FI_569"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_3587",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_12555",
+      "FI_12556",
+      "FI_1618",
+      "FI_569"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_8745",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_12555",
+      "FI_12556",
+      "FI_1618",
+      "FI_569"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_3601",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_12555",
+      "FI_12556",
+      "FI_1618",
+      "FI_569"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_8759",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_12555",
+      "FI_12556",
+      "FI_1618",
+      "FI_569"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_3486",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_12555",
+      "FI_12556",
+      "FI_1618",
+      "FI_569"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_8644",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_12555",
+      "FI_12556",
+      "FI_1618",
+      "FI_569"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_079",
+    "name": "Shrink-wrapped",
+    "productCodes": [
+      "FI_21756"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_3858",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_21756"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_9016",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_21756"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_3762",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_21756"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_8920",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_21756"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_3813",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_21756"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_8971",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_21756"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_3678",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_21756"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_8836",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_21756"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_024",
+    "name": "Shrink-wrapped",
+    "productCodes": [
+      "FI_12266",
+      "FI_12559",
+      "FI_12560",
+      "FI_7852"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_10174",
+    "name": "Custom black velvet bag",
+    "productCodes": [
+      "FI_12266",
+      "FI_12559",
+      "FI_12560",
+      "FI_7852"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_10146",
+    "name": "Custom labeled tin box",
+    "productCodes": [
+      "FI_12266",
+      "FI_12559",
+      "FI_12560",
+      "FI_7852"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_10175",
+    "name": "Custom purple velvet bag",
+    "productCodes": [
+      "FI_12266",
+      "FI_12559",
+      "FI_12560",
+      "FI_7852"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_3931",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_12266",
+      "FI_12559",
+      "FI_12560",
+      "FI_7852"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_10172",
+    "name": "Plain black velvet bag",
+    "productCodes": [
+      "FI_12266",
+      "FI_12559",
+      "FI_12560",
+      "FI_7852"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_10173",
+    "name": "Plain purple velvet bag",
+    "productCodes": [
+      "FI_12266",
+      "FI_12559",
+      "FI_12560",
+      "FI_7852"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_9089",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_12266",
+      "FI_12559",
+      "FI_12560",
+      "FI_7852"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_10090",
+    "name": "Zip pouch",
+    "productCodes": [
+      "FI_12266",
+      "FI_12559",
+      "FI_12560",
+      "FI_7852"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_4061",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_12266",
+      "FI_12559",
+      "FI_12560",
+      "FI_7852"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_9219",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_12266",
+      "FI_12559",
+      "FI_12560",
+      "FI_7852"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_4020",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_12266",
+      "FI_12559",
+      "FI_12560",
+      "FI_7852"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_4077",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_12266",
+      "FI_12559",
+      "FI_12560",
+      "FI_7852"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_9235",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_12266",
+      "FI_12559",
+      "FI_12560",
+      "FI_7852"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_019",
+    "name": "Shrink-wrapped",
+    "productCodes": [
+      "FI_12557",
+      "FI_12558",
+      "FI_2134",
+      "FI_2135"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_013",
+    "name": "Window tuck box",
+    "productCodes": [
+      "FI_12557",
+      "FI_12558",
+      "FI_2134",
+      "FI_2135"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_4729",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_12557",
+      "FI_12558",
+      "FI_2134",
+      "FI_2135"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_9887",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_12557",
+      "FI_12558",
+      "FI_2134",
+      "FI_2135"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_9940",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_12557",
+      "FI_12558",
+      "FI_2134",
+      "FI_2135"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_4682",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_12557",
+      "FI_12558",
+      "FI_2134",
+      "FI_2135"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_9840",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_12557",
+      "FI_12558",
+      "FI_2134",
+      "FI_2135"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_4639",
+    "name": "Custom tuck box",
+    "productCodes": [
+      "FI_12557",
+      "FI_12558",
+      "FI_2134",
+      "FI_2135"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
+  },
+  {
+    "code": "PB_9797",
+    "name": "Plain white tuck box",
+    "productCodes": [
+      "FI_12557",
+      "FI_12558",
+      "FI_2134",
+      "FI_2135"
+    ],
+    "siteCodes": [
+      "ps"
+    ]
   }
 ]

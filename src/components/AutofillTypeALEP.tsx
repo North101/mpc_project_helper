@@ -2,10 +2,10 @@ import React from "react";
 import Accordion from "react-bootstrap/esm/Accordion";
 import FloatingLabel from "react-bootstrap/esm/FloatingLabel";
 import Form from "react-bootstrap/esm/Form";
-import { Card } from "../types/card";
+import { Card, CardFace } from "../types/card";
 import { AutofillNone, AutofillNoneProps, AutofillType } from "./AutofillTypeNone";
 
-const sideMap: { [key: string]: 'front' | 'back'; } = {
+const sideMap: { [key: string]: CardFace; } = {
   '1': 'front',
   '2': 'back',
 }

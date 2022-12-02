@@ -2,11 +2,11 @@
   {
     "code": "mpc",
     "name": "MakePlayingCards",
-    "url": "https://www.makeplayingcards.com"
+    "urls": ["https://www.makeplayingcards.com"]
   },
   {
     "code": "ps",
     "name": "PrinterStudio",
-    "url": "https://www.printerstudio.co.uk"
+    "urls": ["https://www.printerstudio.co.uk", "https://www.printerstudio.com"]
   }
 ]

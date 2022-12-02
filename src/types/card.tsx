@@ -1,3 +1,10 @@
+export type CardFace = 'front' | 'back';
+
+export const CardFaces: CardFace[] = [
+  'front',
+  'back',
+]
+
 export interface CardSide {
   id: number;
   file: File;

@@ -2,7 +2,6 @@ import * as React from "react";
 import { PencilSquare, Save } from "react-bootstrap-icons";
 import Button from "react-bootstrap/esm/Button";
 import Modal from "react-bootstrap/esm/Modal";
-import { is } from "typescript-is";
 import { ParsedProject } from "../types/project";
 import SaveProjectModal from "./SaveProjectModal";
 import ProjectCardList from "./ProjectCardList";

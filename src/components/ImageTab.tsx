@@ -4,10 +4,9 @@ import { CardImage, FileEarmarkPlus, PlusCircle, Upload, XCircle } from "react-b
 import Button from "react-bootstrap/esm/Button";
 import Dropdown from "react-bootstrap/esm/Dropdown";
 import ListGroup from "react-bootstrap/esm/ListGroup";
-import { is } from 'typescript-is';
 import unitData from "../api/data/unit.json";
 import { analysisImage, CardSettings, CompressedImageData, compressImageData, createProject, Settings, UploadedImage, uploadImage } from "../api/mpc_api";
-import { Card, CardSide } from "../types/card";
+import { Card, CardSide, CardFace, CardFaces } from "../types/card";
 import { Site, Unit } from "../types/mpc";
 import { Project } from "../types/project";
 import { analyseCard, remove, reorder, replace, setStateAsync } from "../util";
@@ -28,11 +27,19 @@ interface SettingsState {
   id: 'settings';
 }
 
+const isSettingState = (item: any): item is SettingsState => {
+  return item instanceof Object && item['id'] === 'settings';
+}
+
 interface LoadingState {
   id: 'loading';
   title: string;
   value: number;
   maxValue: number;
+}
+
+const isLoadingState = (item: any): item is LoadingState => {
+  return item instanceof Object && item['id'] === 'loading';
 }
 
 interface FinishedState {
@@ -41,13 +48,25 @@ interface FinishedState {
   url?: string;
 }
 
+const isFinishedState = (item: any): item is FinishedState => {
+  return item instanceof Object && item['id'] === 'finished';
+}
+
 interface ErrorState {
   id: 'error';
   value: any;
 }
 
+const isErrorState = (item: any): item is ErrorState => {
+  return item instanceof Object && item['id'] === 'error';
+}
+
 interface PreviewState {
   id: 'preview';
+}
+
+const isPreviewState = (item: any): item is PreviewState => {
+  return item instanceof Object && item['id'] === 'preview';
 }
 
 interface ImageTabProps {
@@ -97,7 +116,7 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
     let count = 0;
     const promiseList: Promise<CardSide>[] = [];
     for (let i = 0; i < total; i++) {
-      promiseList.push(analyseCard(selectedFiles[i]).then(({file, width, height}) => ({
+      promiseList.push(analyseCard(selectedFiles[i]).then(({ file, width, height }) => ({
         id: ImageTab.fileId++,
         file: file,
         info: {
@@ -211,7 +230,7 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
       const cardData: UploadedImage = {
         count: card.count,
       };
-      for (const side of ['front', 'back'] as ('front' | 'back')[]) {
+      for (const side of CardFaces) {
         const cardSide = card[side];
         if (!cardSide) continue;
 
@@ -370,7 +389,7 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
             <Dropdown.Toggle variant="outline-primary">
               {unit?.name ?? 'Select Product'}
             </Dropdown.Toggle>
-            <Dropdown.Menu>
+            <Dropdown.Menu style={{maxHeight: 300, overflowY: 'scroll'}}>
               {unitData.filter((it) => it.siteCodes.includes(site.code)).map((it) => (
                 <Dropdown.Item key={it.code} eventKey={it.code} active={it.code === unit?.code}>{it.name}</Dropdown.Item>
               ))}
@@ -411,8 +430,8 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
             </Droppable>
           </DragDropContext>
         </div>
-        <div style={{display: 'flex'}}>
-          <div style={{flex: 1}}/>
+        <div style={{ display: 'flex' }}>
+          <div style={{ flex: 1 }} />
           <div>
             Card Count: {cards.reduce((value, card) => value + card.count, 0)}
           </div>
@@ -422,7 +441,7 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
           onAdd={this.onAddCards}
           onClose={this.onStateClear}
         />}
-        {is<SettingsState>(state) && <ImageSettingsModal
+        {isSettingState(state) && <ImageSettingsModal
           site={site}
           unit={unit}
           cards={cards}
@@ -431,7 +450,7 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
           onClose={this.onStateClear}
         />}
         {
-          is<LoadingState>(state) && <ProgressModal
+          isLoadingState(state) && <ProgressModal
             title={state.title}
             value={state.value}
             maxValue={state.maxValue}
@@ -439,7 +458,7 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
           />
         }
         {
-          is<FinishedState>(state) && <SaveProjectModal
+          isFinishedState(state) && <SaveProjectModal
             message='Your images were successfully uploaded'
             value={state.value}
             url={state.url}
@@ -447,13 +466,13 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
           />
         }
         {
-          is<ErrorState>(state) && <ErrorModal
+          isErrorState(state) && <ErrorModal
             value={state.value}
             onClose={this.onStateClear}
           />
         }
         {
-          is<PreviewState>(state) && <CardPreviewModal
+          isPreviewState(state) && <CardPreviewModal
             site={site}
             unit={unit}
             cards={cards}

@@ -24,6 +24,15 @@ export interface CardSettings {
   scale: number;
   sortNo: number;
   applyMask: boolean;
+  productWidth: number;
+  productHeight: number;
+  productPadding: number;
+  padding: number;
+  safe: number;
+  unpick: boolean;
+  x: number;
+  y: number;
+  lappedType: string;
 }
 
 export interface Settings extends CardSettings {
@@ -180,9 +189,9 @@ export const saveFrontImageStep = (projectId: string, settings: Settings, cards:
   body.append('hidd_designcount', `${cards.length}`);
   body.append('hidd_productgroup', '');
   body.append('hidd_unpick_info', JSON.stringify([{
-    'SortNo': 1,
-    'X': 0,
-    'Y': 0,
+    'SortNo': settings.sortNo,
+    'X': settings.x,
+    'Y': settings.y,
     'Width': settings.width,
     'Height': settings.height,
     'Rotate': 0.0,
@@ -193,37 +202,37 @@ export const saveFrontImageStep = (projectId: string, settings: Settings, cards:
     'Resolution': settings.dpi,
     'AllowEdit': 'Y',
     'AllowMove': 'Y',
-    'AutoDirection': 'Y',
+    'AutoDirection': settings.auto ? 'Y' : 'N',
     'ApplyMask': settings.applyMask ? 'Y' : 'N',
-    'RealX': 0,
-    'RealY': 0,
+    'RealX': settings.x * settings.dpi / 100,
+    'RealY': settings.y * settings.dpi / 100,
     'RealWidth': settings.width * settings.dpi / 100,
     'RealHeight': settings.height * settings.dpi / 100,
   }]));
   body.append('hidd_images_info', JSON.stringify(cards.map((sides) => sides.front ? uncompressImageData(settings, sides.front) : null)));
   body.append('hidd_pixel_info', JSON.stringify({
-    'ProductWidth': settings.width - 24,
-    'ProductHeight': settings.height - 24,
-    'ProductPadding': 12,
-    'PaddingLeft': 0,
-    'PaddingTop': 0,
-    'PaddingRight': 0,
-    'PaddingBottom': 0,
-    'SafeLeft': 12,
-    'SafeTop': 12,
-    'SafeRight': 12,
-    'SafeBottom': 12,
+    'ProductWidth': settings.productWidth,
+    'ProductHeight': settings.productHeight,
+    'ProductPadding': settings.productPadding,
+    'PaddingLeft': settings.padding,
+    'PaddingTop': settings.padding,
+    'PaddingRight': settings.padding,
+    'PaddingBottom': settings.padding,
+    'SafeLeft': settings.safe,
+    'SafeTop': settings.safe,
+    'SafeRight': settings.safe,
+    'SafeBottom': settings.safe,
     'Radius': 0,
-    'IsUnpick': 'N',
+    'IsUnpick': settings.unpick ? 'Y' : 'N',
     'IsLapped': 'N',
     'IsPartImage': 'N',
-    'LappedType': 'A',
+    'LappedType': settings.lappedType,
     'LappedRow': 0,
     'LappedCol': 0,
     'Resolution': settings.dpi,
     'AllowDesign': 'Y',
-    'PreviewWidth': settings.width,
-    'PreviewHeight': settings.height,
+    'PreviewWidth': settings.productWidth + (settings.padding * 2),
+    'PreviewHeight': settings.productHeight + (settings.padding * 2),
     'Filter': settings.filter,
     'AllowEditFilter': 'Y',
     'ImageMode': 'B',
@@ -267,8 +276,8 @@ export const saveFrontTextStep = (projectId: string, settings: Settings, cards: 
     'Radius': 0,
     'IsPartImage': 'N',
     'IsTextZoom': 'Y',
-    'PreviewWidth': settings.width,
-    'PreviewHeight': settings.height,
+    'PreviewWidth': settings.productWidth + (settings.padding * 2),
+    'PreviewHeight': settings.productHeight + (settings.padding * 2),
     'Zoom': 1.0,
   }]));
   body.append('hidd_pixel_info_part', '');
@@ -326,9 +335,9 @@ export const saveBackImageStep = (projectId: string, settings: Settings, cards: 
   body.append('hidd_totalcount', `${count}`);
   body.append('hidd_designcount', `${count}`);
   body.append('hidd_unpick_info', JSON.stringify([{
-    'SortNo': 1,
-    'X': 0,
-    'Y': 0,
+    'SortNo': settings.sortNo,
+    'X': settings.x,
+    'Y': settings.y,
     'Width': settings.width,
     'Height': settings.height,
     'Rotate': 0.0,
@@ -339,37 +348,37 @@ export const saveBackImageStep = (projectId: string, settings: Settings, cards: 
     'Resolution': settings.dpi,
     'AllowEdit': 'Y',
     'AllowMove': 'Y',
-    'AutoDirection': 'Y',
+    'AutoDirection': settings.auto ? 'Y' : 'N',
     'ApplyMask': settings.applyMask ? 'Y' : 'N',
-    'RealX': 0,
-    'RealY': 0,
+    'RealX': settings.x * settings.dpi / 100,
+    'RealY': settings.y * settings.dpi / 100,
     'RealWidth': settings.width * settings.dpi / 100,
     'RealHeight': settings.height * settings.dpi / 100,
   }]));
   body.append('hidd_images_info', JSON.stringify(cards.map((sides) => sides.back ? uncompressImageData(settings, sides.back) : null)));
   body.append('hidd_pixel_info', JSON.stringify({
-    'ProductWidth': settings.width - 24,
-    'ProductHeight': settings.height - 24,
-    'ProductPadding': 12,
-    'PaddingLeft': 12,
-    'PaddingTop': 12,
-    'PaddingRight': 12,
-    'PaddingBottom': 12,
-    'SafeLeft': 12,
-    'SafeTop': 12,
-    'SafeRight': 12,
-    'SafeBottom': 12,
+    'ProductWidth': settings.productWidth,
+    'ProductHeight': settings.productHeight,
+    'ProductPadding': settings.productPadding,
+    'PaddingLeft': settings.padding,
+    'PaddingTop': settings.padding,
+    'PaddingRight': settings.padding,
+    'PaddingBottom': settings.padding,
+    'SafeLeft': settings.safe,
+    'SafeTop': settings.safe,
+    'SafeRight': settings.safe,
+    'SafeBottom': settings.safe,
     'Radius': 0,
-    'IsUnpick': 'N',
+    'IsUnpick': settings.unpick ? 'Y' : 'N',
     'IsLapped': 'N',
     'IsPartImage': 'N',
-    'LappedType': 'A',
+    'LappedType': settings.lappedType,
     'LappedRow': 0,
     'LappedCol': 0,
     'Resolution': settings.dpi,
     'AllowDesign': 'Y',
-    'PreviewWidth': settings.width,
-    'PreviewHeight': settings.height,
+    'PreviewWidth': settings.productWidth + (settings.padding * 2),
+    'PreviewHeight': settings.productHeight + (settings.padding * 2),
     'Filter': settings.filter,
     'AllowEditFilter': 'Y',
     'ImageMode': 'B',
@@ -411,8 +420,8 @@ export const saveBackTextStep = (projectId: string, settings: Settings, cards: U
     'Radius': 0,
     'IsPartImage': 'N',
     'IsTextZoom': 'Y',
-    'PreviewWidth': settings.width,
-    'PreviewHeight': settings.height,
+    'PreviewWidth': settings.productWidth + (settings.padding * 2),
+    'PreviewHeight': settings.productHeight + (settings.padding * 2),
     'Zoom': 1.0,
   }]));
   body.append('hidd_pixel_info_part', '');
@@ -555,14 +564,29 @@ export const createProject = async (settings: Settings, cards: UploadedImage[]) 
   return `${settings.url}/design/dn_preview_layout.aspx?ssid=${projectId}`;
 }
 
+const getDateTime = async () => {
+  const r = await fetch('https://www.makeplayingcards.com/api/common/getdatetime.ashx?_=1669724896880');
+  return await r.text().then(e => e.replace(/\-/g, '/'));
+}
+
+const cloudflareTrace = async () => {
+  const r = await fetch('https://www.cloudflare.com/cdn-cgi/trace?_=1669724896877');
+  const text = await r.text();
+  return new Map(text.split('\n').map(e => e.split('=', 2) as [string, string]));
+}
+
 export const uploadImage = async (settings: CardSettings, side: string, image: File) => {
+  const trace = await cloudflareTrace();
+  const ip = trace.get('ip') ?? '';
+  const st = await getDateTime();
+
   const body = new FormData();
   body.append('fileData', image);
   body.append('userName', '');
   body.append('layer', side);
-  body.append('st', new Date().toISOString().replace('T', ' ').slice(0, 23));
-  body.append('pt', '14167');
-  body.append('ip', '');
+  body.append('st', st);
+  body.append('pt', '0');
+  body.append('ip', ip);
 
   const r = await fetch(`${settings.url}/uploader/up_product.aspx`, {
     method: 'POST',
