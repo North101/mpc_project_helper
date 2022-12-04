@@ -108,15 +108,6 @@ export default class ProjectSettingsModal extends React.Component<ProjectSetting
       scale: unit.scale,
       sortNo: unit.sortNo,
       applyMask: unit.applyMask,
-      productWidth: unit.productWidth,
-      productHeight: unit.productHeight,
-      productPadding: unit.productPadding,
-      padding: unit.padding,
-      safe: unit.safe,
-      unpick: unit.unpick,
-      x: unit.x,
-      y: unit.y,
-      lappedType: unit.lappedType,
     };
   }
 
