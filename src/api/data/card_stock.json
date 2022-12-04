@@ -1,312 +1,286 @@
 [
   {
     "code": "PA_030",
-    "name": "(S27) Smooth",
+    "name": {
+      "mpc": "(S27) Smooth"
+    },
     "productCodes": [
       "FI_8007",
       "FI_8011"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_021",
-    "name": "(S30) Standard Smooth",
+    "name": {
+      "mpc": "(S30) Standard Smooth"
+    },
     "productCodes": [
       "FI_8007",
       "FI_8011"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_052",
-    "name": "(S33) Superior Smooth",
+    "name": {
+      "mpc": "(S33) Superior Smooth"
+    },
     "productCodes": [
       "FI_8007",
       "FI_8011"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_278",
-    "name": "(M28) Standard Linen",
+    "name": {
+      "mpc": "(M28) Standard Linen"
+    },
     "productCodes": [
       "FI_8007",
       "FI_8011"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_279",
-    "name": "(M29) BGM Linen",
+    "name": {
+      "mpc": "(M29) BGM Linen"
+    },
     "productCodes": [
       "FI_8007",
       "FI_8011"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_031",
-    "name": "(M31) Linen",
+    "name": {
+      "mpc": "(M31) Linen",
+      "ps": "Standard (smooth)"
+    },
     "productCodes": [
       "FI_21661",
       "FI_21665",
       "FI_8007",
       "FI_8011"
-    ],
-    "siteCodes": [
-      "mpc",
-      "ps"
     ]
   },
   {
     "code": "PA_234",
-    "name": "(A35) Thick Standard",
+    "name": {
+      "mpc": "(A35) Thick Standard"
+    },
     "productCodes": [
       "FI_8007",
       "FI_8011"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_243",
-    "name": "(E27) Eco Herbage",
+    "name": {
+      "mpc": "(E27) Eco Herbage"
+    },
     "productCodes": [
       "FI_8007",
       "FI_8011"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_032",
-    "name": "(P10) Plastic",
+    "name": {
+      "mpc": "(P10) Plastic",
+      "ps": "Premium (linen)"
+    },
     "productCodes": [
       "FI_21661",
       "FI_21665",
       "FI_8007",
       "FI_8011"
-    ],
-    "siteCodes": [
-      "mpc",
-      "ps"
     ]
   },
   {
     "code": "PA_116",
-    "name": "(S27) Smooth",
+    "name": {
+      "mpc": "(S27) Smooth"
+    },
     "productCodes": [
       "FI_8854"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_117",
-    "name": "(S30) Standard Smooth",
+    "name": {
+      "mpc": "(S30) Standard Smooth"
+    },
     "productCodes": [
       "FI_8854"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_119",
-    "name": "(S33) Superior Smooth",
+    "name": {
+      "mpc": "(S33) Superior Smooth"
+    },
     "productCodes": [
       "FI_8854"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_302",
-    "name": "(M28) Standard Linen",
+    "name": {
+      "mpc": "(M28) Standard Linen"
+    },
     "productCodes": [
       "FI_8854"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_303",
-    "name": "(M29) BGM Linen",
+    "name": {
+      "mpc": "(M29) BGM Linen"
+    },
     "productCodes": [
       "FI_8854"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_118",
-    "name": "(M31) Linen",
+    "name": {
+      "mpc": "(M31) Linen"
+    },
     "productCodes": [
       "FI_8854"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_147",
-    "name": "(M32) Linen Air [min.1000]",
+    "name": {
+      "mpc": "(M32) Linen Air [min.1000]"
+    },
     "productCodes": [
       "FI_8854"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_175",
-    "name": "(A35) Thick Standard",
+    "name": {
+      "mpc": "(A35) Thick Standard"
+    },
     "productCodes": [
       "FI_8854"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_244",
-    "name": "(E27) Eco Herbage",
+    "name": {
+      "mpc": "(E27) Eco Herbage"
+    },
     "productCodes": [
       "FI_8854"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_120",
-    "name": "(P10) Plastic",
+    "name": {
+      "mpc": "(P10) Plastic"
+    },
     "productCodes": [
       "FI_8854"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_121",
-    "name": "(S27) Smooth",
+    "name": {
+      "mpc": "(S27) Smooth"
+    },
     "productCodes": [
       "FI_8866"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_122",
-    "name": "(S30) Standard Smooth",
+    "name": {
+      "mpc": "(S30) Standard Smooth"
+    },
     "productCodes": [
       "FI_8866"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_124",
-    "name": "(S33) Superior Smooth",
+    "name": {
+      "mpc": "(S33) Superior Smooth"
+    },
     "productCodes": [
       "FI_8866"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_304",
-    "name": "(M28) Standard Linen",
+    "name": {
+      "mpc": "(M28) Standard Linen"
+    },
     "productCodes": [
       "FI_8866"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_305",
-    "name": "(M29) BGM Linen",
+    "name": {
+      "mpc": "(M29) BGM Linen"
+    },
     "productCodes": [
       "FI_8866"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_123",
-    "name": "(M31) Linen",
+    "name": {
+      "mpc": "(M31) Linen"
+    },
     "productCodes": [
       "FI_8866"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_148",
-    "name": "(M32) Linen Air [min.1000]",
+    "name": {
+      "mpc": "(M32) Linen Air [min.1000]"
+    },
     "productCodes": [
       "FI_8866"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_237",
-    "name": "(A35) Thick Standard",
+    "name": {
+      "mpc": "(A35) Thick Standard"
+    },
     "productCodes": [
       "FI_8866"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_245",
-    "name": "(E27) Eco Herbage",
+    "name": {
+      "mpc": "(E27) Eco Herbage"
+    },
     "productCodes": [
       "FI_8866"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_125",
-    "name": "(P10) Plastic",
+    "name": {
+      "mpc": "(P10) Plastic"
+    },
     "productCodes": [
       "FI_8866"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_009",
-    "name": "(S27) Smooth",
+    "name": {
+      "mpc": "(S27) Smooth",
+      "ps": "Standard (smooth)"
+    },
     "productCodes": [
       "FI_12557",
       "FI_12558",
@@ -314,15 +288,14 @@
       "FI_2135",
       "FI_6037",
       "FI_6038"
-    ],
-    "siteCodes": [
-      "mpc",
-      "ps"
     ]
   },
   {
     "code": "PA_010",
-    "name": "(S30) Standard Smooth",
+    "name": {
+      "mpc": "(S30) Standard Smooth",
+      "ps": "Premium (linen)"
+    },
     "productCodes": [
       "FI_12557",
       "FI_12558",
@@ -330,48 +303,44 @@
       "FI_2135",
       "FI_6037",
       "FI_6038"
-    ],
-    "siteCodes": [
-      "mpc",
-      "ps"
     ]
   },
   {
     "code": "PA_053",
-    "name": "(S33) Superior Smooth",
+    "name": {
+      "mpc": "(S33) Superior Smooth"
+    },
     "productCodes": [
       "FI_6037",
       "FI_6038"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_274",
-    "name": "(M28) Standard Linen",
+    "name": {
+      "mpc": "(M28) Standard Linen"
+    },
     "productCodes": [
       "FI_6037",
       "FI_6038"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_275",
-    "name": "(M29) BGM Linen",
+    "name": {
+      "mpc": "(M29) BGM Linen"
+    },
     "productCodes": [
       "FI_6037",
       "FI_6038"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_011",
-    "name": "(M31) Linen",
+    "name": {
+      "mpc": "(M31) Linen",
+      "ps": "Standard (smooth)"
+    },
     "productCodes": [
       "FI_12266",
       "FI_12559",
@@ -379,367 +348,335 @@
       "FI_6037",
       "FI_6038",
       "FI_7852"
-    ],
-    "siteCodes": [
-      "mpc",
-      "ps"
     ]
   },
   {
     "code": "PA_149",
-    "name": "(M32) Linen Air [min.1000]",
+    "name": {
+      "mpc": "(M32) Linen Air [min.1000]"
+    },
     "productCodes": [
       "FI_6037",
       "FI_6038"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_178",
-    "name": "(A35) Thick Standard",
+    "name": {
+      "mpc": "(A35) Thick Standard"
+    },
     "productCodes": [
       "FI_6037",
       "FI_6038"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_246",
-    "name": "(E27) Eco Herbage",
+    "name": {
+      "mpc": "(E27) Eco Herbage"
+    },
     "productCodes": [
       "FI_6037",
       "FI_6038"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_018",
-    "name": "(P10) Plastic",
+    "name": {
+      "mpc": "(P10) Plastic",
+      "ps": "Standard (smooth)"
+    },
     "productCodes": [
       "FI_6037",
       "FI_6038",
       "FI_9896",
       "FI_9897"
-    ],
-    "siteCodes": [
-      "mpc",
-      "ps"
     ]
   },
   {
     "code": "PA_033",
-    "name": "(S27) Smooth",
+    "name": {
+      "mpc": "(S27) Smooth",
+      "ps": "Plastic (100%)"
+    },
     "productCodes": [
       "FI_21661",
       "FI_21665",
       "FI_8003",
       "FI_8009"
-    ],
-    "siteCodes": [
-      "mpc",
-      "ps"
     ]
   },
   {
     "code": "PA_022",
-    "name": "(S30) Standard Smooth",
+    "name": {
+      "mpc": "(S30) Standard Smooth"
+    },
     "productCodes": [
       "FI_8003",
       "FI_8009"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_054",
-    "name": "(S33) Superior Smooth",
+    "name": {
+      "mpc": "(S33) Superior Smooth"
+    },
     "productCodes": [
       "FI_8003",
       "FI_8009"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_280",
-    "name": "(M28) Standard Linen",
+    "name": {
+      "mpc": "(M28) Standard Linen"
+    },
     "productCodes": [
       "FI_8003",
       "FI_8009"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_281",
-    "name": "(M29) BGM Linen",
+    "name": {
+      "mpc": "(M29) BGM Linen"
+    },
     "productCodes": [
       "FI_8003",
       "FI_8009"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_034",
-    "name": "(M31) Linen",
+    "name": {
+      "mpc": "(M31) Linen",
+      "ps": "Standard (smooth)"
+    },
     "productCodes": [
       "FI_21756",
       "FI_8003",
       "FI_8009"
-    ],
-    "siteCodes": [
-      "mpc",
-      "ps"
     ]
   },
   {
     "code": "PA_150",
-    "name": "(M32) Linen Air [min.1000]",
+    "name": {
+      "mpc": "(M32) Linen Air [min.1000]"
+    },
     "productCodes": [
       "FI_8003",
       "FI_8009"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_181",
-    "name": "(A35) Thick Standard",
+    "name": {
+      "mpc": "(A35) Thick Standard"
+    },
     "productCodes": [
       "FI_8003",
       "FI_8009"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_247",
-    "name": "(E27) Eco Herbage",
+    "name": {
+      "mpc": "(E27) Eco Herbage"
+    },
     "productCodes": [
       "FI_8003",
       "FI_8009"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_035",
-    "name": "(P10) Plastic",
+    "name": {
+      "mpc": "(P10) Plastic",
+      "ps": "Premium (linen)"
+    },
     "productCodes": [
       "FI_21756",
       "FI_8003",
       "FI_8009"
-    ],
-    "siteCodes": [
-      "mpc",
-      "ps"
     ]
   },
   {
     "code": "PA_036",
-    "name": "(S27) Smooth",
+    "name": {
+      "mpc": "(S27) Smooth",
+      "ps": "Plastic (100%)"
+    },
     "productCodes": [
       "FI_21756",
       "FI_8006"
-    ],
-    "siteCodes": [
-      "mpc",
-      "ps"
     ]
   },
   {
     "code": "PA_023",
-    "name": "(S30) Standard Smooth",
+    "name": {
+      "mpc": "(S30) Standard Smooth"
+    },
     "productCodes": [
       "FI_8006"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_055",
-    "name": "(S33) Superior Smooth",
+    "name": {
+      "mpc": "(S33) Superior Smooth"
+    },
     "productCodes": [
       "FI_8006"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_282",
-    "name": "(M28) Standard Linen",
+    "name": {
+      "mpc": "(M28) Standard Linen"
+    },
     "productCodes": [
       "FI_8006"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_283",
-    "name": "(M29) BGM Linen",
+    "name": {
+      "mpc": "(M29) BGM Linen"
+    },
     "productCodes": [
       "FI_8006"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_037",
-    "name": "(M31) Linen",
+    "name": {
+      "mpc": "(M31) Linen",
+      "ps": "Standard (smooth)"
+    },
     "productCodes": [
       "FI_21757",
       "FI_8006"
-    ],
-    "siteCodes": [
-      "mpc",
-      "ps"
     ]
   },
   {
     "code": "PA_151",
-    "name": "(M32) Linen Air [min.1000]",
+    "name": {
+      "mpc": "(M32) Linen Air [min.1000]"
+    },
     "productCodes": [
       "FI_8006"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_184",
-    "name": "(A35) Thick Standard",
+    "name": {
+      "mpc": "(A35) Thick Standard",
+      "ps": "Superior (smooth)"
+    },
     "productCodes": [
       "FI_8006",
       "FI_9896",
       "FI_9897"
-    ],
-    "siteCodes": [
-      "mpc",
-      "ps"
     ]
   },
   {
     "code": "PA_248",
-    "name": "(E27) Eco Herbage",
+    "name": {
+      "mpc": "(E27) Eco Herbage"
+    },
     "productCodes": [
       "FI_8006"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_038",
-    "name": "(P10) Plastic",
+    "name": {
+      "mpc": "(P10) Plastic",
+      "ps": "Premium (linen)"
+    },
     "productCodes": [
       "FI_21757",
       "FI_8006"
-    ],
-    "siteCodes": [
-      "mpc",
-      "ps"
     ]
   },
   {
     "code": "PA_039",
-    "name": "(S27) Smooth",
+    "name": {
+      "mpc": "(S27) Smooth",
+      "ps": "Plastic (100%)"
+    },
     "productCodes": [
       "FI_21757",
       "FI_8001",
       "FI_8343"
-    ],
-    "siteCodes": [
-      "mpc",
-      "ps"
     ]
   },
   {
     "code": "PA_024",
-    "name": "(S30) Standard Smooth",
+    "name": {
+      "mpc": "(S30) Standard Smooth"
+    },
     "productCodes": [
       "FI_8001",
       "FI_8343"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_056",
-    "name": "(S33) Superior Smooth",
+    "name": {
+      "mpc": "(S33) Superior Smooth"
+    },
     "productCodes": [
       "FI_8001",
       "FI_8343"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_284",
-    "name": "(M28) Standard Linen",
+    "name": {
+      "mpc": "(M28) Standard Linen"
+    },
     "productCodes": [
       "FI_8001",
       "FI_8343"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_285",
-    "name": "(M29) BGM Linen",
+    "name": {
+      "mpc": "(M29) BGM Linen"
+    },
     "productCodes": [
       "FI_8001",
       "FI_8343"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_040",
-    "name": "(M31) Linen",
+    "name": {
+      "mpc": "(M31) Linen"
+    },
     "productCodes": [
       "FI_8001",
       "FI_8343"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_152",
-    "name": "(M32) Linen Air [min.1000]",
+    "name": {
+      "mpc": "(M32) Linen Air [min.1000]"
+    },
     "productCodes": [
       "FI_8001",
       "FI_8343"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_187",
-    "name": "(A35) Thick Standard",
+    "name": {
+      "mpc": "(A35) Thick Standard",
+      "ps": "Superior (smooth)"
+    },
     "productCodes": [
       "FI_12266",
       "FI_12559",
@@ -747,267 +684,244 @@
       "FI_7852",
       "FI_8001",
       "FI_8343"
-    ],
-    "siteCodes": [
-      "mpc",
-      "ps"
     ]
   },
   {
     "code": "PA_249",
-    "name": "(E27) Eco Herbage",
+    "name": {
+      "mpc": "(E27) Eco Herbage"
+    },
     "productCodes": [
       "FI_8001",
       "FI_8343"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_041",
-    "name": "(P10) Plastic",
+    "name": {
+      "mpc": "(P10) Plastic"
+    },
     "productCodes": [
       "FI_8001",
       "FI_8343"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_091",
-    "name": "(S27) Smooth",
+    "name": {
+      "mpc": "(S27) Smooth"
+    },
     "productCodes": [
       "FI_8542"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_092",
-    "name": "(S30) Standard Smooth",
+    "name": {
+      "mpc": "(S30) Standard Smooth"
+    },
     "productCodes": [
       "FI_8542"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_094",
-    "name": "(S33) Superior Smooth",
+    "name": {
+      "mpc": "(S33) Superior Smooth"
+    },
     "productCodes": [
       "FI_8542"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_294",
-    "name": "(M28) Standard Linen",
+    "name": {
+      "mpc": "(M28) Standard Linen"
+    },
     "productCodes": [
       "FI_8542"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_295",
-    "name": "(M29) BGM Linen",
+    "name": {
+      "mpc": "(M29) BGM Linen"
+    },
     "productCodes": [
       "FI_8542"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_093",
-    "name": "(M31) Linen",
+    "name": {
+      "mpc": "(M31) Linen"
+    },
     "productCodes": [
       "FI_8542"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_101",
-    "name": "(M32) Linen Air [min.1000]",
+    "name": {
+      "mpc": "(M32) Linen Air [min.1000]"
+    },
     "productCodes": [
       "FI_8542"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_088",
-    "name": "(A35) Thick Standard",
+    "name": {
+      "mpc": "(A35) Thick Standard"
+    },
     "productCodes": [
       "FI_8542"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_251",
-    "name": "(E27) Eco Herbage",
+    "name": {
+      "mpc": "(E27) Eco Herbage"
+    },
     "productCodes": [
       "FI_8542"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_095",
-    "name": "(P10) Plastic",
+    "name": {
+      "mpc": "(P10) Plastic"
+    },
     "productCodes": [
       "FI_8542"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_003",
-    "name": "(S27) Smooth",
+    "name": {
+      "mpc": "(S27) Smooth"
+    },
     "productCodes": [
       "FI_4332",
       "FI_4333",
       "FI_8984",
       "FI_8985"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_001",
-    "name": "(S30) Standard Smooth",
+    "name": {
+      "mpc": "(S30) Standard Smooth"
+    },
     "productCodes": [
       "FI_4332",
       "FI_4333",
       "FI_8984",
       "FI_8985"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_057",
-    "name": "(S33) Superior Smooth",
+    "name": {
+      "mpc": "(S33) Superior Smooth"
+    },
     "productCodes": [
       "FI_4332",
       "FI_4333",
       "FI_8984",
       "FI_8985"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_266",
-    "name": "(M28) Standard Linen",
+    "name": {
+      "mpc": "(M28) Standard Linen"
+    },
     "productCodes": [
       "FI_4332",
       "FI_4333",
       "FI_8984",
       "FI_8985"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_267",
-    "name": "(M29) BGM Linen",
+    "name": {
+      "mpc": "(M29) BGM Linen"
+    },
     "productCodes": [
       "FI_4332",
       "FI_4333",
       "FI_8984",
       "FI_8985"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_163",
-    "name": "(M30) Linen Air Light [min.1000]",
+    "name": {
+      "mpc": "(M30) Linen Air Light [min.1000]"
+    },
     "productCodes": [
       "FI_4332",
       "FI_4333",
       "FI_8984",
       "FI_8985"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_002",
-    "name": "(M31) Linen",
+    "name": {
+      "mpc": "(M31) Linen"
+    },
     "productCodes": [
       "FI_4332",
       "FI_4333",
       "FI_8984",
       "FI_8985"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_027",
-    "name": "(M32) Linen Air [min.1000]",
+    "name": {
+      "mpc": "(M32) Linen Air [min.1000]"
+    },
     "productCodes": [
       "FI_4332",
       "FI_4333",
       "FI_8984",
       "FI_8985"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_194",
-    "name": "(A35) Thick Standard",
+    "name": {
+      "mpc": "(A35) Thick Standard"
+    },
     "productCodes": [
       "FI_4332",
       "FI_4333",
       "FI_8984",
       "FI_8985"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_252",
-    "name": "(E27) Eco Herbage",
+    "name": {
+      "mpc": "(E27) Eco Herbage"
+    },
     "productCodes": [
       "FI_4332",
       "FI_4333",
       "FI_8984",
       "FI_8985"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_012",
-    "name": "(P10) Plastic",
+    "name": {
+      "mpc": "(P10) Plastic",
+      "ps": "Standard (smooth)"
+    },
     "productCodes": [
       "FI_12550",
       "FI_12553",
@@ -1017,215 +931,194 @@
       "FI_6038",
       "FI_8984",
       "FI_8985"
-    ],
-    "siteCodes": [
-      "mpc",
-      "ps"
     ]
   },
   {
     "code": "PA_111",
-    "name": "(S27) Smooth",
+    "name": {
+      "mpc": "(S27) Smooth"
+    },
     "productCodes": [
       "FI_8836"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_112",
-    "name": "(S30) Standard Smooth",
+    "name": {
+      "mpc": "(S30) Standard Smooth"
+    },
     "productCodes": [
       "FI_8836"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_114",
-    "name": "(S33) Superior Smooth",
+    "name": {
+      "mpc": "(S33) Superior Smooth"
+    },
     "productCodes": [
       "FI_8836"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_300",
-    "name": "(M28) Standard Linen",
+    "name": {
+      "mpc": "(M28) Standard Linen"
+    },
     "productCodes": [
       "FI_8836"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_301",
-    "name": "(M29) BGM Linen",
+    "name": {
+      "mpc": "(M29) BGM Linen"
+    },
     "productCodes": [
       "FI_8836"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_113",
-    "name": "(M31) Linen",
+    "name": {
+      "mpc": "(M31) Linen"
+    },
     "productCodes": [
       "FI_8836"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_154",
-    "name": "(M32) Linen Air [min.1000]",
+    "name": {
+      "mpc": "(M32) Linen Air [min.1000]"
+    },
     "productCodes": [
       "FI_8836"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_197",
-    "name": "(A35) Thick Standard",
+    "name": {
+      "mpc": "(A35) Thick Standard"
+    },
     "productCodes": [
       "FI_8836"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_253",
-    "name": "(E27) Eco Herbage",
+    "name": {
+      "mpc": "(E27) Eco Herbage"
+    },
     "productCodes": [
       "FI_8836"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_115",
-    "name": "(P10) Plastic",
+    "name": {
+      "mpc": "(P10) Plastic"
+    },
     "productCodes": [
       "FI_8836"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_050",
-    "name": "(S27) Smooth",
+    "name": {
+      "mpc": "(S27) Smooth"
+    },
     "productCodes": [
       "FI_8332"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_048",
-    "name": "(S30) Standard Smooth",
+    "name": {
+      "mpc": "(S30) Standard Smooth"
+    },
     "productCodes": [
       "FI_8332"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_058",
-    "name": "(S33) Superior Smooth",
+    "name": {
+      "mpc": "(S33) Superior Smooth"
+    },
     "productCodes": [
       "FI_8332"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_290",
-    "name": "(M28) Standard Linen",
+    "name": {
+      "mpc": "(M28) Standard Linen"
+    },
     "productCodes": [
       "FI_8332"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_291",
-    "name": "(M29) BGM Linen",
+    "name": {
+      "mpc": "(M29) BGM Linen"
+    },
     "productCodes": [
       "FI_8332"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_049",
-    "name": "(M31) Linen",
+    "name": {
+      "mpc": "(M31) Linen"
+    },
     "productCodes": [
       "FI_8332"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_155",
-    "name": "(M32) Linen Air [min.1000]",
+    "name": {
+      "mpc": "(M32) Linen Air [min.1000]"
+    },
     "productCodes": [
       "FI_8332"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_200",
-    "name": "(A35) Thick Standard",
+    "name": {
+      "mpc": "(A35) Thick Standard"
+    },
     "productCodes": [
       "FI_8332"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_254",
-    "name": "(E27) Eco Herbage",
+    "name": {
+      "mpc": "(E27) Eco Herbage"
+    },
     "productCodes": [
       "FI_8332"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_051",
-    "name": "(P10) Plastic",
+    "name": {
+      "mpc": "(P10) Plastic"
+    },
     "productCodes": [
       "FI_8332"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_016",
-    "name": "(S27) Smooth",
+    "name": {
+      "mpc": "(S27) Smooth",
+      "ps": "Plastic (100%)"
+    },
     "productCodes": [
       "FI_12555",
       "FI_12556",
@@ -1241,15 +1134,14 @@
       "FI_8319",
       "FI_9124",
       "FI_9125"
-    ],
-    "siteCodes": [
-      "mpc",
-      "ps"
     ]
   },
   {
     "code": "PA_014",
-    "name": "(S30) Standard Smooth",
+    "name": {
+      "mpc": "(S30) Standard Smooth",
+      "ps": "Premium (linen)"
+    },
     "productCodes": [
       "FI_12266",
       "FI_12559",
@@ -1265,15 +1157,13 @@
       "FI_8319",
       "FI_9124",
       "FI_9125"
-    ],
-    "siteCodes": [
-      "mpc",
-      "ps"
     ]
   },
   {
     "code": "PA_059",
-    "name": "(S33) Superior Smooth",
+    "name": {
+      "mpc": "(S33) Superior Smooth"
+    },
     "productCodes": [
       "FI_7999",
       "FI_8000",
@@ -1285,14 +1175,13 @@
       "FI_8319",
       "FI_9124",
       "FI_9125"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_276",
-    "name": "(M28) Standard Linen",
+    "name": {
+      "mpc": "(M28) Standard Linen"
+    },
     "productCodes": [
       "FI_7999",
       "FI_8000",
@@ -1304,14 +1193,13 @@
       "FI_8319",
       "FI_9124",
       "FI_9125"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_277",
-    "name": "(M29) BGM Linen",
+    "name": {
+      "mpc": "(M29) BGM Linen"
+    },
     "productCodes": [
       "FI_7999",
       "FI_8000",
@@ -1323,14 +1211,13 @@
       "FI_8319",
       "FI_9124",
       "FI_9125"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_164",
-    "name": "(M30) Linen Air Light [min.1000]",
+    "name": {
+      "mpc": "(M30) Linen Air Light [min.1000]"
+    },
     "productCodes": [
       "FI_7999",
       "FI_8000",
@@ -1342,14 +1229,14 @@
       "FI_8319",
       "FI_9124",
       "FI_9125"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_015",
-    "name": "(M31) Linen",
+    "name": {
+      "mpc": "(M31) Linen",
+      "ps": "Plastic (100%)"
+    },
     "productCodes": [
       "FI_12554",
       "FI_4332",
@@ -1365,15 +1252,13 @@
       "FI_8319",
       "FI_9124",
       "FI_9125"
-    ],
-    "siteCodes": [
-      "mpc",
-      "ps"
     ]
   },
   {
     "code": "PA_028",
-    "name": "(M32) Linen Air [min.1000]",
+    "name": {
+      "mpc": "(M32) Linen Air [min.1000]"
+    },
     "productCodes": [
       "FI_7999",
       "FI_8000",
@@ -1385,14 +1270,13 @@
       "FI_8319",
       "FI_9124",
       "FI_9125"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_203",
-    "name": "(A35) Thick Standard",
+    "name": {
+      "mpc": "(A35) Thick Standard"
+    },
     "productCodes": [
       "FI_7999",
       "FI_8000",
@@ -1404,14 +1288,13 @@
       "FI_8319",
       "FI_9124",
       "FI_9125"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_242",
-    "name": "(E27) Eco Herbage",
+    "name": {
+      "mpc": "(E27) Eco Herbage"
+    },
     "productCodes": [
       "FI_7999",
       "FI_8000",
@@ -1423,14 +1306,13 @@
       "FI_8319",
       "FI_9124",
       "FI_9125"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_017",
-    "name": "(P10) Plastic",
+    "name": {
+      "mpc": "(P10) Plastic"
+    },
     "productCodes": [
       "FI_7999",
       "FI_8000",
@@ -1442,114 +1324,104 @@
       "FI_8319",
       "FI_9124",
       "FI_9125"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_096",
-    "name": "(S27) Smooth",
+    "name": {
+      "mpc": "(S27) Smooth"
+    },
     "productCodes": [
       "FI_8543"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_097",
-    "name": "(S30) Standard Smooth",
+    "name": {
+      "mpc": "(S30) Standard Smooth"
+    },
     "productCodes": [
       "FI_8543"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_099",
-    "name": "(S33) Superior Smooth",
+    "name": {
+      "mpc": "(S33) Superior Smooth"
+    },
     "productCodes": [
       "FI_8543"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_296",
-    "name": "(M28) Standard Linen",
+    "name": {
+      "mpc": "(M28) Standard Linen"
+    },
     "productCodes": [
       "FI_8543"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_297",
-    "name": "(M29) BGM Linen",
+    "name": {
+      "mpc": "(M29) BGM Linen"
+    },
     "productCodes": [
       "FI_8543"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_098",
-    "name": "(M31) Linen",
+    "name": {
+      "mpc": "(M31) Linen"
+    },
     "productCodes": [
       "FI_8543"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_102",
-    "name": "(M32) Linen Air [min.1000]",
+    "name": {
+      "mpc": "(M32) Linen Air [min.1000]"
+    },
     "productCodes": [
       "FI_8543"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_090",
-    "name": "(A35) Thick Standard",
+    "name": {
+      "mpc": "(A35) Thick Standard"
+    },
     "productCodes": [
       "FI_8543"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_255",
-    "name": "(E27) Eco Herbage",
+    "name": {
+      "mpc": "(E27) Eco Herbage"
+    },
     "productCodes": [
       "FI_8543"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_100",
-    "name": "(P10) Plastic",
+    "name": {
+      "mpc": "(P10) Plastic"
+    },
     "productCodes": [
       "FI_8543"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_006",
-    "name": "(S27) Smooth",
+    "name": {
+      "mpc": "(S27) Smooth",
+      "ps": "Premium (linen)"
+    },
     "productCodes": [
       "FI_12554",
       "FI_1618",
@@ -1561,15 +1433,13 @@
       "FI_8987",
       "FI_9122",
       "FI_9123"
-    ],
-    "siteCodes": [
-      "mpc",
-      "ps"
     ]
   },
   {
     "code": "PA_004",
-    "name": "(S30) Standard Smooth",
+    "name": {
+      "mpc": "(S30) Standard Smooth"
+    },
     "productCodes": [
       "FI_1618",
       "FI_569",
@@ -1577,14 +1447,13 @@
       "FI_8987",
       "FI_9122",
       "FI_9123"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_060",
-    "name": "(S33) Superior Smooth",
+    "name": {
+      "mpc": "(S33) Superior Smooth"
+    },
     "productCodes": [
       "FI_1618",
       "FI_569",
@@ -1592,14 +1461,13 @@
       "FI_8987",
       "FI_9122",
       "FI_9123"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_268",
-    "name": "(M28) Standard Linen",
+    "name": {
+      "mpc": "(M28) Standard Linen"
+    },
     "productCodes": [
       "FI_1618",
       "FI_569",
@@ -1607,14 +1475,13 @@
       "FI_8987",
       "FI_9122",
       "FI_9123"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_269",
-    "name": "(M29) BGM Linen",
+    "name": {
+      "mpc": "(M29) BGM Linen"
+    },
     "productCodes": [
       "FI_1618",
       "FI_569",
@@ -1622,14 +1489,13 @@
       "FI_8987",
       "FI_9122",
       "FI_9123"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_165",
-    "name": "(M30) Linen Air Light [min.1000]",
+    "name": {
+      "mpc": "(M30) Linen Air Light [min.1000]"
+    },
     "productCodes": [
       "FI_1618",
       "FI_569",
@@ -1637,14 +1503,14 @@
       "FI_8987",
       "FI_9122",
       "FI_9123"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_005",
-    "name": "(M31) Linen",
+    "name": {
+      "mpc": "(M31) Linen",
+      "ps": "Standard (smooth)"
+    },
     "productCodes": [
       "FI_12554",
       "FI_1618",
@@ -1656,15 +1522,13 @@
       "FI_8987",
       "FI_9122",
       "FI_9123"
-    ],
-    "siteCodes": [
-      "mpc",
-      "ps"
     ]
   },
   {
     "code": "PA_029",
-    "name": "(M32) Linen Air [min.1000]",
+    "name": {
+      "mpc": "(M32) Linen Air [min.1000]"
+    },
     "productCodes": [
       "FI_1618",
       "FI_569",
@@ -1672,14 +1536,13 @@
       "FI_8987",
       "FI_9122",
       "FI_9123"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_207",
-    "name": "(A35) Thick Standard",
+    "name": {
+      "mpc": "(A35) Thick Standard"
+    },
     "productCodes": [
       "FI_1618",
       "FI_569",
@@ -1687,14 +1550,13 @@
       "FI_8987",
       "FI_9122",
       "FI_9123"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_256",
-    "name": "(E27) Eco Herbage",
+    "name": {
+      "mpc": "(E27) Eco Herbage"
+    },
     "productCodes": [
       "FI_1618",
       "FI_569",
@@ -1702,14 +1564,14 @@
       "FI_8987",
       "FI_9122",
       "FI_9123"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_013",
-    "name": "(P10) Plastic",
+    "name": {
+      "mpc": "(P10) Plastic",
+      "ps": "Premium (linen)"
+    },
     "productCodes": [
       "FI_12550",
       "FI_12553",
@@ -1721,235 +1583,212 @@
       "FI_8987",
       "FI_9122",
       "FI_9123"
-    ],
-    "siteCodes": [
-      "mpc",
-      "ps"
     ]
   },
   {
     "code": "PA_127",
-    "name": "(S27) Smooth",
+    "name": {
+      "mpc": "(S27) Smooth"
+    },
     "productCodes": [
       "FI_8883"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_128",
-    "name": "(S30) Standard Smooth",
+    "name": {
+      "mpc": "(S30) Standard Smooth"
+    },
     "productCodes": [
       "FI_8883"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_130",
-    "name": "(S33) Superior Smooth",
+    "name": {
+      "mpc": "(S33) Superior Smooth"
+    },
     "productCodes": [
       "FI_8883"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_306",
-    "name": "(M28) Standard Linen",
+    "name": {
+      "mpc": "(M28) Standard Linen"
+    },
     "productCodes": [
       "FI_8883"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_307",
-    "name": "(M29) BGM Linen",
+    "name": {
+      "mpc": "(M29) BGM Linen"
+    },
     "productCodes": [
       "FI_8883"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_318",
-    "name": "(M30) Linen Air Light [min.1000]",
+    "name": {
+      "mpc": "(M30) Linen Air Light [min.1000]"
+    },
     "productCodes": [
       "FI_8883"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_129",
-    "name": "(M31) Linen",
+    "name": {
+      "mpc": "(M31) Linen"
+    },
     "productCodes": [
       "FI_8883"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_153",
-    "name": "(M32) Linen Air [min.1000]",
+    "name": {
+      "mpc": "(M32) Linen Air [min.1000]"
+    },
     "productCodes": [
       "FI_8883"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_190",
-    "name": "(A35) Thick Standard",
+    "name": {
+      "mpc": "(A35) Thick Standard"
+    },
     "productCodes": [
       "FI_8883"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_250",
-    "name": "(E27) Eco Herbage",
+    "name": {
+      "mpc": "(E27) Eco Herbage"
+    },
     "productCodes": [
       "FI_8883"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_131",
-    "name": "(P10) Plastic",
+    "name": {
+      "mpc": "(P10) Plastic"
+    },
     "productCodes": [
       "FI_8883"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_080",
-    "name": "(S27) Smooth",
+    "name": {
+      "mpc": "(S27) Smooth"
+    },
     "productCodes": [
       "FI_8459"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_081",
-    "name": "(S30) Standard Smooth",
+    "name": {
+      "mpc": "(S30) Standard Smooth"
+    },
     "productCodes": [
       "FI_8459"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_084",
-    "name": "(S33) Superior Smooth",
+    "name": {
+      "mpc": "(S33) Superior Smooth"
+    },
     "productCodes": [
       "FI_8459"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_292",
-    "name": "(M28) Standard Linen",
+    "name": {
+      "mpc": "(M28) Standard Linen"
+    },
     "productCodes": [
       "FI_8459"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_293",
-    "name": "(M29) BGM Linen",
+    "name": {
+      "mpc": "(M29) BGM Linen"
+    },
     "productCodes": [
       "FI_8459"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_320",
-    "name": "(M30) Linen Air Light [min.1000]",
+    "name": {
+      "mpc": "(M30) Linen Air Light [min.1000]"
+    },
     "productCodes": [
       "FI_8459"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_082",
-    "name": "(M31) Linen",
+    "name": {
+      "mpc": "(M31) Linen"
+    },
     "productCodes": [
       "FI_8459"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_083",
-    "name": "(M32) Linen Air [min.1000]",
+    "name": {
+      "mpc": "(M32) Linen Air [min.1000]"
+    },
     "productCodes": [
       "FI_8459"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_213",
-    "name": "(A35) Thick Standard",
+    "name": {
+      "mpc": "(A35) Thick Standard"
+    },
     "productCodes": [
       "FI_8459"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_258",
-    "name": "(E27) Eco Herbage",
+    "name": {
+      "mpc": "(E27) Eco Herbage"
+    },
     "productCodes": [
       "FI_8459"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_085",
-    "name": "(P10) Plastic",
+    "name": {
+      "mpc": "(P10) Plastic"
+    },
     "productCodes": [
       "FI_8459"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_008",
-    "name": "(S30) Standard Smooth",
+    "name": {
+      "mpc": "(S30) Standard Smooth",
+      "ps": "Premium (linen)"
+    },
     "productCodes": [
       "FI_12555",
       "FI_12556",
@@ -1958,270 +1797,246 @@
       "FI_569",
       "FI_8988",
       "FI_8990"
-    ],
-    "siteCodes": [
-      "mpc",
-      "ps"
     ]
   },
   {
     "code": "PA_063",
-    "name": "(S33) Superior Smooth",
+    "name": {
+      "mpc": "(S33) Superior Smooth"
+    },
     "productCodes": [
       "FI_5073",
       "FI_8988",
       "FI_8990"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_272",
-    "name": "(M28) Standard Linen",
+    "name": {
+      "mpc": "(M28) Standard Linen"
+    },
     "productCodes": [
       "FI_5073",
       "FI_8988",
       "FI_8990"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_273",
-    "name": "(M29) BGM Linen",
+    "name": {
+      "mpc": "(M29) BGM Linen"
+    },
     "productCodes": [
       "FI_5073",
       "FI_8988",
       "FI_8990"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_321",
-    "name": "(M30) Linen Air Light [min.1000]",
+    "name": {
+      "mpc": "(M30) Linen Air Light [min.1000]"
+    },
     "productCodes": [
       "FI_5073",
       "FI_8988",
       "FI_8990"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_066",
-    "name": "(M31) Linen",
+    "name": {
+      "mpc": "(M31) Linen"
+    },
     "productCodes": [
       "FI_5073",
       "FI_8988",
       "FI_8990"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_157",
-    "name": "(M32) Linen Air [min.1000]",
+    "name": {
+      "mpc": "(M32) Linen Air [min.1000]"
+    },
     "productCodes": [
       "FI_5073",
       "FI_8988",
       "FI_8990"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_216",
-    "name": "(A35) Thick Standard",
+    "name": {
+      "mpc": "(A35) Thick Standard"
+    },
     "productCodes": [
       "FI_5073",
       "FI_8988",
       "FI_8990"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_259",
-    "name": "(E27) Eco Herbage",
+    "name": {
+      "mpc": "(E27) Eco Herbage"
+    },
     "productCodes": [
       "FI_5073",
       "FI_8988",
       "FI_8990"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_019",
-    "name": "(P10) Plastic",
+    "name": {
+      "mpc": "(P10) Plastic",
+      "ps": "Premium (linen)"
+    },
     "productCodes": [
       "FI_5073",
       "FI_8988",
       "FI_8990",
       "FI_9896",
       "FI_9897"
-    ],
-    "siteCodes": [
-      "mpc",
-      "ps"
     ]
   },
   {
     "code": "PA_132",
-    "name": "(S27) Smooth",
+    "name": {
+      "mpc": "(S27) Smooth"
+    },
     "productCodes": [
       "FI_8884"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_133",
-    "name": "(S30) Standard Smooth",
+    "name": {
+      "mpc": "(S30) Standard Smooth"
+    },
     "productCodes": [
       "FI_8884"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_135",
-    "name": "(S33) Superior Smooth",
+    "name": {
+      "mpc": "(S33) Superior Smooth"
+    },
     "productCodes": [
       "FI_8884"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_308",
-    "name": "(M28) Standard Linen",
+    "name": {
+      "mpc": "(M28) Standard Linen"
+    },
     "productCodes": [
       "FI_8884"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_309",
-    "name": "(M29) BGM Linen",
+    "name": {
+      "mpc": "(M29) BGM Linen"
+    },
     "productCodes": [
       "FI_8884"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_134",
-    "name": "(M31) Linen",
+    "name": {
+      "mpc": "(M31) Linen"
+    },
     "productCodes": [
       "FI_8884"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_156",
-    "name": "(M32) Linen Air [min.1000]",
+    "name": {
+      "mpc": "(M32) Linen Air [min.1000]"
+    },
     "productCodes": [
       "FI_8884"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_210",
-    "name": "(A35) Thick Standard",
+    "name": {
+      "mpc": "(A35) Thick Standard"
+    },
     "productCodes": [
       "FI_8884"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_257",
-    "name": "(E27) Eco Herbage",
+    "name": {
+      "mpc": "(E27) Eco Herbage"
+    },
     "productCodes": [
       "FI_8884"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_136",
-    "name": "(P10) Plastic",
+    "name": {
+      "mpc": "(P10) Plastic"
+    },
     "productCodes": [
       "FI_8884"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_045",
-    "name": "(S27) Smooth",
+    "name": {
+      "mpc": "(S27) Smooth"
+    },
     "productCodes": [
       "FI_8002",
       "FI_8005"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_026",
-    "name": "(S30) Standard Smooth",
+    "name": {
+      "mpc": "(S30) Standard Smooth"
+    },
     "productCodes": [
       "FI_8002",
       "FI_8005"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_062",
-    "name": "(S33) Superior Smooth",
+    "name": {
+      "mpc": "(S33) Superior Smooth"
+    },
     "productCodes": [
       "FI_8002",
       "FI_8005"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_288",
-    "name": "(M28) Standard Linen",
+    "name": {
+      "mpc": "(M28) Standard Linen"
+    },
     "productCodes": [
       "FI_8002",
       "FI_8005"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_289",
-    "name": "(M29) BGM Linen",
+    "name": {
+      "mpc": "(M29) BGM Linen",
+      "ps": "Plastic (100%)"
+    },
     "productCodes": [
       "FI_12266",
       "FI_12559",
@@ -2229,160 +2044,145 @@
       "FI_7852",
       "FI_8002",
       "FI_8005"
-    ],
-    "siteCodes": [
-      "mpc",
-      "ps"
     ]
   },
   {
     "code": "PA_046",
-    "name": "(M31) Linen",
+    "name": {
+      "mpc": "(M31) Linen"
+    },
     "productCodes": [
       "FI_8002",
       "FI_8005"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_159",
-    "name": "(M32) Linen Air [min.1000]",
+    "name": {
+      "mpc": "(M32) Linen Air [min.1000]"
+    },
     "productCodes": [
       "FI_8002",
       "FI_8005"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_222",
-    "name": "(A35) Thick Standard",
+    "name": {
+      "mpc": "(A35) Thick Standard"
+    },
     "productCodes": [
       "FI_8002",
       "FI_8005"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_261",
-    "name": "(E27) Eco Herbage",
+    "name": {
+      "mpc": "(E27) Eco Herbage"
+    },
     "productCodes": [
       "FI_8002",
       "FI_8005"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_047",
-    "name": "(P10) Plastic",
+    "name": {
+      "mpc": "(P10) Plastic"
+    },
     "productCodes": [
       "FI_8002",
       "FI_8005"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_138",
-    "name": "(S30) Standard Smooth",
+    "name": {
+      "mpc": "(S30) Standard Smooth"
+    },
     "productCodes": [
       "FI_8892"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_140",
-    "name": "(S33) Superior Smooth",
+    "name": {
+      "mpc": "(S33) Superior Smooth"
+    },
     "productCodes": [
       "FI_8892"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_310",
-    "name": "(M28) Standard Linen",
+    "name": {
+      "mpc": "(M28) Standard Linen"
+    },
     "productCodes": [
       "FI_8892"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_311",
-    "name": "(M29) BGM Linen",
+    "name": {
+      "mpc": "(M29) BGM Linen"
+    },
     "productCodes": [
       "FI_8892"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_139",
-    "name": "(M31) Linen",
+    "name": {
+      "mpc": "(M31) Linen"
+    },
     "productCodes": [
       "FI_8892"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_160",
-    "name": "(M32) Linen Air [min.1000]",
+    "name": {
+      "mpc": "(M32) Linen Air [min.1000]"
+    },
     "productCodes": [
       "FI_8892"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_225",
-    "name": "(A35) Thick Standard",
+    "name": {
+      "mpc": "(A35) Thick Standard"
+    },
     "productCodes": [
       "FI_8892"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_262",
-    "name": "(E27) Eco Herbage",
+    "name": {
+      "mpc": "(E27) Eco Herbage"
+    },
     "productCodes": [
       "FI_8892"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_141",
-    "name": "(P10) Plastic",
+    "name": {
+      "mpc": "(P10) Plastic"
+    },
     "productCodes": [
       "FI_8892"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_007",
-    "name": "(S30) Standard Smooth",
+    "name": {
+      "mpc": "(S30) Standard Smooth",
+      "ps": "Standard (smooth)"
+    },
     "productCodes": [
       "FI_12555",
       "FI_12556",
@@ -2390,495 +2190,446 @@
       "FI_2134",
       "FI_2135",
       "FI_569"
-    ],
-    "siteCodes": [
-      "mpc",
-      "ps"
     ]
   },
   {
     "code": "PA_064",
-    "name": "(S33) Superior Smooth",
+    "name": {
+      "mpc": "(S33) Superior Smooth"
+    },
     "productCodes": [
       "FI_2134",
       "FI_2135"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_270",
-    "name": "(M28) Standard Linen",
+    "name": {
+      "mpc": "(M28) Standard Linen"
+    },
     "productCodes": [
       "FI_2134",
       "FI_2135"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_271",
-    "name": "(M29) BGM Linen",
+    "name": {
+      "mpc": "(M29) BGM Linen"
+    },
     "productCodes": [
       "FI_2134",
       "FI_2135"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_322",
-    "name": "(M30) Linen Air Light [min.1000]",
+    "name": {
+      "mpc": "(M30) Linen Air Light [min.1000]"
+    },
     "productCodes": [
       "FI_2134",
       "FI_2135"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_126",
-    "name": "(M31) Linen",
+    "name": {
+      "mpc": "(M31) Linen"
+    },
     "productCodes": [
       "FI_2134",
       "FI_2135"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_161",
-    "name": "(M32) Linen Air [min.1000]",
+    "name": {
+      "mpc": "(M32) Linen Air [min.1000]"
+    },
     "productCodes": [
       "FI_2134",
       "FI_2135"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_228",
-    "name": "(A35) Thick Standard",
+    "name": {
+      "mpc": "(A35) Thick Standard"
+    },
     "productCodes": [
       "FI_2134",
       "FI_2135"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_263",
-    "name": "(E27) Eco Herbage",
+    "name": {
+      "mpc": "(E27) Eco Herbage"
+    },
     "productCodes": [
       "FI_2134",
       "FI_2135"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_020",
-    "name": "(P10) Plastic",
+    "name": {
+      "mpc": "(P10) Plastic",
+      "ps": "Plastic (100%)"
+    },
     "productCodes": [
       "FI_2134",
       "FI_2135",
       "FI_9896",
       "FI_9897"
-    ],
-    "siteCodes": [
-      "mpc",
-      "ps"
     ]
   },
   {
     "code": "PA_042",
-    "name": "(S27) Smooth",
+    "name": {
+      "mpc": "(S27) Smooth"
+    },
     "productCodes": [
       "FI_8012"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_025",
-    "name": "(S30) Standard Smooth",
+    "name": {
+      "mpc": "(S30) Standard Smooth"
+    },
     "productCodes": [
       "FI_8012"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_061",
-    "name": "(S33) Superior Smooth",
+    "name": {
+      "mpc": "(S33) Superior Smooth"
+    },
     "productCodes": [
       "FI_8012"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_286",
-    "name": "(M28) Standard Linen",
+    "name": {
+      "mpc": "(M28) Standard Linen"
+    },
     "productCodes": [
       "FI_8012"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_287",
-    "name": "(M29) BGM Linen",
+    "name": {
+      "mpc": "(M29) BGM Linen"
+    },
     "productCodes": [
       "FI_8012"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_043",
-    "name": "(M31) Linen",
+    "name": {
+      "mpc": "(M31) Linen",
+      "ps": "Plastic (100%)"
+    },
     "productCodes": [
       "FI_12550",
       "FI_12553",
       "FI_6037",
       "FI_6038",
       "FI_8012"
-    ],
-    "siteCodes": [
-      "mpc",
-      "ps"
     ]
   },
   {
     "code": "PA_158",
-    "name": "(M32) Linen Air [min.1000]",
+    "name": {
+      "mpc": "(M32) Linen Air [min.1000]"
+    },
     "productCodes": [
       "FI_8012"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_219",
-    "name": "(A35) Thick Standard",
+    "name": {
+      "mpc": "(A35) Thick Standard"
+    },
     "productCodes": [
       "FI_8012"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_260",
-    "name": "(E27) Eco Herbage",
+    "name": {
+      "mpc": "(E27) Eco Herbage"
+    },
     "productCodes": [
       "FI_8012"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_044",
-    "name": "(P10) Plastic",
+    "name": {
+      "mpc": "(P10) Plastic"
+    },
     "productCodes": [
       "FI_8012"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_168",
-    "name": "(S27) Smooth",
+    "name": {
+      "mpc": "(S27) Smooth"
+    },
     "productCodes": [
       "FI_9009"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_166",
-    "name": "(S30) Standard Smooth",
+    "name": {
+      "mpc": "(S30) Standard Smooth"
+    },
     "productCodes": [
       "FI_9009"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_171",
-    "name": "(S33) Superior Smooth",
+    "name": {
+      "mpc": "(S33) Superior Smooth"
+    },
     "productCodes": [
       "FI_9009"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_314",
-    "name": "(M28) Standard Linen",
+    "name": {
+      "mpc": "(M28) Standard Linen"
+    },
     "productCodes": [
       "FI_9009"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_315",
-    "name": "(M29) BGM Linen",
+    "name": {
+      "mpc": "(M29) BGM Linen"
+    },
     "productCodes": [
       "FI_9009"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_167",
-    "name": "(M31) Linen",
+    "name": {
+      "mpc": "(M31) Linen"
+    },
     "productCodes": [
       "FI_9009"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_231",
-    "name": "(A35) Thick Standard",
+    "name": {
+      "mpc": "(A35) Thick Standard"
+    },
     "productCodes": [
       "FI_9009"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_264",
-    "name": "(E27) Eco Herbage",
+    "name": {
+      "mpc": "(E27) Eco Herbage"
+    },
     "productCodes": [
       "FI_9009"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_169",
-    "name": "(P10) Plastic",
+    "name": {
+      "mpc": "(P10) Plastic"
+    },
     "productCodes": [
       "FI_9009"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_105",
-    "name": "(S27) Smooth",
+    "name": {
+      "mpc": "(S27) Smooth"
+    },
     "productCodes": [
       "FI_8590"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_103",
-    "name": "(S30) Standard Smooth",
+    "name": {
+      "mpc": "(S30) Standard Smooth"
+    },
     "productCodes": [
       "FI_8590"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_106",
-    "name": "(S33) Superior Smooth",
+    "name": {
+      "mpc": "(S33) Superior Smooth"
+    },
     "productCodes": [
       "FI_8590"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_298",
-    "name": "(M28) Standard Linen",
+    "name": {
+      "mpc": "(M28) Standard Linen"
+    },
     "productCodes": [
       "FI_8590"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_299",
-    "name": "(M29) BGM Linen",
+    "name": {
+      "mpc": "(M29) BGM Linen",
+      "ps": "Plastic (100%)"
+    },
     "productCodes": [
       "FI_12557",
       "FI_12558",
       "FI_2134",
       "FI_2135",
       "FI_8590"
-    ],
-    "siteCodes": [
-      "mpc",
-      "ps"
     ]
   },
   {
     "code": "PA_104",
-    "name": "(M31) Linen",
+    "name": {
+      "mpc": "(M31) Linen"
+    },
     "productCodes": [
       "FI_8590"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_162",
-    "name": "(M32) Linen Air [min.1000]",
+    "name": {
+      "mpc": "(M32) Linen Air [min.1000]"
+    },
     "productCodes": [
       "FI_8590"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_240",
-    "name": "(A35) Thick Standard",
+    "name": {
+      "mpc": "(A35) Thick Standard"
+    },
     "productCodes": [
       "FI_8590"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_265",
-    "name": "(E27) Eco Herbage",
+    "name": {
+      "mpc": "(E27) Eco Herbage"
+    },
     "productCodes": [
       "FI_8590"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_107",
-    "name": "(P10) Plastic",
+    "name": {
+      "mpc": "(P10) Plastic"
+    },
     "productCodes": [
       "FI_8590"
-    ],
-    "siteCodes": [
-      "mpc"
     ]
   },
   {
     "code": "PA_324",
-    "name": "Superior (smooth)",
+    "name": {
+      "ps": "Superior (smooth)"
+    },
     "productCodes": [
       "FI_21757"
-    ],
-    "siteCodes": [
-      "ps"
     ]
   },
   {
     "code": "PA_180",
-    "name": "Superior (smooth)",
+    "name": {
+      "ps": "Superior (smooth)"
+    },
     "productCodes": [
       "FI_12550",
       "FI_12553",
       "FI_6037",
       "FI_6038"
-    ],
-    "siteCodes": [
-      "ps"
     ]
   },
   {
     "code": "PA_182",
-    "name": "Superior (smooth)",
+    "name": {
+      "ps": "Superior (smooth)"
+    },
     "productCodes": [
       "FI_12554",
       "FI_4332",
       "FI_4333",
       "FI_6989"
-    ],
-    "siteCodes": [
-      "ps"
     ]
   },
   {
     "code": "PA_183",
-    "name": "Superior (smooth)",
+    "name": {
+      "ps": "Superior (smooth)"
+    },
     "productCodes": [
       "FI_21661",
       "FI_21665"
-    ],
-    "siteCodes": [
-      "ps"
     ]
   },
   {
     "code": "PA_185",
-    "name": "Superior (smooth)",
+    "name": {
+      "ps": "Superior (smooth)"
+    },
     "productCodes": [
       "FI_12555",
       "FI_12556",
       "FI_1618",
       "FI_569"
-    ],
-    "siteCodes": [
-      "ps"
     ]
   },
   {
     "code": "PA_186",
-    "name": "Superior (smooth)",
+    "name": {
+      "ps": "Superior (smooth)"
+    },
     "productCodes": [
       "FI_21756"
-    ],
-    "siteCodes": [
-      "ps"
     ]
   },
   {
     "code": "PA_189",
-    "name": "Superior (smooth)",
+    "name": {
+      "ps": "Superior (smooth)"
+    },
     "productCodes": [
       "FI_12557",
       "FI_12558",
       "FI_2134",
       "FI_2135"
-    ],
-    "siteCodes": [
-      "ps"
     ]
   }
 ]

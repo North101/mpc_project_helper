@@ -8,7 +8,7 @@ import cardStockData from "../api/data/card_stock.json";
 import finishData from "../api/data/finish.json";
 import packagingData from "../api/data/packaging.json";
 import printTypeData from "../api/data/print_type.json";
-import unitData from "../api/data/unit.json";
+import unitData from "../api/data/unit.curated.json";
 import { Settings, UploadedImage } from "../api/mpc_api";
 import { Site, Unit } from "../types/mpc";
 
@@ -36,10 +36,10 @@ export default class ProjectSettingsModal extends React.Component<ProjectSetting
     const { site, unit, name } = props;
     this.state = {
       name: name?.substring(0, 32),
-      cardStockCode: cardStockData.find((it) => it.productCodes.includes(unit.productCode) && it.siteCodes.includes(site.code))?.code,
-      printTypeCode: printTypeData.find((it) => it.productCodes.includes(unit.productCode) && it.siteCodes.includes(site.code))?.code,
-      finishCode: finishData.find((it) => it.productCodes.includes(unit.productCode) && it.siteCodes.includes(site.code))?.code,
-      packagingCode: packagingData.find((it) => it.productCodes.includes(unit.productCode) && it.siteCodes.includes(site.code))?.code,
+      cardStockCode: cardStockData.find((it) => it.productCodes.includes(unit.productCode) && site.code in it.name)?.code,
+      printTypeCode: printTypeData.find((it) => it.productCodes.includes(unit.productCode) && site.code in it.name)?.code,
+      finishCode: finishData.find((it) => it.productCodes.includes(unit.productCode) && site.code in it.name)?.code,
+      packagingCode: packagingData.find((it) => it.productCodes.includes(unit.productCode) && site.code in it.name)?.code,
     };
   }
 
@@ -134,8 +134,8 @@ export default class ProjectSettingsModal extends React.Component<ProjectSetting
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             <FloatingLabel controlId="floatingSelect1" label="Product">
               <Form.Select aria-label="Product" value={unit.code} disabled>
-                {unitData.filter((it) => it.siteCodes.includes(site.code)).map((it) => (
-                  <option key={it.code} value={it.code}>{it.name}</option>
+                {unitData.filter((it) => site.code in it.name).map((it) => (
+                  <option key={it.code} value={it.code}>{(it.name as any)[site.code]}</option>
                 ))}
               </Form.Select>
             </FloatingLabel>
@@ -149,29 +149,29 @@ export default class ProjectSettingsModal extends React.Component<ProjectSetting
             </FloatingLabel>
             <FloatingLabel controlId="floatingSelect2" label="Card Stock">
               <Form.Select aria-label="Card Stock" value={cardStockCode} onChange={this.onCardStockChange}>
-                {cardStockData.filter((it) => it.productCodes.includes(unit.productCode) && it.siteCodes.includes(site.code)).map((it) => (
-                  <option key={it.code} value={it.code}>{it.name}</option>
+                {cardStockData.filter((it) => it.productCodes.includes(unit.productCode) && site.code in it.name).map((it) => (
+                  <option key={it.code} value={it.code}>{(it.name as any)[site.code]}</option>
                 ))}
               </Form.Select>
             </FloatingLabel>
             <FloatingLabel controlId="floatingSelect3" label="Print Type">
               <Form.Select aria-label="Print Type" value={printTypeCode} onChange={this.onPrintTypeChange}>
-                {printTypeData.filter((it) => it.productCodes.includes(unit.productCode) && it.siteCodes.includes(site.code)).map((it) => (
-                  <option key={it.code} value={it.code}>{it.name}</option>
+                {printTypeData.filter((it) => it.productCodes.includes(unit.productCode) && site.code in it.name).map((it) => (
+                  <option key={it.code} value={it.code}>{(it.name as any)[site.code]}</option>
                 ))}
               </Form.Select>
             </FloatingLabel>
             <FloatingLabel controlId="floatingSelect4" label="Finish">
               <Form.Select aria-label="Finish" value={finishCode} onChange={this.onFinishChange}>
-                {finishData.filter((it) => it.productCodes.includes(unit.productCode) && it.siteCodes.includes(site.code)).map((it) => (
-                  <option key={it.code} value={it.code}>{it.name}</option>
+                {finishData.filter((it) => it.productCodes.includes(unit.productCode) && site.code in it.name).map((it) => (
+                  <option key={it.code} value={it.code}>{(it.name as any)[site.code]}</option>
                 ))}
               </Form.Select>
             </FloatingLabel>
             <FloatingLabel controlId="floatingSelect5" label="Packaging">
               <Form.Select aria-label="Packaging" value={packagingCode} onChange={this.onPackagingChange}>
-                {packagingData.filter((it) => it.productCodes.includes(unit.productCode) && it.siteCodes.includes(site.code)).map((it) => (
-                  <option key={it.code} value={it.code}>{it.name}</option>
+                {packagingData.filter((it) => it.productCodes.includes(unit.productCode) && site.code in it.name).map((it) => (
+                  <option key={it.code} value={it.code}>{(it.name as any)[site.code]}</option>
                 ))}
               </Form.Select>
             </FloatingLabel>

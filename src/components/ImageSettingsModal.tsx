@@ -1,4 +1,5 @@
 import * as React from "react";
+import Alert from "react-bootstrap/esm/Alert";
 import Button from "react-bootstrap/esm/Button";
 import FloatingLabel from "react-bootstrap/esm/FloatingLabel";
 import Form from "react-bootstrap/esm/Form";
@@ -7,11 +8,10 @@ import cardStockData from "../api/data/card_stock.json";
 import finishData from "../api/data/finish.json";
 import packagingData from "../api/data/packaging.json";
 import printTypeData from "../api/data/print_type.json";
-import unitData from "../api/data/unit.json";
+import unitData from "../api/data/unit.curated.json";
 import { CardSettings, Settings } from "../api/mpc_api";
-import { Site, Unit } from "../types/mpc";
 import { Card } from "../types/card";
-import Alert from "react-bootstrap/esm/Alert";
+import { Site, Unit } from "../types/mpc";
 
 
 interface ImageSettingsModalProps {
@@ -38,15 +38,15 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
     super(props);
 
     const { site } = props;
-    const unit = props.unit ?? unitData.find((it) => it.siteCodes.includes(site.code));
+    const unit = props.unit ?? unitData.find((it) => site.code in it.name);
     this.state = {
       unit: unit,
       uploadProject: false,
       name: undefined,
-      cardStockCode: cardStockData.find((it) => unit && it.productCodes.includes(unit.productCode) && it.siteCodes.includes(site.code))?.code,
-      printTypeCode: printTypeData.find((it) => unit && it.productCodes.includes(unit.productCode) && it.siteCodes.includes(site.code))?.code,
-      finishCode: finishData.find((it) => unit && it.productCodes.includes(unit.productCode) && it.siteCodes.includes(site.code))?.code,
-      packagingCode: packagingData.find((it) => unit && it.productCodes.includes(unit.productCode) && it.siteCodes.includes(site.code))?.code,
+      cardStockCode: cardStockData.find((it) => unit && it.productCodes.includes(unit.productCode) && site.code in it.name)?.code,
+      printTypeCode: printTypeData.find((it) => unit && it.productCodes.includes(unit.productCode) && site.code in it.name)?.code,
+      finishCode: finishData.find((it) => unit && it.productCodes.includes(unit.productCode) && site.code in it.name)?.code,
+      packagingCode: packagingData.find((it) => unit && it.productCodes.includes(unit.productCode) && site.code in it.name)?.code,
     };
   }
 
@@ -188,8 +188,8 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             <FloatingLabel controlId="floatingSelect1" label="Product">
               <Form.Select aria-label="Product" value={unit?.code} onChange={this.onUnitChange}>
-                {unitData.filter((it) => it.siteCodes.includes(site.code)).map((it) => (
-                  <option key={it.code} value={it.code}>{it.name}</option>
+                {unitData.filter((it) => site.code in it.name).map((it) => (
+                  <option key={it.code} value={it.code}>{(it.name as any)[site.code]}</option>
                 ))}
               </Form.Select>
             </FloatingLabel>
@@ -200,6 +200,7 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
             )}
             <Form.Check
               type='checkbox'
+              name="upload"
               label='Upload project?'
               checked={uploadProject}
               onChange={this.onUploadProjectChange}
@@ -211,29 +212,29 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
                 </FloatingLabel>
                 <FloatingLabel controlId="floatingSelect2" label="Card Stock">
                   <Form.Select aria-label="Card Stock" value={cardStockCode} onChange={this.onCardStockChange}>
-                    {cardStockData.filter((it) => unit && it.productCodes.includes(unit.productCode) && it.siteCodes.includes(site.code)).map((it) => (
-                      <option key={it.code} value={it.code}>{it.name}</option>
+                    {cardStockData.filter((it) => unit && it.productCodes.includes(unit.productCode) && site.code in it.name).map((it) => (
+                      <option key={it.code} value={it.code}>{(it.name as any)[site.code]}</option>
                     ))}
                   </Form.Select>
                 </FloatingLabel>
                 <FloatingLabel controlId="floatingSelect3" label="Print Type">
                   <Form.Select aria-label="Print Type" value={printTypeCode} onChange={this.onPrintTypeChange}>
-                    {printTypeData.filter((it) => unit && it.productCodes.includes(unit.productCode) && it.siteCodes.includes(site.code)).map((it) => (
-                      <option key={it.code} value={it.code}>{it.name}</option>
+                    {printTypeData.filter((it) => unit && it.productCodes.includes(unit.productCode) && site.code in it.name).map((it) => (
+                      <option key={it.code} value={it.code}>{(it.name as any)[site.code]}</option>
                     ))}
                   </Form.Select>
                 </FloatingLabel>
                 <FloatingLabel controlId="floatingSelect4" label="Finish">
                   <Form.Select aria-label="Finish" value={finishCode} onChange={this.onFinishChange}>
-                    {finishData.filter((it) => unit && it.productCodes.includes(unit.productCode) && it.siteCodes.includes(site.code)).map((it) => (
-                      <option key={it.code} value={it.code}>{it.name}</option>
+                    {finishData.filter((it) => unit && it.productCodes.includes(unit.productCode) && site.code in it.name).map((it) => (
+                      <option key={it.code} value={it.code}>{(it.name as any)[site.code]}</option>
                     ))}
                   </Form.Select>
                 </FloatingLabel>
                 <FloatingLabel controlId="floatingSelect5" label="Packaging">
                   <Form.Select aria-label="Packaging" value={packagingCode} onChange={this.onPackagingChange}>
-                    {packagingData.filter((it) => unit && it.productCodes.includes(unit.productCode) && it.siteCodes.includes(site.code)).map((it) => (
-                      <option key={it.code} value={it.code}>{it.name}</option>
+                    {packagingData.filter((it) => unit && it.productCodes.includes(unit.productCode) && site.code in it.name).map((it) => (
+                      <option key={it.code} value={it.code}>{(it.name as any)[site.code]}</option>
                     ))}
                   </Form.Select>
                 </FloatingLabel>

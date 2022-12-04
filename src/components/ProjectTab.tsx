@@ -4,18 +4,18 @@ import { FileEarmarkPlus, Save, Upload, XCircle } from "react-bootstrap-icons";
 import Alert from "react-bootstrap/esm/Alert";
 import Button from "react-bootstrap/esm/Button";
 import ListGroup from "react-bootstrap/esm/ListGroup";
-import unitData from "../api/data/unit.json";
+import unitData from "../api/data/unit.curated.json";
 import { createProject, Settings, UploadedImage } from "../api/mpc_api";
 import { Site, Unit } from "../types/mpc";
 import { ParsedProject, ProjectCard } from "../types/project";
 import { remove, reorder, replace } from "../util";
 import ErrorModal from "./ErrorModal";
-import SaveProjectModal from "./SaveProjectModal";
 import LoadingModal from "./LoadingModal";
 import ProjectEditModal from "./ProjectEditModal";
 import ProjectItem from "./ProjectItem";
 import ProjectSettingsModal from "./ProjectSettingsModal";
 import ProjectSuccessModal from "./ProjectSuccessModal";
+import SaveProjectModal from "./SaveProjectModal";
 
 interface SettingsState {
   id: 'settings';
@@ -129,7 +129,7 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
             },
           });
           return;
-        } else if (!unit.siteCodes.includes(site.code)) {
+        } else if (site.code !in unit.name) {
           this.setState({
             state: {
               id: 'error',
@@ -334,6 +334,7 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
                 >
                   {items.map((item, index) => <ProjectItem
                     key={item.id}
+                    site={site}
                     item={item}
                     index={index}
                     onEdit={this.onItemEdit}

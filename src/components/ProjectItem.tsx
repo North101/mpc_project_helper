@@ -5,6 +5,7 @@ import Button from "react-bootstrap/esm/Button";
 import FloatingLabel from "react-bootstrap/esm/FloatingLabel";
 import Form from "react-bootstrap/esm/Form";
 import ListGroup from "react-bootstrap/esm/ListGroup";
+import { Site } from "../types/mpc";
 import { ParsedProject } from "../types/project";
 
 const getItemStyle = (isDragging: boolean, draggableStyle: any): React.CSSProperties => ({
@@ -20,6 +21,7 @@ const getItemStyle = (isDragging: boolean, draggableStyle: any): React.CSSProper
 });
 
 interface ProjectItemProps {
+  site: Site;
   index: number;
   item: ParsedProject;
   onEdit: (index: number, item: ParsedProject) => void;
@@ -37,7 +39,7 @@ export default class ProjectItem extends React.Component<ProjectItemProps> {
   }
 
   render() {
-    const { index, item } = this.props;
+    const { site, index, item } = this.props;
     return (
       <Draggable draggableId={item.id} index={index}>
         {(provided, snapshot) => (
@@ -62,7 +64,7 @@ export default class ProjectItem extends React.Component<ProjectItemProps> {
               <Form.Control aria-label="Filename" value={item.name} disabled />
             </FloatingLabel>
             <FloatingLabel controlId="floatingSelect2" label="Product" style={{ flex: 1 }}>
-              <Form.Control aria-label="Product" value={item.unit.name} disabled />
+              <Form.Control aria-label="Product" value={item.unit.name[site.code]} disabled />
             </FloatingLabel>
             <FloatingLabel controlId="floatingCount" label="Count" style={{ width: 80 }}>
               <Form.Control

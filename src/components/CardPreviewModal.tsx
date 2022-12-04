@@ -2,7 +2,7 @@ import React from "react";
 import FloatingLabel from "react-bootstrap/esm/FloatingLabel";
 import Form from "react-bootstrap/esm/Form";
 import Modal from "react-bootstrap/esm/Modal";
-import unitData from "../api/data/unit.json";
+import unitData from "../api/data/unit.curated.json";
 import { Card } from "../types/card";
 import { Site, Unit } from "../types/mpc";
 import CardPreview from "./CardPreview";
@@ -25,7 +25,7 @@ export default class CardPreviewModal extends React.Component<CardPreviewModalPr
 
     const { unit, site } = props;
     this.state = {
-      unit: unit ?? unitData.find((it) => it.siteCodes.includes(site.code)),
+      unit: unit ?? unitData.find((it) => site.code in it.name),
     }
   }
 
@@ -51,8 +51,8 @@ export default class CardPreviewModal extends React.Component<CardPreviewModalPr
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8, flex: '1 1 1px', overflowY: 'scroll' }}>
             <FloatingLabel controlId="floatingSelect1" label="Product">
               <Form.Select aria-label="Product" value={unit?.code} onChange={this.onUnitChange}>
-                {unitData.filter((it) => it.siteCodes.includes(site.code)).map((it) => (
-                  <option key={it.code} value={it.code}>{it.name}</option>
+                {unitData.filter((it) => site.code in it.name).map((it) => (
+                  <option key={it.code} value={it.code}>{(it.name as any)[site.code]}</option>
                 ))}
               </Form.Select>
             </FloatingLabel>

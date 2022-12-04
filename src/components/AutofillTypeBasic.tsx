@@ -4,7 +4,7 @@ import FloatingLabel from "react-bootstrap/esm/FloatingLabel";
 import Form from "react-bootstrap/esm/Form";
 import OverlayTrigger from "react-bootstrap/esm/OverlayTrigger";
 import Tooltip from "react-bootstrap/esm/Tooltip";
-import { Card, CardSide, CardFace, CardFaces } from "../types/card";
+import { Card, CardFace, CardFaces, CardSide } from "../types/card";
 import { AutofillNone, AutofillNoneProps, AutofillType } from "./AutofillTypeNone";
 
 const sideMap: { [key: string]: CardFace; } = {

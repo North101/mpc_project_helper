@@ -26,16 +26,16 @@ class ScrapeData:
     self.packagings = {}
     self.finishes = {}
 
-  def scrape(self, url, site):
+  def scrape(self, site: SiteConfig, url):
     html = get(url)
     nodes = html.xpath('//*[@id="main_content"]//*[@class="mc_photobox"][1]//*[@class="mcpb_item"]//a/@href')
     for index, url in enumerate(nodes):
       print(f'{index + 1} / {len(nodes)}')
-      self.scrape_unit(url, site)
+      self.scrape_unit(site, url)
     
     next = html.xpath('//*[@id="main_content"]//*[@class="linkbox"][1]//a[contains(text(), "Next")]/@href')
     if next:
-      self.scrape(next[0], site)
+      self.scrape(site, next[0])
   
   def expected_unpick_info(self, value):
     return {
@@ -93,11 +93,10 @@ class ScrapeData:
       "IsTextZoom": "Y"
     }
 
-  def default_unit(self, unit_code, unit_name, max_cards, product_code, front_design_code, back_design_code, unpick_info, pixel_info, dimensions):
+  def default_unit(self, unit_code, unit_name, max_cards, product_code, front_design_code, back_design_code, unpick_info, pixel_info):
     return {
       'code': unit_code,
-      'name': unit_name,
-      'siteCodes': set(),
+      'name': {},
       'productCode': product_code,
       'frontDesignCode': front_design_code,
       'backDesignCode': back_design_code,
@@ -119,25 +118,24 @@ class ScrapeData:
       'x': unpick_info['X'],
       'y': unpick_info['Y'],
       'lappedType': pixel_info['LappedType'],
-      'dimensions': dimensions,
     }
   
-  def scrape_unit(self, url, site):
+  def scrape_unit(self, site: SiteConfig, url):
     print(url)
     html = get(url)
 
     unit_code = html.xpath('//input[@id="hidd_itemid"]/@value')[0]
     unit_name = html.xpath('//*[@id="main_content"]//div[@class="proinfowrap"]//h1//text()')[0]
+    print(unit_code, unit_name)
+    min_cards = int(html.xpath('//select[@id="dro_choosesize"]/option')[0].attrib['value'])
     max_cards = int(html.xpath('//select[@id="dro_choosesize"]/option')[-1].attrib['value'])
-    min_pieces = int(html.xpath('//input[@id="hidd_pieces"]/@value')[0])
-    dimensions = html.xpath('//div[@class="productspecbox"]/ul/li/*[contains(text(), "Dimensions:")]/..')[0].text_content().replace('Dimensions: ', '')
 
     session = requests.Session()
     r = session.get(f'{site.domain}/products/pro_item_process_flow.aspx', params={
       'itemid': unit_code,
       #'packid': packaging['PackingNo'],
       #'attachno': card_stock_code,
-      'pcs': min_pieces,
+      'pcs': min_cards,
       'qty': '1',
       #'processno': finish['ProcessNo'],
     })
@@ -160,9 +158,8 @@ class ScrapeData:
       unpick_info=unpick_info,
       pixel_info=pixel_info,
       max_cards=max_cards,
-      dimensions=dimensions,
     ))
-    value['siteCodes'].add(site.code)
+    value['name'][site.code] = unit_name
 
     expected_unpick_info = self.expected_unpick_info(value)
     if unpick_info != expected_unpick_info:
@@ -181,93 +178,109 @@ class ScrapeData:
           print(f'{k} = {v} != {expected_value}')
 
     for card_stock in html.xpath('//select[@id="dro_paper_type"]//option'):
-      self.scrape_card_stock(card_stock, site, unit_code, product_code, min_pieces, max_cards)
+      self.scrape_card_stock(site, card_stock, unit_code, product_code, min_cards)
 
-  def scrape_card_stock(self, card_stock, site, unit_code, product_code, min_pieces, max_cards):
+  def scrape_card_stock(self, site: SiteConfig, card_stock, unit_code, product_code, min_cards):
       card_stock_code = card_stock.attrib['value']
       card_stock_name = card_stock.text
       value = self.card_stocks.setdefault(card_stock_code, {
         'code': card_stock_code,
-        'name': card_stock_name,
-        'siteCodes': set(),
+        'name': {},
         'productCodes': set(),
       })
-      value['siteCodes'].add(site.code)
+      value['name'][site.code] = card_stock_name
       value['productCodes'].add(product_code)
 
-      for print_type in self.get_print_types(site, unit_code, card_stock_code, min_pieces, max_cards):
-        self.scrape_print_type(print_type, site, product_code)
+      self.default_print_type(site, product_code)
+      for print_type in self.get_print_types(site, unit_code, card_stock_code, min_cards):
+        self.scrape_print_type(site, print_type, product_code)
 
-      for packaging in self.get_packagings(site, unit_code, card_stock_code, min_pieces):
-        self.scrape_packaging(packaging, site, product_code)
+      for packaging in self.get_packagings(site, unit_code, card_stock_code, min_cards):
+        self.scrape_packaging(site, packaging, product_code)
 
       if site.finish:
-        for finish in self.get_finishes(site, unit_code, card_stock_code, min_pieces):
-          self.scrape_finish(finish, site, product_code)
+        for finish in self.get_finishes(site, unit_code, card_stock_code, min_cards):
+          self.scrape_finish(site, finish, product_code)
+      else:
+        value = self.finishes.setdefault("", {
+          'code': "",
+          'name': {},
+          'productCodes': set(),
+        })
+        value['name'][site.code] = "None"
+        value['productCodes'].add(product_code)
   
-  def get_print_types(self, site, unit_code, card_stock_code, min_pieces, max_cards):
+  def default_print_type(self, site: SiteConfig, product_code):
+    print_type_code = ""
+    value = self.print_types.setdefault(print_type_code, {
+      "code": print_type_code,
+      "name": {},
+      "productCodes": set(),
+    })
+    value["name"][site.code] = "Full color print"
+    value["productCodes"].add(product_code)
+  
+  def get_print_types(self, site: SiteConfig, unit_code, card_stock_code, min_cards):
     return get_json(f'{site.domain}/api/publish/getproducteffectinfo.ashx', params={
       'unitno': unit_code,
       'attachno': card_stock_code,
-      'minPieces': min_pieces,
-      'pieces': max_cards,
+      'minPieces': min_cards,
+      'pieces': min_cards,
     })
 
-  def scrape_print_type(self, print_type, site, product_code):
+  def scrape_print_type(self, site: SiteConfig, print_type, product_code):
     print_type_code = print_type['EffectNo']
     value = self.print_types.setdefault(print_type_code, {
       'code': print_type_code,
-      'name': print_type['PublishDesc'],
-      'siteCodes': set(),
+      'name': {},
       'productCodes': set(),
     })
-    value['siteCodes'].add(site.code)
+    value['name'][site.code] = print_type['PublishDesc']
     value['productCodes'].add(product_code)
   
-  def get_packagings(self, site, unit_code, card_stock_code, min_pieces):
+  def get_packagings(self, site: SiteConfig, unit_code, card_stock_code, min_cards):
     return get_json(f'{site.domain}/api/publish/getpackinginfo.ashx', params={
       'unitno': unit_code,
       'attachno': card_stock_code,
       'pefno': '',
-      'pieces': min_pieces,
+      'pieces': min_cards,
       'bookletNo': '',
       'blMaterial': '',
     })
   
-  def scrape_packaging(self, packaging, site, product_code):
+  def scrape_packaging(self, site: SiteConfig, packaging, product_code):
     packaging_code = packaging['PackingNo']
     value = self.packagings.setdefault(packaging_code, {
       'code': packaging_code,
-      'name': packaging['PublishDesc'],
-      'siteCodes': set(),
+      'name': {},
       'productCodes': set(),
     })
-    value['siteCodes'].add(site.code)
+    value['name'][site.code] = packaging['PublishDesc']
     value['productCodes'].add(product_code)
   
-  def get_finishes(self, site, unit_code, card_stock_code, min_pieces):
+  def get_finishes(self, site: SiteConfig, unit_code, card_stock_code, min_cards):
     return [
       config
       for process in get_json(f'{site.domain}/api/publish/getproductprocessinfo.ashx', params={
         'unitno': unit_code,
         'attachno': card_stock_code,
-        'pieces': min_pieces,
+        'pieces': min_cards,
         'effectNo': '',
       })['PanelInfo']
+      if process['PublishNo'] == 'PPN_0001'
       for config in process['ConfigInfo']
-      if config['ProcessGroup'] == 'CARDFINISH'
     ]
   
-  def scrape_finish(self, finish, site, product_code):
+  def scrape_finish(self, site: SiteConfig, finish, product_code):
     finish_code = finish['ProcessNo']
     value = self.finishes.setdefault(finish_code, {
       'code': finish_code,
-      'name': finish['PublishDesc'],
-      'siteCodes': set(),
+      'name': {},
       'productCodes': set(),
     })
-    value['siteCodes'].add(site.code)
+    value['name'][site.code] = finish['PublishDesc']
     value['productCodes'].add(product_code)
+
 
 class SetEncoder(json.JSONEncoder):
   def default(self, obj):
@@ -278,12 +291,12 @@ class SetEncoder(json.JSONEncoder):
 
 data = ScrapeData()
 data.scrape(
-  'https://www.makeplayingcards.com/promotional/blank-playing-cards.html',
   SiteConfig('https://www.makeplayingcards.com', 'mpc'),
+  'https://www.makeplayingcards.com/promotional/blank-playing-cards.html',
 )
 data.scrape(
-  'https://www.printerstudio.co.uk/create-own/blank-playing-cards.html',
   SiteConfig('https://www.printerstudio.co.uk', 'ps', finish=False),
+  'https://www.printerstudio.co.uk/create-own/blank-playing-cards.html',
 )
 
 with open('src/api/data/unit.json', 'w+') as f:

@@ -6,8 +6,9 @@ export interface Site {
 
 export interface Unit {
   code: string;
-  name: string;
-  siteCodes: string[];
+  name: {
+    [key: string]: string | undefined;
+  };
   productCode: string;
   frontDesignCode: string;
   backDesignCode: string;

@@ -19,7 +19,7 @@ chrome.runtime.onInstalled.addListener(() => {
   });
 });
 
-chrome.action.onClicked.addListener((tab: any) => {
+chrome.action.onClicked.addListener((tab) => {
   chrome.tabs.sendMessage(tab.id!, {
     message: 'show',
   });

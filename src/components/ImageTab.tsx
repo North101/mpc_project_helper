@@ -4,9 +4,9 @@ import { CardImage, FileEarmarkPlus, PlusCircle, Upload, XCircle } from "react-b
 import Button from "react-bootstrap/esm/Button";
 import Dropdown from "react-bootstrap/esm/Dropdown";
 import ListGroup from "react-bootstrap/esm/ListGroup";
-import unitData from "../api/data/unit.json";
+import unitData from "../api/data/unit.curated.json";
 import { analysisImage, CardSettings, CompressedImageData, compressImageData, createProject, Settings, UploadedImage, uploadImage } from "../api/mpc_api";
-import { Card, CardSide, CardFace, CardFaces } from "../types/card";
+import { Card, CardFaces, CardSide } from "../types/card";
 import { Site, Unit } from "../types/mpc";
 import { Project } from "../types/project";
 import { analyseCard, remove, reorder, replace, setStateAsync } from "../util";
@@ -15,8 +15,8 @@ import CardPreviewModal from "./CardPreviewModal";
 import ErrorModal from "./ErrorModal";
 import ImageItem from "./ImageItem";
 import ImageSettingsModal from "./ImageSettingsModal";
-import SaveProjectModal from "./SaveProjectModal";
 import ProgressModal from "./ProgressModal";
+import SaveProjectModal from "./SaveProjectModal";
 
 interface AutofillState {
   id: 'autofill';
@@ -387,11 +387,11 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
           <div style={{ flex: 1 }} />
           <Dropdown onSelect={this.onProductChange}>
             <Dropdown.Toggle variant="outline-primary">
-              {unit?.name ?? 'Select Product'}
+              {unit?.name[site.code as "mpc" | "ps"] ?? 'Select Product'}
             </Dropdown.Toggle>
             <Dropdown.Menu style={{maxHeight: 300, overflowY: 'scroll'}}>
-              {unitData.filter((it) => it.siteCodes.includes(site.code)).map((it) => (
-                <Dropdown.Item key={it.code} eventKey={it.code} active={it.code === unit?.code}>{it.name}</Dropdown.Item>
+              {unitData.filter((it) => site.code in it.name).map((it) => (
+                <Dropdown.Item key={it.code} eventKey={it.code} active={it.code === unit?.code}>{(it.name as any)[site.code]}</Dropdown.Item>
               ))}
             </Dropdown.Menu>
           </Dropdown>
