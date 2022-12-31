@@ -140,14 +140,16 @@ class ScrapeData:
       #'processno': finish['ProcessNo'],
     })
     front_html = lxml.html.parse(StringIO(r.text))
-    product_code = front_html.xpath('//input[@id="hidd_itemId"]')[0].attrib['value']
-    front_design_code = front_html.xpath('//input[@id="hidd_coverCode"]')[0].attrib['value']
-    unpick_info = json.loads(front_html.xpath('//input[@id="hidd_unpick_info"]')[0].attrib['value'])[0]
-    pixel_info = json.loads(front_html.xpath('//input[@id="hidd_pixel_info"]')[0].attrib['value'])
+    hd_parameter =  json.loads(front_html.xpath('//input[@id="hdParameter"]')[0].attrib['value'])
+    product_code = hd_parameter['Base']['ProductCode']
+    front_design_code = hd_parameter['Base']['ProductDesign']
+    unpick_info = json.loads(hd_parameter['Base']['UnpickInfo'])[0]
+    pixel_info = json.loads(hd_parameter['Base']['PixelInfo'])
 
     r = session.get(r.url.replace('dn_playingcards_front_dynamic.aspx', 'dn_playingcards_back_dynamic.aspx'))
     back_html = lxml.html.parse(StringIO(r.text))
-    back_design_code = back_html.xpath('//input[@id="hidd_bottomCode"]')[0].attrib['value']
+    hd_parameter =  json.loads(back_html.xpath('//input[@id="hdParameter"]')[0].attrib['value'])
+    back_design_code = hd_parameter['Base']['ProductDesign']
 
     value = self.units.setdefault(unit_code, self.default_unit(
       unit_code=unit_code,

@@ -259,9 +259,11 @@ export const saveFrontImageStep = async (projectId: string, settings: Settings) 
     retries: 5,
     retryDelay: 500,
   });
+
+  const hdParameter = JSON.parse(formData['hdParameter']);
   return {
-    unpickInfo: JSON.parse(formData['hidd_unpick_info'])[0],
-    pixelInfo: JSON.parse(formData['hidd_pixel_info']),
+    pixelInfo: JSON.parse(hdParameter.Base.PixelInfo) as PixelInfo,
+    unpickInfo: JSON.parse(hdParameter.Base.UnpickInfo)[0] as UnpickInfo,
   };
 }
 
@@ -384,7 +386,7 @@ export const uncompressCropData = (data: CompressedImageData, pixelInfo: PixelIn
   }]
 }
 
-export const saveSession = async (projectId: string, settings: Settings, cards: UploadedImage[], pixelInfo: any, unpickInfo: any) => {
+export const saveSession = async (projectId: string, settings: Settings, cards: UploadedImage[], pixelInfo: PixelInfo, unpickInfo: UnpickInfo) => {
   const body = new FormData();
   // list of front images for the project
   body.append('frontImageList', JSON.stringify(cards.map((sides) => sides.front ? uncompressImageData(settings, sides.front) : null)));
@@ -430,7 +432,7 @@ export const createProject = async (settings: Settings, cards: UploadedImage[]) 
 
   await saveFrontSettings(projectId, settings, expandedCards);
   await saveBackSettings(projectId, settings, expandedCards);
-  const {pixelInfo, unpickInfo} = await saveFrontImageStep(projectId, settings);
+  const { pixelInfo, unpickInfo } = await saveFrontImageStep(projectId, settings);
   await saveFrontTextStep(projectId, settings);
   await saveBackImageStep(projectId, settings);
   await saveBackTextStep(projectId, settings);

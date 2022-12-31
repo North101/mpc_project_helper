@@ -561,7 +561,7 @@
   {
     "code": "PB_8861",
     "name": {
-      "mpc": "Custom booster pack"
+      "mpc": "Custom foil booster pack"
     },
     "productCodes": [
       "FI_8003",
@@ -846,7 +846,7 @@
   {
     "code": "PB_8862",
     "name": {
-      "mpc": "Custom booster pack"
+      "mpc": "Custom foil booster pack"
     },
     "productCodes": [
       "FI_8001",
@@ -1080,15 +1080,6 @@
     ]
   },
   {
-    "code": "PB_8305",
-    "name": {
-      "mpc": "Custom booster pack"
-    },
-    "productCodes": [
-      "FI_8542"
-    ]
-  },
-  {
     "code": "PB_13107",
     "name": {
       "mpc": "Custom double magnetic book box"
@@ -1128,6 +1119,15 @@
     "code": "PB_12346",
     "name": {
       "mpc": "Custom easy-flip side open box"
+    },
+    "productCodes": [
+      "FI_8542"
+    ]
+  },
+  {
+    "code": "PB_8305",
+    "name": {
+      "mpc": "Custom foil booster pack"
     },
     "productCodes": [
       "FI_8542"
@@ -1491,18 +1491,6 @@
     ]
   },
   {
-    "code": "PB_8306",
-    "name": {
-      "mpc": "Custom booster pack"
-    },
-    "productCodes": [
-      "FI_4332",
-      "FI_4333",
-      "FI_8984",
-      "FI_8985"
-    ]
-  },
-  {
     "code": "PB_13111",
     "name": {
       "mpc": "Custom double magnetic book box"
@@ -1566,6 +1554,18 @@
     "code": "PB_12348",
     "name": {
       "mpc": "Custom easy-flip side open box"
+    },
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ]
+  },
+  {
+    "code": "PB_8306",
+    "name": {
+      "mpc": "Custom foil booster pack"
     },
     "productCodes": [
       "FI_4332",
@@ -1895,7 +1895,7 @@
   {
     "code": "PB_8863",
     "name": {
-      "mpc": "Custom booster pack"
+      "mpc": "Custom foil booster pack"
     },
     "productCodes": [
       "FI_8836"
@@ -2505,24 +2505,6 @@
     ]
   },
   {
-    "code": "PB_3669",
-    "name": {
-      "mpc": "Custom booster pack"
-    },
-    "productCodes": [
-      "FI_7999",
-      "FI_8000",
-      "FI_8230",
-      "FI_8238",
-      "FI_8266",
-      "FI_8307",
-      "FI_8316",
-      "FI_8319",
-      "FI_9124",
-      "FI_9125"
-    ]
-  },
-  {
     "code": "PB_13099",
     "name": {
       "mpc": "Custom double magnetic book box"
@@ -2616,6 +2598,24 @@
     "code": "PB_12344",
     "name": {
       "mpc": "Custom easy-flip side open box"
+    },
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ]
+  },
+  {
+    "code": "PB_3669",
+    "name": {
+      "mpc": "Custom foil booster pack"
     },
     "productCodes": [
       "FI_7999",
@@ -3403,20 +3403,6 @@
     ]
   },
   {
-    "code": "PB_3668",
-    "name": {
-      "mpc": "Custom booster pack"
-    },
-    "productCodes": [
-      "FI_1618",
-      "FI_569",
-      "FI_8986",
-      "FI_8987",
-      "FI_9122",
-      "FI_9123"
-    ]
-  },
-  {
     "code": "PB_12390",
     "name": {
       "mpc": "Custom double magnetic book box"
@@ -3476,6 +3462,20 @@
     "code": "PB_12342",
     "name": {
       "mpc": "Custom easy-flip side open box"
+    },
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987",
+      "FI_9122",
+      "FI_9123"
+    ]
+  },
+  {
+    "code": "PB_3668",
+    "name": {
+      "mpc": "Custom foil booster pack"
     },
     "productCodes": [
       "FI_1618",
