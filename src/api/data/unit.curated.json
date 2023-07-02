@@ -324,5 +324,32 @@
     "width": 374,
     "x": 0,
     "y": 0
+  },
+  {
+    "applyMask": false,
+    "auto": true,
+    "backDesignCode": "FP_031901",
+    "code": "3BDC5812E3F03AB4",
+    "dpi": 150,
+    "filter": "",
+    "frontDesignCode": "FP_031900",
+    "height": 524,
+    "lappedType": "A",
+    "maxCards": 105,
+    "name": {
+      "mpc": "Blank Jumbo Cards (89mm x 127mm)"
+    },
+    "padding": 0,
+    "productCode": "FI_8892",
+    "productHeight": 524,
+    "productPadding": 12,
+    "productWidth": 374,
+    "safe": 0,
+    "scale": 1,
+    "sortNo": 1,
+    "unpick": true,
+    "width": 374,
+    "x": 0,
+    "y": 0
   }
 ]

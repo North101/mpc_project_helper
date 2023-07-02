@@ -1,8 +1,9 @@
+import json
 from io import StringIO
+
 import lxml.html
 import requests
-import json
-import datetime
+
 
 def get(url, params=None):
   return lxml.html.parse(StringIO(requests.get(url, params=params).text))
