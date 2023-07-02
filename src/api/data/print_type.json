@@ -76,6 +76,26 @@
     ]
   },
   {
+    "code": "EF_077",
+    "name": {
+      "mpc": "Gold gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_2134",
+      "FI_2135"
+    ]
+  },
+  {
+    "code": "EF_078",
+    "name": {
+      "mpc": "Silver gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_2134",
+      "FI_2135"
+    ]
+  },
+  {
     "code": "EF_295",
     "name": {
       "mpc": "Gold (front)"
@@ -133,6 +153,450 @@
     "productCodes": [
       "FI_8007",
       "FI_8011"
+    ]
+  },
+  {
+    "code": "EF_081",
+    "name": {
+      "mpc": "Gold gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_8003",
+      "FI_8009"
+    ]
+  },
+  {
+    "code": "EF_082",
+    "name": {
+      "mpc": "Silver gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_8003",
+      "FI_8009"
+    ]
+  },
+  {
+    "code": "EF_311",
+    "name": {
+      "mpc": "Gold (front)"
+    },
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ]
+  },
+  {
+    "code": "EF_312",
+    "name": {
+      "mpc": "Silver (front)"
+    },
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ]
+  },
+  {
+    "code": "EF_055",
+    "name": {
+      "mpc": "Holographic (front)"
+    },
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ]
+  },
+  {
+    "code": "EF_405",
+    "name": {
+      "mpc": "Gold (front & back)"
+    },
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ]
+  },
+  {
+    "code": "EF_406",
+    "name": {
+      "mpc": "Silver (front & back)"
+    },
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ]
+  },
+  {
+    "code": "EF_120",
+    "name": {
+      "mpc": "Holographic (front & back)"
+    },
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ]
+  },
+  {
+    "code": "EF_041",
+    "name": {
+      "mpc": "Gold gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_8986",
+      "FI_8987",
+      "FI_9124",
+      "FI_9125"
+    ]
+  },
+  {
+    "code": "EF_042",
+    "name": {
+      "mpc": "Silver gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_8986",
+      "FI_8987",
+      "FI_9124",
+      "FI_9125"
+    ]
+  },
+  {
+    "code": "EF_441",
+    "name": {
+      "mpc": "Red gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_8986",
+      "FI_8987",
+      "FI_9124",
+      "FI_9125"
+    ]
+  },
+  {
+    "code": "EF_442",
+    "name": {
+      "mpc": "Blue gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_8986",
+      "FI_8987",
+      "FI_9124",
+      "FI_9125"
+    ]
+  },
+  {
+    "code": "EF_443",
+    "name": {
+      "mpc": "Green gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_8986",
+      "FI_8987",
+      "FI_9124",
+      "FI_9125"
+    ]
+  },
+  {
+    "code": "EF_444",
+    "name": {
+      "mpc": "Purple gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_8986",
+      "FI_8987",
+      "FI_9124",
+      "FI_9125"
+    ]
+  },
+  {
+    "code": "EF_473",
+    "name": {
+      "mpc": "Holographic gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_8986",
+      "FI_8987",
+      "FI_9124",
+      "FI_9125"
+    ]
+  },
+  {
+    "code": "EF_347",
+    "name": {
+      "mpc": "Gold (front) + gold gilt edge"
+    },
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ]
+  },
+  {
+    "code": "EF_373",
+    "name": {
+      "mpc": "Gold (front) + silver gilt edge"
+    },
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ]
+  },
+  {
+    "code": "EF_348",
+    "name": {
+      "mpc": "Silver (front) + gold gilt edge"
+    },
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ]
+  },
+  {
+    "code": "EF_374",
+    "name": {
+      "mpc": "Silver (front) + silver gilt edge"
+    },
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ]
+  },
+  {
+    "code": "EF_095",
+    "name": {
+      "mpc": "Holographic (front) + gold gilt edge"
+    },
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ]
+  },
+  {
+    "code": "EF_105",
+    "name": {
+      "mpc": "Holographic (front) + silver gilt edge"
+    },
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ]
+  },
+  {
+    "code": "EF_205",
+    "name": {
+      "mpc": "Spot gold cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ]
+  },
+  {
+    "code": "EF_206",
+    "name": {
+      "mpc": "Spot silver cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
+    ]
+  },
+  {
+    "code": "EF_207",
+    "name": {
+      "mpc": "Spot holographic cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
     ]
   },
   {
@@ -276,1116 +740,57 @@
     ]
   },
   {
-    "code": "EF_297",
-    "name": {
-      "mpc": "Gold (front)"
-    },
-    "productCodes": [
-      "FI_6037",
-      "FI_6038",
-      "FI_8854"
-    ]
-  },
-  {
-    "code": "EF_298",
-    "name": {
-      "mpc": "Silver (front)"
-    },
-    "productCodes": [
-      "FI_6037",
-      "FI_6038",
-      "FI_8854"
-    ]
-  },
-  {
-    "code": "EF_048",
-    "name": {
-      "mpc": "Holographic (front)"
-    },
-    "productCodes": [
-      "FI_6037",
-      "FI_6038",
-      "FI_8854"
-    ]
-  },
-  {
-    "code": "EF_391",
-    "name": {
-      "mpc": "Gold (front & back)"
-    },
-    "productCodes": [
-      "FI_6037",
-      "FI_6038",
-      "FI_8854"
-    ]
-  },
-  {
-    "code": "EF_392",
-    "name": {
-      "mpc": "Silver (front & back)"
-    },
-    "productCodes": [
-      "FI_6037",
-      "FI_6038",
-      "FI_8854"
-    ]
-  },
-  {
-    "code": "EF_113",
-    "name": {
-      "mpc": "Holographic (front & back)"
-    },
-    "productCodes": [
-      "FI_6037",
-      "FI_6038",
-      "FI_8854"
-    ]
-  },
-  {
-    "code": "EF_139",
-    "name": {
-      "mpc": "Spot gold cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_8854"
-    ]
-  },
-  {
-    "code": "EF_140",
-    "name": {
-      "mpc": "Spot silver cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_8854"
-    ]
-  },
-  {
-    "code": "EF_141",
-    "name": {
-      "mpc": "Spot holographic cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_8854"
-    ]
-  },
-  {
-    "code": "EF_142",
-    "name": {
-      "mpc": "Spot gold cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_8854"
-    ]
-  },
-  {
-    "code": "EF_143",
-    "name": {
-      "mpc": "Spot silver cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_8854"
-    ]
-  },
-  {
-    "code": "EF_144",
-    "name": {
-      "mpc": "Spot holographic cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_8854"
-    ]
-  },
-  {
-    "code": "EF_329",
-    "name": {
-      "mpc": "Gold (front)"
-    },
-    "productCodes": [
-      "FI_8866"
-    ]
-  },
-  {
-    "code": "EF_330",
-    "name": {
-      "mpc": "Silver (front)"
-    },
-    "productCodes": [
-      "FI_8866"
-    ]
-  },
-  {
-    "code": "EF_066",
-    "name": {
-      "mpc": "Holographic (front)"
-    },
-    "productCodes": [
-      "FI_8866"
-    ]
-  },
-  {
-    "code": "EF_423",
-    "name": {
-      "mpc": "Gold (front & back)"
-    },
-    "productCodes": [
-      "FI_8866"
-    ]
-  },
-  {
-    "code": "EF_424",
-    "name": {
-      "mpc": "Silver (front & back)"
-    },
-    "productCodes": [
-      "FI_8866"
-    ]
-  },
-  {
-    "code": "EF_129",
-    "name": {
-      "mpc": "Holographic (front & back)"
-    },
-    "productCodes": [
-      "FI_8866"
-    ]
-  },
-  {
-    "code": "EF_145",
-    "name": {
-      "mpc": "Spot gold cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_8866"
-    ]
-  },
-  {
-    "code": "EF_146",
-    "name": {
-      "mpc": "Spot silver cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_8866"
-    ]
-  },
-  {
-    "code": "EF_147",
-    "name": {
-      "mpc": "Spot holographic cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_8866"
-    ]
-  },
-  {
-    "code": "EF_148",
-    "name": {
-      "mpc": "Spot gold cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_8866"
-    ]
-  },
-  {
-    "code": "EF_149",
-    "name": {
-      "mpc": "Spot silver cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_8866"
-    ]
-  },
-  {
-    "code": "EF_150",
-    "name": {
-      "mpc": "Spot holographic cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_8866"
-    ]
-  },
-  {
-    "code": "EF_083",
-    "name": {
-      "mpc": "Gold gilt edge + full color print"
-    },
-    "productCodes": [
-      "FI_6037",
-      "FI_6038"
-    ]
-  },
-  {
-    "code": "EF_084",
-    "name": {
-      "mpc": "Silver gilt edge + full color print"
-    },
-    "productCodes": [
-      "FI_6037",
-      "FI_6038"
-    ]
-  },
-  {
-    "code": "EF_339",
-    "name": {
-      "mpc": "Gold (front) + gold gilt edge"
-    },
-    "productCodes": [
-      "FI_6037",
-      "FI_6038"
-    ]
-  },
-  {
-    "code": "EF_365",
-    "name": {
-      "mpc": "Gold (front) + silver gilt edge"
-    },
-    "productCodes": [
-      "FI_6037",
-      "FI_6038"
-    ]
-  },
-  {
-    "code": "EF_340",
-    "name": {
-      "mpc": "Silver (front) + gold gilt edge"
-    },
-    "productCodes": [
-      "FI_6037",
-      "FI_6038"
-    ]
-  },
-  {
-    "code": "EF_366",
-    "name": {
-      "mpc": "Silver (front) + silver gilt edge"
-    },
-    "productCodes": [
-      "FI_6037",
-      "FI_6038"
-    ]
-  },
-  {
-    "code": "EF_091",
-    "name": {
-      "mpc": "Holographic (front) + gold gilt edge"
-    },
-    "productCodes": [
-      "FI_6037",
-      "FI_6038"
-    ]
-  },
-  {
-    "code": "EF_101",
-    "name": {
-      "mpc": "Holographic (front) + silver gilt edge"
-    },
-    "productCodes": [
-      "FI_6037",
-      "FI_6038"
-    ]
-  },
-  {
-    "code": "EF_151",
-    "name": {
-      "mpc": "Spot gold cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_6037",
-      "FI_6038"
-    ]
-  },
-  {
-    "code": "EF_152",
-    "name": {
-      "mpc": "Spot silver cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_6037",
-      "FI_6038"
-    ]
-  },
-  {
-    "code": "EF_153",
-    "name": {
-      "mpc": "Spot holographic cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_6037",
-      "FI_6038"
-    ]
-  },
-  {
-    "code": "EF_154",
-    "name": {
-      "mpc": "Spot gold cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_6037",
-      "FI_6038"
-    ]
-  },
-  {
-    "code": "EF_155",
-    "name": {
-      "mpc": "Spot silver cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_6037",
-      "FI_6038"
-    ]
-  },
-  {
-    "code": "EF_156",
-    "name": {
-      "mpc": "Spot holographic cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_6037",
-      "FI_6038"
-    ]
-  },
-  {
-    "code": "EF_299",
-    "name": {
-      "mpc": "Gold (front)"
-    },
-    "productCodes": [
-      "FI_8003",
-      "FI_8009"
-    ]
-  },
-  {
-    "code": "EF_300",
-    "name": {
-      "mpc": "Silver (front)"
-    },
-    "productCodes": [
-      "FI_8003",
-      "FI_8009"
-    ]
-  },
-  {
-    "code": "EF_049",
-    "name": {
-      "mpc": "Holographic (front)"
-    },
-    "productCodes": [
-      "FI_8003",
-      "FI_8009"
-    ]
-  },
-  {
-    "code": "EF_393",
-    "name": {
-      "mpc": "Gold (front & back)"
-    },
-    "productCodes": [
-      "FI_8003",
-      "FI_8009"
-    ]
-  },
-  {
-    "code": "EF_394",
-    "name": {
-      "mpc": "Silver (front & back)"
-    },
-    "productCodes": [
-      "FI_8003",
-      "FI_8009"
-    ]
-  },
-  {
-    "code": "EF_114",
-    "name": {
-      "mpc": "Holographic (front & back)"
-    },
-    "productCodes": [
-      "FI_8003",
-      "FI_8009"
-    ]
-  },
-  {
-    "code": "EF_081",
-    "name": {
-      "mpc": "Gold gilt edge + full color print"
-    },
-    "productCodes": [
-      "FI_8003",
-      "FI_8009"
-    ]
-  },
-  {
-    "code": "EF_082",
-    "name": {
-      "mpc": "Silver gilt edge + full color print"
-    },
-    "productCodes": [
-      "FI_8003",
-      "FI_8009"
-    ]
-  },
-  {
-    "code": "EF_341",
-    "name": {
-      "mpc": "Gold (front) + gold gilt edge"
-    },
-    "productCodes": [
-      "FI_8003",
-      "FI_8009"
-    ]
-  },
-  {
-    "code": "EF_367",
-    "name": {
-      "mpc": "Gold (front) + silver gilt edge"
-    },
-    "productCodes": [
-      "FI_8003",
-      "FI_8009"
-    ]
-  },
-  {
-    "code": "EF_342",
-    "name": {
-      "mpc": "Silver (front) + gold gilt edge"
-    },
-    "productCodes": [
-      "FI_8003",
-      "FI_8009"
-    ]
-  },
-  {
-    "code": "EF_368",
-    "name": {
-      "mpc": "Silver (front) + silver gilt edge"
-    },
-    "productCodes": [
-      "FI_8003",
-      "FI_8009"
-    ]
-  },
-  {
-    "code": "EF_092",
-    "name": {
-      "mpc": "Holographic (front) + gold gilt edge"
-    },
-    "productCodes": [
-      "FI_8003",
-      "FI_8009"
-    ]
-  },
-  {
-    "code": "EF_102",
-    "name": {
-      "mpc": "Holographic (front) + silver gilt edge"
-    },
-    "productCodes": [
-      "FI_8003",
-      "FI_8009"
-    ]
-  },
-  {
-    "code": "EF_157",
-    "name": {
-      "mpc": "Spot gold cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_8003",
-      "FI_8009"
-    ]
-  },
-  {
-    "code": "EF_158",
-    "name": {
-      "mpc": "Spot silver cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_8003",
-      "FI_8009"
-    ]
-  },
-  {
-    "code": "EF_159",
-    "name": {
-      "mpc": "Spot holographic cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_8003",
-      "FI_8009"
-    ]
-  },
-  {
-    "code": "EF_160",
-    "name": {
-      "mpc": "Spot gold cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_8003",
-      "FI_8009"
-    ]
-  },
-  {
-    "code": "EF_161",
-    "name": {
-      "mpc": "Spot silver cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_8003",
-      "FI_8009"
-    ]
-  },
-  {
-    "code": "EF_162",
-    "name": {
-      "mpc": "Spot holographic cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_8003",
-      "FI_8009"
-    ]
-  },
-  {
-    "code": "EF_301",
-    "name": {
-      "mpc": "Gold (front)"
-    },
-    "productCodes": [
-      "FI_8006"
-    ]
-  },
-  {
-    "code": "EF_302",
-    "name": {
-      "mpc": "Silver (front)"
-    },
-    "productCodes": [
-      "FI_8006"
-    ]
-  },
-  {
-    "code": "EF_050",
-    "name": {
-      "mpc": "Holographic (front)"
-    },
-    "productCodes": [
-      "FI_8006"
-    ]
-  },
-  {
-    "code": "EF_395",
-    "name": {
-      "mpc": "Gold (front & back)"
-    },
-    "productCodes": [
-      "FI_8006"
-    ]
-  },
-  {
-    "code": "EF_396",
-    "name": {
-      "mpc": "Silver (front & back)"
-    },
-    "productCodes": [
-      "FI_8006"
-    ]
-  },
-  {
-    "code": "EF_115",
-    "name": {
-      "mpc": "Holographic (front & back)"
-    },
-    "productCodes": [
-      "FI_8006"
-    ]
-  },
-  {
-    "code": "EF_440",
+    "code": "EF_071",
     "name": {
       "mpc": "High gloss (back) + full color print"
     },
     "productCodes": [
-      "FI_8006"
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
     ]
   },
   {
-    "code": "EF_085",
+    "code": "EF_020",
     "name": {
-      "mpc": "Gold gilt edge + full color print"
+      "mpc": "High gloss (back) + full color print"
     },
     "productCodes": [
-      "FI_8006"
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
     ]
   },
   {
-    "code": "EF_086",
+    "code": "EF_070",
     "name": {
-      "mpc": "Silver gilt edge + full color print"
+      "mpc": "High gloss (back) + full color print"
     },
     "productCodes": [
-      "FI_8006"
-    ]
-  },
-  {
-    "code": "EF_343",
-    "name": {
-      "mpc": "Gold (front) + gold gilt edge"
-    },
-    "productCodes": [
-      "FI_8006"
-    ]
-  },
-  {
-    "code": "EF_369",
-    "name": {
-      "mpc": "Gold (front) + silver gilt edge"
-    },
-    "productCodes": [
-      "FI_8006"
-    ]
-  },
-  {
-    "code": "EF_344",
-    "name": {
-      "mpc": "Silver (front) + gold gilt edge"
-    },
-    "productCodes": [
-      "FI_8006"
-    ]
-  },
-  {
-    "code": "EF_370",
-    "name": {
-      "mpc": "Silver (front) + silver gilt edge"
-    },
-    "productCodes": [
-      "FI_8006"
-    ]
-  },
-  {
-    "code": "EF_093",
-    "name": {
-      "mpc": "Holographic (front) + gold gilt edge"
-    },
-    "productCodes": [
-      "FI_8006"
-    ]
-  },
-  {
-    "code": "EF_103",
-    "name": {
-      "mpc": "Holographic (front) + silver gilt edge"
-    },
-    "productCodes": [
-      "FI_8006"
-    ]
-  },
-  {
-    "code": "EF_163",
-    "name": {
-      "mpc": "Spot gold cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_8006"
-    ]
-  },
-  {
-    "code": "EF_164",
-    "name": {
-      "mpc": "Spot silver cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_8006"
-    ]
-  },
-  {
-    "code": "EF_165",
-    "name": {
-      "mpc": "Spot holographic cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_8006"
-    ]
-  },
-  {
-    "code": "EF_166",
-    "name": {
-      "mpc": "Spot gold cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_8006"
-    ]
-  },
-  {
-    "code": "EF_167",
-    "name": {
-      "mpc": "Spot silver cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_8006"
-    ]
-  },
-  {
-    "code": "EF_168",
-    "name": {
-      "mpc": "Spot holographic cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_8006"
-    ]
-  },
-  {
-    "code": "EF_303",
-    "name": {
-      "mpc": "Gold (front)"
-    },
-    "productCodes": [
-      "FI_8001",
-      "FI_8343"
-    ]
-  },
-  {
-    "code": "EF_304",
-    "name": {
-      "mpc": "Silver (front)"
-    },
-    "productCodes": [
-      "FI_8001",
-      "FI_8343"
-    ]
-  },
-  {
-    "code": "EF_051",
-    "name": {
-      "mpc": "Holographic (front)"
-    },
-    "productCodes": [
-      "FI_8001",
-      "FI_8343"
-    ]
-  },
-  {
-    "code": "EF_397",
-    "name": {
-      "mpc": "Gold (front & back)"
-    },
-    "productCodes": [
-      "FI_8001",
-      "FI_8343"
-    ]
-  },
-  {
-    "code": "EF_398",
-    "name": {
-      "mpc": "Silver (front & back)"
-    },
-    "productCodes": [
-      "FI_8001",
-      "FI_8343"
-    ]
-  },
-  {
-    "code": "EF_116",
-    "name": {
-      "mpc": "Holographic (front & back)"
-    },
-    "productCodes": [
-      "FI_8001",
-      "FI_8343"
-    ]
-  },
-  {
-    "code": "EF_438",
-    "name": {
-      "mpc": "Gold gilt edge + full color print"
-    },
-    "productCodes": [
-      "FI_8001",
-      "FI_8343"
-    ]
-  },
-  {
-    "code": "EF_439",
-    "name": {
-      "mpc": "Silver gilt edge + full color print"
-    },
-    "productCodes": [
-      "FI_8001",
-      "FI_8343"
-    ]
-  },
-  {
-    "code": "EF_169",
-    "name": {
-      "mpc": "Spot gold cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_8001",
-      "FI_8343"
-    ]
-  },
-  {
-    "code": "EF_170",
-    "name": {
-      "mpc": "Spot silver cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_8001",
-      "FI_8343"
-    ]
-  },
-  {
-    "code": "EF_171",
-    "name": {
-      "mpc": "Spot holographic cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_8001",
-      "FI_8343"
-    ]
-  },
-  {
-    "code": "EF_172",
-    "name": {
-      "mpc": "Spot gold cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_8001",
-      "FI_8343"
-    ]
-  },
-  {
-    "code": "EF_173",
-    "name": {
-      "mpc": "Spot silver cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_8001",
-      "FI_8343"
-    ]
-  },
-  {
-    "code": "EF_174",
-    "name": {
-      "mpc": "Spot holographic cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_8001",
-      "FI_8343"
-    ]
-  },
-  {
-    "code": "EF_305",
-    "name": {
-      "mpc": "Gold (front)"
-    },
-    "productCodes": [
-      "FI_8542"
-    ]
-  },
-  {
-    "code": "EF_306",
-    "name": {
-      "mpc": "Silver (front)"
-    },
-    "productCodes": [
-      "FI_8542"
-    ]
-  },
-  {
-    "code": "EF_052",
-    "name": {
-      "mpc": "Holographic (front)"
-    },
-    "productCodes": [
-      "FI_8542"
-    ]
-  },
-  {
-    "code": "EF_399",
-    "name": {
-      "mpc": "Gold (front & back)"
-    },
-    "productCodes": [
-      "FI_8542"
-    ]
-  },
-  {
-    "code": "EF_400",
-    "name": {
-      "mpc": "Silver (front & back)"
-    },
-    "productCodes": [
-      "FI_8542"
-    ]
-  },
-  {
-    "code": "EF_117",
-    "name": {
-      "mpc": "Holographic (front & back)"
-    },
-    "productCodes": [
-      "FI_8542"
-    ]
-  },
-  {
-    "code": "EF_283",
-    "name": {
-      "mpc": "Gold gilt edge + full color print"
-    },
-    "productCodes": [
-      "FI_8542"
-    ]
-  },
-  {
-    "code": "EF_284",
-    "name": {
-      "mpc": "Silver gilt edge + full color print"
-    },
-    "productCodes": [
-      "FI_8542"
-    ]
-  },
-  {
-    "code": "EF_461",
-    "name": {
-      "mpc": "Red gilt edge + full color print"
-    },
-    "productCodes": [
-      "FI_8542"
-    ]
-  },
-  {
-    "code": "EF_462",
-    "name": {
-      "mpc": "Blue gilt edge + full color print"
-    },
-    "productCodes": [
-      "FI_8542"
-    ]
-  },
-  {
-    "code": "EF_463",
-    "name": {
-      "mpc": "Green gilt edge + full color print"
-    },
-    "productCodes": [
-      "FI_8542"
-    ]
-  },
-  {
-    "code": "EF_464",
-    "name": {
-      "mpc": "Purple gilt edge + full color print"
-    },
-    "productCodes": [
-      "FI_8542"
-    ]
-  },
-  {
-    "code": "EF_357",
-    "name": {
-      "mpc": "Gold (front) + gold gilt edge"
-    },
-    "productCodes": [
-      "FI_8542"
-    ]
-  },
-  {
-    "code": "EF_383",
-    "name": {
-      "mpc": "Gold (front) + silver gilt edge"
-    },
-    "productCodes": [
-      "FI_8542"
-    ]
-  },
-  {
-    "code": "EF_358",
-    "name": {
-      "mpc": "Silver (front) + gold gilt edge"
-    },
-    "productCodes": [
-      "FI_8542"
-    ]
-  },
-  {
-    "code": "EF_384",
-    "name": {
-      "mpc": "Silver (front) + silver gilt edge"
-    },
-    "productCodes": [
-      "FI_8542"
-    ]
-  },
-  {
-    "code": "EF_285",
-    "name": {
-      "mpc": "Holographic (front) + gold gilt edge"
-    },
-    "productCodes": [
-      "FI_8542"
-    ]
-  },
-  {
-    "code": "EF_286",
-    "name": {
-      "mpc": "Holographic (front) + silver gilt edge"
-    },
-    "productCodes": [
-      "FI_8542"
-    ]
-  },
-  {
-    "code": "EF_181",
-    "name": {
-      "mpc": "Spot gold cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_8542"
-    ]
-  },
-  {
-    "code": "EF_182",
-    "name": {
-      "mpc": "Spot silver cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_8542"
-    ]
-  },
-  {
-    "code": "EF_183",
-    "name": {
-      "mpc": "Spot holographic cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_8542"
-    ]
-  },
-  {
-    "code": "EF_184",
-    "name": {
-      "mpc": "Spot gold cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_8542"
-    ]
-  },
-  {
-    "code": "EF_185",
-    "name": {
-      "mpc": "Spot silver cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_8542"
-    ]
-  },
-  {
-    "code": "EF_186",
-    "name": {
-      "mpc": "Spot holographic cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_8542"
+      "FI_7999",
+      "FI_8000",
+      "FI_8230",
+      "FI_8238",
+      "FI_8266",
+      "FI_8307",
+      "FI_8316",
+      "FI_8319",
+      "FI_9124",
+      "FI_9125"
     ]
   },
   {
@@ -1545,6 +950,18 @@
     ]
   },
   {
+    "code": "EF_479",
+    "name": {
+      "mpc": "Holographic gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ]
+  },
+  {
     "code": "EF_359",
     "name": {
       "mpc": "Gold (front) + gold gilt edge"
@@ -1614,1047 +1031,6 @@
       "FI_4333",
       "FI_8984",
       "FI_8985"
-    ]
-  },
-  {
-    "code": "EF_002",
-    "name": {
-      "mpc": "High gloss (back) + full color print"
-    },
-    "productCodes": [
-      "FI_4332",
-      "FI_4333",
-      "FI_8984",
-      "FI_8985"
-    ]
-  },
-  {
-    "code": "EF_187",
-    "name": {
-      "mpc": "Spot gold cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_4332",
-      "FI_4333",
-      "FI_8984",
-      "FI_8985"
-    ]
-  },
-  {
-    "code": "EF_188",
-    "name": {
-      "mpc": "Spot silver cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_4332",
-      "FI_4333",
-      "FI_8984",
-      "FI_8985"
-    ]
-  },
-  {
-    "code": "EF_189",
-    "name": {
-      "mpc": "Spot holographic cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_4332",
-      "FI_4333",
-      "FI_8984",
-      "FI_8985"
-    ]
-  },
-  {
-    "code": "EF_190",
-    "name": {
-      "mpc": "Spot gold cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_4332",
-      "FI_4333",
-      "FI_8985"
-    ]
-  },
-  {
-    "code": "EF_191",
-    "name": {
-      "mpc": "Spot silver cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_4332",
-      "FI_4333",
-      "FI_8985"
-    ]
-  },
-  {
-    "code": "EF_192",
-    "name": {
-      "mpc": "Spot holographic cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_4332",
-      "FI_4333",
-      "FI_8985"
-    ]
-  },
-  {
-    "code": "EF_075",
-    "name": {
-      "mpc": "High gloss (back) + full color print"
-    },
-    "productCodes": [
-      "FI_4332",
-      "FI_4333",
-      "FI_8984",
-      "FI_8985"
-    ]
-  },
-  {
-    "code": "EF_331",
-    "name": {
-      "mpc": "Gold (front)"
-    },
-    "productCodes": [
-      "FI_8836"
-    ]
-  },
-  {
-    "code": "EF_332",
-    "name": {
-      "mpc": "Silver (front)"
-    },
-    "productCodes": [
-      "FI_8836"
-    ]
-  },
-  {
-    "code": "EF_067",
-    "name": {
-      "mpc": "Holographic (front)"
-    },
-    "productCodes": [
-      "FI_8836"
-    ]
-  },
-  {
-    "code": "EF_425",
-    "name": {
-      "mpc": "Gold (front & back)"
-    },
-    "productCodes": [
-      "FI_8836"
-    ]
-  },
-  {
-    "code": "EF_426",
-    "name": {
-      "mpc": "Silver (front & back)"
-    },
-    "productCodes": [
-      "FI_8836"
-    ]
-  },
-  {
-    "code": "EF_130",
-    "name": {
-      "mpc": "Holographic (front & back)"
-    },
-    "productCodes": [
-      "FI_8836"
-    ]
-  },
-  {
-    "code": "EF_072",
-    "name": {
-      "mpc": "High gloss (back) + full color print"
-    },
-    "productCodes": [
-      "FI_8836"
-    ]
-  },
-  {
-    "code": "EF_064",
-    "name": {
-      "mpc": "High gloss (back) + full color print"
-    },
-    "productCodes": [
-      "FI_8836"
-    ]
-  },
-  {
-    "code": "EF_193",
-    "name": {
-      "mpc": "Spot gold cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_8836"
-    ]
-  },
-  {
-    "code": "EF_194",
-    "name": {
-      "mpc": "Spot silver cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_8836"
-    ]
-  },
-  {
-    "code": "EF_195",
-    "name": {
-      "mpc": "Spot holographic cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_8836"
-    ]
-  },
-  {
-    "code": "EF_196",
-    "name": {
-      "mpc": "Spot gold cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_8836"
-    ]
-  },
-  {
-    "code": "EF_197",
-    "name": {
-      "mpc": "Spot silver cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_8836"
-    ]
-  },
-  {
-    "code": "EF_198",
-    "name": {
-      "mpc": "Spot holographic cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_8836"
-    ]
-  },
-  {
-    "code": "EF_073",
-    "name": {
-      "mpc": "High gloss (back) + full color print"
-    },
-    "productCodes": [
-      "FI_8836"
-    ]
-  },
-  {
-    "code": "EF_309",
-    "name": {
-      "mpc": "Gold (front)"
-    },
-    "productCodes": [
-      "FI_8332"
-    ]
-  },
-  {
-    "code": "EF_310",
-    "name": {
-      "mpc": "Silver (front)"
-    },
-    "productCodes": [
-      "FI_8332"
-    ]
-  },
-  {
-    "code": "EF_054",
-    "name": {
-      "mpc": "Holographic (front)"
-    },
-    "productCodes": [
-      "FI_8332"
-    ]
-  },
-  {
-    "code": "EF_403",
-    "name": {
-      "mpc": "Gold (front & back)"
-    },
-    "productCodes": [
-      "FI_8332"
-    ]
-  },
-  {
-    "code": "EF_404",
-    "name": {
-      "mpc": "Silver (front & back)"
-    },
-    "productCodes": [
-      "FI_8332"
-    ]
-  },
-  {
-    "code": "EF_119",
-    "name": {
-      "mpc": "Holographic (front & back)"
-    },
-    "productCodes": [
-      "FI_8332"
-    ]
-  },
-  {
-    "code": "EF_045",
-    "name": {
-      "mpc": "Gold gilt edge + full color print"
-    },
-    "productCodes": [
-      "FI_8332"
-    ]
-  },
-  {
-    "code": "EF_046",
-    "name": {
-      "mpc": "Silver gilt edge + full color print"
-    },
-    "productCodes": [
-      "FI_8332"
-    ]
-  },
-  {
-    "code": "EF_449",
-    "name": {
-      "mpc": "Red gilt edge + full color print"
-    },
-    "productCodes": [
-      "FI_8332"
-    ]
-  },
-  {
-    "code": "EF_450",
-    "name": {
-      "mpc": "Blue gilt edge + full color print"
-    },
-    "productCodes": [
-      "FI_8332"
-    ]
-  },
-  {
-    "code": "EF_451",
-    "name": {
-      "mpc": "Green gilt edge + full color print"
-    },
-    "productCodes": [
-      "FI_8332"
-    ]
-  },
-  {
-    "code": "EF_452",
-    "name": {
-      "mpc": "Purple gilt edge + full color print"
-    },
-    "productCodes": [
-      "FI_8332"
-    ]
-  },
-  {
-    "code": "EF_345",
-    "name": {
-      "mpc": "Gold (front) + gold gilt edge"
-    },
-    "productCodes": [
-      "FI_8332"
-    ]
-  },
-  {
-    "code": "EF_371",
-    "name": {
-      "mpc": "Gold (front) + silver gilt edge"
-    },
-    "productCodes": [
-      "FI_8332"
-    ]
-  },
-  {
-    "code": "EF_346",
-    "name": {
-      "mpc": "Silver (front) + gold gilt edge"
-    },
-    "productCodes": [
-      "FI_8332"
-    ]
-  },
-  {
-    "code": "EF_372",
-    "name": {
-      "mpc": "Silver (front) + silver gilt edge"
-    },
-    "productCodes": [
-      "FI_8332"
-    ]
-  },
-  {
-    "code": "EF_094",
-    "name": {
-      "mpc": "Holographic (front) + gold gilt edge"
-    },
-    "productCodes": [
-      "FI_8332"
-    ]
-  },
-  {
-    "code": "EF_104",
-    "name": {
-      "mpc": "Holographic (front) + silver gilt edge"
-    },
-    "productCodes": [
-      "FI_8332"
-    ]
-  },
-  {
-    "code": "EF_199",
-    "name": {
-      "mpc": "Spot gold cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_8332"
-    ]
-  },
-  {
-    "code": "EF_200",
-    "name": {
-      "mpc": "Spot silver cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_8332"
-    ]
-  },
-  {
-    "code": "EF_201",
-    "name": {
-      "mpc": "Spot holographic cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_8332"
-    ]
-  },
-  {
-    "code": "EF_202",
-    "name": {
-      "mpc": "Spot gold cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_8332"
-    ]
-  },
-  {
-    "code": "EF_203",
-    "name": {
-      "mpc": "Spot silver cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_8332"
-    ]
-  },
-  {
-    "code": "EF_204",
-    "name": {
-      "mpc": "Spot holographic cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_8332"
-    ]
-  },
-  {
-    "code": "EF_311",
-    "name": {
-      "mpc": "Gold (front)"
-    },
-    "productCodes": [
-      "FI_7999",
-      "FI_8000",
-      "FI_8230",
-      "FI_8238",
-      "FI_8266",
-      "FI_8307",
-      "FI_8316",
-      "FI_8319",
-      "FI_9124",
-      "FI_9125"
-    ]
-  },
-  {
-    "code": "EF_312",
-    "name": {
-      "mpc": "Silver (front)"
-    },
-    "productCodes": [
-      "FI_7999",
-      "FI_8000",
-      "FI_8230",
-      "FI_8238",
-      "FI_8266",
-      "FI_8307",
-      "FI_8316",
-      "FI_8319",
-      "FI_9124",
-      "FI_9125"
-    ]
-  },
-  {
-    "code": "EF_055",
-    "name": {
-      "mpc": "Holographic (front)"
-    },
-    "productCodes": [
-      "FI_7999",
-      "FI_8000",
-      "FI_8230",
-      "FI_8238",
-      "FI_8266",
-      "FI_8307",
-      "FI_8316",
-      "FI_8319",
-      "FI_9124",
-      "FI_9125"
-    ]
-  },
-  {
-    "code": "EF_405",
-    "name": {
-      "mpc": "Gold (front & back)"
-    },
-    "productCodes": [
-      "FI_7999",
-      "FI_8000",
-      "FI_8230",
-      "FI_8238",
-      "FI_8266",
-      "FI_8307",
-      "FI_8316",
-      "FI_8319",
-      "FI_9124",
-      "FI_9125"
-    ]
-  },
-  {
-    "code": "EF_406",
-    "name": {
-      "mpc": "Silver (front & back)"
-    },
-    "productCodes": [
-      "FI_7999",
-      "FI_8000",
-      "FI_8230",
-      "FI_8238",
-      "FI_8266",
-      "FI_8307",
-      "FI_8316",
-      "FI_8319",
-      "FI_9124",
-      "FI_9125"
-    ]
-  },
-  {
-    "code": "EF_120",
-    "name": {
-      "mpc": "Holographic (front & back)"
-    },
-    "productCodes": [
-      "FI_7999",
-      "FI_8000",
-      "FI_8230",
-      "FI_8238",
-      "FI_8266",
-      "FI_8307",
-      "FI_8316",
-      "FI_8319",
-      "FI_9124",
-      "FI_9125"
-    ]
-  },
-  {
-    "code": "EF_070",
-    "name": {
-      "mpc": "High gloss (back) + full color print"
-    },
-    "productCodes": [
-      "FI_7999",
-      "FI_8000",
-      "FI_8230",
-      "FI_8238",
-      "FI_8266",
-      "FI_8307",
-      "FI_8316",
-      "FI_8319",
-      "FI_9124",
-      "FI_9125"
-    ]
-  },
-  {
-    "code": "EF_041",
-    "name": {
-      "mpc": "Gold gilt edge + full color print"
-    },
-    "productCodes": [
-      "FI_1618",
-      "FI_569",
-      "FI_7999",
-      "FI_8000",
-      "FI_8230",
-      "FI_8238",
-      "FI_8266",
-      "FI_8307",
-      "FI_8316",
-      "FI_8319",
-      "FI_8986",
-      "FI_8987",
-      "FI_9124",
-      "FI_9125"
-    ]
-  },
-  {
-    "code": "EF_042",
-    "name": {
-      "mpc": "Silver gilt edge + full color print"
-    },
-    "productCodes": [
-      "FI_1618",
-      "FI_569",
-      "FI_7999",
-      "FI_8000",
-      "FI_8230",
-      "FI_8238",
-      "FI_8266",
-      "FI_8307",
-      "FI_8316",
-      "FI_8319",
-      "FI_8986",
-      "FI_8987",
-      "FI_9124",
-      "FI_9125"
-    ]
-  },
-  {
-    "code": "EF_441",
-    "name": {
-      "mpc": "Red gilt edge + full color print"
-    },
-    "productCodes": [
-      "FI_1618",
-      "FI_569",
-      "FI_7999",
-      "FI_8000",
-      "FI_8230",
-      "FI_8238",
-      "FI_8266",
-      "FI_8307",
-      "FI_8316",
-      "FI_8319",
-      "FI_8986",
-      "FI_8987",
-      "FI_9124",
-      "FI_9125"
-    ]
-  },
-  {
-    "code": "EF_442",
-    "name": {
-      "mpc": "Blue gilt edge + full color print"
-    },
-    "productCodes": [
-      "FI_1618",
-      "FI_569",
-      "FI_7999",
-      "FI_8000",
-      "FI_8230",
-      "FI_8238",
-      "FI_8266",
-      "FI_8307",
-      "FI_8316",
-      "FI_8319",
-      "FI_8986",
-      "FI_8987",
-      "FI_9124",
-      "FI_9125"
-    ]
-  },
-  {
-    "code": "EF_443",
-    "name": {
-      "mpc": "Green gilt edge + full color print"
-    },
-    "productCodes": [
-      "FI_1618",
-      "FI_569",
-      "FI_7999",
-      "FI_8000",
-      "FI_8230",
-      "FI_8238",
-      "FI_8266",
-      "FI_8307",
-      "FI_8316",
-      "FI_8319",
-      "FI_8986",
-      "FI_8987",
-      "FI_9124",
-      "FI_9125"
-    ]
-  },
-  {
-    "code": "EF_444",
-    "name": {
-      "mpc": "Purple gilt edge + full color print"
-    },
-    "productCodes": [
-      "FI_1618",
-      "FI_569",
-      "FI_7999",
-      "FI_8000",
-      "FI_8230",
-      "FI_8238",
-      "FI_8266",
-      "FI_8307",
-      "FI_8316",
-      "FI_8319",
-      "FI_8986",
-      "FI_8987",
-      "FI_9124",
-      "FI_9125"
-    ]
-  },
-  {
-    "code": "EF_347",
-    "name": {
-      "mpc": "Gold (front) + gold gilt edge"
-    },
-    "productCodes": [
-      "FI_7999",
-      "FI_8000",
-      "FI_8230",
-      "FI_8238",
-      "FI_8266",
-      "FI_8307",
-      "FI_8316",
-      "FI_8319",
-      "FI_9124",
-      "FI_9125"
-    ]
-  },
-  {
-    "code": "EF_373",
-    "name": {
-      "mpc": "Gold (front) + silver gilt edge"
-    },
-    "productCodes": [
-      "FI_7999",
-      "FI_8000",
-      "FI_8230",
-      "FI_8238",
-      "FI_8266",
-      "FI_8307",
-      "FI_8316",
-      "FI_8319",
-      "FI_9124",
-      "FI_9125"
-    ]
-  },
-  {
-    "code": "EF_348",
-    "name": {
-      "mpc": "Silver (front) + gold gilt edge"
-    },
-    "productCodes": [
-      "FI_7999",
-      "FI_8000",
-      "FI_8230",
-      "FI_8238",
-      "FI_8266",
-      "FI_8307",
-      "FI_8316",
-      "FI_8319",
-      "FI_9124",
-      "FI_9125"
-    ]
-  },
-  {
-    "code": "EF_374",
-    "name": {
-      "mpc": "Silver (front) + silver gilt edge"
-    },
-    "productCodes": [
-      "FI_7999",
-      "FI_8000",
-      "FI_8230",
-      "FI_8238",
-      "FI_8266",
-      "FI_8307",
-      "FI_8316",
-      "FI_8319",
-      "FI_9124",
-      "FI_9125"
-    ]
-  },
-  {
-    "code": "EF_095",
-    "name": {
-      "mpc": "Holographic (front) + gold gilt edge"
-    },
-    "productCodes": [
-      "FI_7999",
-      "FI_8000",
-      "FI_8230",
-      "FI_8238",
-      "FI_8266",
-      "FI_8307",
-      "FI_8316",
-      "FI_8319",
-      "FI_9124",
-      "FI_9125"
-    ]
-  },
-  {
-    "code": "EF_105",
-    "name": {
-      "mpc": "Holographic (front) + silver gilt edge"
-    },
-    "productCodes": [
-      "FI_7999",
-      "FI_8000",
-      "FI_8230",
-      "FI_8238",
-      "FI_8266",
-      "FI_8307",
-      "FI_8316",
-      "FI_8319",
-      "FI_9124",
-      "FI_9125"
-    ]
-  },
-  {
-    "code": "EF_020",
-    "name": {
-      "mpc": "High gloss (back) + full color print"
-    },
-    "productCodes": [
-      "FI_7999",
-      "FI_8000",
-      "FI_8230",
-      "FI_8238",
-      "FI_8266",
-      "FI_8307",
-      "FI_8316",
-      "FI_8319",
-      "FI_9124",
-      "FI_9125"
-    ]
-  },
-  {
-    "code": "EF_205",
-    "name": {
-      "mpc": "Spot gold cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_7999",
-      "FI_8000",
-      "FI_8230",
-      "FI_8238",
-      "FI_8266",
-      "FI_8307",
-      "FI_8316",
-      "FI_8319",
-      "FI_9124",
-      "FI_9125"
-    ]
-  },
-  {
-    "code": "EF_206",
-    "name": {
-      "mpc": "Spot silver cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_7999",
-      "FI_8000",
-      "FI_8230",
-      "FI_8238",
-      "FI_8266",
-      "FI_8307",
-      "FI_8316",
-      "FI_8319",
-      "FI_9124",
-      "FI_9125"
-    ]
-  },
-  {
-    "code": "EF_207",
-    "name": {
-      "mpc": "Spot holographic cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_7999",
-      "FI_8000",
-      "FI_8230",
-      "FI_8238",
-      "FI_8266",
-      "FI_8307",
-      "FI_8316",
-      "FI_8319",
-      "FI_9124",
-      "FI_9125"
-    ]
-  },
-  {
-    "code": "EF_208",
-    "name": {
-      "mpc": "Spot gold cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_7999",
-      "FI_8000",
-      "FI_9124"
-    ]
-  },
-  {
-    "code": "EF_209",
-    "name": {
-      "mpc": "Spot silver cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_7999",
-      "FI_8000",
-      "FI_9124"
-    ]
-  },
-  {
-    "code": "EF_210",
-    "name": {
-      "mpc": "Spot holographic cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_7999",
-      "FI_8000",
-      "FI_9124"
-    ]
-  },
-  {
-    "code": "EF_071",
-    "name": {
-      "mpc": "High gloss (back) + full color print"
-    },
-    "productCodes": [
-      "FI_7999",
-      "FI_8000",
-      "FI_8230",
-      "FI_8238",
-      "FI_8266",
-      "FI_8307",
-      "FI_8316",
-      "FI_8319",
-      "FI_9124",
-      "FI_9125"
-    ]
-  },
-  {
-    "code": "EF_313",
-    "name": {
-      "mpc": "Gold (front)"
-    },
-    "productCodes": [
-      "FI_8543"
-    ]
-  },
-  {
-    "code": "EF_314",
-    "name": {
-      "mpc": "Silver (front)"
-    },
-    "productCodes": [
-      "FI_8543"
-    ]
-  },
-  {
-    "code": "EF_056",
-    "name": {
-      "mpc": "Holographic (front)"
-    },
-    "productCodes": [
-      "FI_8543"
-    ]
-  },
-  {
-    "code": "EF_407",
-    "name": {
-      "mpc": "Gold (front & back)"
-    },
-    "productCodes": [
-      "FI_8543"
-    ]
-  },
-  {
-    "code": "EF_408",
-    "name": {
-      "mpc": "Silver (front & back)"
-    },
-    "productCodes": [
-      "FI_8543"
-    ]
-  },
-  {
-    "code": "EF_121",
-    "name": {
-      "mpc": "Holographic (front & back)"
-    },
-    "productCodes": [
-      "FI_8543"
-    ]
-  },
-  {
-    "code": "EF_217",
-    "name": {
-      "mpc": "Spot gold cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_8543"
-    ]
-  },
-  {
-    "code": "EF_218",
-    "name": {
-      "mpc": "Spot silver cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_8543"
-    ]
-  },
-  {
-    "code": "EF_219",
-    "name": {
-      "mpc": "Spot holographic cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_8543"
-    ]
-  },
-  {
-    "code": "EF_220",
-    "name": {
-      "mpc": "Spot gold cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_8543"
-    ]
-  },
-  {
-    "code": "EF_221",
-    "name": {
-      "mpc": "Spot silver cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_8543"
-    ]
-  },
-  {
-    "code": "EF_222",
-    "name": {
-      "mpc": "Spot holographic cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_8543"
     ]
   },
   {
@@ -2742,15 +1118,681 @@
     ]
   },
   {
-    "code": "EF_068",
+    "code": "EF_187",
+    "name": {
+      "mpc": "Spot gold cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ]
+  },
+  {
+    "code": "EF_188",
+    "name": {
+      "mpc": "Spot silver cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ]
+  },
+  {
+    "code": "EF_189",
+    "name": {
+      "mpc": "Spot holographic cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ]
+  },
+  {
+    "code": "EF_190",
+    "name": {
+      "mpc": "Spot gold cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8985"
+    ]
+  },
+  {
+    "code": "EF_191",
+    "name": {
+      "mpc": "Spot silver cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8985"
+    ]
+  },
+  {
+    "code": "EF_192",
+    "name": {
+      "mpc": "Spot holographic cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8985"
+    ]
+  },
+  {
+    "code": "EF_247",
+    "name": {
+      "mpc": "Spot gold cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8012"
+    ]
+  },
+  {
+    "code": "EF_248",
+    "name": {
+      "mpc": "Spot silver cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8012"
+    ]
+  },
+  {
+    "code": "EF_249",
+    "name": {
+      "mpc": "Spot holographic cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8012"
+    ]
+  },
+  {
+    "code": "EF_250",
+    "name": {
+      "mpc": "Spot gold cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8012"
+    ]
+  },
+  {
+    "code": "EF_251",
+    "name": {
+      "mpc": "Spot silver cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8012"
+    ]
+  },
+  {
+    "code": "EF_252",
+    "name": {
+      "mpc": "Spot holographic cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8012"
+    ]
+  },
+  {
+    "code": "EF_299",
+    "name": {
+      "mpc": "Gold (front)"
+    },
+    "productCodes": [
+      "FI_8003",
+      "FI_8009"
+    ]
+  },
+  {
+    "code": "EF_300",
+    "name": {
+      "mpc": "Silver (front)"
+    },
+    "productCodes": [
+      "FI_8003",
+      "FI_8009"
+    ]
+  },
+  {
+    "code": "EF_049",
+    "name": {
+      "mpc": "Holographic (front)"
+    },
+    "productCodes": [
+      "FI_8003",
+      "FI_8009"
+    ]
+  },
+  {
+    "code": "EF_393",
+    "name": {
+      "mpc": "Gold (front & back)"
+    },
+    "productCodes": [
+      "FI_8003",
+      "FI_8009"
+    ]
+  },
+  {
+    "code": "EF_394",
+    "name": {
+      "mpc": "Silver (front & back)"
+    },
+    "productCodes": [
+      "FI_8003",
+      "FI_8009"
+    ]
+  },
+  {
+    "code": "EF_114",
+    "name": {
+      "mpc": "Holographic (front & back)"
+    },
+    "productCodes": [
+      "FI_8003",
+      "FI_8009"
+    ]
+  },
+  {
+    "code": "EF_325",
+    "name": {
+      "mpc": "Gold (front)"
+    },
+    "productCodes": [
+      "FI_2134",
+      "FI_2135"
+    ]
+  },
+  {
+    "code": "EF_326",
+    "name": {
+      "mpc": "Silver (front)"
+    },
+    "productCodes": [
+      "FI_2134",
+      "FI_2135"
+    ]
+  },
+  {
+    "code": "EF_062",
+    "name": {
+      "mpc": "Holographic (front)"
+    },
+    "productCodes": [
+      "FI_2134",
+      "FI_2135"
+    ]
+  },
+  {
+    "code": "EF_419",
+    "name": {
+      "mpc": "Gold (front & back)"
+    },
+    "productCodes": [
+      "FI_2134",
+      "FI_2135"
+    ]
+  },
+  {
+    "code": "EF_420",
+    "name": {
+      "mpc": "Silver (front & back)"
+    },
+    "productCodes": [
+      "FI_2134",
+      "FI_2135"
+    ]
+  },
+  {
+    "code": "EF_127",
+    "name": {
+      "mpc": "Holographic (front & back)"
+    },
+    "productCodes": [
+      "FI_2134",
+      "FI_2135"
+    ]
+  },
+  {
+    "code": "EF_321",
+    "name": {
+      "mpc": "Gold (front)"
+    },
+    "productCodes": [
+      "FI_8012"
+    ]
+  },
+  {
+    "code": "EF_322",
+    "name": {
+      "mpc": "Silver (front)"
+    },
+    "productCodes": [
+      "FI_8012"
+    ]
+  },
+  {
+    "code": "EF_060",
+    "name": {
+      "mpc": "Holographic (front)"
+    },
+    "productCodes": [
+      "FI_8012"
+    ]
+  },
+  {
+    "code": "EF_125",
+    "name": {
+      "mpc": "Holographic (front & back)"
+    },
+    "productCodes": [
+      "FI_8012"
+    ]
+  },
+  {
+    "code": "EF_277",
+    "name": {
+      "mpc": "Spot gold cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8590"
+    ]
+  },
+  {
+    "code": "EF_278",
+    "name": {
+      "mpc": "Spot silver cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8590"
+    ]
+  },
+  {
+    "code": "EF_279",
+    "name": {
+      "mpc": "Spot holographic cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8590"
+    ]
+  },
+  {
+    "code": "EF_280",
+    "name": {
+      "mpc": "Spot gold cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8590"
+    ]
+  },
+  {
+    "code": "EF_281",
+    "name": {
+      "mpc": "Spot silver cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8590"
+    ]
+  },
+  {
+    "code": "EF_282",
+    "name": {
+      "mpc": "Spot holographic cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8590"
+    ]
+  },
+  {
+    "code": "EF_327",
+    "name": {
+      "mpc": "Gold (front)"
+    },
+    "productCodes": [
+      "FI_8590"
+    ]
+  },
+  {
+    "code": "EF_328",
+    "name": {
+      "mpc": "Silver (front)"
+    },
+    "productCodes": [
+      "FI_8590"
+    ]
+  },
+  {
+    "code": "EF_063",
+    "name": {
+      "mpc": "Holographic (front)"
+    },
+    "productCodes": [
+      "FI_8590"
+    ]
+  },
+  {
+    "code": "EF_421",
+    "name": {
+      "mpc": "Gold (front & back)"
+    },
+    "productCodes": [
+      "FI_8590"
+    ]
+  },
+  {
+    "code": "EF_422",
+    "name": {
+      "mpc": "Silver (front & back)"
+    },
+    "productCodes": [
+      "FI_8590"
+    ]
+  },
+  {
+    "code": "EF_128",
+    "name": {
+      "mpc": "Holographic (front & back)"
+    },
+    "productCodes": [
+      "FI_8590"
+    ]
+  },
+  {
+    "code": "EF_415",
+    "name": {
+      "mpc": "Gold (front & back)"
+    },
+    "productCodes": [
+      "FI_8012"
+    ]
+  },
+  {
+    "code": "EF_416",
+    "name": {
+      "mpc": "Silver (front & back)"
+    },
+    "productCodes": [
+      "FI_8012"
+    ]
+  },
+  {
+    "code": "EF_208",
+    "name": {
+      "mpc": "Spot gold cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_9124"
+    ]
+  },
+  {
+    "code": "EF_209",
+    "name": {
+      "mpc": "Spot silver cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_9124"
+    ]
+  },
+  {
+    "code": "EF_210",
+    "name": {
+      "mpc": "Spot holographic cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_7999",
+      "FI_8000",
+      "FI_9124"
+    ]
+  },
+  {
+    "code": "EF_341",
+    "name": {
+      "mpc": "Gold (front) + gold gilt edge"
+    },
+    "productCodes": [
+      "FI_8003",
+      "FI_8009"
+    ]
+  },
+  {
+    "code": "EF_367",
+    "name": {
+      "mpc": "Gold (front) + silver gilt edge"
+    },
+    "productCodes": [
+      "FI_8003",
+      "FI_8009"
+    ]
+  },
+  {
+    "code": "EF_342",
+    "name": {
+      "mpc": "Silver (front) + gold gilt edge"
+    },
+    "productCodes": [
+      "FI_8003",
+      "FI_8009"
+    ]
+  },
+  {
+    "code": "EF_368",
+    "name": {
+      "mpc": "Silver (front) + silver gilt edge"
+    },
+    "productCodes": [
+      "FI_8003",
+      "FI_8009"
+    ]
+  },
+  {
+    "code": "EF_092",
+    "name": {
+      "mpc": "Holographic (front) + gold gilt edge"
+    },
+    "productCodes": [
+      "FI_8003",
+      "FI_8009"
+    ]
+  },
+  {
+    "code": "EF_102",
+    "name": {
+      "mpc": "Holographic (front) + silver gilt edge"
+    },
+    "productCodes": [
+      "FI_8003",
+      "FI_8009"
+    ]
+  },
+  {
+    "code": "EF_157",
+    "name": {
+      "mpc": "Spot gold cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8003",
+      "FI_8009"
+    ]
+  },
+  {
+    "code": "EF_158",
+    "name": {
+      "mpc": "Spot silver cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8003",
+      "FI_8009"
+    ]
+  },
+  {
+    "code": "EF_159",
+    "name": {
+      "mpc": "Spot holographic cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8003",
+      "FI_8009"
+    ]
+  },
+  {
+    "code": "EF_160",
+    "name": {
+      "mpc": "Spot gold cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8003",
+      "FI_8009"
+    ]
+  },
+  {
+    "code": "EF_161",
+    "name": {
+      "mpc": "Spot silver cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8003",
+      "FI_8009"
+    ]
+  },
+  {
+    "code": "EF_162",
+    "name": {
+      "mpc": "Spot holographic cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8003",
+      "FI_8009"
+    ]
+  },
+  {
+    "code": "EF_075",
     "name": {
       "mpc": "High gloss (back) + full color print"
     },
     "productCodes": [
-      "FI_1618",
-      "FI_569",
-      "FI_8986",
-      "FI_8987"
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ]
+  },
+  {
+    "code": "EF_005",
+    "name": {
+      "mpc": "Gold (front)"
+    },
+    "productCodes": [
+      "FI_8883"
+    ]
+  },
+  {
+    "code": "EF_023",
+    "name": {
+      "mpc": "Silver (front)"
+    },
+    "productCodes": [
+      "FI_8883"
+    ]
+  },
+  {
+    "code": "EF_014",
+    "name": {
+      "mpc": "Holographic (front)"
+    },
+    "productCodes": [
+      "FI_8883"
+    ]
+  },
+  {
+    "code": "EF_433",
+    "name": {
+      "mpc": "Holographic (front & back)"
+    },
+    "productCodes": [
+      "FI_8883"
+    ]
+  },
+  {
+    "code": "EF_175",
+    "name": {
+      "mpc": "Spot gold cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8883"
+    ]
+  },
+  {
+    "code": "EF_176",
+    "name": {
+      "mpc": "Spot silver cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8883"
+    ]
+  },
+  {
+    "code": "EF_177",
+    "name": {
+      "mpc": "Spot holographic cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8883"
+    ]
+  },
+  {
+    "code": "EF_178",
+    "name": {
+      "mpc": "Spot gold cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8883"
+    ]
+  },
+  {
+    "code": "EF_179",
+    "name": {
+      "mpc": "Spot silver cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8883"
+    ]
+  },
+  {
+    "code": "EF_180",
+    "name": {
+      "mpc": "Spot holographic cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8883"
+    ]
+  },
+  {
+    "code": "EF_432",
+    "name": {
+      "mpc": "Gold (front & back)"
+    },
+    "productCodes": [
+      "FI_8883"
+    ]
+  },
+  {
+    "code": "EF_434",
+    "name": {
+      "mpc": "Silver (front & back)"
+    },
+    "productCodes": [
+      "FI_8883"
     ]
   },
   {
@@ -2817,18 +1859,6 @@
     "code": "EF_106",
     "name": {
       "mpc": "Holographic (front) + silver gilt edge"
-    },
-    "productCodes": [
-      "FI_1618",
-      "FI_569",
-      "FI_8986",
-      "FI_8987"
-    ]
-  },
-  {
-    "code": "EF_011",
-    "name": {
-      "mpc": "High gloss (back) + full color print"
     },
     "productCodes": [
       "FI_1618",
@@ -2919,6 +1949,278 @@
     ]
   },
   {
+    "code": "EF_331",
+    "name": {
+      "mpc": "Gold (front)"
+    },
+    "productCodes": [
+      "FI_8836"
+    ]
+  },
+  {
+    "code": "EF_332",
+    "name": {
+      "mpc": "Silver (front)"
+    },
+    "productCodes": [
+      "FI_8836"
+    ]
+  },
+  {
+    "code": "EF_067",
+    "name": {
+      "mpc": "Holographic (front)"
+    },
+    "productCodes": [
+      "FI_8836"
+    ]
+  },
+  {
+    "code": "EF_425",
+    "name": {
+      "mpc": "Gold (front & back)"
+    },
+    "productCodes": [
+      "FI_8836"
+    ]
+  },
+  {
+    "code": "EF_426",
+    "name": {
+      "mpc": "Silver (front & back)"
+    },
+    "productCodes": [
+      "FI_8836"
+    ]
+  },
+  {
+    "code": "EF_130",
+    "name": {
+      "mpc": "Holographic (front & back)"
+    },
+    "productCodes": [
+      "FI_8836"
+    ]
+  },
+  {
+    "code": "EF_072",
+    "name": {
+      "mpc": "High gloss (back) + full color print"
+    },
+    "productCodes": [
+      "FI_8836"
+    ]
+  },
+  {
+    "code": "EF_193",
+    "name": {
+      "mpc": "Spot gold cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8836"
+    ]
+  },
+  {
+    "code": "EF_194",
+    "name": {
+      "mpc": "Spot silver cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8836"
+    ]
+  },
+  {
+    "code": "EF_195",
+    "name": {
+      "mpc": "Spot holographic cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8836"
+    ]
+  },
+  {
+    "code": "EF_196",
+    "name": {
+      "mpc": "Spot gold cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8836"
+    ]
+  },
+  {
+    "code": "EF_197",
+    "name": {
+      "mpc": "Spot silver cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8836"
+    ]
+  },
+  {
+    "code": "EF_198",
+    "name": {
+      "mpc": "Spot holographic cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8836"
+    ]
+  },
+  {
+    "code": "EF_453",
+    "name": {
+      "mpc": "Red gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_2134",
+      "FI_2135"
+    ]
+  },
+  {
+    "code": "EF_454",
+    "name": {
+      "mpc": "Blue gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_2134",
+      "FI_2135"
+    ]
+  },
+  {
+    "code": "EF_455",
+    "name": {
+      "mpc": "Green gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_2134",
+      "FI_2135"
+    ]
+  },
+  {
+    "code": "EF_456",
+    "name": {
+      "mpc": "Purple gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_2134",
+      "FI_2135"
+    ]
+  },
+  {
+    "code": "EF_476",
+    "name": {
+      "mpc": "Holographic gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_2134",
+      "FI_2135"
+    ]
+  },
+  {
+    "code": "EF_002",
+    "name": {
+      "mpc": "High gloss (back) + full color print"
+    },
+    "productCodes": [
+      "FI_4332",
+      "FI_4333",
+      "FI_8984",
+      "FI_8985"
+    ]
+  },
+  {
+    "code": "EF_068",
+    "name": {
+      "mpc": "High gloss (back) + full color print"
+    },
+    "productCodes": [
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987"
+    ]
+  },
+  {
+    "code": "EF_283",
+    "name": {
+      "mpc": "Gold gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_8542"
+    ]
+  },
+  {
+    "code": "EF_284",
+    "name": {
+      "mpc": "Silver gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_8542"
+    ]
+  },
+  {
+    "code": "EF_305",
+    "name": {
+      "mpc": "Gold (front)"
+    },
+    "productCodes": [
+      "FI_8542"
+    ]
+  },
+  {
+    "code": "EF_306",
+    "name": {
+      "mpc": "Silver (front)"
+    },
+    "productCodes": [
+      "FI_8542"
+    ]
+  },
+  {
+    "code": "EF_052",
+    "name": {
+      "mpc": "Holographic (front)"
+    },
+    "productCodes": [
+      "FI_8542"
+    ]
+  },
+  {
+    "code": "EF_399",
+    "name": {
+      "mpc": "Gold (front & back)"
+    },
+    "productCodes": [
+      "FI_8542"
+    ]
+  },
+  {
+    "code": "EF_400",
+    "name": {
+      "mpc": "Silver (front & back)"
+    },
+    "productCodes": [
+      "FI_8542"
+    ]
+  },
+  {
+    "code": "EF_117",
+    "name": {
+      "mpc": "Holographic (front & back)"
+    },
+    "productCodes": [
+      "FI_8542"
+    ]
+  },
+  {
+    "code": "EF_064",
+    "name": {
+      "mpc": "High gloss (back) + full color print"
+    },
+    "productCodes": [
+      "FI_8836"
+    ]
+  },
+  {
     "code": "EF_069",
     "name": {
       "mpc": "High gloss (back) + full color print"
@@ -2931,219 +2233,186 @@
     ]
   },
   {
-    "code": "EF_005",
+    "code": "EF_461",
     "name": {
-      "mpc": "Gold (front)"
+      "mpc": "Red gilt edge + full color print"
     },
     "productCodes": [
-      "FI_8883"
+      "FI_8542"
     ]
   },
   {
-    "code": "EF_023",
+    "code": "EF_462",
     "name": {
-      "mpc": "Silver (front)"
+      "mpc": "Blue gilt edge + full color print"
     },
     "productCodes": [
-      "FI_8883"
+      "FI_8542"
     ]
   },
   {
-    "code": "EF_014",
+    "code": "EF_463",
     "name": {
-      "mpc": "Holographic (front)"
+      "mpc": "Green gilt edge + full color print"
     },
     "productCodes": [
-      "FI_8883"
+      "FI_8542"
     ]
   },
   {
-    "code": "EF_432",
+    "code": "EF_464",
     "name": {
-      "mpc": "Gold (front & back)"
+      "mpc": "Purple gilt edge + full color print"
     },
     "productCodes": [
-      "FI_8883"
+      "FI_8542"
     ]
   },
   {
-    "code": "EF_434",
+    "code": "EF_478",
     "name": {
-      "mpc": "Silver (front & back)"
+      "mpc": "Holographic gilt edge + full color print"
     },
     "productCodes": [
-      "FI_8883"
+      "FI_8542"
     ]
   },
   {
-    "code": "EF_433",
+    "code": "EF_357",
     "name": {
-      "mpc": "Holographic (front & back)"
+      "mpc": "Gold (front) + gold gilt edge"
     },
     "productCodes": [
-      "FI_8883"
+      "FI_8542"
     ]
   },
   {
-    "code": "EF_175",
+    "code": "EF_383",
+    "name": {
+      "mpc": "Gold (front) + silver gilt edge"
+    },
+    "productCodes": [
+      "FI_8542"
+    ]
+  },
+  {
+    "code": "EF_358",
+    "name": {
+      "mpc": "Silver (front) + gold gilt edge"
+    },
+    "productCodes": [
+      "FI_8542"
+    ]
+  },
+  {
+    "code": "EF_384",
+    "name": {
+      "mpc": "Silver (front) + silver gilt edge"
+    },
+    "productCodes": [
+      "FI_8542"
+    ]
+  },
+  {
+    "code": "EF_285",
+    "name": {
+      "mpc": "Holographic (front) + gold gilt edge"
+    },
+    "productCodes": [
+      "FI_8542"
+    ]
+  },
+  {
+    "code": "EF_286",
+    "name": {
+      "mpc": "Holographic (front) + silver gilt edge"
+    },
+    "productCodes": [
+      "FI_8542"
+    ]
+  },
+  {
+    "code": "EF_181",
     "name": {
       "mpc": "Spot gold cold foil (back) + full color print (front)"
     },
     "productCodes": [
-      "FI_8883"
+      "FI_8542"
     ]
   },
   {
-    "code": "EF_176",
+    "code": "EF_182",
     "name": {
       "mpc": "Spot silver cold foil (back) + full color print (front)"
     },
     "productCodes": [
-      "FI_8883"
+      "FI_8542"
     ]
   },
   {
-    "code": "EF_177",
+    "code": "EF_183",
     "name": {
       "mpc": "Spot holographic cold foil (back) + full color print (front)"
     },
     "productCodes": [
-      "FI_8883"
+      "FI_8542"
     ]
   },
   {
-    "code": "EF_178",
+    "code": "EF_184",
     "name": {
       "mpc": "Spot gold cold foil (front & back) \u2013 no color print"
     },
     "productCodes": [
-      "FI_8883"
+      "FI_8542"
     ]
   },
   {
-    "code": "EF_179",
+    "code": "EF_185",
     "name": {
       "mpc": "Spot silver cold foil (front & back) \u2013 no color print"
     },
     "productCodes": [
-      "FI_8883"
+      "FI_8542"
     ]
   },
   {
-    "code": "EF_180",
+    "code": "EF_186",
     "name": {
       "mpc": "Spot holographic cold foil (front & back) \u2013 no color print"
     },
     "productCodes": [
-      "FI_8883"
+      "FI_8542"
     ]
   },
   {
-    "code": "EF_317",
+    "code": "EF_073",
     "name": {
-      "mpc": "Gold (front)"
+      "mpc": "High gloss (back) + full color print"
     },
     "productCodes": [
-      "FI_8459"
+      "FI_8836"
     ]
   },
   {
-    "code": "EF_318",
+    "code": "EF_011",
     "name": {
-      "mpc": "Silver (front)"
+      "mpc": "High gloss (back) + full color print"
     },
     "productCodes": [
-      "FI_8459"
+      "FI_1618",
+      "FI_569",
+      "FI_8986",
+      "FI_8987"
     ]
   },
   {
-    "code": "EF_058",
+    "code": "EF_482",
     "name": {
-      "mpc": "Holographic (front)"
+      "mpc": "High gloss (back) + full color print"
     },
     "productCodes": [
-      "FI_8459"
-    ]
-  },
-  {
-    "code": "EF_411",
-    "name": {
-      "mpc": "Gold (front & back)"
-    },
-    "productCodes": [
-      "FI_8459"
-    ]
-  },
-  {
-    "code": "EF_412",
-    "name": {
-      "mpc": "Silver (front & back)"
-    },
-    "productCodes": [
-      "FI_8459"
-    ]
-  },
-  {
-    "code": "EF_123",
-    "name": {
-      "mpc": "Holographic (front & back)"
-    },
-    "productCodes": [
-      "FI_8459"
-    ]
-  },
-  {
-    "code": "EF_235",
-    "name": {
-      "mpc": "Spot gold cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_8459"
-    ]
-  },
-  {
-    "code": "EF_236",
-    "name": {
-      "mpc": "Spot silver cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_8459"
-    ]
-  },
-  {
-    "code": "EF_237",
-    "name": {
-      "mpc": "Spot holographic cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_8459"
-    ]
-  },
-  {
-    "code": "EF_238",
-    "name": {
-      "mpc": "Spot gold cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_8459"
-    ]
-  },
-  {
-    "code": "EF_239",
-    "name": {
-      "mpc": "Spot silver cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_8459"
-    ]
-  },
-  {
-    "code": "EF_240",
-    "name": {
-      "mpc": "Spot holographic cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_8459"
+      "FI_8542"
     ]
   },
   {
@@ -3213,17 +2482,6 @@
     ]
   },
   {
-    "code": "EF_029",
-    "name": {
-      "mpc": "High gloss (back) + full color print"
-    },
-    "productCodes": [
-      "FI_5073",
-      "FI_8988",
-      "FI_8990"
-    ]
-  },
-  {
     "code": "EF_043",
     "name": {
       "mpc": "Gold gilt edge + full color print"
@@ -3282,6 +2540,28 @@
     "code": "EF_448",
     "name": {
       "mpc": "Purple gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_5073",
+      "FI_8988",
+      "FI_8990"
+    ]
+  },
+  {
+    "code": "EF_474",
+    "name": {
+      "mpc": "Holographic gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_5073",
+      "FI_8988",
+      "FI_8990"
+    ]
+  },
+  {
+    "code": "EF_029",
+    "name": {
+      "mpc": "High gloss (back) + full color print"
     },
     "productCodes": [
       "FI_5073",
@@ -3389,715 +2669,111 @@
     ]
   },
   {
-    "code": "EF_244",
-    "name": {
-      "mpc": "Spot gold cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_5073",
-      "FI_8990"
-    ]
-  },
-  {
-    "code": "EF_245",
-    "name": {
-      "mpc": "Spot silver cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_5073",
-      "FI_8990"
-    ]
-  },
-  {
-    "code": "EF_246",
-    "name": {
-      "mpc": "Spot holographic cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_5073",
-      "FI_8990"
-    ]
-  },
-  {
-    "code": "EF_031",
-    "name": {
-      "mpc": "Gold (front)"
-    },
-    "productCodes": [
-      "FI_8884"
-    ]
-  },
-  {
-    "code": "EF_431",
-    "name": {
-      "mpc": "Silver (front)"
-    },
-    "productCodes": [
-      "FI_8884"
-    ]
-  },
-  {
-    "code": "EF_037",
-    "name": {
-      "mpc": "Holographic (front)"
-    },
-    "productCodes": [
-      "FI_8884"
-    ]
-  },
-  {
-    "code": "EF_435",
-    "name": {
-      "mpc": "Gold (front & back)"
-    },
-    "productCodes": [
-      "FI_8884"
-    ]
-  },
-  {
-    "code": "EF_437",
-    "name": {
-      "mpc": "Silver (front & back)"
-    },
-    "productCodes": [
-      "FI_8884"
-    ]
-  },
-  {
-    "code": "EF_436",
-    "name": {
-      "mpc": "Holographic (front & back)"
-    },
-    "productCodes": [
-      "FI_8884"
-    ]
-  },
-  {
-    "code": "EF_229",
+    "code": "EF_271",
     "name": {
       "mpc": "Spot gold cold foil (back) + full color print (front)"
     },
     "productCodes": [
-      "FI_8884"
+      "FI_9009"
     ]
   },
   {
-    "code": "EF_230",
+    "code": "EF_272",
     "name": {
       "mpc": "Spot silver cold foil (back) + full color print (front)"
     },
     "productCodes": [
-      "FI_8884"
+      "FI_9009"
     ]
   },
   {
-    "code": "EF_231",
+    "code": "EF_273",
     "name": {
       "mpc": "Spot holographic cold foil (back) + full color print (front)"
     },
     "productCodes": [
-      "FI_8884"
+      "FI_9009"
     ]
   },
   {
-    "code": "EF_232",
+    "code": "EF_274",
     "name": {
       "mpc": "Spot gold cold foil (front & back) \u2013 no color print"
     },
     "productCodes": [
-      "FI_8884"
+      "FI_9009"
     ]
   },
   {
-    "code": "EF_233",
+    "code": "EF_275",
     "name": {
       "mpc": "Spot silver cold foil (front & back) \u2013 no color print"
     },
     "productCodes": [
-      "FI_8884"
+      "FI_9009"
     ]
   },
   {
-    "code": "EF_234",
+    "code": "EF_276",
     "name": {
       "mpc": "Spot holographic cold foil (front & back) \u2013 no color print"
     },
     "productCodes": [
-      "FI_8884"
+      "FI_9009"
     ]
   },
   {
-    "code": "EF_323",
+    "code": "EF_333",
     "name": {
       "mpc": "Gold (front)"
     },
     "productCodes": [
-      "FI_8002",
-      "FI_8005"
+      "FI_9009"
     ]
   },
   {
-    "code": "EF_324",
+    "code": "EF_334",
     "name": {
       "mpc": "Silver (front)"
     },
     "productCodes": [
-      "FI_8002",
-      "FI_8005"
+      "FI_9009"
     ]
   },
   {
-    "code": "EF_061",
+    "code": "EF_110",
     "name": {
       "mpc": "Holographic (front)"
     },
     "productCodes": [
-      "FI_8002",
-      "FI_8005"
+      "FI_9009"
     ]
   },
   {
-    "code": "EF_417",
+    "code": "EF_427",
     "name": {
       "mpc": "Gold (front & back)"
     },
     "productCodes": [
-      "FI_8002",
-      "FI_8005"
+      "FI_9009"
     ]
   },
   {
-    "code": "EF_418",
+    "code": "EF_428",
     "name": {
       "mpc": "Silver (front & back)"
     },
     "productCodes": [
-      "FI_8002",
-      "FI_8005"
+      "FI_9009"
     ]
   },
   {
-    "code": "EF_126",
+    "code": "EF_131",
     "name": {
       "mpc": "Holographic (front & back)"
     },
     "productCodes": [
-      "FI_8002",
-      "FI_8005"
-    ]
-  },
-  {
-    "code": "EF_079",
-    "name": {
-      "mpc": "Gold gilt edge + full color print"
-    },
-    "productCodes": [
-      "FI_8005"
-    ]
-  },
-  {
-    "code": "EF_080",
-    "name": {
-      "mpc": "Silver gilt edge + full color print"
-    },
-    "productCodes": [
-      "FI_8005"
-    ]
-  },
-  {
-    "code": "EF_457",
-    "name": {
-      "mpc": "Red gilt edge + full color print"
-    },
-    "productCodes": [
-      "FI_8005"
-    ]
-  },
-  {
-    "code": "EF_458",
-    "name": {
-      "mpc": "Blue gilt edge + full color print"
-    },
-    "productCodes": [
-      "FI_8005"
-    ]
-  },
-  {
-    "code": "EF_459",
-    "name": {
-      "mpc": "Green gilt edge + full color print"
-    },
-    "productCodes": [
-      "FI_8005"
-    ]
-  },
-  {
-    "code": "EF_460",
-    "name": {
-      "mpc": "Purple gilt edge + full color print"
-    },
-    "productCodes": [
-      "FI_8005"
-    ]
-  },
-  {
-    "code": "EF_353",
-    "name": {
-      "mpc": "Gold (front) + gold gilt edge"
-    },
-    "productCodes": [
-      "FI_8005"
-    ]
-  },
-  {
-    "code": "EF_379",
-    "name": {
-      "mpc": "Gold (front) + silver gilt edge"
-    },
-    "productCodes": [
-      "FI_8005"
-    ]
-  },
-  {
-    "code": "EF_354",
-    "name": {
-      "mpc": "Silver (front) + gold gilt edge"
-    },
-    "productCodes": [
-      "FI_8005"
-    ]
-  },
-  {
-    "code": "EF_380",
-    "name": {
-      "mpc": "Silver (front) + silver gilt edge"
-    },
-    "productCodes": [
-      "FI_8005"
-    ]
-  },
-  {
-    "code": "EF_098",
-    "name": {
-      "mpc": "Holographic (front) + gold gilt edge"
-    },
-    "productCodes": [
-      "FI_8005"
-    ]
-  },
-  {
-    "code": "EF_108",
-    "name": {
-      "mpc": "Holographic (front) + silver gilt edge"
-    },
-    "productCodes": [
-      "FI_8005"
-    ]
-  },
-  {
-    "code": "EF_253",
-    "name": {
-      "mpc": "Spot gold cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_8002",
-      "FI_8005"
-    ]
-  },
-  {
-    "code": "EF_254",
-    "name": {
-      "mpc": "Spot silver cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_8002",
-      "FI_8005"
-    ]
-  },
-  {
-    "code": "EF_255",
-    "name": {
-      "mpc": "Spot holographic cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_8002",
-      "FI_8005"
-    ]
-  },
-  {
-    "code": "EF_256",
-    "name": {
-      "mpc": "Spot gold cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_8002",
-      "FI_8005"
-    ]
-  },
-  {
-    "code": "EF_257",
-    "name": {
-      "mpc": "Spot silver cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_8002",
-      "FI_8005"
-    ]
-  },
-  {
-    "code": "EF_258",
-    "name": {
-      "mpc": "Spot holographic cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_8002",
-      "FI_8005"
-    ]
-  },
-  {
-    "code": "EF_335",
-    "name": {
-      "mpc": "Gold (front)"
-    },
-    "productCodes": [
-      "FI_8892"
-    ]
-  },
-  {
-    "code": "EF_336",
-    "name": {
-      "mpc": "Silver (front)"
-    },
-    "productCodes": [
-      "FI_8892"
-    ]
-  },
-  {
-    "code": "EF_111",
-    "name": {
-      "mpc": "Holographic (front)"
-    },
-    "productCodes": [
-      "FI_8892"
-    ]
-  },
-  {
-    "code": "EF_429",
-    "name": {
-      "mpc": "Gold (front & back)"
-    },
-    "productCodes": [
-      "FI_8892"
-    ]
-  },
-  {
-    "code": "EF_430",
-    "name": {
-      "mpc": "Silver (front & back)"
-    },
-    "productCodes": [
-      "FI_8892"
-    ]
-  },
-  {
-    "code": "EF_132",
-    "name": {
-      "mpc": "Holographic (front & back)"
-    },
-    "productCodes": [
-      "FI_8892"
-    ]
-  },
-  {
-    "code": "EF_291",
-    "name": {
-      "mpc": "Gold gilt edge + full color print"
-    },
-    "productCodes": [
-      "FI_8892"
-    ]
-  },
-  {
-    "code": "EF_292",
-    "name": {
-      "mpc": "Silver gilt edge + full color print"
-    },
-    "productCodes": [
-      "FI_8892"
-    ]
-  },
-  {
-    "code": "EF_469",
-    "name": {
-      "mpc": "Red gilt edge + full color print"
-    },
-    "productCodes": [
-      "FI_8892"
-    ]
-  },
-  {
-    "code": "EF_470",
-    "name": {
-      "mpc": "Blue gilt edge + full color print"
-    },
-    "productCodes": [
-      "FI_8892"
-    ]
-  },
-  {
-    "code": "EF_471",
-    "name": {
-      "mpc": "Green gilt edge + full color print"
-    },
-    "productCodes": [
-      "FI_8892"
-    ]
-  },
-  {
-    "code": "EF_472",
-    "name": {
-      "mpc": "Purple gilt edge + full color print"
-    },
-    "productCodes": [
-      "FI_8892"
-    ]
-  },
-  {
-    "code": "EF_361",
-    "name": {
-      "mpc": "Gold (front) + gold gilt edge"
-    },
-    "productCodes": [
-      "FI_8892"
-    ]
-  },
-  {
-    "code": "EF_387",
-    "name": {
-      "mpc": "Gold (front) + silver gilt edge"
-    },
-    "productCodes": [
-      "FI_8892"
-    ]
-  },
-  {
-    "code": "EF_362",
-    "name": {
-      "mpc": "Silver (front) + gold gilt edge"
-    },
-    "productCodes": [
-      "FI_8892"
-    ]
-  },
-  {
-    "code": "EF_388",
-    "name": {
-      "mpc": "Silver (front) + silver gilt edge"
-    },
-    "productCodes": [
-      "FI_8892"
-    ]
-  },
-  {
-    "code": "EF_293",
-    "name": {
-      "mpc": "Holographic (front) + gold gilt edge"
-    },
-    "productCodes": [
-      "FI_8892"
-    ]
-  },
-  {
-    "code": "EF_294",
-    "name": {
-      "mpc": "Holographic (front) + silver gilt edge"
-    },
-    "productCodes": [
-      "FI_8892"
-    ]
-  },
-  {
-    "code": "EF_259",
-    "name": {
-      "mpc": "Spot gold cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_8892"
-    ]
-  },
-  {
-    "code": "EF_260",
-    "name": {
-      "mpc": "Spot silver cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_8892"
-    ]
-  },
-  {
-    "code": "EF_261",
-    "name": {
-      "mpc": "Spot holographic cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_8892"
-    ]
-  },
-  {
-    "code": "EF_262",
-    "name": {
-      "mpc": "Spot gold cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_8892"
-    ]
-  },
-  {
-    "code": "EF_263",
-    "name": {
-      "mpc": "Spot silver cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_8892"
-    ]
-  },
-  {
-    "code": "EF_264",
-    "name": {
-      "mpc": "Spot holographic cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_8892"
-    ]
-  },
-  {
-    "code": "EF_325",
-    "name": {
-      "mpc": "Gold (front)"
-    },
-    "productCodes": [
-      "FI_2134",
-      "FI_2135"
-    ]
-  },
-  {
-    "code": "EF_326",
-    "name": {
-      "mpc": "Silver (front)"
-    },
-    "productCodes": [
-      "FI_2134",
-      "FI_2135"
-    ]
-  },
-  {
-    "code": "EF_062",
-    "name": {
-      "mpc": "Holographic (front)"
-    },
-    "productCodes": [
-      "FI_2134",
-      "FI_2135"
-    ]
-  },
-  {
-    "code": "EF_419",
-    "name": {
-      "mpc": "Gold (front & back)"
-    },
-    "productCodes": [
-      "FI_2134",
-      "FI_2135"
-    ]
-  },
-  {
-    "code": "EF_420",
-    "name": {
-      "mpc": "Silver (front & back)"
-    },
-    "productCodes": [
-      "FI_2134",
-      "FI_2135"
-    ]
-  },
-  {
-    "code": "EF_127",
-    "name": {
-      "mpc": "Holographic (front & back)"
-    },
-    "productCodes": [
-      "FI_2134",
-      "FI_2135"
-    ]
-  },
-  {
-    "code": "EF_035",
-    "name": {
-      "mpc": "High gloss (back) + full color print"
-    },
-    "productCodes": [
-      "FI_2134",
-      "FI_2135"
-    ]
-  },
-  {
-    "code": "EF_077",
-    "name": {
-      "mpc": "Gold gilt edge + full color print"
-    },
-    "productCodes": [
-      "FI_2134",
-      "FI_2135"
-    ]
-  },
-  {
-    "code": "EF_078",
-    "name": {
-      "mpc": "Silver gilt edge + full color print"
-    },
-    "productCodes": [
-      "FI_2134",
-      "FI_2135"
-    ]
-  },
-  {
-    "code": "EF_453",
-    "name": {
-      "mpc": "Red gilt edge + full color print"
-    },
-    "productCodes": [
-      "FI_2134",
-      "FI_2135"
-    ]
-  },
-  {
-    "code": "EF_454",
-    "name": {
-      "mpc": "Blue gilt edge + full color print"
-    },
-    "productCodes": [
-      "FI_2134",
-      "FI_2135"
-    ]
-  },
-  {
-    "code": "EF_455",
-    "name": {
-      "mpc": "Green gilt edge + full color print"
-    },
-    "productCodes": [
-      "FI_2134",
-      "FI_2135"
-    ]
-  },
-  {
-    "code": "EF_456",
-    "name": {
-      "mpc": "Purple gilt edge + full color print"
-    },
-    "productCodes": [
-      "FI_2134",
-      "FI_2135"
+      "FI_9009"
     ]
   },
   {
@@ -4221,6 +2897,1764 @@
     ]
   },
   {
+    "code": "EF_085",
+    "name": {
+      "mpc": "Gold gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_8006"
+    ]
+  },
+  {
+    "code": "EF_086",
+    "name": {
+      "mpc": "Silver gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_8006"
+    ]
+  },
+  {
+    "code": "EF_301",
+    "name": {
+      "mpc": "Gold (front)"
+    },
+    "productCodes": [
+      "FI_8006"
+    ]
+  },
+  {
+    "code": "EF_302",
+    "name": {
+      "mpc": "Silver (front)"
+    },
+    "productCodes": [
+      "FI_8006"
+    ]
+  },
+  {
+    "code": "EF_050",
+    "name": {
+      "mpc": "Holographic (front)"
+    },
+    "productCodes": [
+      "FI_8006"
+    ]
+  },
+  {
+    "code": "EF_115",
+    "name": {
+      "mpc": "Holographic (front & back)"
+    },
+    "productCodes": [
+      "FI_8006"
+    ]
+  },
+  {
+    "code": "EF_440",
+    "name": {
+      "mpc": "High gloss (back) + full color print"
+    },
+    "productCodes": [
+      "FI_8006"
+    ]
+  },
+  {
+    "code": "EF_343",
+    "name": {
+      "mpc": "Gold (front) + gold gilt edge"
+    },
+    "productCodes": [
+      "FI_8006"
+    ]
+  },
+  {
+    "code": "EF_369",
+    "name": {
+      "mpc": "Gold (front) + silver gilt edge"
+    },
+    "productCodes": [
+      "FI_8006"
+    ]
+  },
+  {
+    "code": "EF_344",
+    "name": {
+      "mpc": "Silver (front) + gold gilt edge"
+    },
+    "productCodes": [
+      "FI_8006"
+    ]
+  },
+  {
+    "code": "EF_370",
+    "name": {
+      "mpc": "Silver (front) + silver gilt edge"
+    },
+    "productCodes": [
+      "FI_8006"
+    ]
+  },
+  {
+    "code": "EF_093",
+    "name": {
+      "mpc": "Holographic (front) + gold gilt edge"
+    },
+    "productCodes": [
+      "FI_8006"
+    ]
+  },
+  {
+    "code": "EF_103",
+    "name": {
+      "mpc": "Holographic (front) + silver gilt edge"
+    },
+    "productCodes": [
+      "FI_8006"
+    ]
+  },
+  {
+    "code": "EF_163",
+    "name": {
+      "mpc": "Spot gold cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8006"
+    ]
+  },
+  {
+    "code": "EF_164",
+    "name": {
+      "mpc": "Spot silver cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8006"
+    ]
+  },
+  {
+    "code": "EF_165",
+    "name": {
+      "mpc": "Spot holographic cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8006"
+    ]
+  },
+  {
+    "code": "EF_166",
+    "name": {
+      "mpc": "Spot gold cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8006"
+    ]
+  },
+  {
+    "code": "EF_167",
+    "name": {
+      "mpc": "Spot silver cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8006"
+    ]
+  },
+  {
+    "code": "EF_168",
+    "name": {
+      "mpc": "Spot holographic cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8006"
+    ]
+  },
+  {
+    "code": "EF_395",
+    "name": {
+      "mpc": "Gold (front & back)"
+    },
+    "productCodes": [
+      "FI_8006"
+    ]
+  },
+  {
+    "code": "EF_396",
+    "name": {
+      "mpc": "Silver (front & back)"
+    },
+    "productCodes": [
+      "FI_8006"
+    ]
+  },
+  {
+    "code": "EF_244",
+    "name": {
+      "mpc": "Spot gold cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_5073",
+      "FI_8990"
+    ]
+  },
+  {
+    "code": "EF_245",
+    "name": {
+      "mpc": "Spot silver cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_5073",
+      "FI_8990"
+    ]
+  },
+  {
+    "code": "EF_246",
+    "name": {
+      "mpc": "Spot holographic cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_5073",
+      "FI_8990"
+    ]
+  },
+  {
+    "code": "EF_217",
+    "name": {
+      "mpc": "Spot gold cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8543"
+    ]
+  },
+  {
+    "code": "EF_218",
+    "name": {
+      "mpc": "Spot silver cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8543"
+    ]
+  },
+  {
+    "code": "EF_219",
+    "name": {
+      "mpc": "Spot holographic cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8543"
+    ]
+  },
+  {
+    "code": "EF_220",
+    "name": {
+      "mpc": "Spot gold cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8543"
+    ]
+  },
+  {
+    "code": "EF_221",
+    "name": {
+      "mpc": "Spot silver cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8543"
+    ]
+  },
+  {
+    "code": "EF_222",
+    "name": {
+      "mpc": "Spot holographic cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8543"
+    ]
+  },
+  {
+    "code": "EF_313",
+    "name": {
+      "mpc": "Gold (front)"
+    },
+    "productCodes": [
+      "FI_8543"
+    ]
+  },
+  {
+    "code": "EF_314",
+    "name": {
+      "mpc": "Silver (front)"
+    },
+    "productCodes": [
+      "FI_8543"
+    ]
+  },
+  {
+    "code": "EF_056",
+    "name": {
+      "mpc": "Holographic (front)"
+    },
+    "productCodes": [
+      "FI_8543"
+    ]
+  },
+  {
+    "code": "EF_407",
+    "name": {
+      "mpc": "Gold (front & back)"
+    },
+    "productCodes": [
+      "FI_8543"
+    ]
+  },
+  {
+    "code": "EF_408",
+    "name": {
+      "mpc": "Silver (front & back)"
+    },
+    "productCodes": [
+      "FI_8543"
+    ]
+  },
+  {
+    "code": "EF_121",
+    "name": {
+      "mpc": "Holographic (front & back)"
+    },
+    "productCodes": [
+      "FI_8543"
+    ]
+  },
+  {
+    "code": "EF_083",
+    "name": {
+      "mpc": "Gold gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_6037",
+      "FI_6038"
+    ]
+  },
+  {
+    "code": "EF_084",
+    "name": {
+      "mpc": "Silver gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_6037",
+      "FI_6038"
+    ]
+  },
+  {
+    "code": "EF_297",
+    "name": {
+      "mpc": "Gold (front)"
+    },
+    "productCodes": [
+      "FI_6037",
+      "FI_6038",
+      "FI_8854"
+    ]
+  },
+  {
+    "code": "EF_298",
+    "name": {
+      "mpc": "Silver (front)"
+    },
+    "productCodes": [
+      "FI_6037",
+      "FI_6038",
+      "FI_8854"
+    ]
+  },
+  {
+    "code": "EF_048",
+    "name": {
+      "mpc": "Holographic (front)"
+    },
+    "productCodes": [
+      "FI_6037",
+      "FI_6038",
+      "FI_8854"
+    ]
+  },
+  {
+    "code": "EF_391",
+    "name": {
+      "mpc": "Gold (front & back)"
+    },
+    "productCodes": [
+      "FI_6037",
+      "FI_6038",
+      "FI_8854"
+    ]
+  },
+  {
+    "code": "EF_392",
+    "name": {
+      "mpc": "Silver (front & back)"
+    },
+    "productCodes": [
+      "FI_6037",
+      "FI_6038",
+      "FI_8854"
+    ]
+  },
+  {
+    "code": "EF_113",
+    "name": {
+      "mpc": "Holographic (front & back)"
+    },
+    "productCodes": [
+      "FI_6037",
+      "FI_6038",
+      "FI_8854"
+    ]
+  },
+  {
+    "code": "EF_323",
+    "name": {
+      "mpc": "Gold (front)"
+    },
+    "productCodes": [
+      "FI_8002",
+      "FI_8005"
+    ]
+  },
+  {
+    "code": "EF_324",
+    "name": {
+      "mpc": "Silver (front)"
+    },
+    "productCodes": [
+      "FI_8002",
+      "FI_8005"
+    ]
+  },
+  {
+    "code": "EF_061",
+    "name": {
+      "mpc": "Holographic (front)"
+    },
+    "productCodes": [
+      "FI_8002",
+      "FI_8005"
+    ]
+  },
+  {
+    "code": "EF_417",
+    "name": {
+      "mpc": "Gold (front & back)"
+    },
+    "productCodes": [
+      "FI_8002",
+      "FI_8005"
+    ]
+  },
+  {
+    "code": "EF_418",
+    "name": {
+      "mpc": "Silver (front & back)"
+    },
+    "productCodes": [
+      "FI_8002",
+      "FI_8005"
+    ]
+  },
+  {
+    "code": "EF_126",
+    "name": {
+      "mpc": "Holographic (front & back)"
+    },
+    "productCodes": [
+      "FI_8002",
+      "FI_8005"
+    ]
+  },
+  {
+    "code": "EF_483",
+    "name": {
+      "mpc": "High gloss (back) + full color print"
+    },
+    "productCodes": [
+      "FI_8002",
+      "FI_8005"
+    ]
+  },
+  {
+    "code": "EF_253",
+    "name": {
+      "mpc": "Spot gold cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8002",
+      "FI_8005"
+    ]
+  },
+  {
+    "code": "EF_254",
+    "name": {
+      "mpc": "Spot silver cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8002",
+      "FI_8005"
+    ]
+  },
+  {
+    "code": "EF_255",
+    "name": {
+      "mpc": "Spot holographic cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8002",
+      "FI_8005"
+    ]
+  },
+  {
+    "code": "EF_256",
+    "name": {
+      "mpc": "Spot gold cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8002",
+      "FI_8005"
+    ]
+  },
+  {
+    "code": "EF_257",
+    "name": {
+      "mpc": "Spot silver cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8002",
+      "FI_8005"
+    ]
+  },
+  {
+    "code": "EF_258",
+    "name": {
+      "mpc": "Spot holographic cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8002",
+      "FI_8005"
+    ]
+  },
+  {
+    "code": "EF_481",
+    "name": {
+      "mpc": "High gloss (back) + full color print"
+    },
+    "productCodes": [
+      "FI_6037",
+      "FI_6038"
+    ]
+  },
+  {
+    "code": "EF_339",
+    "name": {
+      "mpc": "Gold (front) + gold gilt edge"
+    },
+    "productCodes": [
+      "FI_6037",
+      "FI_6038"
+    ]
+  },
+  {
+    "code": "EF_365",
+    "name": {
+      "mpc": "Gold (front) + silver gilt edge"
+    },
+    "productCodes": [
+      "FI_6037",
+      "FI_6038"
+    ]
+  },
+  {
+    "code": "EF_340",
+    "name": {
+      "mpc": "Silver (front) + gold gilt edge"
+    },
+    "productCodes": [
+      "FI_6037",
+      "FI_6038"
+    ]
+  },
+  {
+    "code": "EF_366",
+    "name": {
+      "mpc": "Silver (front) + silver gilt edge"
+    },
+    "productCodes": [
+      "FI_6037",
+      "FI_6038"
+    ]
+  },
+  {
+    "code": "EF_091",
+    "name": {
+      "mpc": "Holographic (front) + gold gilt edge"
+    },
+    "productCodes": [
+      "FI_6037",
+      "FI_6038"
+    ]
+  },
+  {
+    "code": "EF_101",
+    "name": {
+      "mpc": "Holographic (front) + silver gilt edge"
+    },
+    "productCodes": [
+      "FI_6037",
+      "FI_6038"
+    ]
+  },
+  {
+    "code": "EF_151",
+    "name": {
+      "mpc": "Spot gold cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_6037",
+      "FI_6038"
+    ]
+  },
+  {
+    "code": "EF_152",
+    "name": {
+      "mpc": "Spot silver cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_6037",
+      "FI_6038"
+    ]
+  },
+  {
+    "code": "EF_153",
+    "name": {
+      "mpc": "Spot holographic cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_6037",
+      "FI_6038"
+    ]
+  },
+  {
+    "code": "EF_154",
+    "name": {
+      "mpc": "Spot gold cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_6037",
+      "FI_6038"
+    ]
+  },
+  {
+    "code": "EF_155",
+    "name": {
+      "mpc": "Spot silver cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_6037",
+      "FI_6038"
+    ]
+  },
+  {
+    "code": "EF_156",
+    "name": {
+      "mpc": "Spot holographic cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_6037",
+      "FI_6038"
+    ]
+  },
+  {
+    "code": "EF_079",
+    "name": {
+      "mpc": "Gold gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_8005"
+    ]
+  },
+  {
+    "code": "EF_080",
+    "name": {
+      "mpc": "Silver gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_8005"
+    ]
+  },
+  {
+    "code": "EF_309",
+    "name": {
+      "mpc": "Gold (front)"
+    },
+    "productCodes": [
+      "FI_8332"
+    ]
+  },
+  {
+    "code": "EF_310",
+    "name": {
+      "mpc": "Silver (front)"
+    },
+    "productCodes": [
+      "FI_8332"
+    ]
+  },
+  {
+    "code": "EF_054",
+    "name": {
+      "mpc": "Holographic (front)"
+    },
+    "productCodes": [
+      "FI_8332"
+    ]
+  },
+  {
+    "code": "EF_119",
+    "name": {
+      "mpc": "Holographic (front & back)"
+    },
+    "productCodes": [
+      "FI_8332"
+    ]
+  },
+  {
+    "code": "EF_045",
+    "name": {
+      "mpc": "Gold gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_8332"
+    ]
+  },
+  {
+    "code": "EF_046",
+    "name": {
+      "mpc": "Silver gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_8332"
+    ]
+  },
+  {
+    "code": "EF_449",
+    "name": {
+      "mpc": "Red gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_8332"
+    ]
+  },
+  {
+    "code": "EF_450",
+    "name": {
+      "mpc": "Blue gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_8332"
+    ]
+  },
+  {
+    "code": "EF_451",
+    "name": {
+      "mpc": "Green gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_8332"
+    ]
+  },
+  {
+    "code": "EF_452",
+    "name": {
+      "mpc": "Purple gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_8332"
+    ]
+  },
+  {
+    "code": "EF_475",
+    "name": {
+      "mpc": "Holographic gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_8332"
+    ]
+  },
+  {
+    "code": "EF_345",
+    "name": {
+      "mpc": "Gold (front) + gold gilt edge"
+    },
+    "productCodes": [
+      "FI_8332"
+    ]
+  },
+  {
+    "code": "EF_371",
+    "name": {
+      "mpc": "Gold (front) + silver gilt edge"
+    },
+    "productCodes": [
+      "FI_8332"
+    ]
+  },
+  {
+    "code": "EF_346",
+    "name": {
+      "mpc": "Silver (front) + gold gilt edge"
+    },
+    "productCodes": [
+      "FI_8332"
+    ]
+  },
+  {
+    "code": "EF_372",
+    "name": {
+      "mpc": "Silver (front) + silver gilt edge"
+    },
+    "productCodes": [
+      "FI_8332"
+    ]
+  },
+  {
+    "code": "EF_094",
+    "name": {
+      "mpc": "Holographic (front) + gold gilt edge"
+    },
+    "productCodes": [
+      "FI_8332"
+    ]
+  },
+  {
+    "code": "EF_104",
+    "name": {
+      "mpc": "Holographic (front) + silver gilt edge"
+    },
+    "productCodes": [
+      "FI_8332"
+    ]
+  },
+  {
+    "code": "EF_199",
+    "name": {
+      "mpc": "Spot gold cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8332"
+    ]
+  },
+  {
+    "code": "EF_200",
+    "name": {
+      "mpc": "Spot silver cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8332"
+    ]
+  },
+  {
+    "code": "EF_201",
+    "name": {
+      "mpc": "Spot holographic cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8332"
+    ]
+  },
+  {
+    "code": "EF_202",
+    "name": {
+      "mpc": "Spot gold cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8332"
+    ]
+  },
+  {
+    "code": "EF_203",
+    "name": {
+      "mpc": "Spot silver cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8332"
+    ]
+  },
+  {
+    "code": "EF_204",
+    "name": {
+      "mpc": "Spot holographic cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8332"
+    ]
+  },
+  {
+    "code": "EF_403",
+    "name": {
+      "mpc": "Gold (front & back)"
+    },
+    "productCodes": [
+      "FI_8332"
+    ]
+  },
+  {
+    "code": "EF_404",
+    "name": {
+      "mpc": "Silver (front & back)"
+    },
+    "productCodes": [
+      "FI_8332"
+    ]
+  },
+  {
+    "code": "EF_235",
+    "name": {
+      "mpc": "Spot gold cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8459"
+    ]
+  },
+  {
+    "code": "EF_236",
+    "name": {
+      "mpc": "Spot silver cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8459"
+    ]
+  },
+  {
+    "code": "EF_237",
+    "name": {
+      "mpc": "Spot holographic cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8459"
+    ]
+  },
+  {
+    "code": "EF_238",
+    "name": {
+      "mpc": "Spot gold cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8459"
+    ]
+  },
+  {
+    "code": "EF_239",
+    "name": {
+      "mpc": "Spot silver cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8459"
+    ]
+  },
+  {
+    "code": "EF_240",
+    "name": {
+      "mpc": "Spot holographic cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8459"
+    ]
+  },
+  {
+    "code": "EF_317",
+    "name": {
+      "mpc": "Gold (front)"
+    },
+    "productCodes": [
+      "FI_8459"
+    ]
+  },
+  {
+    "code": "EF_318",
+    "name": {
+      "mpc": "Silver (front)"
+    },
+    "productCodes": [
+      "FI_8459"
+    ]
+  },
+  {
+    "code": "EF_058",
+    "name": {
+      "mpc": "Holographic (front)"
+    },
+    "productCodes": [
+      "FI_8459"
+    ]
+  },
+  {
+    "code": "EF_411",
+    "name": {
+      "mpc": "Gold (front & back)"
+    },
+    "productCodes": [
+      "FI_8459"
+    ]
+  },
+  {
+    "code": "EF_412",
+    "name": {
+      "mpc": "Silver (front & back)"
+    },
+    "productCodes": [
+      "FI_8459"
+    ]
+  },
+  {
+    "code": "EF_123",
+    "name": {
+      "mpc": "Holographic (front & back)"
+    },
+    "productCodes": [
+      "FI_8459"
+    ]
+  },
+  {
+    "code": "EF_457",
+    "name": {
+      "mpc": "Red gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_8005"
+    ]
+  },
+  {
+    "code": "EF_458",
+    "name": {
+      "mpc": "Blue gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_8005"
+    ]
+  },
+  {
+    "code": "EF_459",
+    "name": {
+      "mpc": "Green gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_8005"
+    ]
+  },
+  {
+    "code": "EF_460",
+    "name": {
+      "mpc": "Purple gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_8005"
+    ]
+  },
+  {
+    "code": "EF_477",
+    "name": {
+      "mpc": "Holographic gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_8005"
+    ]
+  },
+  {
+    "code": "EF_353",
+    "name": {
+      "mpc": "Gold (front) + gold gilt edge"
+    },
+    "productCodes": [
+      "FI_8005"
+    ]
+  },
+  {
+    "code": "EF_379",
+    "name": {
+      "mpc": "Gold (front) + silver gilt edge"
+    },
+    "productCodes": [
+      "FI_8005"
+    ]
+  },
+  {
+    "code": "EF_354",
+    "name": {
+      "mpc": "Silver (front) + gold gilt edge"
+    },
+    "productCodes": [
+      "FI_8005"
+    ]
+  },
+  {
+    "code": "EF_380",
+    "name": {
+      "mpc": "Silver (front) + silver gilt edge"
+    },
+    "productCodes": [
+      "FI_8005"
+    ]
+  },
+  {
+    "code": "EF_098",
+    "name": {
+      "mpc": "Holographic (front) + gold gilt edge"
+    },
+    "productCodes": [
+      "FI_8005"
+    ]
+  },
+  {
+    "code": "EF_108",
+    "name": {
+      "mpc": "Holographic (front) + silver gilt edge"
+    },
+    "productCodes": [
+      "FI_8005"
+    ]
+  },
+  {
+    "code": "EF_291",
+    "name": {
+      "mpc": "Gold gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_8892"
+    ]
+  },
+  {
+    "code": "EF_292",
+    "name": {
+      "mpc": "Silver gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_8892"
+    ]
+  },
+  {
+    "code": "EF_335",
+    "name": {
+      "mpc": "Gold (front)"
+    },
+    "productCodes": [
+      "FI_8892"
+    ]
+  },
+  {
+    "code": "EF_336",
+    "name": {
+      "mpc": "Silver (front)"
+    },
+    "productCodes": [
+      "FI_8892"
+    ]
+  },
+  {
+    "code": "EF_111",
+    "name": {
+      "mpc": "Holographic (front)"
+    },
+    "productCodes": [
+      "FI_8892"
+    ]
+  },
+  {
+    "code": "EF_429",
+    "name": {
+      "mpc": "Gold (front & back)"
+    },
+    "productCodes": [
+      "FI_8892"
+    ]
+  },
+  {
+    "code": "EF_430",
+    "name": {
+      "mpc": "Silver (front & back)"
+    },
+    "productCodes": [
+      "FI_8892"
+    ]
+  },
+  {
+    "code": "EF_132",
+    "name": {
+      "mpc": "Holographic (front & back)"
+    },
+    "productCodes": [
+      "FI_8892"
+    ]
+  },
+  {
+    "code": "EF_139",
+    "name": {
+      "mpc": "Spot gold cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8854"
+    ]
+  },
+  {
+    "code": "EF_140",
+    "name": {
+      "mpc": "Spot silver cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8854"
+    ]
+  },
+  {
+    "code": "EF_141",
+    "name": {
+      "mpc": "Spot holographic cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8854"
+    ]
+  },
+  {
+    "code": "EF_142",
+    "name": {
+      "mpc": "Spot gold cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8854"
+    ]
+  },
+  {
+    "code": "EF_143",
+    "name": {
+      "mpc": "Spot silver cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8854"
+    ]
+  },
+  {
+    "code": "EF_144",
+    "name": {
+      "mpc": "Spot holographic cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8854"
+    ]
+  },
+  {
+    "code": "EF_469",
+    "name": {
+      "mpc": "Red gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_8892"
+    ]
+  },
+  {
+    "code": "EF_470",
+    "name": {
+      "mpc": "Blue gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_8892"
+    ]
+  },
+  {
+    "code": "EF_471",
+    "name": {
+      "mpc": "Green gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_8892"
+    ]
+  },
+  {
+    "code": "EF_472",
+    "name": {
+      "mpc": "Purple gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_8892"
+    ]
+  },
+  {
+    "code": "EF_480",
+    "name": {
+      "mpc": "Holographic gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_8892"
+    ]
+  },
+  {
+    "code": "EF_361",
+    "name": {
+      "mpc": "Gold (front) + gold gilt edge"
+    },
+    "productCodes": [
+      "FI_8892"
+    ]
+  },
+  {
+    "code": "EF_387",
+    "name": {
+      "mpc": "Gold (front) + silver gilt edge"
+    },
+    "productCodes": [
+      "FI_8892"
+    ]
+  },
+  {
+    "code": "EF_362",
+    "name": {
+      "mpc": "Silver (front) + gold gilt edge"
+    },
+    "productCodes": [
+      "FI_8892"
+    ]
+  },
+  {
+    "code": "EF_388",
+    "name": {
+      "mpc": "Silver (front) + silver gilt edge"
+    },
+    "productCodes": [
+      "FI_8892"
+    ]
+  },
+  {
+    "code": "EF_293",
+    "name": {
+      "mpc": "Holographic (front) + gold gilt edge"
+    },
+    "productCodes": [
+      "FI_8892"
+    ]
+  },
+  {
+    "code": "EF_294",
+    "name": {
+      "mpc": "Holographic (front) + silver gilt edge"
+    },
+    "productCodes": [
+      "FI_8892"
+    ]
+  },
+  {
+    "code": "EF_259",
+    "name": {
+      "mpc": "Spot gold cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8892"
+    ]
+  },
+  {
+    "code": "EF_260",
+    "name": {
+      "mpc": "Spot silver cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8892"
+    ]
+  },
+  {
+    "code": "EF_261",
+    "name": {
+      "mpc": "Spot holographic cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8892"
+    ]
+  },
+  {
+    "code": "EF_262",
+    "name": {
+      "mpc": "Spot gold cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8892"
+    ]
+  },
+  {
+    "code": "EF_263",
+    "name": {
+      "mpc": "Spot silver cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8892"
+    ]
+  },
+  {
+    "code": "EF_264",
+    "name": {
+      "mpc": "Spot holographic cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8892"
+    ]
+  },
+  {
+    "code": "EF_439",
+    "name": {
+      "mpc": "Silver gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_8001",
+      "FI_8343"
+    ]
+  },
+  {
+    "code": "EF_303",
+    "name": {
+      "mpc": "Gold (front)"
+    },
+    "productCodes": [
+      "FI_8001",
+      "FI_8343"
+    ]
+  },
+  {
+    "code": "EF_304",
+    "name": {
+      "mpc": "Silver (front)"
+    },
+    "productCodes": [
+      "FI_8001",
+      "FI_8343"
+    ]
+  },
+  {
+    "code": "EF_051",
+    "name": {
+      "mpc": "Holographic (front)"
+    },
+    "productCodes": [
+      "FI_8001",
+      "FI_8343"
+    ]
+  },
+  {
+    "code": "EF_397",
+    "name": {
+      "mpc": "Gold (front & back)"
+    },
+    "productCodes": [
+      "FI_8001",
+      "FI_8343"
+    ]
+  },
+  {
+    "code": "EF_398",
+    "name": {
+      "mpc": "Silver (front & back)"
+    },
+    "productCodes": [
+      "FI_8001",
+      "FI_8343"
+    ]
+  },
+  {
+    "code": "EF_116",
+    "name": {
+      "mpc": "Holographic (front & back)"
+    },
+    "productCodes": [
+      "FI_8001",
+      "FI_8343"
+    ]
+  },
+  {
+    "code": "EF_438",
+    "name": {
+      "mpc": "Gold gilt edge + full color print"
+    },
+    "productCodes": [
+      "FI_8001",
+      "FI_8343"
+    ]
+  },
+  {
+    "code": "EF_169",
+    "name": {
+      "mpc": "Spot gold cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8001",
+      "FI_8343"
+    ]
+  },
+  {
+    "code": "EF_170",
+    "name": {
+      "mpc": "Spot silver cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8001",
+      "FI_8343"
+    ]
+  },
+  {
+    "code": "EF_171",
+    "name": {
+      "mpc": "Spot holographic cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8001",
+      "FI_8343"
+    ]
+  },
+  {
+    "code": "EF_172",
+    "name": {
+      "mpc": "Spot gold cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8001",
+      "FI_8343"
+    ]
+  },
+  {
+    "code": "EF_173",
+    "name": {
+      "mpc": "Spot silver cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8001",
+      "FI_8343"
+    ]
+  },
+  {
+    "code": "EF_174",
+    "name": {
+      "mpc": "Spot holographic cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8001",
+      "FI_8343"
+    ]
+  },
+  {
+    "code": "EF_329",
+    "name": {
+      "mpc": "Gold (front)"
+    },
+    "productCodes": [
+      "FI_8866"
+    ]
+  },
+  {
+    "code": "EF_330",
+    "name": {
+      "mpc": "Silver (front)"
+    },
+    "productCodes": [
+      "FI_8866"
+    ]
+  },
+  {
+    "code": "EF_066",
+    "name": {
+      "mpc": "Holographic (front)"
+    },
+    "productCodes": [
+      "FI_8866"
+    ]
+  },
+  {
+    "code": "EF_423",
+    "name": {
+      "mpc": "Gold (front & back)"
+    },
+    "productCodes": [
+      "FI_8866"
+    ]
+  },
+  {
+    "code": "EF_424",
+    "name": {
+      "mpc": "Silver (front & back)"
+    },
+    "productCodes": [
+      "FI_8866"
+    ]
+  },
+  {
+    "code": "EF_129",
+    "name": {
+      "mpc": "Holographic (front & back)"
+    },
+    "productCodes": [
+      "FI_8866"
+    ]
+  },
+  {
+    "code": "EF_145",
+    "name": {
+      "mpc": "Spot gold cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8866"
+    ]
+  },
+  {
+    "code": "EF_146",
+    "name": {
+      "mpc": "Spot silver cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8866"
+    ]
+  },
+  {
+    "code": "EF_147",
+    "name": {
+      "mpc": "Spot holographic cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8866"
+    ]
+  },
+  {
+    "code": "EF_148",
+    "name": {
+      "mpc": "Spot gold cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8866"
+    ]
+  },
+  {
+    "code": "EF_149",
+    "name": {
+      "mpc": "Spot silver cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8866"
+    ]
+  },
+  {
+    "code": "EF_150",
+    "name": {
+      "mpc": "Spot holographic cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8866"
+    ]
+  },
+  {
+    "code": "EF_031",
+    "name": {
+      "mpc": "Gold (front)"
+    },
+    "productCodes": [
+      "FI_8884"
+    ]
+  },
+  {
+    "code": "EF_431",
+    "name": {
+      "mpc": "Silver (front)"
+    },
+    "productCodes": [
+      "FI_8884"
+    ]
+  },
+  {
+    "code": "EF_037",
+    "name": {
+      "mpc": "Holographic (front)"
+    },
+    "productCodes": [
+      "FI_8884"
+    ]
+  },
+  {
+    "code": "EF_435",
+    "name": {
+      "mpc": "Gold (front & back)"
+    },
+    "productCodes": [
+      "FI_8884"
+    ]
+  },
+  {
+    "code": "EF_437",
+    "name": {
+      "mpc": "Silver (front & back)"
+    },
+    "productCodes": [
+      "FI_8884"
+    ]
+  },
+  {
+    "code": "EF_436",
+    "name": {
+      "mpc": "Holographic (front & back)"
+    },
+    "productCodes": [
+      "FI_8884"
+    ]
+  },
+  {
+    "code": "EF_229",
+    "name": {
+      "mpc": "Spot gold cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8884"
+    ]
+  },
+  {
+    "code": "EF_230",
+    "name": {
+      "mpc": "Spot silver cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8884"
+    ]
+  },
+  {
+    "code": "EF_231",
+    "name": {
+      "mpc": "Spot holographic cold foil (back) + full color print (front)"
+    },
+    "productCodes": [
+      "FI_8884"
+    ]
+  },
+  {
+    "code": "EF_232",
+    "name": {
+      "mpc": "Spot gold cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8884"
+    ]
+  },
+  {
+    "code": "EF_233",
+    "name": {
+      "mpc": "Spot silver cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8884"
+    ]
+  },
+  {
+    "code": "EF_234",
+    "name": {
+      "mpc": "Spot holographic cold foil (front & back) \u2013 no color print"
+    },
+    "productCodes": [
+      "FI_8884"
+    ]
+  },
+  {
     "code": "EF_076",
     "name": {
       "mpc": "High gloss (back) + full color print"
@@ -4231,327 +4665,13 @@
     ]
   },
   {
-    "code": "EF_321",
+    "code": "EF_035",
     "name": {
-      "mpc": "Gold (front)"
+      "mpc": "High gloss (back) + full color print"
     },
     "productCodes": [
-      "FI_8012"
-    ]
-  },
-  {
-    "code": "EF_322",
-    "name": {
-      "mpc": "Silver (front)"
-    },
-    "productCodes": [
-      "FI_8012"
-    ]
-  },
-  {
-    "code": "EF_060",
-    "name": {
-      "mpc": "Holographic (front)"
-    },
-    "productCodes": [
-      "FI_8012"
-    ]
-  },
-  {
-    "code": "EF_415",
-    "name": {
-      "mpc": "Gold (front & back)"
-    },
-    "productCodes": [
-      "FI_8012"
-    ]
-  },
-  {
-    "code": "EF_416",
-    "name": {
-      "mpc": "Silver (front & back)"
-    },
-    "productCodes": [
-      "FI_8012"
-    ]
-  },
-  {
-    "code": "EF_125",
-    "name": {
-      "mpc": "Holographic (front & back)"
-    },
-    "productCodes": [
-      "FI_8012"
-    ]
-  },
-  {
-    "code": "EF_247",
-    "name": {
-      "mpc": "Spot gold cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_8012"
-    ]
-  },
-  {
-    "code": "EF_248",
-    "name": {
-      "mpc": "Spot silver cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_8012"
-    ]
-  },
-  {
-    "code": "EF_249",
-    "name": {
-      "mpc": "Spot holographic cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_8012"
-    ]
-  },
-  {
-    "code": "EF_250",
-    "name": {
-      "mpc": "Spot gold cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_8012"
-    ]
-  },
-  {
-    "code": "EF_251",
-    "name": {
-      "mpc": "Spot silver cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_8012"
-    ]
-  },
-  {
-    "code": "EF_252",
-    "name": {
-      "mpc": "Spot holographic cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_8012"
-    ]
-  },
-  {
-    "code": "EF_333",
-    "name": {
-      "mpc": "Gold (front)"
-    },
-    "productCodes": [
-      "FI_9009"
-    ]
-  },
-  {
-    "code": "EF_334",
-    "name": {
-      "mpc": "Silver (front)"
-    },
-    "productCodes": [
-      "FI_9009"
-    ]
-  },
-  {
-    "code": "EF_110",
-    "name": {
-      "mpc": "Holographic (front)"
-    },
-    "productCodes": [
-      "FI_9009"
-    ]
-  },
-  {
-    "code": "EF_427",
-    "name": {
-      "mpc": "Gold (front & back)"
-    },
-    "productCodes": [
-      "FI_9009"
-    ]
-  },
-  {
-    "code": "EF_428",
-    "name": {
-      "mpc": "Silver (front & back)"
-    },
-    "productCodes": [
-      "FI_9009"
-    ]
-  },
-  {
-    "code": "EF_131",
-    "name": {
-      "mpc": "Holographic (front & back)"
-    },
-    "productCodes": [
-      "FI_9009"
-    ]
-  },
-  {
-    "code": "EF_271",
-    "name": {
-      "mpc": "Spot gold cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_9009"
-    ]
-  },
-  {
-    "code": "EF_272",
-    "name": {
-      "mpc": "Spot silver cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_9009"
-    ]
-  },
-  {
-    "code": "EF_273",
-    "name": {
-      "mpc": "Spot holographic cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_9009"
-    ]
-  },
-  {
-    "code": "EF_274",
-    "name": {
-      "mpc": "Spot gold cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_9009"
-    ]
-  },
-  {
-    "code": "EF_275",
-    "name": {
-      "mpc": "Spot silver cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_9009"
-    ]
-  },
-  {
-    "code": "EF_276",
-    "name": {
-      "mpc": "Spot holographic cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_9009"
-    ]
-  },
-  {
-    "code": "EF_327",
-    "name": {
-      "mpc": "Gold (front)"
-    },
-    "productCodes": [
-      "FI_8590"
-    ]
-  },
-  {
-    "code": "EF_328",
-    "name": {
-      "mpc": "Silver (front)"
-    },
-    "productCodes": [
-      "FI_8590"
-    ]
-  },
-  {
-    "code": "EF_063",
-    "name": {
-      "mpc": "Holographic (front)"
-    },
-    "productCodes": [
-      "FI_8590"
-    ]
-  },
-  {
-    "code": "EF_421",
-    "name": {
-      "mpc": "Gold (front & back)"
-    },
-    "productCodes": [
-      "FI_8590"
-    ]
-  },
-  {
-    "code": "EF_422",
-    "name": {
-      "mpc": "Silver (front & back)"
-    },
-    "productCodes": [
-      "FI_8590"
-    ]
-  },
-  {
-    "code": "EF_128",
-    "name": {
-      "mpc": "Holographic (front & back)"
-    },
-    "productCodes": [
-      "FI_8590"
-    ]
-  },
-  {
-    "code": "EF_277",
-    "name": {
-      "mpc": "Spot gold cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_8590"
-    ]
-  },
-  {
-    "code": "EF_278",
-    "name": {
-      "mpc": "Spot silver cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_8590"
-    ]
-  },
-  {
-    "code": "EF_279",
-    "name": {
-      "mpc": "Spot holographic cold foil (back) + full color print (front)"
-    },
-    "productCodes": [
-      "FI_8590"
-    ]
-  },
-  {
-    "code": "EF_280",
-    "name": {
-      "mpc": "Spot gold cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_8590"
-    ]
-  },
-  {
-    "code": "EF_281",
-    "name": {
-      "mpc": "Spot silver cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_8590"
-    ]
-  },
-  {
-    "code": "EF_282",
-    "name": {
-      "mpc": "Spot holographic cold foil (front & back) \u2013 no color print"
-    },
-    "productCodes": [
-      "FI_8590"
+      "FI_2134",
+      "FI_2135"
     ]
   }
 ]
