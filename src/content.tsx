@@ -4,6 +4,9 @@ import ReactDOM from "react-dom/client";
 import App from "./components/App";
 import "./popup.css";
 
+const doctype = document.implementation.createDocumentType('html', '', '');
+document.doctype?.parentNode?.replaceChild(doctype, document.doctype);
+
 const head = document.head;
 const link = document.createElement('link');
 link.type = 'text/css';

@@ -108,11 +108,12 @@ export default class ProjectSettingsModal extends React.Component<ProjectSetting
       scale: unit.scale,
       sortNo: unit.sortNo,
       applyMask: unit.applyMask,
+      maxCards: unit.maxCards,
     };
   }
 
   render() {
-    const { cards, site, unit } = this.props;
+    const { site, unit, cards } = this.props;
     const { name, cardStockCode, printTypeCode, finishCode, packagingCode } = this.state;
     const settings = this.getSettings();
     const count = cards.reduce((value, it) => value + it.count, 0)
@@ -120,7 +121,7 @@ export default class ProjectSettingsModal extends React.Component<ProjectSetting
 
     return (
       <Modal show centered>
-        <Modal.Header>Project Settings</Modal.Header>
+        <Modal.Header>Upload Project</Modal.Header>
         <Modal.Body>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             <FloatingLabel controlId="floatingSelect1" label="Product">
@@ -131,12 +132,12 @@ export default class ProjectSettingsModal extends React.Component<ProjectSetting
               </Form.Select>
             </FloatingLabel>
             {tooManyCards && (
-              <Alert variant="danger" style={{ margin: 0 }}>
-                You are trying to create a project with {count} cards but the max is {unit.maxCards}.
+              <Alert variant="warning" style={{ margin: 0 }}>
+                As your project has more than {unit.maxCards} cards, it will automatically be split into multiple projects.
               </Alert>
             )}
             <FloatingLabel controlId="floatingText" label="Project Name">
-              <Form.Control aria-label="ProjectName" value={name} onChange={this.onNameChange} />
+              <Form.Control aria-label="ProjectName" value={name ?? ''} onChange={this.onNameChange} />
             </FloatingLabel>
             <FloatingLabel controlId="floatingSelect2" label="Card Stock">
               <Form.Select aria-label="Card Stock" value={cardStockCode} onChange={this.onCardStockChange}>
@@ -170,7 +171,7 @@ export default class ProjectSettingsModal extends React.Component<ProjectSetting
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={this.onClose}>Close</Button>
-          <Button variant="success" onClick={() => this.onUpload(settings!)} disabled={!settings || tooManyCards}>Upload</Button>
+          <Button variant="success" onClick={() => this.onUpload(settings!)} disabled={!settings}>Upload</Button>
         </Modal.Footer>
       </Modal>
     );

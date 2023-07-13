@@ -21,13 +21,19 @@ export default class App extends React.Component<AppProps, AppState> {
     this.state = {
       show: false,
     };
-
-    chrome.runtime.onMessage.addListener((request) => {
-      if (request.message === 'show') this.show();
-    });
   }
 
-  show = () => {
+  componentDidMount() {
+    chrome.runtime.onMessage.addListener(this.onShow);
+  }
+
+  componentWillUnmount() {
+    chrome.runtime.onMessage.removeListener(this.onShow)
+  }
+
+  onShow = (request: { message: string }) => {
+    if (request.message !== 'show') return;
+
     this.setState({
       show: true,
     });

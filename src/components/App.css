@@ -3,7 +3,11 @@
   max-width: 90vw !important;
   height: 90vh !important;
   max-height: 90vh !important;
-} 
+}
+
+.button-group {
+  gap: 4px;
+}
 
 hr.solid {
   border-top: 1px solid #bbb;

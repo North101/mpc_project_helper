@@ -5,10 +5,10 @@ import Alert from "react-bootstrap/esm/Alert";
 import Button from "react-bootstrap/esm/Button";
 import ListGroup from "react-bootstrap/esm/ListGroup";
 import unitData from "../api/data/unit.curated.json";
-import { createProject, Settings, UploadedImage } from "../api/mpc_api";
+import { createAutoSplitProject, Settings, UploadedImage } from "../api/mpc_api";
 import { Site, Unit } from "../types/mpc";
 import { ParsedProject, ProjectCard } from "../types/project";
-import { remove, reorder, replace } from "../util";
+import { remove, reorder, replace, setStateAsync } from "../util";
 import ErrorModal from "./ErrorModal";
 import LoadingModal from "./LoadingModal";
 import ProjectEditModal from "./ProjectEditModal";
@@ -47,7 +47,7 @@ const isExportState = (item: any): item is ExportState => {
 
 interface FinishedState {
   id: 'finished';
-  value: string;
+  urls: string[];
 }
 
 const isFinishedState = (item: any): item is FinishedState => {
@@ -207,13 +207,10 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
     });
 
     try {
-      const projectUrl = await createProject(settings, cards);
-
-      this.setState({
-        items: [],
+      await setStateAsync(this, {
         state: {
           id: 'finished',
-          value: projectUrl,
+          urls: await createAutoSplitProject(settings, cards),
         },
       });
     } catch (e) {
@@ -260,7 +257,7 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
   onUploadClick = () => {
     const { items } = this.state;
     const unit = items.length > 0 && items.every((it) => it.unit.code === items[0]?.unit.code) ? items[0]?.unit : null;
-  
+
     if (unit) {
       this.setState({
         state: {
@@ -301,7 +298,7 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
             ref={this.fileInput}
             type="file"
             multiple
-            accept='.txt'
+            accept='.txt, .json'
             onChange={this.onAdd}
           />
           <Button variant="outline-primary" onClick={() => this.fileInput.current!.click()}>
@@ -374,7 +371,7 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
           onClose={this.onStateClear}
         />}
         {isFinishedState(state) && <ProjectSuccessModal
-          value={state.value}
+          urls={state.urls}
           onClose={this.onStateClear}
         />}
         {isErrorState(state) && <ErrorModal

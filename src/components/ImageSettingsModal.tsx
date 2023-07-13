@@ -152,6 +152,7 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
       scale: unit.scale,
       sortNo: unit.sortNo,
       applyMask: unit.applyMask,
+      maxCards: unit.maxCards,
     };
   }
 
@@ -165,7 +166,7 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
 
     return (
       <Modal show centered>
-        <Modal.Header>Card Settings</Modal.Header>
+        <Modal.Header>Image Upload</Modal.Header>
         <Modal.Body>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             <FloatingLabel controlId="floatingSelect1" label="Product">
@@ -175,22 +176,22 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
                 ))}
               </Form.Select>
             </FloatingLabel>
-            {unit && tooManyCards && (
-              <Alert variant={uploadProject ? "danger" : "warning"} style={{ margin: 0 }}>
-                You are trying to create a project with {count} cards but the max is {unit.maxCards}.
-              </Alert>
-            )}
             <Form.Check
               type='checkbox'
               name="upload"
-              label='Upload project?'
+              label='Also upload project?'
               checked={uploadProject}
               onChange={this.onUploadProjectChange}
             />
             {uploadProject && (
               <>
+                {unit && tooManyCards && (
+                  <Alert variant="warning" style={{ margin: 0 }}>
+                    As your project has more than {unit.maxCards} cards, it will automatically be split into multiple projects.
+                  </Alert>
+                )}
                 <FloatingLabel controlId="floatingText" label="Project Name">
-                  <Form.Control aria-label="ProjectName" value={name} onChange={this.onNameChange} />
+                  <Form.Control aria-label="ProjectName" value={name ?? ''} onChange={this.onNameChange} />
                 </FloatingLabel>
                 <FloatingLabel controlId="floatingSelect2" label="Card Stock">
                   <Form.Select aria-label="Card Stock" value={cardStockCode} onChange={this.onCardStockChange}>
@@ -230,7 +231,7 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
             <Button variant="success" onClick={() => this.onCardUpload(cardSettings!)} disabled={!cardSettings}>Upload</Button>
           )}
           {uploadProject && (
-            <Button variant="success" onClick={() => this.onProjectUpload(projectSettings!)} disabled={!projectSettings || tooManyCards}>Upload</Button>
+            <Button variant="success" onClick={() => this.onProjectUpload(projectSettings!)} disabled={!projectSettings}>Upload</Button>
           )}
         </Modal.Footer>
       </Modal>

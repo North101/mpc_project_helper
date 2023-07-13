@@ -5,14 +5,14 @@
         "strict": true,
         "noImplicitReturns": true,
         "noImplicitAny": true,
-        "module": "es6",
+        "module": "ESNext",
         "moduleResolution": "node",
         "target": "es5",
         "allowJs": true,
         "jsx": "react",
         "downlevelIteration": true,
         "resolveJsonModule": true,
-        "esModuleInterop": true  
+        "esModuleInterop": true,
     },
     "include": [
         "./src/**/*",

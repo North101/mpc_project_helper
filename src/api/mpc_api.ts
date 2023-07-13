@@ -80,6 +80,7 @@ export interface Settings extends CardSettings {
   printType: string;
   finish: string;
   packaging: string;
+  maxCards: number;
 }
 
 export interface UploadedImage {
@@ -439,6 +440,41 @@ export const createProject = async (settings: Settings, cards: UploadedImage[]) 
   await saveSession(projectId, settings, expandedCards, pixelInfo, unpickInfo);
 
   return `${settings.url}/design/dn_preview_layout.aspx?ssid=${projectId}`;
+}
+
+export const createAutoSplitProject = async (settings: Settings, cards: UploadedImage[]) => {
+  const projects: string[] = []
+  const maxCardCount = settings.maxCards
+  const projectCount = Math.ceil(cards.reduce((value, card) => value + card.count, 0) / maxCardCount)
+
+  let cardIndex = 0
+  let cardCountOffset = 0
+  while (cardIndex < cards.length) {
+    const projectCards: UploadedImage[] = []
+    let projectCardCount = 0
+    while (projectCardCount < maxCardCount && cardIndex < cards.length) {
+      const card = cards[cardIndex]
+      const count = Math.min(card.count - cardCountOffset, maxCardCount - projectCardCount)
+      projectCards.push(count == card.count ? card : {
+        ...card,
+        count: count,
+      })
+      cardCountOffset += count
+      if (cardCountOffset >= card.count) {
+        cardIndex += 1
+        cardCountOffset = 0
+      }
+      projectCardCount += count
+    }
+    const name: string|undefined = projectCount > 1
+      ? `${settings.name} (${projects.length + 1}/${projectCount})`
+      : settings.name
+    projects.push(await createProject({
+      ...settings,
+      name: name,
+    }, projectCards))
+  }
+  return projects
 }
 
 const getDateTime = async (url: string) => {

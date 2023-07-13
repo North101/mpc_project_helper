@@ -5,7 +5,7 @@ import Button from "react-bootstrap/esm/Button";
 import Dropdown from "react-bootstrap/esm/Dropdown";
 import ListGroup from "react-bootstrap/esm/ListGroup";
 import unitData from "../api/data/unit.curated.json";
-import { analysisImage, CardSettings, CompressedImageData, compressImageData, createProject, Settings, UploadedImage, uploadImage } from "../api/mpc_api";
+import { analysisImage, CardSettings, CompressedImageData, compressImageData, createAutoSplitProject, Settings, UploadedImage, uploadImage } from "../api/mpc_api";
 import { Card, CardFaces, CardSide } from "../types/card";
 import { Site, Unit } from "../types/mpc";
 import { Project } from "../types/project";
@@ -45,7 +45,7 @@ const isLoadingState = (item: any): item is LoadingState => {
 interface FinishedState {
   id: 'finished';
   value: Project;
-  url?: string;
+  urls?: string[];
 }
 
 const isFinishedState = (item: any): item is FinishedState => {
@@ -303,7 +303,6 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
       const data = await this.uploadCards(settings, cards);
       if (data === undefined) return;
 
-      const projectUrl = await createProject(settings, data);
       this.setState({
         files: [],
         cards: [],
@@ -314,7 +313,7 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
             code: settings.unit,
             cards: data,
           },
-          url: projectUrl,
+          urls: await createAutoSplitProject(settings, data),
         },
       });
       return;
@@ -461,7 +460,7 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
           isFinishedState(state) && <SaveProjectModal
             message='Your images were successfully uploaded'
             value={state.value}
-            url={state.url}
+            urls={state.urls}
             onClose={this.onStateClear}
           />
         }
