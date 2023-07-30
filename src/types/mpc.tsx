@@ -1,24 +1,144 @@
-export interface Site {
+import cardStockData from "../api/data/card_stock.json";
+import finishData from "../api/data/finish.json";
+import packagingData from "../api/data/packaging.json";
+import printTypeData from "../api/data/print_type.json";
+import unitData from "../api/data/unit.json";
+
+export class Site {
   code: string;
   name: string;
   urls: string[];
+
+  constructor({code, name, urls}: {code: string, name: string, urls: string[]}) {
+    this.code = code;
+    this.name = name;
+    this.urls = urls;
+  }
+
+  get unitList() {
+    const siteCode = this.code as keyof typeof unitData;
+    return (unitData as unknown as UnitData)[siteCode] ?? [];
+  }
+
+  get cardStockList() {
+    const siteCode = this.code as keyof typeof cardStockData;
+    return (cardStockData as CardStockData)[siteCode] ?? [];
+  }
+
+  cardStockListByUnit(unit: Unit) {
+    return this.cardStockList
+      .filter(cardStock => unit.cardStockCodes.find(it => it.code == cardStock.code))
+      .toSorted((a, b) => unit.cardStockCodes.findIndex(it => it.code == a.code) - unit.cardStockCodes.findIndex(it => it.code == b.code))
+  }
+
+  get printTypeList() {
+    const siteCode = this.code as keyof typeof printTypeData;
+    return (printTypeData as PrintTypeData)[siteCode] ?? [];
+  }
+
+  printTypeListByCardStock(unit: Unit, cardStock: CardStock) {
+    const c = unit.cardStockCodes.find(it => it.code == cardStock.code);
+    return this.printTypeList
+      .filter(it => c?.printTypeCodes.includes(it.code))
+      .toSorted((a, b) => c!.printTypeCodes.indexOf(a.code) - c!.printTypeCodes.indexOf(b.code))
+  }
+
+  get finishList() {
+    const siteCode = this.code as keyof typeof finishData;
+    return (finishData as FinishData)[siteCode] ?? [];
+  }
+
+  finishListByCardStock(unit: Unit, cardStock: CardStock) {
+    const c = unit.cardStockCodes.find(it => it.code == cardStock.code);
+    return this.finishList
+      .filter(it => c?.finishCodes.includes(it.code))
+      .toSorted((a, b) => c!.finishCodes.indexOf(a.code) - c!.finishCodes.indexOf(b.code))
+  }
+
+  get packagingList() {
+    const siteCode = this.code as keyof typeof packagingData;
+    return (packagingData as PackagingData)[siteCode] ?? [];
+  }
+
+  packagingListByCardStock(unit: Unit, cardStock: CardStock) {
+    const c = unit.cardStockCodes.find(it => it.code == cardStock.code);
+    return this.packagingList
+      .filter(it => c?.packagingCodes.includes(it.code))
+      .toSorted((a, b) => c!.packagingCodes.indexOf(a.code) - c!.packagingCodes.indexOf(b.code))
+  }
 }
 
-export interface Unit {
-  code: string;
-  name: {
-    [key: string]: string | undefined;
-  };
-  productCode: string;
-  frontDesignCode: string;
-  backDesignCode: string;
-  width: number;
-  height: number;
-  dpi: number;
-  filter: string;
-  auto: boolean;
-  scale: number;
-  sortNo: number;
-  applyMask: boolean;
-  maxCards: number;
-};
+export type UnitData = {
+  [key: string]: Unit[]
+}
+
+export type Unit = {
+  applyMask: boolean
+  auto: boolean
+  backDesignCode: string
+  code: string
+  curated: any
+  dpi: number
+  filter: string
+  frontDesignCode: string
+  height: number
+  lappedType: string
+  maxCards: number
+  name: string
+  padding: number
+  productCode: string
+  productHeight: number
+  productPadding: number
+  productWidth: number
+  safe: number
+  scale: number
+  sortNo: number
+  unpick: boolean
+  width: number
+  x: number
+  y: number
+  cardStockCodes: [
+    {
+      code: string
+      finishCodes: string[]
+      packagingCodes: string[]
+      printTypeCodes: string[]
+    }
+  ]
+}
+
+export type CardStockData = {
+  [key: string]: CardStock[]
+}
+
+export type CardStock = {
+  code: string
+  name: string
+}
+
+export type FinishData = {
+  [key: string]: Finish[]
+}
+
+export type Finish = {
+  code: string
+  name: string
+}
+
+export type PackagingData = {
+  [key: string]: Packaging[]
+}
+
+export type Packaging = {
+  code: string
+  name: string
+}
+
+export type PrintTypeData = {
+  [key: string]: PrintType[]
+}
+
+export type PrintType = {
+  code: string
+  name: string
+}

@@ -4,14 +4,9 @@ import Button from "react-bootstrap/esm/Button";
 import FloatingLabel from "react-bootstrap/esm/FloatingLabel";
 import Form from "react-bootstrap/esm/Form";
 import Modal from "react-bootstrap/esm/Modal";
-import cardStockData from "../api/data/card_stock.json";
-import finishData from "../api/data/finish.json";
-import packagingData from "../api/data/packaging.json";
-import printTypeData from "../api/data/print_type.json";
-import unitData from "../api/data/unit.curated.json";
 import { CardSettings, Settings } from "../api/mpc_api";
 import { Card } from "../types/card";
-import { Site, Unit } from "../types/mpc";
+import { CardStock, Site, Unit } from "../types/mpc";
 
 
 interface ImageSettingsModalProps {
@@ -19,7 +14,7 @@ interface ImageSettingsModalProps {
   unit?: Unit;
   cards: Card[];
   onCardUpload: (settings: CardSettings, cards: Card[]) => void;
-  onProjectUpload: (settings: Settings, cards: Card[]) => void;
+  onProjectUpload: (name: string, settings: Settings, cards: Card[]) => void;
   onClose: () => void;
 }
 
@@ -27,7 +22,7 @@ interface ImageSettingsModalState {
   unit?: Unit;
   uploadProject: boolean;
   name?: string;
-  cardStockCode?: string;
+  cardStock?: CardStock;
   printTypeCode?: string;
   finishCode?: string;
   packagingCode?: string;
@@ -38,15 +33,16 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
     super(props);
 
     const { site } = props;
-    const unit = props.unit ?? unitData.find((it) => site.code in it.name);
+    const unit = props.unit ?? site.unitList.filter(it => it.curated)[0] ?? site.unitList[0];
+    const cardStock = site.cardStockListByUnit(unit)[0]
     this.state = {
       unit: unit,
       uploadProject: false,
       name: undefined,
-      cardStockCode: cardStockData.find((it) => unit && it.productCodes.includes(unit.productCode) && site.code in it.name)?.code,
-      printTypeCode: printTypeData.find((it) => unit && it.productCodes.includes(unit.productCode) && site.code in it.name)?.code,
-      finishCode: finishData.find((it) => unit && it.productCodes.includes(unit.productCode) && site.code in it.name)?.code,
-      packagingCode: packagingData.find((it) => unit && it.productCodes.includes(unit.productCode) && site.code in it.name)?.code,
+      cardStock: cardStock,
+      printTypeCode: site.printTypeListByCardStock(unit, cardStock)[0]?.code,
+      finishCode: site.finishListByCardStock(unit, cardStock)[0]?.code,
+      packagingCode: site.packagingListByCardStock(unit, cardStock)[0]?.code,
     };
   }
 
@@ -54,8 +50,8 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
     this.props.onCardUpload(settings, this.props.cards);
   }
 
-  onProjectUpload = (settings: Settings) => {
-    this.props.onProjectUpload(settings, this.props.cards);
+  onProjectUpload = (name: string, settings: Settings) => {
+    this.props.onProjectUpload(name, settings, this.props.cards);
   }
 
   onClose = () => {
@@ -63,15 +59,25 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
   }
 
   onUnitChange = (event: React.FormEvent<HTMLSelectElement>) => {
+    const { site } = this.props;
     const unitCode = event.currentTarget.value;
     this.setState({
-      unit: unitData.find((it) => it.code === unitCode),
+      unit: site.unitList.find(it => it.code === unitCode),
     });
   }
 
   onCardStockChange = (event: React.FormEvent<HTMLSelectElement>) => {
+    const { site } = this.props;
+    const { unit, printTypeCode, finishCode, packagingCode } = this.state;
+    const cardStock = site.cardStockList.find(it => it.code == event.currentTarget.value);
+    const printTypeList = unit && cardStock && site.printTypeListByCardStock(unit, cardStock);
+    const finishList =  unit && cardStock && site.finishListByCardStock(unit, cardStock);
+    const packagingList =  unit && cardStock && site.packagingListByCardStock(unit, cardStock);
     this.setState({
-      cardStockCode: event.currentTarget.value,
+      cardStock: cardStock,
+      printTypeCode: printTypeList?.find(it => it.code == printTypeCode)?.code ?? printTypeList?.at(0)?.code,
+      finishCode: finishList?.find(it => it.code == finishCode)?.code ?? finishList?.at(0)?.code,
+      packagingCode: packagingList?.find(it => it.code == packagingCode)?.code ?? packagingList?.at(0)?.code,
     });
   }
 
@@ -106,7 +112,6 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
   }
 
   getCardSettings = (): CardSettings | undefined => {
-    const { site } = this.props;
     const { unit } = this.state;
     if (!unit) return;
 
@@ -128,8 +133,8 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
   }
 
   getProjectSettings = (): Settings | undefined => {
-    const { unit, name, cardStockCode, printTypeCode, finishCode, packagingCode } = this.state;
-    if (unit === undefined || cardStockCode === undefined || printTypeCode === undefined || finishCode === undefined || packagingCode === undefined) {
+    const { unit, name, cardStock, printTypeCode, finishCode, packagingCode } = this.state;
+    if (unit === undefined || cardStock === undefined || printTypeCode === undefined || finishCode === undefined || packagingCode === undefined) {
       return;
     }
 
@@ -140,7 +145,7 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
       frontDesign: unit.frontDesignCode,
       backDesign: unit.backDesignCode,
       name: name,
-      cardStock: cardStockCode,
+      cardStock: cardStock.code,
       printType: printTypeCode,
       finish: finishCode,
       packaging: packagingCode,
@@ -158,7 +163,7 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
 
   render() {
     const { cards, site } = this.props;
-    const { unit, uploadProject, name, cardStockCode, printTypeCode, finishCode, packagingCode } = this.state;
+    const { unit, uploadProject, name, cardStock, printTypeCode, finishCode, packagingCode } = this.state;
     const cardSettings = this.getCardSettings();
     const projectSettings = this.getProjectSettings();
     const count = cards.reduce((value, it) => value + it.count, 0);
@@ -171,9 +176,16 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             <FloatingLabel controlId="floatingSelect1" label="Product">
               <Form.Select aria-label="Product" value={unit?.code} onChange={this.onUnitChange}>
-                {unitData.filter((it) => site.code in it.name).map((it) => (
-                  <option key={it.code} value={it.code}>{(it.name as any)[site.code]}</option>
-                ))}
+                <optgroup label="Recomended">
+                  {site.unitList.filter(it => it.curated !== null).map(it => (
+                    <option key={it.code} value={it.code}>{it.name}</option>
+                  ))}
+                </optgroup>
+                <optgroup label="Other">
+                  {site.unitList.filter(it => it.curated === null).map(it => (
+                    <option key={it.code} value={it.code}>{it.name}</option>
+                  ))}
+                </optgroup>
               </Form.Select>
             </FloatingLabel>
             <Form.Check
@@ -194,31 +206,31 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
                   <Form.Control aria-label="ProjectName" value={name ?? ''} onChange={this.onNameChange} />
                 </FloatingLabel>
                 <FloatingLabel controlId="floatingSelect2" label="Card Stock">
-                  <Form.Select aria-label="Card Stock" value={cardStockCode} onChange={this.onCardStockChange}>
-                    {cardStockData.filter((it) => unit && it.productCodes.includes(unit.productCode) && site.code in it.name).map((it) => (
-                      <option key={it.code} value={it.code}>{(it.name as any)[site.code]}</option>
-                    ))}
+                  <Form.Select aria-label="Card Stock" value={cardStock?.code} onChange={this.onCardStockChange}>
+                    {unit && site.cardStockListByUnit(unit)
+                      .map(it => <option key={it.code} value={it.code}>{it.name}</option>)
+                    }
                   </Form.Select>
                 </FloatingLabel>
                 <FloatingLabel controlId="floatingSelect3" label="Print Type">
                   <Form.Select aria-label="Print Type" value={printTypeCode} onChange={this.onPrintTypeChange}>
-                    {printTypeData.filter((it) => unit && it.productCodes.includes(unit.productCode) && site.code in it.name).map((it) => (
-                      <option key={it.code} value={it.code}>{(it.name as any)[site.code]}</option>
-                    ))}
+                    {unit && cardStock && site.printTypeListByCardStock(unit, cardStock)
+                      .map(it => <option key={it.code} value={it.code}>{it.name}</option>)
+                    }
                   </Form.Select>
                 </FloatingLabel>
                 <FloatingLabel controlId="floatingSelect4" label="Finish">
                   <Form.Select aria-label="Finish" value={finishCode} onChange={this.onFinishChange}>
-                    {finishData.filter((it) => unit && it.productCodes.includes(unit.productCode) && site.code in it.name).map((it) => (
-                      <option key={it.code} value={it.code}>{(it.name as any)[site.code]}</option>
-                    ))}
+                    {unit && cardStock && site.finishListByCardStock(unit, cardStock)
+                      .map(it => <option key={it.code} value={it.code}>{it.name}</option>)
+                    }
                   </Form.Select>
                 </FloatingLabel>
                 <FloatingLabel controlId="floatingSelect5" label="Packaging">
                   <Form.Select aria-label="Packaging" value={packagingCode} onChange={this.onPackagingChange}>
-                    {packagingData.filter((it) => unit && it.productCodes.includes(unit.productCode) && site.code in it.name).map((it) => (
-                      <option key={it.code} value={it.code}>{(it.name as any)[site.code]}</option>
-                    ))}
+                    {unit && cardStock && site.packagingListByCardStock(unit, cardStock)
+                      .map(it => <option key={it.code} value={it.code}>{it.name}</option>)
+                    }
                   </Form.Select>
                 </FloatingLabel>
               </>
@@ -231,7 +243,7 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
             <Button variant="success" onClick={() => this.onCardUpload(cardSettings!)} disabled={!cardSettings}>Upload</Button>
           )}
           {uploadProject && (
-            <Button variant="success" onClick={() => this.onProjectUpload(projectSettings!)} disabled={!projectSettings}>Upload</Button>
+            <Button variant="success" onClick={() => this.onProjectUpload(name ?? '', projectSettings!)} disabled={!projectSettings}>Upload</Button>
           )}
         </Modal.Footer>
       </Modal>

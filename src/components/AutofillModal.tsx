@@ -39,7 +39,7 @@ export default class AutofillModal extends React.Component<AutofillModalProps, A
   }
 
   onAutofillChange = (event: React.FormEvent<HTMLSelectElement>) => {
-    const autofill = this.autofillOptions.find((it) => it.id === event.currentTarget.value);
+    const autofill = this.autofillOptions.find(it => it.id === event.currentTarget.value);
     if (autofill === undefined) return;
 
     this.setState({
@@ -85,7 +85,7 @@ export default class AutofillModal extends React.Component<AutofillModalProps, A
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8, flex: 1 }}>
             <FloatingLabel label="Autotfill">
               <Form.Select aria-label="Autotfill" value={autofill.id} onChange={this.onAutofillChange}>
-                {this.autofillOptions.map((it) => (
+                {this.autofillOptions.map(it => (
                   <option key={it.id} value={it.id}>{it.name}</option>
                 ))}
               </Form.Select>

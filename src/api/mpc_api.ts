@@ -149,7 +149,7 @@ const extractFormData = (html: Document) => {
   return formData;
 }
 
-export const initProject = async (settings: Settings, cards: UploadedImage[]): Promise<{ssid: string; formData: StepFormData;}> => {
+export const initProject = async (settings: Settings, cards: UploadedImage[]): Promise<string> => {
   const r = await fetch(createUrl(`${settings.url}/products/pro_item_process_flow.aspx`, {
     // Card type
     itemid: settings.unit,
@@ -172,10 +172,7 @@ export const initProject = async (settings: Settings, cards: UploadedImage[]): P
   const ssid = select1(html, '/html/body/form[@id="form1"]/@action')!
     .textContent!
     .replace('./dn_playingcards_front_dynamic.aspx?ssid=', '');
-  return {
-    ssid,
-    formData: extractFormData(html),
-  };
+  return ssid;
 }
 
 export const saveFrontSettings = async (projectId: string, settings: Settings, cards: UploadedImage[]) => {
@@ -390,16 +387,16 @@ export const uncompressCropData = (data: CompressedImageData, pixelInfo: PixelIn
 export const saveSession = async (projectId: string, settings: Settings, cards: UploadedImage[], pixelInfo: PixelInfo, unpickInfo: UnpickInfo) => {
   const body = new FormData();
   // list of front images for the project
-  body.append('frontImageList', JSON.stringify(cards.map((sides) => sides.front ? uncompressImageData(settings, sides.front) : null)));
+  body.append('frontImageList', JSON.stringify(cards.map(sides => sides.front ? uncompressImageData(settings, sides.front) : null)));
   // list of front images assigned to cards
-  body.append('frontCropInfo', JSON.stringify(cards.map((sides) => sides.front ? uncompressCropData(sides.front, pixelInfo, unpickInfo) : null)));
+  body.append('frontCropInfo', JSON.stringify(cards.map(sides => sides.front ? uncompressCropData(sides.front, pixelInfo, unpickInfo) : null)));
   // page designer for multiple front cards
   body.append('frontDesignModePage', 'dn_playingcards_mode_nf.aspx');
   body.append('frontTextInfo', [...new Array(cards.length)].map(() => '').join('%u25C7'));
   // list of back images for the project
-  body.append('backImageList', JSON.stringify(cards.map((sides) => sides.back ? uncompressImageData(settings, sides.back) : null)));
+  body.append('backImageList', JSON.stringify(cards.map(sides => sides.back ? uncompressImageData(settings, sides.back) : null)));
   // list of back images assigned to cards
-  body.append('backCropInfo', JSON.stringify(cards.map((sides) => sides.back ? uncompressCropData(sides.back, pixelInfo, unpickInfo) : null)));
+  body.append('backCropInfo', JSON.stringify(cards.map(sides => sides.back ? uncompressCropData(sides.back, pixelInfo, unpickInfo) : null)));
   body.append('backTextInfo', [...new Array(cards.length)].map(() => '').join('%u25C7'));
   // page designer for multiple back cards
   body.append('backDesignModePage', 'dn_playingcards_mode_nb.aspx');
@@ -407,11 +404,24 @@ export const saveSession = async (projectId: string, settings: Settings, cards: 
   body.append('expand', 'null');
   // no idea
   body.append('mapinfo', '[]');
-  if (settings.name) {
-    body.append('name', settings.name);
-  }
 
   return fetch(createUrl(`${settings.url}/design/dn_keep_session.aspx`, {
+    ssid: projectId,
+  }), {
+    method: 'POST',
+    body: body,
+    retries: 5,
+    retryDelay: 500,
+  });
+}
+
+export const saveProject = async (projectId: string, settings: Settings) => {
+  if (!settings.name) return;
+
+  const body = new FormData();
+  body.append('name', settings.name)
+
+  return fetch(createUrl(`${settings.url}/design/dn_project_save.aspx`, {
     ssid: projectId,
   }), {
     method: 'POST',
@@ -429,7 +439,7 @@ export const createProject = async (settings: Settings, cards: UploadedImage[]) 
     return e;
   }, []);
 
-  const {ssid: projectId, formData: frontImageFormData} = await initProject(settings, expandedCards);
+  const projectId = await initProject(settings, expandedCards);
 
   await saveFrontSettings(projectId, settings, expandedCards);
   await saveBackSettings(projectId, settings, expandedCards);
@@ -438,6 +448,7 @@ export const createProject = async (settings: Settings, cards: UploadedImage[]) 
   await saveBackImageStep(projectId, settings);
   await saveBackTextStep(projectId, settings);
   await saveSession(projectId, settings, expandedCards, pixelInfo, unpickInfo);
+  await saveProject(projectId, settings);
 
   return `${settings.url}/design/dn_preview_layout.aspx?ssid=${projectId}`;
 }

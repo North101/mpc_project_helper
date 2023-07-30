@@ -1,5 +1,5 @@
 import React from "react";
-import { DragDropContext, Droppable, DropResult } from "react-beautiful-dnd";
+import { DragDropContext, Droppable, DropResult } from "@hello-pangea/dnd";
 import ListGroup from "react-bootstrap/esm/ListGroup";
 import { ParsedProject, ProjectCard } from "../types/project";
 import { remove, reorder, replace } from "../util";

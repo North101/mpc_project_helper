@@ -33,7 +33,7 @@ const sideData: {
 export const FilenameTooltip = (props: any) => {
   return (
     <OverlayTrigger
-      placement='bottom'
+      placement='auto'
       overlay={<Tooltip>{props.children}</Tooltip>}
     >
       <span className="filename-part">{props.text}</span>
@@ -58,8 +58,8 @@ export class AutofillBasic extends AutofillNone<AutofillBasicState> {
     const { cardSides } = props;
     this.state = {
       defaultSide: undefined,
-      defaultFront: cardSides.find((it) => it.file.name.match(this.defaultFrontMatcher)),
-      defaultBack: cardSides.find((it) => it.file.name.match(this.defaultBackMatcher)),
+      defaultFront: cardSides.find(it => it.file.name.match(this.defaultFrontMatcher)),
+      defaultBack: cardSides.find(it => it.file.name.match(this.defaultBackMatcher)),
     };
   }
 
@@ -69,7 +69,7 @@ export class AutofillBasic extends AutofillNone<AutofillBasicState> {
   }
 
   onDefaultSideChange = (event: React.FormEvent<HTMLSelectElement>) => {
-    const defaultSide = sideData.find((it) => it.id === event.currentTarget.value)?.id;
+    const defaultSide = sideData.find(it => it.id === event.currentTarget.value)?.id;
 
     this.setState({
       defaultSide,
@@ -78,7 +78,7 @@ export class AutofillBasic extends AutofillNone<AutofillBasicState> {
 
   onDefaultFrontChange = (event: React.FormEvent<HTMLSelectElement>) => {
     const { cardSides } = this.props;
-    const defaultFront = cardSides.find((it) => `${it.id}` === event.currentTarget.value);
+    const defaultFront = cardSides.find(it => `${it.id}` === event.currentTarget.value);
 
     this.setState({
       defaultFront,
@@ -87,7 +87,7 @@ export class AutofillBasic extends AutofillNone<AutofillBasicState> {
 
   onDefaultBackChange = (event: React.FormEvent<HTMLSelectElement>) => {
     const { cardSides } = this.props;
-    const defaultBack = cardSides.find((it) => `${it.id}` === event.currentTarget.value);
+    const defaultBack = cardSides.find(it => `${it.id}` === event.currentTarget.value);
 
     this.setState({
       defaultBack,
@@ -240,7 +240,7 @@ export class AutofillBasic extends AutofillNone<AutofillBasicState> {
                   <li>
                     <span style={{ color: 'blue', textDecoration: 'underline' }}>
                       my-filename
-                      <FilenameTooltip text={'-front'}>
+                      <FilenameTooltip text={'-back'}>
                         <span style={{ fontWeight: 'bold' }}>{'-<side>'}</span><br />
                         This is the back image for my-filename
                       </FilenameTooltip>
@@ -259,7 +259,7 @@ export class AutofillBasic extends AutofillNone<AutofillBasicState> {
           <FloatingLabel label="Default Side" style={{ flex: 1 }}>
             <Form.Select value={defaultSide} onChange={this.onDefaultSideChange}>
               <option>None</option>
-              {sideData.map((it) => (
+              {sideData.map(it => (
                 <option key={it.id} value={it.id}>{it.name}</option>
               ))}
             </Form.Select>
@@ -267,7 +267,7 @@ export class AutofillBasic extends AutofillNone<AutofillBasicState> {
           <FloatingLabel label="Default Front" style={{ flex: 1 }}>
             <Form.Select value={defaultFront?.id} onChange={this.onDefaultFrontChange}>
               <option>None</option>
-              {cardSides.map((it) => (
+              {cardSides.map(it => (
                 <option key={it.id} value={it.id}>{it.file.name}</option>
               ))}
             </Form.Select>
@@ -275,7 +275,7 @@ export class AutofillBasic extends AutofillNone<AutofillBasicState> {
           <FloatingLabel label="Default Back" style={{ flex: 1 }}>
             <Form.Select value={defaultBack?.id} onChange={this.onDefaultBackChange}>
               <option>None</option>
-              {cardSides.map((it) => (
+              {cardSides.map(it => (
                 <option key={it.id} value={it.id}>{it.file.name}</option>
               ))}
             </Form.Select>

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Draggable } from "react-beautiful-dnd";
+import { Draggable } from "@hello-pangea/dnd";
 import { GripVertical, Trash } from "react-bootstrap-icons";
 import Button from "react-bootstrap/esm/Button";
 import FloatingLabel from "react-bootstrap/esm/FloatingLabel";
@@ -36,7 +36,7 @@ export default class ProjectCardItem extends React.Component<ProjectCardItemProp
   onFrontChange = (event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { item } = this.props;
     if (!item.front) return;
-  
+
     this.onChange({
       ...item,
       front: {

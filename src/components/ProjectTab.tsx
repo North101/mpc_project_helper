@@ -1,13 +1,12 @@
 import * as React from "react";
-import { DragDropContext, Droppable, DropResult } from "react-beautiful-dnd";
-import { FileEarmarkPlus, Save, Upload, XCircle } from "react-bootstrap-icons";
+import { DragDropContext, Droppable, DropResult } from "@hello-pangea/dnd";
+import { FileEarmarkPlus, Save, Upload, XCircle, ArrowsCollapse } from "react-bootstrap-icons";
 import Alert from "react-bootstrap/esm/Alert";
 import Button from "react-bootstrap/esm/Button";
 import ListGroup from "react-bootstrap/esm/ListGroup";
-import unitData from "../api/data/unit.curated.json";
 import { createAutoSplitProject, Settings, UploadedImage } from "../api/mpc_api";
 import { Site, Unit } from "../types/mpc";
-import { ParsedProject, ProjectCard } from "../types/project";
+import { ParsedProject, Project, ProjectCard } from "../types/project";
 import { remove, reorder, replace, setStateAsync } from "../util";
 import ErrorModal from "./ErrorModal";
 import LoadingModal from "./LoadingModal";
@@ -16,6 +15,8 @@ import ProjectItem from "./ProjectItem";
 import ProjectSettingsModal from "./ProjectSettingsModal";
 import ProjectSuccessModal from "./ProjectSuccessModal";
 import SaveProjectModal from "./SaveProjectModal";
+import { ImageTabSettings, ProjectTabSettings } from "./App";
+import { FilenameTooltip } from "./AutofillTypeBasic";
 
 interface SettingsState {
   id: 'settings';
@@ -47,6 +48,7 @@ const isExportState = (item: any): item is ExportState => {
 
 interface FinishedState {
   id: 'finished';
+  project: Project,
   urls: string[];
 }
 
@@ -74,6 +76,8 @@ const isItemEditState = (item: any): item is ItemEditState => {
 
 interface ProjectTabProps {
   site: Site;
+  items?: ParsedProject[];
+  onSetTab: (project: ProjectTabSettings | ImageTabSettings) => void;
 }
 
 interface ProjectTabState {
@@ -94,8 +98,18 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
 
     this.state = {
       state: null,
-      items: [],
+      items: props.items ?? [],
     };
+  }
+
+  static getDerivedStateFromProps(props: ProjectTabProps, state: ProjectTabState): ProjectTabState | null {
+    if (props.items !== state.items) {
+      return {
+        ...state,
+        items: props.items ?? state.items,
+      }
+    }
+    return null
   }
 
   onAdd = async (e: any) => {
@@ -120,20 +134,12 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
         }
 
         const unitCode = data.code;
-        const unit = unitData.find((it) => it.code === unitCode);
+        const unit = site.unitList.find(it => it.code === unitCode);
         if (!unit) {
           this.setState({
             state: {
               id: 'error',
               value: `${file.name}\n\nProject product type not found: ${unitCode}`,
-            },
-          });
-          return;
-        } else if (!(site.code in unit.name)) {
-          this.setState({
-            state: {
-              id: 'error',
-              value: `${file.name}\n\nProject is not compatible with: ${location.origin}`,
             },
           });
           return;
@@ -210,6 +216,11 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
       await setStateAsync(this, {
         state: {
           id: 'finished',
+          project: {
+            version: 1,
+            code: settings.unit,
+            cards,
+          },
           urls: await createAutoSplitProject(settings, cards),
         },
       });
@@ -240,6 +251,23 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
     });
   }
 
+  onCombine = () => {
+    const { items } = this.state;
+    const item: ParsedProject = {
+      ...items[0],
+      cards: [],
+    }
+    for (const v of items) {
+      item.cards.push(...v.cards);
+    }
+
+    this.setState({
+      items: [
+        item,
+      ],
+    });
+  }
+
   onExport = () => {
     this.setState({
       state: {
@@ -256,7 +284,7 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
 
   onUploadClick = () => {
     const { items } = this.state;
-    const unit = items.length > 0 && items.every((it) => it.unit.code === items[0]?.unit.code) ? items[0]?.unit : null;
+    const unit = items.length > 0 && items.every(it => it.unit.code === items[0]?.unit.code) ? items[0]?.unit : null;
 
     if (unit) {
       this.setState({
@@ -283,11 +311,10 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
   render() {
     const { site } = this.props;
     const { items, state } = this.state;
-    const unit = items.length > 0 && items.every((it) => it.unit.code === items[0].unit.code) ? items[0]?.unit : null;
-    const count = items.reduce<number>((value, item) => {
+    const unit = items.length > 0 && items.every(it => it.unit.code === items[0].unit.code) ? items[0]?.unit : null;
+    const cardCount = items.reduce<number>((value, item) => {
       return value + item.cards.reduce<number>((v, card) => v + card.count, 0);
     }, 0);
-    const tooManyCards = unit !== null && count > unit.maxCards;
 
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: 8, flex: 1 }}>
@@ -308,6 +335,9 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
             <XCircle /> Clear
           </Button>
           <div style={{ flex: 1 }} />
+          <Button variant="outline-primary" onClick={this.onCombine} disabled={unit === null}>
+            <ArrowsCollapse /> Combine
+          </Button>
           <Button variant="outline-primary" onClick={this.onExport} disabled={unit === null}>
             <Save /> Export
           </Button>
@@ -343,9 +373,12 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
             </Droppable>
           </DragDropContext>
         </div>
-        <div style={{ textAlign: 'right' }}>
-          Card Count: <span style={{ color: tooManyCards ? 'red' : undefined }}>{count}</span>
-        </div>
+        {unit && <div style={{ textAlign: 'right' }}>
+        <FilenameTooltip text={`Card Count: ${cardCount} / ${unit.maxCards}`}>
+            The max amount of cards a project can have is {unit.maxCards}.<br/>
+            If you add more than {unit.maxCards} then the project will be automatically split into multiple projects.
+          </FilenameTooltip>
+        </div>}
         {isSettingsState(state) && (
           <ProjectSettingsModal
             site={site}
@@ -360,7 +393,8 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
           onClose={this.onStateClear}
         />}
         {isExportState(state) && <SaveProjectModal
-          value={{
+          name={items[0].name}
+          project={{
             version: 1,
             code: items[0].code,
             cards: items.reduce<ProjectCard[]>((item, value) => {
@@ -371,6 +405,7 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
           onClose={this.onStateClear}
         />}
         {isFinishedState(state) && <ProjectSuccessModal
+          project={state.project}
           urls={state.urls}
           onClose={this.onStateClear}
         />}

@@ -4,13 +4,20 @@ import Button from "react-bootstrap/esm/Button";
 import FloatingLabel from "react-bootstrap/esm/FloatingLabel";
 import Form from "react-bootstrap/esm/Form";
 import Modal from "react-bootstrap/esm/Modal";
-import cardStockData from "../api/data/card_stock.json";
-import finishData from "../api/data/finish.json";
-import packagingData from "../api/data/packaging.json";
-import printTypeData from "../api/data/print_type.json";
-import unitData from "../api/data/unit.curated.json";
 import { Settings, UploadedImage } from "../api/mpc_api";
-import { Site, Unit } from "../types/mpc";
+import { CardStock, Site, Unit } from "../types/mpc";
+
+declare global {
+  interface Array<T> {
+    toSorted(compareFn?: ((a: T, b: T) => number) | undefined): Array<T>;
+  }
+}
+
+Array.prototype.toSorted = function<T>(compareFn?: ((a: T, b: T) => number) | undefined) {
+  const copy = [...this];
+  copy.sort(compareFn)
+  return copy;
+}
 
 interface ProjectSettingsModalProps {
   site: Site;
@@ -23,7 +30,7 @@ interface ProjectSettingsModalProps {
 
 interface ProjectSettingsModalState {
   name?: string;
-  cardStockCode?: string;
+  cardStock?: CardStock;
   printTypeCode?: string;
   finishCode?: string;
   packagingCode?: string;
@@ -34,12 +41,13 @@ export default class ProjectSettingsModal extends React.Component<ProjectSetting
     super(props);
 
     const { site, unit, name } = props;
+    const cardStock = site.cardStockListByUnit(unit)[0]
     this.state = {
       name: name?.substring(0, 32),
-      cardStockCode: cardStockData.find((it) => it.productCodes.includes(unit.productCode) && site.code in it.name)?.code,
-      printTypeCode: printTypeData.find((it) => it.productCodes.includes(unit.productCode) && site.code in it.name)?.code,
-      finishCode: finishData.find((it) => it.productCodes.includes(unit.productCode) && site.code in it.name)?.code,
-      packagingCode: packagingData.find((it) => it.productCodes.includes(unit.productCode) && site.code in it.name)?.code,
+      cardStock: cardStock,
+      printTypeCode: site.printTypeListByCardStock(unit, cardStock)[0]?.code,
+      finishCode: site.finishListByCardStock(unit, cardStock)[0]?.code,
+      packagingCode: site.packagingListByCardStock(unit, cardStock)[0]?.code,
     };
   }
 
@@ -53,8 +61,17 @@ export default class ProjectSettingsModal extends React.Component<ProjectSetting
   }
 
   onCardStockChange = (event: React.FormEvent<HTMLSelectElement>) => {
+    const { site, unit } = this.props;
+    const { printTypeCode, finishCode, packagingCode } = this.state;
+    const cardStock = site.cardStockList.find(it => it.code == event.currentTarget.value);
+    const printTypeList = unit && cardStock && site.printTypeListByCardStock(unit, cardStock);
+    const finishList = unit && cardStock && site.finishListByCardStock(unit, cardStock);
+    const packagingList = unit && cardStock && site.packagingListByCardStock(unit, cardStock);
     this.setState({
-      cardStockCode: event.currentTarget.value,
+      cardStock: cardStock,
+      printTypeCode: printTypeList?.find(it => it.code == printTypeCode)?.code ?? printTypeList?.at(0)?.code,
+      finishCode: finishList?.find(it => it.code == finishCode)?.code ?? finishList?.at(0)?.code,
+      packagingCode: packagingList?.find(it => it.code == packagingCode)?.code ?? packagingList?.at(0)?.code,
     });
   }
 
@@ -83,8 +100,8 @@ export default class ProjectSettingsModal extends React.Component<ProjectSetting
   }
 
   getSettings = (): Settings | undefined => {
-    const { name, cardStockCode, printTypeCode, finishCode, packagingCode } = this.state;
-    if (cardStockCode === undefined || printTypeCode === undefined || finishCode === undefined || packagingCode === undefined) {
+    const { name, cardStock, printTypeCode, finishCode, packagingCode } = this.state;
+    if (cardStock === undefined || printTypeCode === undefined || finishCode === undefined || packagingCode === undefined) {
       return;
     }
 
@@ -96,7 +113,7 @@ export default class ProjectSettingsModal extends React.Component<ProjectSetting
       product: unit.productCode,
       frontDesign: unit.frontDesignCode,
       backDesign: unit.backDesignCode,
-      cardStock: cardStockCode,
+      cardStock: cardStock.code,
       printType: printTypeCode,
       finish: finishCode,
       packaging: packagingCode,
@@ -114,7 +131,7 @@ export default class ProjectSettingsModal extends React.Component<ProjectSetting
 
   render() {
     const { site, unit, cards } = this.props;
-    const { name, cardStockCode, printTypeCode, finishCode, packagingCode } = this.state;
+    const { name, cardStock, printTypeCode, finishCode, packagingCode } = this.state;
     const settings = this.getSettings();
     const count = cards.reduce((value, it) => value + it.count, 0)
     const tooManyCards = count > unit.maxCards;
@@ -126,9 +143,16 @@ export default class ProjectSettingsModal extends React.Component<ProjectSetting
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             <FloatingLabel controlId="floatingSelect1" label="Product">
               <Form.Select aria-label="Product" value={unit.code} disabled>
-                {unitData.filter((it) => site.code in it.name).map((it) => (
-                  <option key={it.code} value={it.code}>{(it.name as any)[site.code]}</option>
-                ))}
+                <optgroup label="Recomended">
+                  {site.unitList.filter(it => it.curated !== null).map(it => (
+                    <option key={it.code} value={it.code}>{it.name}</option>
+                  ))}
+                </optgroup>
+                <optgroup label="Other">
+                  {site.unitList.filter(it => it.curated === null).map(it => (
+                    <option key={it.code} value={it.code}>{it.name}</option>
+                  ))}
+                </optgroup>
               </Form.Select>
             </FloatingLabel>
             {tooManyCards && (
@@ -140,31 +164,31 @@ export default class ProjectSettingsModal extends React.Component<ProjectSetting
               <Form.Control aria-label="ProjectName" value={name ?? ''} onChange={this.onNameChange} />
             </FloatingLabel>
             <FloatingLabel controlId="floatingSelect2" label="Card Stock">
-              <Form.Select aria-label="Card Stock" value={cardStockCode} onChange={this.onCardStockChange}>
-                {cardStockData.filter((it) => it.productCodes.includes(unit.productCode) && site.code in it.name).map((it) => (
-                  <option key={it.code} value={it.code}>{(it.name as any)[site.code]}</option>
-                ))}
+              <Form.Select aria-label="Card Stock" value={cardStock?.code} onChange={this.onCardStockChange}>
+                {unit && site.cardStockListByUnit(unit)
+                  .map(it => <option key={it.code} value={it.code}>{it.name}</option>)
+                }
               </Form.Select>
             </FloatingLabel>
             <FloatingLabel controlId="floatingSelect3" label="Print Type">
               <Form.Select aria-label="Print Type" value={printTypeCode} onChange={this.onPrintTypeChange}>
-                {printTypeData.filter((it) => it.productCodes.includes(unit.productCode) && site.code in it.name).map((it) => (
-                  <option key={it.code} value={it.code}>{(it.name as any)[site.code]}</option>
-                ))}
+                {unit && cardStock && site.printTypeListByCardStock(unit, cardStock)
+                  .map(it => <option key={it.code} value={it.code}>{it.name}</option>)
+                }
               </Form.Select>
             </FloatingLabel>
             <FloatingLabel controlId="floatingSelect4" label="Finish">
               <Form.Select aria-label="Finish" value={finishCode} onChange={this.onFinishChange}>
-                {finishData.filter((it) => it.productCodes.includes(unit.productCode) && site.code in it.name).map((it) => (
-                  <option key={it.code} value={it.code}>{(it.name as any)[site.code]}</option>
-                ))}
+                {unit && cardStock && site.finishListByCardStock(unit, cardStock)
+                  .map(it => <option key={it.code} value={it.code}>{it.name}</option>)
+                }
               </Form.Select>
             </FloatingLabel>
             <FloatingLabel controlId="floatingSelect5" label="Packaging">
               <Form.Select aria-label="Packaging" value={packagingCode} onChange={this.onPackagingChange}>
-                {packagingData.filter((it) => it.productCodes.includes(unit.productCode) && site.code in it.name).map((it) => (
-                  <option key={it.code} value={it.code}>{(it.name as any)[site.code]}</option>
-                ))}
+                {unit && cardStock && site.packagingListByCardStock(unit, cardStock)
+                  .map(it => <option key={it.code} value={it.code}>{it.name}</option>)
+                }
               </Form.Select>
             </FloatingLabel>
           </div>

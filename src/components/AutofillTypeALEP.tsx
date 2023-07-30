@@ -42,7 +42,7 @@ export class AutofillALeP extends AutofillNone<AutofillALePState> {
   }
 
   onBackAuthenticityChange = (event: React.FormEvent<HTMLSelectElement>) => {
-    const backAuthenticity = authenticityData.find((it) => `${it.id}` === event.currentTarget.value);
+    const backAuthenticity = authenticityData.find(it => `${it.id}` === event.currentTarget.value);
     if (!backAuthenticity) return;
 
     this.setState({
@@ -69,10 +69,10 @@ export class AutofillALeP extends AutofillNone<AutofillALePState> {
       const groupName = match[1];
       const side = sideMap[match[2].toLowerCase()];
       if (!side) continue;
-  
+
       const authenticityId = match[3].toLowerCase();
       if (side === 'back' && backAuthenticity.id !== authenticityId) continue;
-  
+
       const card = groups[groupName] ?? {
         id: AutofillNone.cardId++,
         count: 1,
@@ -106,7 +106,7 @@ export class AutofillALeP extends AutofillNone<AutofillALePState> {
         <div style={{ display: 'flex', gap: 4, marginTop: 8, flex: '1 1 1px', overflowY: 'scroll' }}>
           <FloatingLabel label="Back Authenticity" style={{ flex: 1 }}>
             <Form.Select value={backAuthenticity.id} onChange={this.onBackAuthenticityChange}>
-              {authenticityData.map((it) => (
+              {authenticityData.map(it => (
                 <option key={it.id} value={it.id}>{it.name}</option>
               ))}
             </Form.Select>

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Draggable } from "react-beautiful-dnd";
+import { Draggable } from "@hello-pangea/dnd";
 import { GripVertical, PencilSquare, Trash } from "react-bootstrap-icons";
 import Button from "react-bootstrap/esm/Button";
 import FloatingLabel from "react-bootstrap/esm/FloatingLabel";
@@ -64,7 +64,7 @@ export default class ProjectItem extends React.Component<ProjectItemProps> {
               <Form.Control aria-label="Filename" value={item.name} disabled />
             </FloatingLabel>
             <FloatingLabel controlId="floatingSelect2" label="Product" style={{ flex: 1 }}>
-              <Form.Control aria-label="Product" value={item.unit.name[site.code]} disabled />
+              <Form.Control aria-label="Product" value={item.unit.name} disabled />
             </FloatingLabel>
             <FloatingLabel controlId="floatingCount" label="Count" style={{ width: 80 }}>
               <Form.Control

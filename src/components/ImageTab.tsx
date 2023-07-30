@@ -1,10 +1,9 @@
 import * as React from "react";
-import { DragDropContext, Droppable, DropResult } from "react-beautiful-dnd";
+import { DragDropContext, Droppable, DropResult } from "@hello-pangea/dnd";
 import { CardImage, FileEarmarkPlus, PlusCircle, Upload, XCircle } from "react-bootstrap-icons";
 import Button from "react-bootstrap/esm/Button";
 import Dropdown from "react-bootstrap/esm/Dropdown";
 import ListGroup from "react-bootstrap/esm/ListGroup";
-import unitData from "../api/data/unit.curated.json";
 import { analysisImage, CardSettings, CompressedImageData, compressImageData, createAutoSplitProject, Settings, UploadedImage, uploadImage } from "../api/mpc_api";
 import { Card, CardFaces, CardSide } from "../types/card";
 import { Site, Unit } from "../types/mpc";
@@ -17,6 +16,9 @@ import ImageItem from "./ImageItem";
 import ImageSettingsModal from "./ImageSettingsModal";
 import ProgressModal from "./ProgressModal";
 import SaveProjectModal from "./SaveProjectModal";
+import { ImageTabSettings, ProjectTabSettings } from "./App";
+import ProjectTab from "./ProjectTab";
+import { FilenameTooltip } from "./AutofillTypeBasic";
 
 interface AutofillState {
   id: 'autofill';
@@ -44,6 +46,7 @@ const isLoadingState = (item: any): item is LoadingState => {
 
 interface FinishedState {
   id: 'finished';
+  name?: string;
   value: Project;
   urls?: string[];
 }
@@ -71,6 +74,7 @@ const isPreviewState = (item: any): item is PreviewState => {
 
 interface ImageTabProps {
   site: Site;
+  onSetTab: (project: ProjectTabSettings | ImageTabSettings) => void;
 }
 
 interface ImageTabState {
@@ -123,7 +127,7 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
           width,
           height,
         },
-      })).then((it) => {
+      })).then(it => {
         this.setState({
           state: {
             id: 'loading',
@@ -298,7 +302,7 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
     }
   }
 
-  onProjectUpload = async (settings: Settings, cards: Card[]) => {
+  onProjectUpload = async (name: string | undefined, settings: Settings, cards: Card[]) => {
     try {
       const data = await this.uploadCards(settings, cards);
       if (data === undefined) return;
@@ -308,6 +312,7 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
         cards: [],
         state: {
           id: 'finished',
+          name,
           value: {
             version: 1,
             code: settings.unit,
@@ -352,15 +357,41 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
   }
 
   onProductChange = (eventKey: any) => {
-    const unit = unitData.find((it) => it.code == eventKey);
+    const { site } = this.props;
+    const unit = site.unitList.find(it => it.code == eventKey);
     this.setState({
       unit,
+    })
+  }
+
+  onLoadProject = (name: string | undefined, project: Project) => {
+    const { site } = this.props;
+    const unitCode = project.code;
+    const unit = site.unitList.find(it => it.code === unitCode)!;
+
+    const parsedProject = {
+      ...project,
+      id: `${++ProjectTab.projectId}`,
+      name: name ?? 'Unknown',
+      unit,
+      cards: project.cards.map((card: any) => ({
+        id: ProjectTab.cardId++,
+        ...card,
+      })),
+    }
+
+    this.props.onSetTab({
+      id: 'project',
+      items: [
+        parsedProject,
+      ]
     })
   }
 
   render() {
     const { site } = this.props;
     const { cards, files, unit, state } = this.state;
+    const cardCount = cards.reduce<number>((v, card) => v + card.count, 0);
 
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: 8, flex: 1 }}>
@@ -386,11 +417,16 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
           <div style={{ flex: 1 }} />
           <Dropdown onSelect={this.onProductChange}>
             <Dropdown.Toggle variant="outline-primary">
-              {unit?.name[site.code as "mpc" | "ps"] ?? 'Select Product'}
+              {unit?.name ?? 'Select Product'}
             </Dropdown.Toggle>
-            <Dropdown.Menu style={{maxHeight: 300, overflowY: 'scroll'}}>
-              {unitData.filter((it) => site.code in it.name).map((it) => (
-                <Dropdown.Item key={it.code} eventKey={it.code} active={it.code === unit?.code}>{(it.name as any)[site.code]}</Dropdown.Item>
+            <Dropdown.Menu style={{ maxHeight: 300, overflowY: 'scroll' }}>
+              <Dropdown.Header>Recomended</Dropdown.Header>
+              {site.unitList.filter(it => it.curated !== null).map(it => (
+                <Dropdown.Item key={it.code} eventKey={it.code} active={it.code === unit?.code}>{it.name}</Dropdown.Item>
+              ))}
+              <Dropdown.Header>Other</Dropdown.Header>
+              {site.unitList.filter(it => it.curated === null).map(it => (
+                <Dropdown.Item key={it.code} eventKey={it.code} active={it.code === unit?.code}>{it.name}</Dropdown.Item>
               ))}
             </Dropdown.Menu>
           </Dropdown>
@@ -429,12 +465,12 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
             </Droppable>
           </DragDropContext>
         </div>
-        <div style={{ display: 'flex' }}>
-          <div style={{ flex: 1 }} />
-          <div>
-            Card Count: {cards.reduce((value, card) => value + card.count, 0)}
-          </div>
-        </div>
+        {unit && <div style={{ textAlign: 'right' }}>
+        <FilenameTooltip text={`Card Count: ${cardCount} / ${unit.maxCards}`}>
+            The max amount of cards a project can have is {unit.maxCards}.<br/>
+            If you add more than {unit.maxCards} then the project will be automatically split into multiple projects.
+          </FilenameTooltip>
+        </div>}
         {state?.id === 'autofill' && <AutofillModal
           cardSides={state.cardSides}
           onAdd={this.onAddCards}
@@ -459,8 +495,10 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
         {
           isFinishedState(state) && <SaveProjectModal
             message='Your images were successfully uploaded'
-            value={state.value}
+            name={state.name}
+            project={state.value}
             urls={state.urls}
+            onLoadProject={this.onLoadProject}
             onClose={this.onStateClear}
           />
         }

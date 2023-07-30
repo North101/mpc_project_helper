@@ -76,8 +76,9 @@ export default class ProjectEditModal extends React.Component<ProjectEditModalPr
             onChange={this.onChange}
           />
           {state === 'export' && <SaveProjectModal
+            name={item.name}
             filename={item.name}
-            value={item}
+            project={item}
             onClose={this.onStateClear}
           />}
         </Modal.Body>

@@ -2,7 +2,6 @@ import React from "react";
 import FloatingLabel from "react-bootstrap/esm/FloatingLabel";
 import Form from "react-bootstrap/esm/Form";
 import Modal from "react-bootstrap/esm/Modal";
-import unitData from "../api/data/unit.curated.json";
 import { Card } from "../types/card";
 import { Site, Unit } from "../types/mpc";
 import CardPreview from "./CardPreview";
@@ -25,14 +24,15 @@ export default class CardPreviewModal extends React.Component<CardPreviewModalPr
 
     const { unit, site } = props;
     this.state = {
-      unit: unit ?? unitData.find((it) => site.code in it.name),
+      unit: unit ?? site.unitList.at(0),
     }
   }
 
   onUnitChange = (event: React.FormEvent<HTMLSelectElement>) => {
+    const { site } = this.props;
     const unitCode = event.currentTarget.value;
     this.setState({
-      unit: unitData.find((it) => it.code === unitCode),
+      unit: site.unitList.find(it => it.code === unitCode),
     });
   }
 
@@ -51,9 +51,16 @@ export default class CardPreviewModal extends React.Component<CardPreviewModalPr
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8, flex: '1 1 1px', overflowY: 'scroll' }}>
             <FloatingLabel controlId="floatingSelect1" label="Product">
               <Form.Select aria-label="Product" value={unit?.code} onChange={this.onUnitChange}>
-                {unitData.filter((it) => site.code in it.name).map((it) => (
-                  <option key={it.code} value={it.code}>{(it.name as any)[site.code]}</option>
-                ))}
+                <optgroup label="Recomended">
+                  {site.unitList.filter(it => it.curated !== null).map(it => (
+                    <option key={it.code} value={it.code}>{it.name}</option>
+                  ))}
+                </optgroup>
+                <optgroup label="Other">
+                  {site.unitList.filter(it => it.curated === null).map(it => (
+                    <option key={it.code} value={it.code}>{it.name}</option>
+                  ))}
+                </optgroup>
               </Form.Select>
             </FloatingLabel>
             {unit && (
@@ -63,7 +70,7 @@ export default class CardPreviewModal extends React.Component<CardPreviewModalPr
                     data.push(card);
                   }
                   return data;
-                }, []).map((it) => <CardPreview height={unit.height} width={unit.width} card={it} />)}
+                }, []).map(it => <CardPreview height={unit.height} width={unit.width} card={it} />)}
               </div>
             )}
           </div>

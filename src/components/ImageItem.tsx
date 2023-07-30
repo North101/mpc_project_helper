@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Draggable } from "react-beautiful-dnd";
+import { Draggable } from "@hello-pangea/dnd";
 import { CheckLg, ExclamationTriangle, GripVertical, Trash } from "react-bootstrap-icons";
 import Button from "react-bootstrap/esm/Button";
 import FloatingLabel from "react-bootstrap/esm/FloatingLabel";
@@ -78,7 +78,7 @@ export default class ImageItem extends React.Component<ImageItemProps> {
     const { item, files } = this.props;
     this.onChange({
       ...item,
-      front: files.find((file) => `${file.id}` === event.currentTarget.value),
+      front: files.find(file => `${file.id}` === event.currentTarget.value),
     });
   }
 
@@ -86,7 +86,7 @@ export default class ImageItem extends React.Component<ImageItemProps> {
     const { item, files } = this.props;
     this.onChange({
       ...item,
-      back: files.find((file) => `${file.id}` === event.currentTarget.value),
+      back: files.find(file => `${file.id}` === event.currentTarget.value),
     });
   }
 
@@ -127,14 +127,14 @@ export default class ImageItem extends React.Component<ImageItemProps> {
             <FloatingLabel controlId="floatingSelect1" label="Front" style={{ flex: 1 }}>
               <Form.Select aria-label="Front" value={item.front?.id} onChange={this.onFrontChange}>
                 <option key={""} value="">Empty</option>
-                {files.map((cardSide) => <option key={cardSide.id} value={cardSide.id}>{cardSide.file.name}</option>)}
+                {files.map(cardSide => <option key={cardSide.id} value={cardSide.id}>{cardSide.file.name}</option>)}
               </Form.Select>
             </FloatingLabel>
             <ImageDetails cardSide={item.front} unit={unit} size={24} goodColor="green" badColor="red" />
             <FloatingLabel controlId="floatingSelect2" label="Back" style={{ flex: 1 }}>
               <Form.Select aria-label="Back" value={item.back?.id} onChange={this.onBackChange}>
                 <option key={""} value="">Empty</option>
-                {files.map((cardSide) => <option key={cardSide.id} value={cardSide.id}>{cardSide.file.name}</option>)}
+                {files.map(cardSide => <option key={cardSide.id} value={cardSide.id}>{cardSide.file.name}</option>)}
               </Form.Select>
             </FloatingLabel>
             <ImageDetails cardSide={item.back} unit={unit} size={24} goodColor="green" badColor="red" />

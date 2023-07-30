@@ -19,13 +19,13 @@ chrome.runtime.onInstalled.addListener(() => {
   });
 });
 
-chrome.action.onClicked.addListener((tab) => {
+chrome.action.onClicked.addListener(tab => {
   chrome.tabs.sendMessage(tab.id!, {
     message: 'show',
   });
 });
 
-chrome.runtime.onMessage.addListener((request) => {
+chrome.runtime.onMessage.addListener(request => {
   if (request.message === 'open') {
     chrome.tabs.create({
       url: request.url,
