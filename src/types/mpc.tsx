@@ -4,6 +4,18 @@ import packagingData from "../api/data/packaging.json";
 import printTypeData from "../api/data/print_type.json";
 import unitData from "../api/data/unit.json";
 
+declare global {
+  interface Array<T> {
+    toSorted(compareFn?: ((a: T, b: T) => number) | undefined): Array<T>;
+  }
+}
+
+Array.prototype.toSorted = function<T>(compareFn?: ((a: T, b: T) => number) | undefined): Array<T> {
+  const copy = [...this];
+  copy.sort(compareFn)
+  return copy;
+}
+
 export class Site {
   code: string;
   name: string;
@@ -16,52 +28,52 @@ export class Site {
   }
 
   get unitList() {
-    const siteCode = this.code as keyof typeof unitData;
+    const siteCode = this.code;
     return (unitData as unknown as UnitData)[siteCode] ?? [];
   }
 
   get cardStockList() {
-    const siteCode = this.code as keyof typeof cardStockData;
+    const siteCode = this.code;
     return (cardStockData as CardStockData)[siteCode] ?? [];
   }
 
   cardStockListByUnit(unit: Unit) {
     return this.cardStockList
-      .filter(cardStock => unit.cardStockCodes.find(it => it.code == cardStock.code))
-      .toSorted((a, b) => unit.cardStockCodes.findIndex(it => it.code == a.code) - unit.cardStockCodes.findIndex(it => it.code == b.code))
+      .filter(cardStock => unit.options.find(it => it.cardStockCode == cardStock.code))
+      .toSorted((a, b) => unit.options.findIndex(it => it.cardStockCode == a.code) - unit.options.findIndex(it => it.cardStockCode == b.code))
   }
 
   get printTypeList() {
-    const siteCode = this.code as keyof typeof printTypeData;
+    const siteCode = this.code;
     return (printTypeData as PrintTypeData)[siteCode] ?? [];
   }
 
   printTypeListByCardStock(unit: Unit, cardStock: CardStock) {
-    const c = unit.cardStockCodes.find(it => it.code == cardStock.code);
+    const c = unit.options.find(it => it.cardStockCode == cardStock.code);
     return this.printTypeList
       .filter(it => c?.printTypeCodes.includes(it.code))
       .toSorted((a, b) => c!.printTypeCodes.indexOf(a.code) - c!.printTypeCodes.indexOf(b.code))
   }
 
   get finishList() {
-    const siteCode = this.code as keyof typeof finishData;
+    const siteCode = this.code;
     return (finishData as FinishData)[siteCode] ?? [];
   }
 
   finishListByCardStock(unit: Unit, cardStock: CardStock) {
-    const c = unit.cardStockCodes.find(it => it.code == cardStock.code);
+    const c = unit.options.find(it => it.cardStockCode == cardStock.code);
     return this.finishList
       .filter(it => c?.finishCodes.includes(it.code))
       .toSorted((a, b) => c!.finishCodes.indexOf(a.code) - c!.finishCodes.indexOf(b.code))
   }
 
   get packagingList() {
-    const siteCode = this.code as keyof typeof packagingData;
+    const siteCode = this.code;
     return (packagingData as PackagingData)[siteCode] ?? [];
   }
 
   packagingListByCardStock(unit: Unit, cardStock: CardStock) {
-    const c = unit.cardStockCodes.find(it => it.code == cardStock.code);
+    const c = unit.options.find(it => it.cardStockCode == cardStock.code);
     return this.packagingList
       .filter(it => c?.packagingCodes.includes(it.code))
       .toSorted((a, b) => c!.packagingCodes.indexOf(a.code) - c!.packagingCodes.indexOf(b.code))
@@ -85,6 +97,7 @@ export type Unit = {
   lappedType: string
   maxCards: number
   name: string
+  options: UnitOption[]
   padding: number
   productCode: string
   productHeight: number
@@ -97,14 +110,13 @@ export type Unit = {
   width: number
   x: number
   y: number
-  cardStockCodes: [
-    {
-      code: string
-      finishCodes: string[]
-      packagingCodes: string[]
-      printTypeCodes: string[]
-    }
-  ]
+}
+
+export type UnitOption = {
+  cardStockCode: string
+  finishCodes: string[]
+  packagingCodes: string[]
+  printTypeCodes: string[]
 }
 
 export type CardStockData = {

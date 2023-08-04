@@ -7,18 +7,6 @@ import Modal from "react-bootstrap/esm/Modal";
 import { Settings, UploadedImage } from "../api/mpc_api";
 import { CardStock, Site, Unit } from "../types/mpc";
 
-declare global {
-  interface Array<T> {
-    toSorted(compareFn?: ((a: T, b: T) => number) | undefined): Array<T>;
-  }
-}
-
-Array.prototype.toSorted = function<T>(compareFn?: ((a: T, b: T) => number) | undefined) {
-  const copy = [...this];
-  copy.sort(compareFn)
-  return copy;
-}
-
 interface ProjectSettingsModalProps {
   site: Site;
   unit: Unit;
