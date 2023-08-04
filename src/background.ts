@@ -1,19 +1,17 @@
+const conditions = chrome.runtime.getManifest().content_scripts?.flatMap((e) => {
+  if (e.matches == null || !e.js?.includes('content.js')) return [];
+
+  return e.matches.map(e => new chrome.declarativeContent.PageStateMatcher({
+    pageUrl: { urlMatches: e },
+  })) ?? [];
+}) ?? [];
+
 chrome.runtime.onInstalled.addListener(() => {
   chrome.action.disable();
 
   chrome.declarativeContent.onPageChanged.removeRules(undefined, () => {
     chrome.declarativeContent.onPageChanged.addRules([{
-      conditions: [
-        new chrome.declarativeContent.PageStateMatcher({
-          pageUrl: { urlMatches: 'https://www.makeplayingcards.com/*' },
-        }),
-        new chrome.declarativeContent.PageStateMatcher({
-          pageUrl: { urlMatches: 'https://www.printerstudio.co.uk/*' },
-        }),
-        new chrome.declarativeContent.PageStateMatcher({
-          pageUrl: { urlMatches: 'https://www.printerstudio.com/*' },
-        })
-      ],
+      conditions: conditions,
       actions: [new chrome.declarativeContent.ShowAction()],
     }]);
   });
