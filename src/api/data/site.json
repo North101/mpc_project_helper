@@ -8,5 +8,10 @@
     "code": "ps",
     "name": "PrinterStudio",
     "urls": ["https://www.printerstudio.co.uk", "https://www.printerstudio.com"]
+  },
+  {
+    "code": "pshk",
+    "name": "PrinterStudio",
+    "urls": ["https://www.printerstudio.com.hk"]
   }
 ]

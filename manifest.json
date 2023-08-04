@@ -1,7 +1,7 @@
 {
   "name": "MPC Project Helper",
+  "version": null,
   "manifest_version": 3,
-  "version": "1.4.0",
   "icons": {
     "16": "icon16.png",
     "48": "icon48.png",
@@ -13,7 +13,8 @@
   "host_permissions": [
     "https://www.makeplayingcards.com/",
     "https://www.printerstudio.co.uk/",
-    "https://www.printerstudio.com/"
+    "https://www.printerstudio.com/",
+    "https://www.printerstudio.com.hk/"
   ],
   "background": {
     "service_worker": "background.js"
@@ -23,7 +24,8 @@
       "matches": [
         "https://www.makeplayingcards.com/*",
         "https://www.printerstudio.co.uk/*",
-        "https://www.printerstudio.com/*"
+        "https://www.printerstudio.com/*",
+        "https://www.printerstudio.com.hk/*"
       ],
       "js": [
         "content.js"
