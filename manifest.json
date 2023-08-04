@@ -41,15 +41,13 @@
   "web_accessible_resources": [
     {
       "resources": [
-        "icons/select.svg",
-        "icons/upload.svg",
-        "icons/clear.svg",
-        "icons/add.svg"
+        "bootstrap.min.css"
       ],
       "matches": [
         "https://www.makeplayingcards.com/*",
         "https://www.printerstudio.co.uk/*",
-        "https://www.printerstudio.com/*"
+        "https://www.printerstudio.com/*",
+        "https://www.printerstudio.com.hk/*"
       ]
     }
   ]
