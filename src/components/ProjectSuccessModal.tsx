@@ -20,11 +20,9 @@ export default class ProjectSuccessModal extends React.Component<ProjectSuccessM
       <Modal show centered scrollable>
         <Modal.Header>Success</Modal.Header>
         <Modal.Body>
-          <div style={{ display: 'flex', flexDirection: 'column', flex: 1, }}>
-            <div style={{ flex: '1 1 1px', overflowY: 'scroll', display: 'flex', flexDirection: 'column', gap: 4 }}>
-              <SaveProjectButton project={project}/>
-              <ProjectLinkGroup urls={urls}/>
-            </div>
+          <div style={{ overflowY: 'scroll', display: 'flex', flexDirection: 'column', gap: 4 }}>
+            <SaveProjectButton project={project} />
+            <ProjectLinkGroup urls={urls} />
           </div>
         </Modal.Body>
         <Modal.Footer>
