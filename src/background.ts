@@ -1,5 +1,7 @@
+export {}
+
 const conditions = chrome.runtime.getManifest().content_scripts?.flatMap((e) => {
-  if (e.matches == null || !e.js?.includes('content.js')) return [];
+  if (e.matches == null || !e.js?.includes('src/content.js')) return [];
 
   return e.matches.map(e => new chrome.declarativeContent.PageStateMatcher({
     pageUrl: { urlMatches: e },

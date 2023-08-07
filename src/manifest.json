@@ -1,6 +1,5 @@
 {
   "name": "MPC Project Helper",
-  "version": null,
   "manifest_version": 3,
   "icons": {
     "16": "icon16.png",
@@ -17,7 +16,7 @@
     "https://www.printerstudio.com.hk/"
   ],
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "src/background.ts"
   },
   "content_scripts": [
     {
@@ -28,14 +27,15 @@
         "https://www.printerstudio.com.hk/*"
       ],
       "js": [
-        "content.js"
+        "src/content.tsx"
       ]
     }
   ],
   "action": {
     "default_icon": {
       "16": "icon16.png",
-      "48": "icon48.png"
+      "48": "icon48.png",
+      "128": "icon128.png"
     }
   },
   "web_accessible_resources": [
