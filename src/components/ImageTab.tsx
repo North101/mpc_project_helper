@@ -1,24 +1,24 @@
-import * as React from "react";
 import { DragDropContext, Droppable, DropResult } from "@hello-pangea/dnd";
+import { analysisImage, CardSettings, CompressedImageData, compressImageData, createAutoSplitProject, Settings, UploadedImage, uploadImage } from "mpc_api";
+import * as React from "react";
 import { CardImage, FileEarmarkPlus, PlusCircle, Upload, XCircle } from "react-bootstrap-icons";
 import Button from "react-bootstrap/esm/Button";
 import Dropdown from "react-bootstrap/esm/Dropdown";
 import ListGroup from "react-bootstrap/esm/ListGroup";
-import { analysisImage, CardSettings, CompressedImageData, compressImageData, createAutoSplitProject, Settings, UploadedImage, uploadImage } from "../api/mpc_api";
 import { Card, CardFaces, CardSide } from "../types/card";
 import { Site, Unit } from "../types/mpc";
 import { Project } from "../types/project";
 import { analyseCard, remove, reorder, replace, setStateAsync } from "../util";
+import { ImageTabSettings, ProjectTabSettings } from "./App";
 import AutofillModal from "./AutofillModal";
+import { FilenameTooltip } from "./AutofillTypeBasic";
 import CardPreviewModal from "./CardPreviewModal";
 import ErrorModal from "./ErrorModal";
 import ImageItem from "./ImageItem";
 import ImageSettingsModal from "./ImageSettingsModal";
 import ProgressModal from "./ProgressModal";
-import SaveProjectModal from "./SaveProjectModal";
-import { ImageTabSettings, ProjectTabSettings } from "./App";
 import ProjectTab from "./ProjectTab";
-import { FilenameTooltip } from "./AutofillTypeBasic";
+import SaveProjectModal from "./SaveProjectModal";
 
 interface AutofillState {
   id: 'autofill';
@@ -444,7 +444,7 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
         <div style={{ flex: '1 1 1px', overflowY: 'scroll', }}>
           <DragDropContext onDragEnd={this.onDragEnd}>
             <Droppable droppableId="droppable">
-              {(provided, snapshot) => (
+              {(provided) => (
                 <ListGroup
                   {...provided.droppableProps}
                   ref={provided.innerRef}
@@ -466,8 +466,8 @@ export default class ImageTab extends React.Component<ImageTabProps, ImageTabSta
           </DragDropContext>
         </div>
         {unit && <div style={{ textAlign: 'right' }}>
-        <FilenameTooltip text={`Card Count: ${cardCount} / ${unit.maxCards}`}>
-            The max amount of cards a project can have is {unit.maxCards}.<br/>
+          <FilenameTooltip text={`Card Count: ${cardCount} / ${unit.maxCards}`}>
+            The max amount of cards a project can have is {unit.maxCards}.<br />
             If you add more than {unit.maxCards} then the project will be automatically split into multiple projects.
           </FilenameTooltip>
         </div>}

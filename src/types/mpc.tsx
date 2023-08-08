@@ -1,8 +1,4 @@
-import cardStockData from "../api/data/card_stock.json";
-import finishData from "../api/data/finish.json";
-import packagingData from "../api/data/packaging.json";
-import printTypeData from "../api/data/print_type.json";
-import unitData from "../api/data/unit.json";
+import mpcData from "mpc_api/data";
 
 declare global {
   interface Array<T> {
@@ -10,7 +6,7 @@ declare global {
   }
 }
 
-Array.prototype.toSorted = function<T>(compareFn?: ((a: T, b: T) => number) | undefined): Array<T> {
+Array.prototype.toSorted = function <T>(compareFn?: ((a: T, b: T) => number) | undefined): Array<T> {
   const copy = [...this];
   copy.sort(compareFn)
   return copy;
@@ -21,7 +17,7 @@ export class Site {
   name: string;
   urls: string[];
 
-  constructor({code, name, urls}: {code: string, name: string, urls: string[]}) {
+  constructor({ code, name, urls }: { code: string, name: string, urls: string[] }) {
     this.code = code;
     this.name = name;
     this.urls = urls;
@@ -29,12 +25,12 @@ export class Site {
 
   get unitList() {
     const siteCode = this.code;
-    return (unitData as unknown as UnitData)[siteCode] ?? [];
+    return mpcData.units[siteCode] ?? [];
   }
 
   get cardStockList() {
     const siteCode = this.code;
-    return (cardStockData as CardStockData)[siteCode] ?? [];
+    return mpcData.cardStocks[siteCode] ?? [];
   }
 
   cardStockListByUnit(unit: Unit) {
@@ -45,7 +41,7 @@ export class Site {
 
   get printTypeList() {
     const siteCode = this.code;
-    return (printTypeData as PrintTypeData)[siteCode] ?? [];
+    return mpcData.printTypes[siteCode] ?? [];
   }
 
   printTypeListByCardStock(unit: Unit, cardStock: CardStock) {
@@ -57,7 +53,7 @@ export class Site {
 
   get finishList() {
     const siteCode = this.code;
-    return (finishData as FinishData)[siteCode] ?? [];
+    return mpcData.finishes[siteCode] ?? [];
   }
 
   finishListByCardStock(unit: Unit, cardStock: CardStock) {
@@ -69,7 +65,7 @@ export class Site {
 
   get packagingList() {
     const siteCode = this.code;
-    return (packagingData as PackagingData)[siteCode] ?? [];
+    return mpcData.packagings[siteCode] ?? [];
   }
 
   packagingListByCardStock(unit: Unit, cardStock: CardStock) {

@@ -1,10 +1,10 @@
+import { CardSettings, Settings } from "mpc_api";
 import * as React from "react";
 import Alert from "react-bootstrap/esm/Alert";
 import Button from "react-bootstrap/esm/Button";
 import FloatingLabel from "react-bootstrap/esm/FloatingLabel";
 import Form from "react-bootstrap/esm/Form";
 import Modal from "react-bootstrap/esm/Modal";
-import { CardSettings, Settings } from "../api/mpc_api";
 import { Card } from "../types/card";
 import { CardStock, Site, Unit } from "../types/mpc";
 
@@ -71,8 +71,8 @@ export default class ImageSettingsModal extends React.Component<ImageSettingsMod
     const { unit, printTypeCode, finishCode, packagingCode } = this.state;
     const cardStock = site.cardStockList.find(it => it.code == event.currentTarget.value);
     const printTypeList = unit && cardStock && site.printTypeListByCardStock(unit, cardStock);
-    const finishList =  unit && cardStock && site.finishListByCardStock(unit, cardStock);
-    const packagingList =  unit && cardStock && site.packagingListByCardStock(unit, cardStock);
+    const finishList = unit && cardStock && site.finishListByCardStock(unit, cardStock);
+    const packagingList = unit && cardStock && site.packagingListByCardStock(unit, cardStock);
     this.setState({
       cardStock: cardStock,
       printTypeCode: printTypeList?.find(it => it.code == printTypeCode)?.code ?? printTypeList?.at(0)?.code,

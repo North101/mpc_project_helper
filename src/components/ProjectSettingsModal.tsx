@@ -1,10 +1,10 @@
+import { Settings, UploadedImage } from "mpc_api";
 import * as React from "react";
 import Alert from "react-bootstrap/esm/Alert";
 import Button from "react-bootstrap/esm/Button";
 import FloatingLabel from "react-bootstrap/esm/FloatingLabel";
 import Form from "react-bootstrap/esm/Form";
 import Modal from "react-bootstrap/esm/Modal";
-import { Settings, UploadedImage } from "../api/mpc_api";
 import { CardStock, Site, Unit } from "../types/mpc";
 
 interface ProjectSettingsModalProps {

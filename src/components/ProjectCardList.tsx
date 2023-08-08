@@ -1,5 +1,5 @@
-import React from "react";
 import { DragDropContext, Droppable, DropResult } from "@hello-pangea/dnd";
+import React from "react";
 import ListGroup from "react-bootstrap/esm/ListGroup";
 import { ParsedProject, ProjectCard } from "../types/project";
 import { remove, reorder, replace } from "../util";
@@ -64,7 +64,7 @@ export default class ProjectCardList extends React.Component<ProjectCardListProp
         <div style={{ flex: '1 1 1px', overflowY: 'scroll', }}>
           <DragDropContext onDragEnd={this.onDragEnd}>
             <Droppable droppableId={project.id}>
-              {(provided, snapshot) => (
+              {(provided) => (
                 <ListGroup
                   {...provided.droppableProps}
                   ref={provided.innerRef}

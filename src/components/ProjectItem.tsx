@@ -1,5 +1,5 @@
-import * as React from "react";
 import { Draggable } from "@hello-pangea/dnd";
+import * as React from "react";
 import { GripVertical, PencilSquare, Trash } from "react-bootstrap-icons";
 import Button from "react-bootstrap/esm/Button";
 import FloatingLabel from "react-bootstrap/esm/FloatingLabel";
@@ -39,7 +39,7 @@ export default class ProjectItem extends React.Component<ProjectItemProps> {
   }
 
   render() {
-    const { site, index, item } = this.props;
+    const { index, item } = this.props;
     return (
       <Draggable draggableId={item.id} index={index}>
         {(provided, snapshot) => (

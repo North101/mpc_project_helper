@@ -1,14 +1,14 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import mpcData from 'mpc_api/data';
 import * as React from "react";
 import Modal from "react-bootstrap/esm/Modal";
 import Tab from "react-bootstrap/esm/Tab";
 import Tabs from "react-bootstrap/esm/Tabs";
-import siteData from '../api/data/site.json';
+import { Site } from '../types/mpc';
 import { ParsedProject } from '../types/project';
 import "./App.css";
 import ImageTab from "./ImageTab";
 import ProjectTab from "./ProjectTab";
-import { Site } from '../types/mpc';
 
 interface AppProps { }
 
@@ -71,7 +71,7 @@ export default class App extends React.Component<AppProps, AppState> {
 
   render() {
     const { show, tab } = this.state;
-    const data = siteData.find(site => site.urls.includes(location.origin));
+    const data = mpcData.sites.find(site => site.urls.includes(location.origin));
     const site = data ? new Site(data) : null;
     return (
       <Modal show={show} fullscreen centered onHide={this.onClose} dialogClassName="my-modal">

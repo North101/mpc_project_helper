@@ -1,4 +1,4 @@
-import { UploadedImage } from "../api/mpc_api";
+import { UploadedImage } from "mpc_api";
 import { Unit } from "./mpc";
 
 export interface ProjectCard extends UploadedImage {

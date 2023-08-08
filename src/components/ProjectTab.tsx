@@ -1,13 +1,15 @@
-import * as React from "react";
 import { DragDropContext, Droppable, DropResult } from "@hello-pangea/dnd";
-import { FileEarmarkPlus, Save, Upload, XCircle, ArrowsCollapse } from "react-bootstrap-icons";
+import { createAutoSplitProject, Settings, UploadedImage } from "mpc_api";
+import * as React from "react";
+import { ArrowsCollapse, FileEarmarkPlus, Save, Upload, XCircle } from "react-bootstrap-icons";
 import Alert from "react-bootstrap/esm/Alert";
 import Button from "react-bootstrap/esm/Button";
 import ListGroup from "react-bootstrap/esm/ListGroup";
-import { createAutoSplitProject, Settings, UploadedImage } from "../api/mpc_api";
 import { Site, Unit } from "../types/mpc";
 import { ParsedProject, Project, ProjectCard } from "../types/project";
 import { remove, reorder, replace, setStateAsync } from "../util";
+import { ImageTabSettings, ProjectTabSettings } from "./App";
+import { FilenameTooltip } from "./AutofillTypeBasic";
 import ErrorModal from "./ErrorModal";
 import LoadingModal from "./LoadingModal";
 import ProjectEditModal from "./ProjectEditModal";
@@ -15,8 +17,6 @@ import ProjectItem from "./ProjectItem";
 import ProjectSettingsModal from "./ProjectSettingsModal";
 import ProjectSuccessModal from "./ProjectSuccessModal";
 import SaveProjectModal from "./SaveProjectModal";
-import { ImageTabSettings, ProjectTabSettings } from "./App";
-import { FilenameTooltip } from "./AutofillTypeBasic";
 
 interface SettingsState {
   id: 'settings';
@@ -353,7 +353,7 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
         <div style={{ flex: '1 1 1px', overflowY: 'scroll' }}>
           <DragDropContext onDragEnd={this.onDragEnd}>
             <Droppable droppableId="droppable">
-              {(provided, snapshot) => (
+              {(provided) => (
                 <ListGroup
                   {...provided.droppableProps}
                   ref={provided.innerRef}
@@ -374,8 +374,8 @@ export default class ProjectTab extends React.Component<ProjectTabProps, Project
           </DragDropContext>
         </div>
         {unit && <div style={{ textAlign: 'right' }}>
-        <FilenameTooltip text={`Card Count: ${cardCount} / ${unit.maxCards}`}>
-            The max amount of cards a project can have is {unit.maxCards}.<br/>
+          <FilenameTooltip text={`Card Count: ${cardCount} / ${unit.maxCards}`}>
+            The max amount of cards a project can have is {unit.maxCards}.<br />
             If you add more than {unit.maxCards} then the project will be automatically split into multiple projects.
           </FilenameTooltip>
         </div>}

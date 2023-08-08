@@ -21,7 +21,7 @@ class AutofillCardItem extends React.Component<AutofillCardItemProps> {
   }
 
   onCountChange = (event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { item, onChange } = this.props;
+    const { item } = this.props;
     this.onChange({
       ...item,
       count: (event.currentTarget as HTMLInputElement).valueAsNumber,
