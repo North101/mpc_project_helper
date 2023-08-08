@@ -71,7 +71,7 @@ export default class App extends React.Component<AppProps, AppState> {
 
   render() {
     const { show, tab } = this.state;
-    const data = mpcData.sites.find(site => site.urls.includes(location.origin));
+    const data = mpcData.sites.find(site => site.urls.includes(location.host));
     const site = data ? new Site(data) : null;
     return (
       <Modal show={show} fullscreen centered onHide={this.onClose} dialogClassName="my-modal">
@@ -103,7 +103,7 @@ export default class App extends React.Component<AppProps, AppState> {
             </Tabs>
           ) : (
             <div>
-              MPC Project Helper is not compatible with {location.origin}
+              MPC Project Helper is not compatible with {location.host}
             </div>
           )}
         </Modal.Body>

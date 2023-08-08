@@ -15,7 +15,7 @@ export default class ProjectLinkGroup extends React.Component<ProjectLinkGroupPr
         <p>Your project(s) were successfully uploaded</p>
         <Alert variant="warning">
           <Alert.Heading>Warning</Alert.Heading>
-          <p>MPC Project Helper is reverse engineered and makes no guaranties that it is bug free or that {location.origin} will not make changes that will break it.</p>
+          <p>MPC Project Helper is reverse engineered and makes no guaranties that it is bug free or that {location.host} will not make changes that will break it.</p>
           <hr />
           <p>Always check the uploaded project and its images before purchasing.</p>
         </Alert>

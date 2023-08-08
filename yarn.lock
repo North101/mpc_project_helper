@@ -2463,7 +2463,7 @@ moment@^2.19.3:
 
 "mpc_api@https://github.com/North101/mpc_api":
   version "1.0.0"
-  resolved "https://github.com/North101/mpc_api#2c315d757a11610aa80502b018100089bf074673"
+  resolved "https://github.com/North101/mpc_api#52510d02295091cc6fddd086363435d67bf07a36"
   dependencies:
     fetch-retry "^5.0.6"
 
