@@ -1,22 +1,23 @@
-import * as React from "react";
-import Button from "react-bootstrap/esm/Button";
-import Modal from "react-bootstrap/esm/Modal";
-import Spinner from "react-bootstrap/esm/Spinner";
+import Button from 'react-bootstrap/esm/Button'
+import Modal from 'react-bootstrap/esm/Modal'
+import Spinner from 'react-bootstrap/esm/Spinner'
 
-export default class LoadingModal extends React.Component<{ onClose: () => void; }> {
-  render() {
-    return (
-      <Modal show centered>
-        <Modal.Header>Uploading...</Modal.Header>
-        <Modal.Body>
-          <div style={{ display: 'flex', justifyContent: 'center', padding: 8 }}>
-            <Spinner animation="border" role="status" />
-          </div>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="danger" onClick={this.props.onClose}>Cancel</Button>
-        </Modal.Footer>
-      </Modal>
-    );
-  }
+interface LoadingModalProps {
+  onClose: () => void
 }
+
+const LoadingModal = ({ onClose }: LoadingModalProps) => (
+  <Modal show centered>
+    <Modal.Header>Uploading...</Modal.Header>
+    <Modal.Body>
+      <div className='d-flex flex-column align-items-center p-4'>
+        <Spinner animation='border' role='status' />
+      </div>
+    </Modal.Body>
+    <Modal.Footer>
+      <Button variant='danger' onClick={onClose}>Cancel</Button>
+    </Modal.Footer>
+  </Modal>
+)
+
+export default LoadingModal

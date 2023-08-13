@@ -1,19 +1,28 @@
-import { UploadedImage } from "mpc_api";
-import { Unit } from "./mpc";
-
+import { UploadedImage } from 'mpc_api'
 export interface ProjectCard extends UploadedImage {
-  id: number;
+  id: string
 }
 
-export interface Project {
-  version: 1;
-  code: string;
-  cards: UploadedImage[];
+export interface ProjectV1 {
+  version: number
+  code: string
+  cards: UploadedImage[]
 }
 
-export interface ParsedProject extends Project {
-  id: string;
-  name: string;
-  unit: Unit;
-  cards: ProjectCard[];
+export interface ProjectV2Part {
+  name: string
+  cards: UploadedImage[]
+}
+
+export interface ProjectV2 {
+  version: number
+  code: string
+  parts: ProjectV2Part[]
+}
+
+export interface ParsedProject {
+  id: string
+  code: string
+  name: string
+  cards: ProjectCard[]
 }

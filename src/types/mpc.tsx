@@ -1,36 +1,36 @@
-import mpcData from "mpc_api/data";
+import mpcData from 'mpc_api/data'
 
 declare global {
   interface Array<T> {
-    toSorted(compareFn?: ((a: T, b: T) => number) | undefined): Array<T>;
+    toSorted(compareFn?: ((a: T, b: T) => number) | undefined): Array<T>
   }
 }
 
 Array.prototype.toSorted = function <T>(compareFn?: ((a: T, b: T) => number) | undefined): Array<T> {
-  const copy = [...this];
+  const copy = [...this]
   copy.sort(compareFn)
-  return copy;
+  return copy
 }
 
 export class Site {
-  code: string;
-  name: string;
-  urls: string[];
+  code: string
+  name: string
+  urls: string[]
 
   constructor({ code, name, urls }: { code: string, name: string, urls: string[] }) {
-    this.code = code;
-    this.name = name;
-    this.urls = urls;
+    this.code = code
+    this.name = name
+    this.urls = urls
   }
 
   get unitList() {
-    const siteCode = this.code;
-    return mpcData.units[siteCode] ?? [];
+    const siteCode = this.code
+    return mpcData.units[siteCode] ?? []
   }
 
   get cardStockList() {
-    const siteCode = this.code;
-    return mpcData.cardStocks[siteCode] ?? [];
+    const siteCode = this.code
+    return mpcData.cardStocks[siteCode] ?? []
   }
 
   cardStockListByUnit(unit: Unit) {
@@ -40,36 +40,36 @@ export class Site {
   }
 
   get printTypeList() {
-    const siteCode = this.code;
-    return mpcData.printTypes[siteCode] ?? [];
+    const siteCode = this.code
+    return mpcData.printTypes[siteCode] ?? []
   }
 
   printTypeListByCardStock(unit: Unit, cardStock: CardStock) {
-    const c = unit.options.find(it => it.cardStockCode == cardStock.code);
+    const c = unit.options.find(it => it.cardStockCode == cardStock.code)
     return this.printTypeList
       .filter(it => c?.printTypeCodes.includes(it.code))
       .toSorted((a, b) => c!.printTypeCodes.indexOf(a.code) - c!.printTypeCodes.indexOf(b.code))
   }
 
   get finishList() {
-    const siteCode = this.code;
-    return mpcData.finishes[siteCode] ?? [];
+    const siteCode = this.code
+    return mpcData.finishes[siteCode] ?? []
   }
 
   finishListByCardStock(unit: Unit, cardStock: CardStock) {
-    const c = unit.options.find(it => it.cardStockCode == cardStock.code);
+    const c = unit.options.find(it => it.cardStockCode == cardStock.code)
     return this.finishList
       .filter(it => c?.finishCodes.includes(it.code))
       .toSorted((a, b) => c!.finishCodes.indexOf(a.code) - c!.finishCodes.indexOf(b.code))
   }
 
   get packagingList() {
-    const siteCode = this.code;
-    return mpcData.packagings[siteCode] ?? [];
+    const siteCode = this.code
+    return mpcData.packagings[siteCode] ?? []
   }
 
   packagingListByCardStock(unit: Unit, cardStock: CardStock) {
-    const c = unit.options.find(it => it.cardStockCode == cardStock.code);
+    const c = unit.options.find(it => it.cardStockCode == cardStock.code)
     return this.packagingList
       .filter(it => c?.packagingCodes.includes(it.code))
       .toSorted((a, b) => c!.packagingCodes.indexOf(a.code) - c!.packagingCodes.indexOf(b.code))

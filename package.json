@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@hello-pangea/dnd": "^16.3.0",
+    "ajv": "^8.12.0",
     "bootstrap": "^5.3.1",
     "fetch-retry": "^5.0.6",
     "mpc_api": "https://github.com/North101/mpc_api",
@@ -22,6 +23,7 @@
     "@types/chrome": "^0.0.243",
     "@types/react": "^18.2.19",
     "@types/react-dom": "^18.0.9",
+    "@types/uuid": "^9.0.2",
     "@types/webextension-polyfill": "^0.10.0",
     "@types/wicg-file-system-access": "^2020.9.6",
     "@vitejs/plugin-react-swc": "^3.2.0",

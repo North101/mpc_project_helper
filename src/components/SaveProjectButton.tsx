@@ -1,39 +1,46 @@
-import React from "react";
-import Button from "react-bootstrap/esm/Button";
-import { Project } from "../types/project";
+import Button from 'react-bootstrap/esm/Button'
+import { ParsedProject, ProjectV2 } from '../types/project'
 
 interface SaveProjectButtonProps {
-  project: Project;
+  projects: ParsedProject[]
 }
 
-export default class SaveProjectButton extends React.Component<SaveProjectButtonProps> {
-  onSave = async () => {
+const SaveProjectButton = ({ projects }: SaveProjectButtonProps) => {
+  const onSave = async () => {
+    const download: ProjectV2 = {
+      version: 2,
+      code: projects[0].code,
+      parts: projects.map(e => ({
+        name: e.name,
+        cards: e.cards,
+      })),
+    }
+
     const handle = await window.showSaveFilePicker({
       suggestedName: 'project.json',
       types: [
         {
-          description: "Project file",
+          description: 'Project file',
           accept: {
-            "application/json": [".json"],
+            'application/json': ['.json'],
           },
         },
       ],
-    });
-    const writable = await handle.createWritable();
-
-    await writable.write(JSON.stringify(this.props.project));
-    await writable.close();
+    })
+    const writable = await handle.createWritable()
+    await writable.write(JSON.stringify(download))
+    await writable.close()
   }
 
-  render() {
-    return (
-      <Button
-        style={{ width: '80%', margin: '0 auto', }}
-        variant="success"
-        onClick={this.onSave}
-      >
-        Save as Project
-      </Button>
-    )
-  }
+  return (
+    <Button
+      className='w-75'
+      variant='success'
+      onClick={onSave}
+    >
+      Save as Project
+    </Button>
+  )
 }
+
+export default SaveProjectButton

@@ -1,92 +1,57 @@
-import * as React from "react";
-import { PencilSquare, Save } from "react-bootstrap-icons";
-import Button from "react-bootstrap/esm/Button";
-import Modal from "react-bootstrap/esm/Modal";
-import { ParsedProject } from "../types/project";
-import ProjectCardList from "./ProjectCardList";
-import SaveProjectModal from "./SaveProjectModal";
+import { useState } from 'react'
+import { PencilSquare, Save } from 'react-bootstrap-icons'
+import Button from 'react-bootstrap/esm/Button'
+import Modal from 'react-bootstrap/esm/Modal'
+import Stack from 'react-bootstrap/esm/Stack'
+import { ParsedProject } from '../types/project'
+import ProjectCardList from './ProjectCardList'
+import SuccessModal from './SuccessModal'
+import { useModal } from './util'
 
 interface ProjectEditModalProps {
-  index: number;
-  item: ParsedProject;
-  onSave: (index: number, item: ParsedProject) => void;
-  onClose: () => void;
+  project: ParsedProject
+  index: number
+  onSave: (project: ParsedProject, index: number) => void
+  onClose: () => void
 }
 
-interface ProjectEditModalState {
-  item: ParsedProject;
-  state: 'export' | null;
+const ProjectEditModal = ({ project: initialProject, index, onClose, onSave }: ProjectEditModalProps) => {
+  const [project, setProject] = useState(initialProject)
+  const [modal, setModal, clearModal] = useModal()
+
+  const onExport = () => {
+    setModal(<SuccessModal
+      projects={[project]}
+      onClose={clearModal}
+    />)
+  }
+
+  const onChange = (project: ParsedProject) => setProject(project)
+
+  return (
+    <Modal show fullscreen centered onHide={onClose} className='mpc-project-helper-dialog'>
+      <Modal.Header closeButton className='row-gap-4'>
+        <PencilSquare /> {project.name}
+      </Modal.Header>
+      <Modal.Body className='d-flex flex-column row-gap-2'>
+        <Stack direction='horizontal' gap={1}>
+          <div className='flex-fill' />
+          <Button variant='outline-primary' onClick={onExport}>
+            <Save /> Export
+          </Button>
+        </Stack>
+        <ProjectCardList
+          project={project}
+          onChange={onChange}
+        />
+        {modal}
+      </Modal.Body>
+      <Modal.Footer>
+        <Button variant='danger' onClick={onClose}>Cancel</Button>
+        <Button variant='success' onClick={() => onSave(project, index)}>Save</Button>
+      </Modal.Footer>
+    </Modal>
+  )
 }
 
-export default class ProjectEditModal extends React.Component<ProjectEditModalProps, ProjectEditModalState> {
-  constructor(props: ProjectEditModalProps) {
-    super(props);
-
-    this.state = {
-      item: props.item,
-      state: null,
-    }
-  }
-
-  onChange = (item: ParsedProject) => {
-    this.setState({
-      item,
-    });
-  }
-
-  onSave = () => {
-    const { index, onSave } = this.props;
-    const { item } = this.state;
-
-    onSave(index, item);
-  }
-
-  onExport = () => {
-    this.setState({
-      state: 'export',
-    });
-  }
-
-  onStateClear = () => {
-    this.setState({
-      state: null,
-    });
-  }
-
-  onClose = () => {
-    this.props.onClose();
-  }
-
-  render() {
-    const { item, state } = this.state;
-    return (
-      <Modal show centered onHide={this.onClose} scrollable dialogClassName="my-modal">
-        <Modal.Header closeButton style={{ alignItems: 'center', gap: 4 }}>
-          <PencilSquare /> {item.name}
-        </Modal.Header>
-        <Modal.Body>
-          <div style={{ display: 'flex', gap: 4 }}>
-            <div style={{ flex: 1 }} />
-            <Button variant="outline-primary" onClick={this.onExport}>
-              <Save /> Export
-            </Button>
-          </div>
-          <ProjectCardList
-            project={item}
-            onChange={this.onChange}
-          />
-          {state === 'export' && <SaveProjectModal
-            name={item.name}
-            filename={item.name}
-            project={item}
-            onClose={this.onStateClear}
-          />}
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="danger" onClick={this.onClose}>Cancel</Button>
-          <Button variant="success" onClick={this.onSave}>Save</Button>
-        </Modal.Footer>
-      </Modal>
-    );
-  }
-}
+export default ProjectEditModal

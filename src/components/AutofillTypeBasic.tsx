@@ -1,13 +1,14 @@
-import React from "react";
-import Accordion from "react-bootstrap/esm/Accordion";
-import FloatingLabel from "react-bootstrap/esm/FloatingLabel";
-import Form from "react-bootstrap/esm/Form";
-import OverlayTrigger from "react-bootstrap/esm/OverlayTrigger";
-import Tooltip from "react-bootstrap/esm/Tooltip";
-import { Card, CardFace, CardFaces, CardSide } from "../types/card";
-import { AutofillNone, AutofillNoneProps, AutofillType } from "./AutofillTypeNone";
+import React, { useEffect, useState } from 'react'
+import Accordion from 'react-bootstrap/esm/Accordion'
+import FloatingLabel from 'react-bootstrap/esm/FloatingLabel'
+import Form from 'react-bootstrap/esm/Form'
+import OverlayTrigger from 'react-bootstrap/esm/OverlayTrigger'
+import Tooltip from 'react-bootstrap/esm/Tooltip'
+import { v4 as uuid } from 'uuid'
+import { Card, CardFace, CardFaces, CardSide } from '../types/card'
+import { AutofillNoneProps, AutofillType } from './AutofillTypeNone'
 
-const sideMap: { [key: string]: CardFace; } = {
+const sideMap: { [key: string]: CardFace } = {
   '1': 'front',
   'front': 'front',
   'a': 'front',
@@ -17,18 +18,18 @@ const sideMap: { [key: string]: CardFace; } = {
 }
 
 const sideData: {
-  id: CardFace;
-  name: string;
+  id: CardFace
+  name: string
 }[] = [
-  {
-    id: 'front',
-    name: 'Front',
-  },
-  {
-    id: 'back',
-    name: 'Back',
-  },
-];
+    {
+      id: 'front',
+      name: 'Front',
+    },
+    {
+      id: 'back',
+      name: 'Back',
+    },
+  ]
 
 export const FilenameTooltip = (props: any) => {
   return (
@@ -36,258 +37,218 @@ export const FilenameTooltip = (props: any) => {
       placement='auto'
       overlay={<Tooltip>{props.children}</Tooltip>}
     >
-      <span className="filename-part">{props.text}</span>
+      <span className='filename-part'>{props.text}</span>
     </OverlayTrigger>
   )
 }
 
-interface AutofillBasicState {
-  defaultSide?: CardFace;
-  defaultFront?: CardSide;
-  defaultBack?: CardSide;
-}
+export const AutofillBasic = ({ cardSides, onChange }: AutofillNoneProps) => {
+  const cardMatcher = /^((.+?(?:(?:\s|\-|_|\.)x(\d+))?)(?:(?:(?:\s|\-|_|\.)(front|back|[AaBb12]))|((?<=\d)[AaBb])))?\.(png|jpg)$/
+  const defaultFrontMatcher = /^front.(png|jpg)$/
+  const defaultBackMatcher = /^back.(png|jpg)$/
 
-export class AutofillBasic extends AutofillNone<AutofillBasicState> {
-  cardMatcher = /^((.+?(?:(?:\s|\-|_|\.)x(\d+))?)(?:(?:(?:\s|\-|_|\.)(front|back|[AaBb12]))|((?<=\d)[AaBb])))?\.(png|jpg)$/;
-  defaultFrontMatcher = /^front.(png|jpg)$/
-  defaultBackMatcher = /^back.(png|jpg)$/
+  const [defaultSide, setDefaultSide] = useState<CardFace>()
+  const [defaultFront, setDefaultFront] = useState<CardSide | undefined>(() => {
+    return cardSides.find(it => it.file.name.match(defaultFrontMatcher))
+  })
+  const [defaultBack, setDefaultBack] = useState<CardSide | undefined>(() => {
+    return cardSides.find(it => it.file.name.match(defaultBackMatcher))
+  })
 
-  constructor(props: AutofillNoneProps) {
-    super(props);
-
-    const { cardSides } = props;
-    this.state = {
-      defaultSide: undefined,
-      defaultFront: cardSides.find(it => it.file.name.match(this.defaultFrontMatcher)),
-      defaultBack: cardSides.find(it => it.file.name.match(this.defaultBackMatcher)),
-    };
+  const onDefaultSideChange = (event: React.FormEvent<HTMLSelectElement>) => {
+    setDefaultSide(sideData.find(it => it.id === event.currentTarget.value)?.id)
   }
 
-  onChange = () => {
-    const { onChange } = this.props;
-    onChange(this.process());
+  const onDefaultFrontChange = (event: React.FormEvent<HTMLSelectElement>) => {
+    setDefaultFront(cardSides.find(it => it.id === event.currentTarget.value))
   }
 
-  onDefaultSideChange = (event: React.FormEvent<HTMLSelectElement>) => {
-    const defaultSide = sideData.find(it => it.id === event.currentTarget.value)?.id;
-
-    this.setState({
-      defaultSide,
-    }, () => this.onChange());
+  const onDefaultBackChange = (event: React.FormEvent<HTMLSelectElement>) => {
+    setDefaultBack(cardSides.find(it => it.id === event.currentTarget.value))
   }
 
-  onDefaultFrontChange = (event: React.FormEvent<HTMLSelectElement>) => {
-    const { cardSides } = this.props;
-    const defaultFront = cardSides.find(it => `${it.id}` === event.currentTarget.value);
-
-    this.setState({
-      defaultFront,
-    }, () => this.onChange());
-  }
-
-  onDefaultBackChange = (event: React.FormEvent<HTMLSelectElement>) => {
-    const { cardSides } = this.props;
-    const defaultBack = cardSides.find(it => `${it.id}` === event.currentTarget.value);
-
-    this.setState({
-      defaultBack,
-    }, () => this.onChange());
-  }
-
-  componentDidMount() {
-    this.onChange();
-  }
-
-  process = () => {
-    const { cardSides } = this.props;
-    const { defaultSide, defaultFront, defaultBack } = this.state;
-
+  useEffect(() => {
     const groups: {
-      [key: string]: Card;
-    } = {};
+      [key: string]: Card
+    } = {}
     for (const cardSide of cardSides) {
-      const match = cardSide.file.name.match(this.cardMatcher);
-      if (!match) continue;
+      const match = cardSide.file.name.match(cardMatcher)
+      if (!match) continue
 
-      const name = match[1];
-      if (CardFaces.includes(name as CardFace)) continue;
+      const name = match[1]
+      if (CardFaces.includes(name as CardFace)) continue
 
-      const groupName = match[2];
-      const count = parseInt(match[3]) || 1;
-      const side = sideMap[(match[4] ?? match[5])?.toLowerCase()] ?? defaultSide;
-      if (!side) continue;
+      const groupName = match[2]
+      const count = parseInt(match[3]) || 1
+      const side = sideMap[(match[4] ?? match[5])?.toLowerCase()] ?? defaultSide
+      if (!side) continue
 
       const card = groups[groupName] ?? {
-        id: AutofillNone.cardId++,
+        id: uuid(),
         front: defaultFront,
         back: defaultBack,
         count,
-      };
-      if (side === 'front') {
-        card.front = cardSide;
-      } else if (side === 'back') {
-        card.back = cardSide;
-      } else {
-        continue;
       }
-      groups[groupName] = card;
+      if (side === 'front') {
+        card.front = cardSide
+      } else if (side === 'back') {
+        card.back = cardSide
+      } else {
+        continue
+      }
+      groups[groupName] = card
     }
 
-    return Object.values(groups);
-  }
+    onChange(Object.values(groups))
+  }, [defaultSide, defaultFront, defaultBack])
 
-  render() {
-    const { cardSides } = this.props;
-    const { defaultSide, defaultFront, defaultBack } = this.state;
-
-    return (
-      <div>
-        <Accordion>
-          <Accordion.Item eventKey="0">
-            <Accordion.Header style={{ padding: 0 }}>Description</Accordion.Header>
-            <Accordion.Body>
-              <p>A basic autofill that will match front and back images and (optionally) a count</p>
-              <p>
-                <span>An image with the filename </span>
-                <span style={{ color: 'blue', textDecoration: 'underline' }}>
-                  <FilenameTooltip text={'<side>'}>
-                    <span style={{ fontWeight: 'bold' }}>Required</span><br />
-                    side: front, back
-                  </FilenameTooltip>
-                  <FilenameTooltip text={'.<ext>'}>
-                    <span style={{ fontWeight: 'bold' }}>Required</span><br />
-                    ext: .png, .jpg
-                  </FilenameTooltip>
-                </span>
-                <span> will be automatically set as the default front or back image</span>
-              </p>
-              <p>
-                <span>Filename structure (hover for more info): </span>
-                <span style={{ color: 'blue', textDecoration: 'underline' }}>
-                  <FilenameTooltip text={'<anything>'}>
-                    Literally anything
-                  </FilenameTooltip>
-                  <FilenameTooltip text={'-x<count>'}>
-                    <span style={{ fontWeight: 'bold' }}>Optional</span><br />
-                    seperator: -, _, ., {'<space>'}<br />
-                    count: number. the number of times you want this duplicated in the project
-                  </FilenameTooltip>
-                  <FilenameTooltip text={'-<side>'}>
-                    <span style={{ fontWeight: 'bold' }}>Optional (default: front)</span><br />
-                    seperator: -, _, ., {'<space>'}<br />
-                    side:<br />
-                    <ul>
-                      <li>front, 1, a: will be assigned as the front image</li>
-                      <li>back, 2, b: will be assigned as the back image</li>
-                    </ul>
-                  </FilenameTooltip>
-                  <FilenameTooltip text={'.<ext>'}>
-                    <span style={{ fontWeight: 'bold' }}>Required</span><br />
-                    ext: .png, .jpg
-                  </FilenameTooltip>
-                </span>
-              </p>
-              <div>
-                e.g.<br />
-                <ul>
-                  <li>
-                    <span style={{ color: 'blue', textDecoration: 'underline' }}>
-                      01-card
-                      <FilenameTooltip text={'-x2'}>
-                        <span style={{ fontWeight: 'bold' }}>{'-x<count>'}</span><br />
-                        Sets the count to 2
-                      </FilenameTooltip>
-                      <FilenameTooltip text={'-front'}>
-                        <span style={{ fontWeight: 'bold' }}>{'-<side>'}</span><br />
-                        This is the front image for 01-card-x2
-                      </FilenameTooltip>
-                      <FilenameTooltip text={'.jpg'}>
-                        <span style={{ fontWeight: 'bold' }}>{'.<ext>'}</span><br />
-                        The file type
-                      </FilenameTooltip>
-                    </span>
-                  </li>
-                  <li>
-                    <span style={{ color: 'blue', textDecoration: 'underline' }}>
-                      01-card
-                      <FilenameTooltip text={'-x2'}>
-                        <span style={{ fontWeight: 'bold' }}>{'-<count>'}</span><br />
-                        Sets the count to 2
-                      </FilenameTooltip>
-                      <FilenameTooltip text={'-back'}>
-                        <span style={{ fontWeight: 'bold' }}>{'-<side>'}</span><br />
-                        This is the back image for 01-card-x2
-                      </FilenameTooltip>
-                      <FilenameTooltip text={'.png'}>
-                        <span style={{ fontWeight: 'bold' }}>{'.<ext>'}</span><br />
-                        The file type
-                      </FilenameTooltip>
-                    </span>
-                  </li>
-                  <li>
-                    <span style={{ color: 'blue', textDecoration: 'underline' }}>
-                      my-filename
-                      <FilenameTooltip text={'-front'}>
-                        <span style={{ fontWeight: 'bold' }}>{'-<side>'}</span><br />
-                        This is the front image for my-filename
-                      </FilenameTooltip>
-                      <FilenameTooltip text={'.png'}>
-                        <span style={{ fontWeight: 'bold' }}>{'.<ext>'}</span><br />
-                        The file type
-                      </FilenameTooltip>
-                    </span>
-                  </li>
-                  <li>
-                    <span style={{ color: 'blue', textDecoration: 'underline' }}>
-                      my-filename
-                      <FilenameTooltip text={'-back'}>
-                        <span style={{ fontWeight: 'bold' }}>{'-<side>'}</span><br />
-                        This is the back image for my-filename
-                      </FilenameTooltip>
-                      <FilenameTooltip text={'.png'}>
-                        <span style={{ fontWeight: 'bold' }}>{'.{ext>'}</span><br />
-                        The file type
-                      </FilenameTooltip>
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </Accordion.Body>
-          </Accordion.Item>
-        </Accordion>
-        <div style={{ display: 'flex', gap: 4, marginTop: 8, flex: '1 1 1px', overflowY: 'scroll' }}>
-          <FloatingLabel label="Default Side" style={{ flex: 1 }}>
-            <Form.Select value={defaultSide} onChange={this.onDefaultSideChange}>
-              <option>None</option>
-              {sideData.map(it => (
-                <option key={it.id} value={it.id}>{it.name}</option>
-              ))}
-            </Form.Select>
-          </FloatingLabel>
-          <FloatingLabel label="Default Front" style={{ flex: 1 }}>
-            <Form.Select value={defaultFront?.id} onChange={this.onDefaultFrontChange}>
-              <option>None</option>
-              {cardSides.map(it => (
-                <option key={it.id} value={it.id}>{it.file.name}</option>
-              ))}
-            </Form.Select>
-          </FloatingLabel>
-          <FloatingLabel label="Default Back" style={{ flex: 1 }}>
-            <Form.Select value={defaultBack?.id} onChange={this.onDefaultBackChange}>
-              <option>None</option>
-              {cardSides.map(it => (
-                <option key={it.id} value={it.id}>{it.file.name}</option>
-              ))}
-            </Form.Select>
-          </FloatingLabel>
-        </div>
-      </div >
-    );
-  }
+  return (
+    <div className='d-flex flex-column gap-2'>
+      <Accordion>
+        <Accordion.Item eventKey='0'>
+          <Accordion.Header className='p-0'>Description</Accordion.Header>
+          <Accordion.Body>
+            <p>A basic autofill that will match front and back images and (optionally) a count</p>
+            <p>
+              <span>An image with the filename </span>
+              <span style={{ color: 'blue'}} className='text-decoration-underline'>
+                <FilenameTooltip text={'<side>'}>
+                  <span className='fw-bold'>Required</span><br />
+                  side: front, back
+                </FilenameTooltip>
+                <FilenameTooltip text={'.<ext>'}>
+                  <span className='fw-bold'>Required</span><br />
+                  ext: .png, .jpg
+                </FilenameTooltip>
+              </span>
+              <span> will be automatically set as the default front or back image</span>
+            </p>
+            <p>
+              <span>Filename structure (hover for more info): </span>
+              <span style={{ color: 'blue'}} className='text-decoration-underline'>
+                <FilenameTooltip text={'<anything>'}>
+                  Literally anything
+                </FilenameTooltip>
+                <FilenameTooltip text={'-x<count>'}>
+                  <span className='fw-bold'>Optional</span><br />
+                  seperator: -, _, ., {'<space>'}<br />
+                  count: number. the number of times you want this duplicated in the project
+                </FilenameTooltip>
+                <FilenameTooltip text={'-<side>'}>
+                  <span className='fw-bold'>Optional (default: front)</span><br />
+                  seperator: -, _, ., {'<space>'}<br />
+                  side:<br />
+                  <ul>
+                    <li>front, 1, a: will be assigned as the front image</li>
+                    <li>back, 2, b: will be assigned as the back image</li>
+                  </ul>
+                </FilenameTooltip>
+                <FilenameTooltip text={'.<ext>'}>
+                  <span className='fw-bold'>Required</span><br />
+                  ext: .png, .jpg
+                </FilenameTooltip>
+              </span>
+            </p>
+            <div>
+              e.g.<br />
+              <ul>
+                <li>
+                  <span style={{ color: 'blue'}} className='text-decoration-underline'>
+                    01-card
+                    <FilenameTooltip text={'-x2'}>
+                      <span className='fw-bold'>{'-x<count>'}</span><br />
+                      Sets the count to 2
+                    </FilenameTooltip>
+                    <FilenameTooltip text={'-front'}>
+                      <span className='fw-bold'>{'-<side>'}</span><br />
+                      This is the front image for 01-card-x2
+                    </FilenameTooltip>
+                    <FilenameTooltip text={'.jpg'}>
+                      <span className='fw-bold'>{'.<ext>'}</span><br />
+                      The file type
+                    </FilenameTooltip>
+                  </span>
+                </li>
+                <li>
+                  <span style={{ color: 'blue'}} className='text-decoration-underline'>
+                    01-card
+                    <FilenameTooltip text={'-x2'}>
+                      <span className='fw-bold'>{'-<count>'}</span><br />
+                      Sets the count to 2
+                    </FilenameTooltip>
+                    <FilenameTooltip text={'-back'}>
+                      <span className='fw-bold'>{'-<side>'}</span><br />
+                      This is the back image for 01-card-x2
+                    </FilenameTooltip>
+                    <FilenameTooltip text={'.png'}>
+                      <span className='fw-bold'>{'.<ext>'}</span><br />
+                      The file type
+                    </FilenameTooltip>
+                  </span>
+                </li>
+                <li>
+                  <span style={{ color: 'blue'}} className='text-decoration-underline'>
+                    my-filename
+                    <FilenameTooltip text={'-front'}>
+                      <span className='fw-bold'>{'-<side>'}</span><br />
+                      This is the front image for my-filename
+                    </FilenameTooltip>
+                    <FilenameTooltip text={'.png'}>
+                      <span className='fw-bold'>{'.<ext>'}</span><br />
+                      The file type
+                    </FilenameTooltip>
+                  </span>
+                </li>
+                <li>
+                  <span style={{ color: 'blue'}} className='text-decoration-underline'>
+                    my-filename
+                    <FilenameTooltip text={'-back'}>
+                      <span className='fw-bold'>{'-<side>'}</span><br />
+                      This is the back image for my-filename
+                    </FilenameTooltip>
+                    <FilenameTooltip text={'.png'}>
+                      <span className='fw-bold'>{'.{ext>'}</span><br />
+                      The file type
+                    </FilenameTooltip>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </Accordion.Body>
+        </Accordion.Item>
+      </Accordion>
+      <div className='d-flex gap-2'>
+        <FloatingLabel label='Default Side' className='flex-fill'>
+          <Form.Select value={defaultSide} onChange={onDefaultSideChange}>
+            <option>None</option>
+            {sideData.map(it => (
+              <option key={it.id} value={it.id}>{it.name}</option>
+            ))}
+          </Form.Select>
+        </FloatingLabel>
+        <FloatingLabel label='Default Front' className='flex-fill'>
+          <Form.Select value={defaultFront?.id} onChange={onDefaultFrontChange}>
+            <option>None</option>
+            {cardSides.map(it => (
+              <option key={it.id} value={it.id}>{it.file.name}</option>
+            ))}
+          </Form.Select>
+        </FloatingLabel>
+        <FloatingLabel label='Default Back' className='flex-fill'>
+          <Form.Select value={defaultBack?.id} onChange={onDefaultBackChange}>
+            <option>None</option>
+            {cardSides.map(it => (
+              <option key={it.id} value={it.id}>{it.file.name}</option>
+            ))}
+          </Form.Select>
+        </FloatingLabel>
+      </div>
+    </div >
+  )
 }
 
 const autofillTypeBasic: AutofillType = {
   id: 'basic',
   name: 'Basic',
 }
-export default autofillTypeBasic;
+export default autofillTypeBasic

@@ -1,47 +1,19 @@
-.my-modal {
+.mpc-project-helper-dialog {
+  margin: 5vh 5vw !important;
+}
+
+.mpc-project-helper-dialog .modal-dialog {
   width: 90vw !important;
   max-width: 90vw !important;
   height: 90vh !important;
   max-height: 90vh !important;
 }
 
-.button-group {
-  gap: 4px;
-}
-
-hr.solid {
-  border-top: 1px solid #bbb;
-  margin-bottom: 0;
-}
-
-#project-input, #image-input {
-  display: none;
-}
-
-.list-group-numbered>li::before {
-  width: 40px;
-  text-align: end;
-}
-
-.filename-part:hover {
-  background: lightgrey;
-}
-
-.tooltip-inner {
-  max-width: unset !important;
-  text-align: left !important;
-}
-
-.modal-body {
-  overflow: hidden !important;
-}
-
-.modal-content, .modal-body, .tab-content, .tab-pane.active {
+.mpc-project-helper-dialog .modal-dialog .tab-content {
+  height: 0;
   flex: 1;
-  display: flex !important;
-  flex-direction: column;
 }
 
-.accordion-button {
-  padding: 0.75em;
+.mpc-project-helper-dialog .modal-dialog .tab-pane {
+  height: 100%;
 }
