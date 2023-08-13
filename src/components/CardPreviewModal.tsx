@@ -40,7 +40,7 @@ const CardPreviewModal = ({ site, unit: initialUnit, cards, onClose }: CardPrevi
             </optgroup>
           </Form.Select>
         </FloatingLabel>
-        {unit && <div className='d-flex flex-fill flex-wrap gap-4 overflow-scroll'>
+        {unit && <div className='d-flex flex-fill flex-wrap gap-2 overflow-scroll'>
           {cards.flatMap(e => Array<Card>(e.count).fill(e)).map((it, index) => <CardPreview
             key={index}
             height={unit.height}

@@ -25,6 +25,8 @@ const ProjectTab = ({ site, projects: initialProjects }: ProjectTabProps) => {
   }, 0)
 
   useEffect(() => {
+    if (!initialProjects) return
+
     setProjects(initialProjects ?? [])
   }, [initialProjects])
 

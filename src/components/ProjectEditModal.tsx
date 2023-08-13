@@ -30,7 +30,7 @@ const ProjectEditModal = ({ project: initialProject, index, onClose, onSave }: P
 
   return (
     <Modal show fullscreen centered onHide={onClose} className='mpc-project-helper-dialog'>
-      <Modal.Header closeButton className='row-gap-4'>
+      <Modal.Header closeButton className='row-gap-2'>
         <PencilSquare /> {project.name}
       </Modal.Header>
       <Modal.Body className='d-flex flex-column row-gap-2'>
