@@ -5,7 +5,7 @@ const conditions = chrome.runtime.getManifest().content_scripts?.flatMap((e) => 
 
   return e.matches.map(e => new chrome.declarativeContent.PageStateMatcher({
     pageUrl: { urlMatches: e },
-  })) ?? []
+  }))
 }) ?? []
 
 chrome.runtime.onInstalled.addListener(() => {
@@ -23,12 +23,4 @@ chrome.action.onClicked.addListener(tab => {
   chrome.tabs.sendMessage(tab.id!, {
     message: 'show',
   })
-})
-
-chrome.runtime.onMessage.addListener(request => {
-  if (request.message === 'open') {
-    chrome.tabs.create({
-      url: request.url,
-    })
-  }
 })
