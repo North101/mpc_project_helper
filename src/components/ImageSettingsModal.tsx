@@ -13,16 +13,16 @@ interface ImageSettingsModalProps {
   site: Site
   unit?: Unit
   cards: Card[]
-  onCardUpload: (settings: CardSettings, cards: Card[]) => void
+  onCardUpload: (name: string, settings: CardSettings, cards: Card[]) => void
   onProjectUpload: (settings: Settings, cards: Card[]) => void
   onClose: () => void
 }
 
 const ImageSettingsModal = ({ site, unit: initialUnit, cards, onCardUpload, onProjectUpload, onClose }: ImageSettingsModalProps) => {
   const [unit, setUnit] = useState<Unit | undefined>(() => initialUnit ?? site.unitList[0])
-  const [uploadProject, setUploadProject] = useState(false)
-  const [name, setName] = useState<string | undefined>()
+  const [name, setName] = useState<string>('')
 
+  const [uploadProject, setUploadProject] = useState(false)
   const [cardStock, setCardStock] = useState<CardStock | undefined>(() => {
     return initialUnit && site.cardStockListByUnit(initialUnit)[0]
   })
@@ -143,7 +143,7 @@ const ImageSettingsModal = ({ site, unit: initialUnit, cards, onCardUpload, onPr
     <Modal show centered>
       <Modal.Header>Image Upload</Modal.Header>
       <Modal.Body>
-        <div className='d-flex flex-column gap-4'>
+        <div className='d-flex flex-column gap-2'>
           <FloatingLabel controlId='floatingSelect1' label='Product'>
             <Form.Select aria-label='Product' value={unit?.code} onChange={onUnitChange}>
               <optgroup label='Recomended'>
@@ -158,6 +158,10 @@ const ImageSettingsModal = ({ site, unit: initialUnit, cards, onCardUpload, onPr
               </optgroup>
             </Form.Select>
           </FloatingLabel>
+          <FloatingLabel controlId='floatingText' label='Project Name'>
+            <Form.Control aria-label='ProjectName' value={name} onChange={onNameChange} />
+          </FloatingLabel>
+
           <Form.Check
             type='checkbox'
             name='upload'
@@ -172,9 +176,6 @@ const ImageSettingsModal = ({ site, unit: initialUnit, cards, onCardUpload, onPr
                   As your project has more than {unit.maxCards} cards, it will automatically be split into multiple projects.
                 </Alert>
               )}
-              <FloatingLabel controlId='floatingText' label='Project Name'>
-                <Form.Control aria-label='ProjectName' value={name ?? ''} onChange={onNameChange} />
-              </FloatingLabel>
               <FloatingLabel controlId='floatingSelect2' label='Card Stock'>
                 <Form.Select aria-label='Card Stock' value={cardStock?.code} onChange={onCardStockChange}>
                   {unit && site.cardStockListByUnit(unit)
@@ -212,7 +213,7 @@ const ImageSettingsModal = ({ site, unit: initialUnit, cards, onCardUpload, onPr
         {!uploadProject && (
           <Button
             variant='success'
-            onClick={() => onCardUpload(cardSettings!, cards)}
+            onClick={() => onCardUpload(name, cardSettings!, cards)}
             disabled={!cardSettings}
           >
             Upload

@@ -155,14 +155,14 @@ const UploadButton = ({ site, cards, setModal, clearModal, setTab }: UploadButto
     return data
   }
 
-  const onCardUpload = async (settings: CardSettings, cards: Card[]) => {
+  const onCardUpload = async (name: string, settings: CardSettings, cards: Card[]) => {
     try {
       const data = await uploadCards(settings, cards)
       if (data === undefined) return
 
       const projects = [{
         id: uuid(),
-        name: '',
+        name: name,
         code: settings.unit,
         unit: site.unitList.find(e => e.code == settings.unit)!,
         cards: data.map(card => ({
