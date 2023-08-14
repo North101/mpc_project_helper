@@ -1,0 +1,205 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for Root",
+  "oneOf": [
+    {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "number"
+        },
+        "code": {
+          "type": "string"
+        },
+        "cards": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "count": {
+                "type": "number"
+              },
+              "front": {
+                "type": "object",
+                "properties": {
+                  "Name": {
+                    "type": "string"
+                  },
+                  "ID": {
+                    "type": "string"
+                  },
+                  "SourceID": {
+                    "type": "string"
+                  },
+                  "Exp": {
+                    "type": "string"
+                  },
+                  "Width": {
+                    "type": "number"
+                  },
+                  "Height": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "Name",
+                  "ID",
+                  "SourceID",
+                  "Exp",
+                  "Width",
+                  "Height"
+                ]
+              },
+              "back": {
+                "type": "object",
+                "properties": {
+                  "Name": {
+                    "type": "string"
+                  },
+                  "ID": {
+                    "type": "string"
+                  },
+                  "SourceID": {
+                    "type": "string"
+                  },
+                  "Exp": {
+                    "type": "string"
+                  },
+                  "Width": {
+                    "type": "number"
+                  },
+                  "Height": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "Name",
+                  "ID",
+                  "SourceID",
+                  "Exp",
+                  "Width",
+                  "Height"
+                ]
+              }
+            },
+            "required": [
+              "count"
+            ]
+          }
+        }
+      },
+      "required": [
+        "version",
+        "code",
+        "cards"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "number"
+        },
+        "code": {
+          "type": "string"
+        },
+        "parts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "cards": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "number"
+                    },
+                    "front": {
+                      "type": "object",
+                      "properties": {
+                        "Name": {
+                          "type": "string"
+                        },
+                        "ID": {
+                          "type": "string"
+                        },
+                        "SourceID": {
+                          "type": "string"
+                        },
+                        "Exp": {
+                          "type": "string"
+                        },
+                        "Width": {
+                          "type": "number"
+                        },
+                        "Height": {
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "Name",
+                        "ID",
+                        "SourceID",
+                        "Exp",
+                        "Width",
+                        "Height"
+                      ]
+                    },
+                    "back": {
+                      "type": "object",
+                      "properties": {
+                        "Name": {
+                          "type": "string"
+                        },
+                        "ID": {
+                          "type": "string"
+                        },
+                        "SourceID": {
+                          "type": "string"
+                        },
+                        "Exp": {
+                          "type": "string"
+                        },
+                        "Width": {
+                          "type": "number"
+                        },
+                        "Height": {
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "Name",
+                        "ID",
+                        "SourceID",
+                        "Exp",
+                        "Width",
+                        "Height"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "count"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "name",
+              "cards"
+            ]
+          }
+        }
+      },
+      "required": [
+        "version",
+        "code",
+        "parts"
+      ]
+    }
+  ]
+}

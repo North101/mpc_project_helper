@@ -6,7 +6,7 @@ import Stack from 'react-bootstrap/esm/Stack'
 import { v4 as uuid } from 'uuid'
 import { Site, Unit } from '../types/mpc'
 import { ParsedProject } from '../types/project'
-import { projectV1Validator, projectV2Validator } from '../types/validation.ts'
+import { projectValidator } from '../types/validation.ts'
 import ErrorModal from './ErrorModal.tsx'
 import LoadingModal from './LoadingModal.tsx'
 import ProjectCombineModal from './ProjectCombineModal'
@@ -29,7 +29,9 @@ const AddButton = ({ onClick }: AddButtonProps) => {
       const file = e.target.files[i]
       try {
         const data = JSON.parse(await file.text())
-        if (projectV1Validator(data)) {
+        if (!projectValidator(data)) continue
+
+        if (data.version == 1) {
           onClick(prevState => [
             ...prevState,
             {
@@ -42,7 +44,7 @@ const AddButton = ({ onClick }: AddButtonProps) => {
               })),
             },
           ])
-        } else if (projectV2Validator(data)) {
+        } else if (data.version == 2) {
           onClick(prevState => [
             ...prevState,
             ...data.parts.map(e => ({
