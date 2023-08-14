@@ -15,7 +15,7 @@ interface CardPreviewModalProps {
 }
 
 const CardPreviewModal = ({ site, unit: initialUnit, cards, onClose }: CardPreviewModalProps) => {
-  const [unit, setUnit] = useState<Unit | undefined>(initialUnit ?? site.unitList.at(0))
+  const [unit, setUnit] = useState<Unit | undefined>(initialUnit ?? site.unitList[0])
 
   const onUnitChange = (event: React.FormEvent<HTMLSelectElement>) => {
     const unitCode = event.currentTarget.value

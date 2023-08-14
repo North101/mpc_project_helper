@@ -17,8 +17,8 @@ interface ProjectSettingsModalProps {
 }
 
 const ProjectSettingsModal = ({ site, unit, projects, onUpload, onClose }: ProjectSettingsModalProps) => {
-  const [name, setName] = useState<string | undefined>(() => projects?.at(0)?.name)
-  const [cardStock, setCardStock] = useState<CardStock | undefined>(() => site.cardStockListByUnit(unit)?.at(0))
+  const [name, setName] = useState<string | undefined>(() => projects?.[0]?.name)
+  const [cardStock, setCardStock] = useState<CardStock | undefined>(() => site.cardStockListByUnit(unit)?.[0])
   const [printType, setPrintType] = useState<PrintType | undefined>()
   const [finish, setFinish] = useState<Finish | undefined>()
   const [packaging, setPackaging] = useState<Packaging | undefined>()
@@ -52,13 +52,13 @@ const ProjectSettingsModal = ({ site, unit, projects, onUpload, onClose }: Proje
 
   useEffect(() => {
     const printTypeList = unit && cardStock && site.printTypeListByCardStock(unit, cardStock)
-    setPrintType(printTypeList?.find(it => it.code == printType?.code) ?? printTypeList?.at(0))
+    setPrintType(printTypeList?.find(it => it.code == printType?.code) ?? printTypeList?.[0])
 
     const finishList = unit && cardStock && site.finishListByCardStock(unit, cardStock)
-    setFinish(finishList?.find(it => it.code == finish?.code) ?? finishList?.at(0))
+    setFinish(finishList?.find(it => it.code == finish?.code) ?? finishList?.[0])
 
     const packagingList = unit && cardStock && site.packagingListByCardStock(unit, cardStock)
-    setPackaging(packagingList?.find(it => it.code == packaging?.code) ?? packagingList?.at(0))
+    setPackaging(packagingList?.find(it => it.code == packaging?.code) ?? packagingList?.[0])
   }, [cardStock])
 
   useEffect(() => {

@@ -68,18 +68,18 @@ const ImageSettingsModal = ({ site, unit: initialUnit, cards, onCardUpload, onPr
   }
 
   useEffect(() => {
-    setCardStock(unit ? site.cardStockListByUnit(unit)?.at(0) : undefined)
+    setCardStock(unit ? site.cardStockListByUnit(unit)?.[0] : undefined)
   }, [unit])
 
   useEffect(() => {
     const printTypeList = unit && cardStock && site.printTypeListByCardStock(unit, cardStock)
-    setPrintType(printTypeList?.find(it => it.code == printType?.code) ?? printTypeList?.at(0))
+    setPrintType(printTypeList?.find(it => it.code == printType?.code) ?? printTypeList?.[0])
 
     const finishList = unit && cardStock && site.finishListByCardStock(unit, cardStock)
-    setFinish(finishList?.find(it => it.code == finish?.code) ?? finishList?.at(0))
+    setFinish(finishList?.find(it => it.code == finish?.code) ?? finishList?.[0])
 
     const packagingList = unit && cardStock && site.packagingListByCardStock(unit, cardStock)
-    setPackaging(packagingList?.find(it => it.code == packaging?.code) ?? packagingList?.at(0))
+    setPackaging(packagingList?.find(it => it.code == packaging?.code) ?? packagingList?.[0])
   }, [cardStock])
 
   useEffect(() => {

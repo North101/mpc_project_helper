@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@hello-pangea/dnd": "^16.3.0",
+    "@popperjs/core": "^2.11.8",
     "ajv": "^8.12.0",
     "bootstrap": "^5.3.1",
     "fetch-retry": "^5.0.6",
