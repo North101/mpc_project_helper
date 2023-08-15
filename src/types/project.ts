@@ -18,6 +18,8 @@ export interface ProjectV2 {
   parts: Part[]
 }
 
+export type ProjectUnion = ProjectV1 | ProjectV2
+
 export interface ProjectMeta {
   projectId: string[]
   name: string

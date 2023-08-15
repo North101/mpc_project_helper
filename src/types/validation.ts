@@ -1,5 +1,5 @@
 import * as validation from './validation.js'
-import { ProjectV1, ProjectV2 } from './project.js'
+import { ProjectUnion } from './project.js'
 
-export const projectValidator = (data: unknown): data is ProjectV1 | ProjectV2 =>
+export const projectValidator = (data: unknown): data is ProjectUnion =>
   (validation as any).projectValidator(data)

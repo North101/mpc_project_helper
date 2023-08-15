@@ -117,23 +117,34 @@ const ProjectTabToolbar = ({ site, unit, projects, setProjects, setModal, clearM
   />)
 
   const upload = async (settings: Settings, projects: ParsedProject[]) => {
+    const key = uuid()
     setModal(<LoadingModal
+      key={key}
       onClose={clearModal}
     />)
 
     try {
       const cards = projects.flatMap(e => e.cards)
-      setModal(<SuccessModal
-        message='Your project(s) were successfully uploaded'
-        projects={projects}
-        urls={await createAutoSplitProject(settings, cards)}
-        onClose={clearModal}
-      />)
+      const urls = await createAutoSplitProject(settings, cards)
+      setModal(prevState => {
+        if (prevState?.key != key) return prevState
+
+        return <SuccessModal
+          message='Your project(s) were successfully uploaded'
+          projects={projects}
+          urls={urls}
+          onClose={clearModal}
+        />
+      })
     } catch (e) {
-      setModal(<ErrorModal
-        error={e}
-        onClose={clearModal}
-      />)
+      setModal(prevState => {
+        if (prevState?.key != key) return prevState
+
+        return <ErrorModal
+          error={e}
+          onClose={clearModal}
+        />
+      })
       return
     }
   }

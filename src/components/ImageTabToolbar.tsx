@@ -32,7 +32,9 @@ const AddButton = ({ onAddCards, setModal, clearModal }: AddButtonProps) => {
     const total = selectedFiles?.length
     if (!total) return
 
+    const key = uuid()
     setModal(<ProgressModal
+      key={key}
       title='Analysing images...'
       value={0}
       maxValue={total}
@@ -50,14 +52,17 @@ const AddButton = ({ onAddCards, setModal, clearModal }: AddButtonProps) => {
           height,
         },
       })).then(it => {
-        setModal(
-          <ProgressModal
+        setModal(prevState => {
+          if (prevState?.key != key) return prevState
+
+          return <ProgressModal
+            key={key}
             title='Analysing images...'
             value={++count}
             maxValue={total}
             onClose={clearModal}
           />
-        )
+        })
         return it
       }))
     }
@@ -66,13 +71,15 @@ const AddButton = ({ onAddCards, setModal, clearModal }: AddButtonProps) => {
     cardSides.sort((a, b) => {
       return a.file.name.localeCompare(b.file.name)
     })
-    setModal(
-      <AutofillModal
+    setModal(prevState => {
+      if (prevState?.key != key) return prevState
+
+      return <AutofillModal
         cardSides={cardSides}
         onAdd={onAddCards}
         onClose={clearModal}
       />
-    )
+    })
   }
 
   return (
@@ -110,7 +117,9 @@ const UploadButton = ({ site, cards, setModal, clearModal, setTab }: UploadButto
       return p
     }, new Set()).size
 
+    const key = uuid()
     setModal(<ProgressModal
+      key={key}
       title='Uploading...'
       value={0}
       maxValue={maxValue}
@@ -141,12 +150,17 @@ const UploadButton = ({ site, cards, setModal, clearModal, setTab }: UploadButto
           cardData[side] = compressedImageData
           files.set(id, compressedImageData)
 
-          setModal(<ProgressModal
-            title='Uploading...'
-            value={files.size}
-            maxValue={maxValue}
-            onClose={clearModal}
-          />)
+          setModal(prevState => {
+            if (prevState?.key != key) return prevState
+
+            return <ProgressModal
+              key={key}
+              title='Uploading...'
+              value={files.size}
+              maxValue={maxValue}
+              onClose={clearModal}
+            />
+          })
         }
       }
       data.push(cardData)
