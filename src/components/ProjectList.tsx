@@ -11,11 +11,9 @@ interface ProjectListProps {
   site: Site
   projects: ParsedProject[]
   setProjects: Dispatch<SetStateAction<ParsedProject[]>>
-  setModal: Dispatch<SetStateAction<JSX.Element | undefined>>
-  clearModal: () => void
 }
 
-const ProjectList = ({ site, projects, setProjects, setModal, clearModal }: ProjectListProps) => {
+const ProjectList = ({ site, projects, setProjects }: ProjectListProps) => {
   const onDragEnd = (result: DropResult) => {
     if (!result.destination) return
 
@@ -42,8 +40,6 @@ const ProjectList = ({ site, projects, setProjects, setModal, clearModal }: Proj
                 project={project}
                 index={index}
                 setProjects={setProjects}
-                setModal={setModal}
-                clearModal={clearModal}
               />)}
               {provided.placeholder}
             </ListGroup>

@@ -5,7 +5,7 @@ import { ParsedProject } from '../types/project'
 import CardCount from './CardCount'
 import ProjectList from './ProjectList'
 import ProjectTabToolbar from './ProjectTabToolbar'
-import { useModal } from './util'
+import { ModalContext, useModal } from './util'
 
 interface ProjectTabProps {
   site: Site
@@ -31,28 +31,26 @@ const ProjectTab = ({ site, projects: initialProjects }: ProjectTabProps) => {
   }, [initialProjects])
 
   return (
-    <Stack className='d-flex h-100' gap={2}>
-      <ProjectTabToolbar
-        site={site}
-        unit={unit}
-        projects={projects}
-        setProjects={setProjects}
-        setModal={setModal}
-        clearModal={clearModal}
-      />
-      <ProjectList
-        site={site}
-        projects={projects}
-        setProjects={setProjects}
-        setModal={setModal}
-        clearModal={clearModal}
-      />
-      <CardCount
-        count={cardCount}
-        unit={unit}
-      />
-      {modal}
-    </Stack>
+    <ModalContext.Provider value={[modal, setModal, clearModal]}>
+      <Stack className='d-flex h-100' gap={2}>
+        <ProjectTabToolbar
+          site={site}
+          unit={unit}
+          projects={projects}
+          setProjects={setProjects}
+        />
+        <ProjectList
+          site={site}
+          projects={projects}
+          setProjects={setProjects}
+        />
+        <CardCount
+          count={cardCount}
+          unit={unit}
+        />
+        {modal}
+      </Stack>
+    </ModalContext.Provider>
   )
 }
 

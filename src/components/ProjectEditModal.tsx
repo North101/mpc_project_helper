@@ -26,8 +26,6 @@ const ProjectEditModal = ({ project: initialProject, index, onClose, onSave }: P
     />)
   }
 
-  const onChange = (project: ParsedProject) => setProject(project)
-
   return (
     <Modal show fullscreen centered onHide={onClose} className='mpc-project-helper-dialog'>
       <Modal.Header closeButton className='row-gap-2'>
@@ -42,7 +40,7 @@ const ProjectEditModal = ({ project: initialProject, index, onClose, onSave }: P
         </Stack>
         <ProjectCardList
           project={project}
-          onChange={onChange}
+          onChange={setProject}
         />
         {modal}
       </Modal.Body>

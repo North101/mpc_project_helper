@@ -1,5 +1,5 @@
 import { CardSettings, CompressedImageData, Settings, UploadedImage, analysisImage, compressImageData, createAutoSplitProject, uploadImage } from 'mpc_api'
-import { Dispatch, SetStateAction, useId, useRef } from 'react'
+import { Dispatch, SetStateAction, useContext, useId, useRef } from 'react'
 import { CardImage, FileEarmarkPlus, PlusCircle, Upload, XCircle } from 'react-bootstrap-icons'
 import Button from 'react-bootstrap/esm/Button'
 import Dropdown from 'react-bootstrap/esm/Dropdown'
@@ -8,22 +8,21 @@ import { v4 as uuid } from 'uuid'
 import { Card, CardFaces, CardSide } from '../types/card'
 import { Site, Unit } from '../types/mpc'
 import { analyseCard } from '../util'
-import { TabProps } from './App'
 import AutofillModal from './AutofillModal'
 import CardPreviewModal from './CardPreviewModal'
 import ErrorModal from './ErrorModal'
 import ImageSettingsModal from './ImageSettingsModal'
 import ProgressModal from './ProgressModal'
 import SuccessModal from './SuccessModal'
+import { ModalContext, TabContext } from './util'
 
 interface AddButtonProps {
   onAddCards: (files: CardSide[], cards: Card[]) => void
-  setModal: Dispatch<SetStateAction<JSX.Element | undefined>>
-  clearModal: () => void
 }
 
-const AddButton = ({ onAddCards, setModal, clearModal }: AddButtonProps) => {
+const AddButton = ({ onAddCards }: AddButtonProps) => {
   const ref = useRef<HTMLInputElement>(null)
+  const [_, setModal, clearModal] = useContext(ModalContext)
 
   const onOpenFiles = () => ref?.current?.click()
 
@@ -104,12 +103,12 @@ const AddButton = ({ onAddCards, setModal, clearModal }: AddButtonProps) => {
 interface UploadButtonProps {
   site: Site
   cards: Card[]
-  setModal: Dispatch<SetStateAction<JSX.Element | undefined>>
-  clearModal: () => void
-  setTab: (tab: TabProps) => void
 }
 
-const UploadButton = ({ site, cards, setModal, clearModal, setTab }: UploadButtonProps) => {
+const UploadButton = ({ site, cards }: UploadButtonProps) => {
+  const [_model, setModal, clearModal] = useContext(ModalContext)
+  const [_tab, setTab] = useContext(TabContext)
+
   const uploadCards = async (settings: CardSettings, cards: Card[]) => {
     const maxValue = cards.reduce<Set<File>>((p, v) => {
       if (v.front) p.add(v.front?.file)
@@ -296,12 +295,11 @@ interface ImageTabToolbarProps {
   setCards: Dispatch<SetStateAction<Card[]>>
   unit?: Unit
   setUnit: Dispatch<SetStateAction<Unit | undefined>>
-  setModal: Dispatch<SetStateAction<JSX.Element | undefined>>
-  clearModal: () => void
-  setTab: (tab: TabProps) => void
 }
 
-const ImageTabToolbar = ({ site, setFiles, cards, setCards, unit, setUnit, setModal, clearModal, setTab }: ImageTabToolbarProps) => {
+const ImageTabToolbar = ({ site, setFiles, cards, setCards, unit, setUnit }: ImageTabToolbarProps) => {
+  const [_, setModal, clearModal] = useContext(ModalContext)
+
   const onAddCards = (newFiles: CardSide[], newCards: Card[]) => {
     setFiles(prevState => [
       ...prevState,
@@ -334,8 +332,6 @@ const ImageTabToolbar = ({ site, setFiles, cards, setCards, unit, setUnit, setMo
     <Stack direction='horizontal' gap={1}>
       <AddButton
         onAddCards={onAddCards}
-        setModal={setModal}
-        clearModal={clearModal}
       />
       <Button variant='outline-primary' onClick={onAddEmpty}>
         <PlusCircle /> Add empty card
@@ -359,9 +355,6 @@ const ImageTabToolbar = ({ site, setFiles, cards, setCards, unit, setUnit, setMo
       <UploadButton
         site={site}
         cards={cards}
-        setModal={setModal}
-        clearModal={clearModal}
-        setTab={setTab}
       />
     </Stack>
   )

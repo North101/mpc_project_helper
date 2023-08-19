@@ -1,5 +1,5 @@
 import { Settings, createAutoSplitProject } from 'mpc_api'
-import { Dispatch, SetStateAction, useRef } from 'react'
+import { Dispatch, SetStateAction, useContext, useRef } from 'react'
 import { ArrowsCollapse, FileEarmarkPlus, Save, Upload, XCircle } from 'react-bootstrap-icons'
 import Button from 'react-bootstrap/esm/Button'
 import Stack from 'react-bootstrap/esm/Stack'
@@ -12,6 +12,7 @@ import LoadingModal from './LoadingModal.tsx'
 import ProjectCombineModal from './ProjectCombineModal'
 import ProjectSettingsModal from './ProjectSettingsModal'
 import SuccessModal from './SuccessModal.tsx'
+import { ModalContext } from './util.tsx'
 
 interface AddButtonProps {
   onClick: Dispatch<SetStateAction<ParsedProject[]>>
@@ -98,11 +99,11 @@ interface ProjectTabToolbarProps {
   unit?: Unit
   projects: ParsedProject[]
   setProjects: Dispatch<SetStateAction<ParsedProject[]>>
-  setModal: Dispatch<SetStateAction<JSX.Element | undefined>>
-  clearModal: () => void
 }
 
-const ProjectTabToolbar = ({ site, unit, projects, setProjects, setModal, clearModal }: ProjectTabToolbarProps) => {
+const ProjectTabToolbar = ({ site, unit, projects, setProjects }: ProjectTabToolbarProps) => {
+  const [_, setModal, clearModal] = useContext(ModalContext)
+
   const onClearProjects = () => setProjects([])
 
   const onCombine = () => setModal(<ProjectCombineModal

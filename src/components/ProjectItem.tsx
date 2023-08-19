@@ -1,5 +1,5 @@
 import { Draggable } from '@hello-pangea/dnd'
-import { Dispatch, SetStateAction } from 'react'
+import { Dispatch, SetStateAction, useContext } from 'react'
 import { GripVertical, PencilSquare, Trash } from 'react-bootstrap-icons'
 import Button from 'react-bootstrap/esm/Button'
 import FloatingLabel from 'react-bootstrap/esm/FloatingLabel'
@@ -9,6 +9,7 @@ import { Site } from '../types/mpc'
 import { ParsedProject } from '../types/project'
 import { remove, replace } from '../util'
 import ProjectEditModal from './ProjectEditModal'
+import { ModalContext } from './util'
 
 
 const getItemStyle = (isDragging: boolean, draggableStyle: any): React.CSSProperties => ({
@@ -28,11 +29,10 @@ interface ProjectItemProps {
   project: ParsedProject
   index: number
   setProjects: Dispatch<SetStateAction<ParsedProject[]>>
-  setModal: Dispatch<SetStateAction<JSX.Element | undefined>>
-  clearModal: () => void
 }
 
-const ProjectItem = ({ site, project, index, setProjects, setModal, clearModal }: ProjectItemProps) => {
+const ProjectItem = ({ site, project, index, setProjects }: ProjectItemProps) => {
+  const [_, setModal, clearModal] = useContext(ModalContext)
   const unit = site.unitList.find(e => e.code == project.code)
 
   const onNameChange = (event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
