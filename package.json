@@ -1,7 +1,7 @@
 {
   "name": "mpc_project_helper",
   "private": true,
-  "version": "2.0.3",
+  "version": "2.0.4",
   "type": "module",
   "license": "ISC",
   "scripts": {
@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@types/chrome": "^0.0.243",
-    "@types/react": "^18.2.19",
+    "@types/react": "^18.2.20",
     "@types/react-dom": "^18.0.9",
     "@types/uuid": "^9.0.2",
     "@types/webextension-polyfill": "^0.10.0",
