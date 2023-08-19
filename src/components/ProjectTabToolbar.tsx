@@ -125,7 +125,10 @@ const ProjectTabToolbar = ({ site, unit, projects, setProjects, setModal, clearM
 
     try {
       const cards = projects.flatMap(e => e.cards)
-      const urls = await createAutoSplitProject(settings, cards)
+      const urls = await createAutoSplitProject({
+        ...settings,
+        name: undefined,
+      }, cards)
       setModal(prevState => {
         if (prevState?.key != key) return prevState
 

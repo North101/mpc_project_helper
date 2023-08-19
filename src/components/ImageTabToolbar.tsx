@@ -222,7 +222,10 @@ const UploadButton = ({ site, cards, setModal, clearModal, setTab }: UploadButto
       setModal(<SuccessModal
         message='Your images were successfully uploaded'
         projects={projects}
-        urls={await createAutoSplitProject(settings, data)}
+        urls={await createAutoSplitProject({
+          ...settings,
+          name: undefined,
+        }, data)}
         onLoadProject={() => setTab({
           id: 'project',
           projects: projects,

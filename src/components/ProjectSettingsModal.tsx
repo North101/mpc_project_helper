@@ -17,7 +17,7 @@ interface ProjectSettingsModalProps {
 }
 
 const ProjectSettingsModal = ({ site, unit, projects, onUpload, onClose }: ProjectSettingsModalProps) => {
-  const [name, setName] = useState<string | undefined>(() => projects?.[0]?.name)
+  const [name, setName] = useState<string>(() => projects[0]?.name ?? '')
   const [cardStock, setCardStock] = useState<CardStock | undefined>(() => site.cardStockListByUnit(unit)?.[0])
   const [printType, setPrintType] = useState<PrintType | undefined>()
   const [finish, setFinish] = useState<Finish | undefined>()
@@ -25,28 +25,33 @@ const ProjectSettingsModal = ({ site, unit, projects, onUpload, onClose }: Proje
   const [settings, setSettings] = useState<Settings | undefined>()
 
   const onNameChange = (event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setName(event.currentTarget.value.substring(0, 32))
+    const value = event.currentTarget.value.substring(0, 32)
+    setName(value)
   }
 
   const onCardStockChange = (event: React.FormEvent<HTMLSelectElement>) => {
-    setCardStock(site.cardStockList.find(it => it.code == event.currentTarget.value))
+    const value = event.currentTarget.value
+    setCardStock(site.cardStockList.find(it => it.code == value))
   }
 
   const onPrintTypeChange = (event: React.FormEvent<HTMLSelectElement>) => {
+    const value = event.currentTarget.value
     setPrintType(cardStock
-      ? site.printTypeListByCardStock(unit, cardStock).find(e => e.code == event.currentTarget.value)
+      ? site.printTypeListByCardStock(unit, cardStock).find(e => e.code == value)
       : undefined)
   }
 
   const onFinishChange = (event: React.FormEvent<HTMLSelectElement>) => {
+    const value = event.currentTarget.value
     setFinish(cardStock
-      ? site.finishListByCardStock(unit, cardStock).find(e => e.code == event.currentTarget.value)
+      ? site.finishListByCardStock(unit, cardStock).find(e => e.code == value)
       : undefined)
   }
 
   const onPackagingChange = (event: React.FormEvent<HTMLSelectElement>) => {
+    const value = event.currentTarget.value
     setPackaging(cardStock
-      ? site.packagingListByCardStock(unit, cardStock).find(e => e.code == event.currentTarget.value)
+      ? site.packagingListByCardStock(unit, cardStock).find(e => e.code == value)
       : undefined)
   }
 
