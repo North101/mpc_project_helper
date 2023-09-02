@@ -102,10 +102,11 @@ const AddButton = ({ onAddCards }: AddButtonProps) => {
 
 interface UploadButtonProps {
   site: Site
+  unit: Unit | undefined
   cards: Card[]
 }
 
-const UploadButton = ({ site, cards }: UploadButtonProps) => {
+const UploadButton = ({ site, unit, cards }: UploadButtonProps) => {
   const [_model, setModal, clearModal] = useContext(ModalContext)
   const [_tab, setTab] = useContext(TabContext)
 
@@ -244,6 +245,7 @@ const UploadButton = ({ site, cards }: UploadButtonProps) => {
 
   const onClick = () => setModal(<ImageSettingsModal
     site={site}
+    unit={unit}
     cards={cards}
     onCardUpload={onCardUpload}
     onProjectUpload={onProjectUpload}
@@ -354,6 +356,7 @@ const ImageTabToolbar = ({ site, setFiles, cards, setCards, unit, setUnit }: Ima
       </Button>
       <UploadButton
         site={site}
+        unit={unit}
         cards={cards}
       />
     </Stack>
