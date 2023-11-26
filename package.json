@@ -1,7 +1,7 @@
 {
   "name": "mpc_project_helper",
   "private": true,
-  "version": "2.0.4",
+  "version": "2.0.5",
   "type": "module",
   "license": "ISC",
   "scripts": {
@@ -12,25 +12,25 @@
     "@hello-pangea/dnd": "^16.3.0",
     "@popperjs/core": "^2.11.8",
     "ajv": "^8.12.0",
-    "bootstrap": "^5.3.1",
+    "bootstrap": "^5.3.2",
     "fetch-retry": "^5.0.6",
     "mpc_api": "https://github.com/North101/mpc_api",
     "react": "^18.2.0",
-    "react-bootstrap": "^2.8.0",
+    "react-bootstrap": "^2.9.1",
     "react-bootstrap-icons": "^1.10.3",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/chrome": "^0.0.244",
-    "@types/react": "^18.2.21",
-    "@types/react-dom": "^18.0.9",
-    "@types/uuid": "^9.0.3",
-    "@types/webextension-polyfill": "^0.10.2",
-    "@types/wicg-file-system-access": "^2020.9.6",
-    "@vitejs/plugin-react-swc": "^3.2.0",
-    "typescript": "^5.2.2",
-    "vite": "^4.1.4",
-    "vite-plugin-web-extension": "^3.0.1",
+    "@types/chrome": "^0.0.253",
+    "@types/react": "^18.2.38",
+    "@types/react-dom": "^18.2.17",
+    "@types/uuid": "^9.0.7",
+    "@types/webextension-polyfill": "^0.10.7",
+    "@types/wicg-file-system-access": "^2023.10.4",
+    "@vitejs/plugin-react-swc": "^3.5.0",
+    "typescript": "^5.3.2",
+    "vite": "^5.0.2",
+    "vite-plugin-web-extension": "^4.0.0",
     "webextension-polyfill": "^0.10.0"
   }
 }
