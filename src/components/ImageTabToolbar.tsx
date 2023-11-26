@@ -325,6 +325,7 @@ const ImageTabToolbar = ({ site, setFiles, cards, setCards, unit, setUnit }: Ima
   const onClear = () => setCards([])
 
   const onPreview = () => setModal(<CardPreviewModal
+    unit={unit}
     site={site}
     cards={cards}
     onClose={clearModal}
