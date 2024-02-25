@@ -36,7 +36,7 @@ const ImageTab = ({ site }: ImageTabProps) => {
           cards={cards}
           setCards={setCards}
         />
-        <CardCount count={cardCount} unit={unit} />
+        <CardCount count={cardCount} />
         {modal}
       </Stack>
     </ModalContext.Provider>

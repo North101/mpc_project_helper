@@ -1,46 +1,63 @@
 import { Dispatch, SetStateAction, useState } from 'react'
 import Button from 'react-bootstrap/esm/Button'
+import Card from 'react-bootstrap/esm/Card'
 import Form from 'react-bootstrap/esm/Form'
 import Modal from 'react-bootstrap/esm/Modal'
+import { Site } from '../types/mpc'
 import { ParsedProject } from '../types/project'
 import { replace } from '../util'
+import Stack from 'react-bootstrap/esm/Stack'
 
 interface ProjectCombineModalProps {
-  projects: ParsedProject[]
+  site: Site
+  projects: {
+    [key: string]: ParsedProject[]
+  }
   setProjects: Dispatch<SetStateAction<ParsedProject[]>>
   onClose: () => void
 }
 
-const ProjectCombineModal = ({ projects, setProjects, onClose }: ProjectCombineModalProps) => {
-  const [checked, setChecked] = useState<boolean[]>(() => projects.map(() => true))
+const ProjectCombineModal = ({ site, projects: groupedProjects, setProjects, onClose }: ProjectCombineModalProps) => {
+  const [checkedProjects, setCheckedProjects] = useState(() => {
+    return Object.fromEntries(Object.entries(groupedProjects).map(([key, value]) => {
+      return [key, value.map(() => true)]
+    }))
+  })
 
-  const onChange = (event: React.ChangeEvent<HTMLInputElement>, index: number) => {
+  const onChange = (event: React.ChangeEvent<HTMLInputElement>, code: string, index: number) => {
     const checked = event.currentTarget.checked
-    setChecked(prevState => replace(prevState, index, checked))
+    setCheckedProjects(prevState => ({
+      ...prevState,
+      [code]: replace(prevState[code], index, checked),
+    }))
   }
 
   const onCombine = () => {
-    setProjects(prevState => {
-      const combinedProject = prevState.reduce<ParsedProject | undefined>((value, project, index) => {
-        if (!checked[index]) return value
-
-        return value ? {
-          ...value,
-          cards: [
-            ...value.cards,
-            ...project.cards,
-          ]
-        } : project
-      }, undefined)
-      if (!combinedProject) return prevState
-
-      const index = checked.findIndex(e => e)
-      const projects = prevState.filter((_, index) => !checked[index]).slice()
-      return [
-        ...projects.slice(0, index),
-        combinedProject,
-        ...projects.slice(index)
-      ]
+    setProjects(_ => {
+      const data: ParsedProject[] = []
+      for (const [code, projects] of Object.entries(groupedProjects)) {
+        let combined: number | null = null
+        for (let i = 0; i < projects.length; i++) {
+          const project = projects[i]
+          const checked = checkedProjects[code][i]
+          if (checked) {
+            if (combined != null) {
+              data[combined] = {
+                ...data[combined],
+                cards: [
+                  ...data[combined].cards,
+                  ...project.cards,
+                ],
+              }
+            } else {
+              combined = data.push(project) - 1
+            }
+          } else {
+            data.push(project)
+          }
+        }
+      }
+      return data
     })
     onClose()
   }
@@ -49,13 +66,24 @@ const ProjectCombineModal = ({ projects, setProjects, onClose }: ProjectCombineM
     <Modal show centered scrollable>
       <Modal.Header>Combine</Modal.Header>
       <Modal.Body>
-        {projects.map((e, index) => <Form.Check
-          key={e.id}
-          type='checkbox'
-          label={e.name}
-          checked={checked[index]}
-          onChange={(e) => onChange(e, index)}
-        />)}
+        <Stack gap={2}>
+          {Object.entries(groupedProjects).map(([code, projects]) => (
+            <Card key={code}>
+              <Card.Body>
+                <Card.Title>{site.unitList.find(e => e.code == code)?.name ?? 'Unknown'}</Card.Title>
+                <Card.Text>
+                  {projects.map((e, index) => <Form.Check
+                    key={e.id}
+                    type='checkbox'
+                    label={e.name}
+                    checked={checkedProjects[code][index]}
+                    onChange={(e) => onChange(e, code, index)}
+                  />)}
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          ))}
+        </Stack>
       </Modal.Body>
       <Modal.Footer>
         <Button
@@ -67,7 +95,7 @@ const ProjectCombineModal = ({ projects, setProjects, onClose }: ProjectCombineM
         <Button
           variant='primary'
           onClick={onCombine}
-          disabled={checked.every(e => !e)}
+          disabled={!Object.values(checkedProjects).some((value) => value.some(e => e))}
         >
           Combine
         </Button>

@@ -1,75 +1,29 @@
-import { Settings } from 'mpc_api'
 import { useEffect, useState } from 'react'
-import Alert from 'react-bootstrap/esm/Alert'
 import Button from 'react-bootstrap/esm/Button'
 import FloatingLabel from 'react-bootstrap/esm/FloatingLabel'
 import Form from 'react-bootstrap/esm/Form'
 import Modal from 'react-bootstrap/esm/Modal'
+import Nav from 'react-bootstrap/esm/Nav'
+import Tab from 'react-bootstrap/esm/Tab'
 import { CardStock, Finish, Packaging, PrintType, Site, Unit } from '../types/mpc'
-import { ParsedProject } from '../types/project'
+import { ProjectCard, UploadProject, UploadProjectSettings } from '../types/project'
 
-interface ProjectSettingsModalProps {
-  site: Site
+
+interface Blah {
+  name: string
   unit: Unit
-  projects: ParsedProject[]
-  onUpload: (settings: Settings, projects: ParsedProject[]) => void
-  onClose: () => void
+  cards: ProjectCard[]
+  cardStock?: CardStock
+  printType?: PrintType
+  finish?: Finish
+  packaging?: Packaging
 }
 
-const ProjectSettingsModal = ({ site, unit, projects, onUpload, onClose }: ProjectSettingsModalProps) => {
-  const [name, setName] = useState<string>(() => projects[0]?.name ?? '')
-  const [cardStock, setCardStock] = useState<CardStock | undefined>(() => site.cardStockListByUnit(unit)?.[0])
-  const [printType, setPrintType] = useState<PrintType | undefined>()
-  const [finish, setFinish] = useState<Finish | undefined>()
-  const [packaging, setPackaging] = useState<Packaging | undefined>()
-  const [settings, setSettings] = useState<Settings | undefined>()
-
-  const onNameChange = (event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const value = event.currentTarget.value.substring(0, 32)
-    setName(value)
-  }
-
-  const onCardStockChange = (event: React.FormEvent<HTMLSelectElement>) => {
-    const value = event.currentTarget.value
-    setCardStock(site.cardStockList.find(it => it.code == value))
-  }
-
-  const onPrintTypeChange = (event: React.FormEvent<HTMLSelectElement>) => {
-    const value = event.currentTarget.value
-    setPrintType(cardStock
-      ? site.printTypeListByCardStock(unit, cardStock).find(e => e.code == value)
-      : undefined)
-  }
-
-  const onFinishChange = (event: React.FormEvent<HTMLSelectElement>) => {
-    const value = event.currentTarget.value
-    setFinish(cardStock
-      ? site.finishListByCardStock(unit, cardStock).find(e => e.code == value)
-      : undefined)
-  }
-
-  const onPackagingChange = (event: React.FormEvent<HTMLSelectElement>) => {
-    const value = event.currentTarget.value
-    setPackaging(cardStock
-      ? site.packagingListByCardStock(unit, cardStock).find(e => e.code == value)
-      : undefined)
-  }
-
-  useEffect(() => {
-    const printTypeList = unit && cardStock && site.printTypeListByCardStock(unit, cardStock)
-    setPrintType(printTypeList?.find(it => it.code == printType?.code) ?? printTypeList?.[0])
-
-    const finishList = unit && cardStock && site.finishListByCardStock(unit, cardStock)
-    setFinish(finishList?.find(it => it.code == finish?.code) ?? finishList?.[0])
-
-    const packagingList = unit && cardStock && site.packagingListByCardStock(unit, cardStock)
-    setPackaging(packagingList?.find(it => it.code == packaging?.code) ?? packagingList?.[0])
-  }, [cardStock])
-
-  useEffect(() => {
-    if (cardStock === undefined || printType === undefined || finish === undefined || packaging === undefined) return
-
-    setSettings({
+const getSettings = ({ cards, unit, name, cardStock, printType, finish, packaging }: Blah): UploadProjectSettings | undefined => {
+  if (cardStock === undefined || printType === undefined || finish === undefined || packaging === undefined) return
+  return {
+    cards,
+    settings: {
       url: window.location.origin,
       name: name,
       unit: unit.code,
@@ -89,68 +43,223 @@ const ProjectSettingsModal = ({ site, unit, projects, onUpload, onClose }: Proje
       sortNo: unit.sortNo,
       applyMask: unit.applyMask,
       maxCards: unit.maxCards,
+    }
+  }
+}
+
+const getCardStock = (site: Site, value: string) => site.cardStockList.find(it => it.code == value)
+
+const getPrintType = (site: Site, unit: Unit, cardStock: CardStock | undefined, value: string) => {
+  return cardStock
+    ? site.printTypeListByCardStock(unit, cardStock).find(e => e.code == value)
+    : undefined
+}
+
+const getDefaultPrintType = (site: Site, unit: Unit, cardStock: CardStock | undefined, printType?: PrintType) => {
+  const printTypeList = unit && cardStock && site.printTypeListByCardStock(unit, cardStock)
+  return printTypeList?.find(it => it.code == printType?.code) ?? printTypeList?.at(0)
+}
+
+const getFinish = (site: Site, unit: Unit, cardStock: CardStock | undefined, value: string) => {
+  return cardStock
+    ? site.finishListByCardStock(unit, cardStock).find(e => e.code == value)
+    : undefined
+}
+
+const getDefaultFinish = (site: Site, unit: Unit, cardStock: CardStock | undefined, finish?: Finish) => {
+  const finishList = unit && cardStock && site.finishListByCardStock(unit, cardStock)
+  return finishList?.find(it => it.code == finish?.code) ?? finishList?.at(0)
+}
+
+const getDefaultPackaging = (site: Site, unit: Unit, cardStock: CardStock | undefined, packaging?: Packaging) => {
+  const packagingList = unit && cardStock && site.packagingListByCardStock(unit, cardStock)
+  return packagingList?.find(it => it.code == packaging?.code) ?? packagingList?.at(0)
+}
+
+const getPackaging = (site: Site, unit: Unit, cardStock: CardStock | undefined, value: string) => {
+  return cardStock
+    ? site.packagingListByCardStock(unit, cardStock).find(e => e.code == value)
+    : undefined
+}
+
+interface ProjectSettingsPanelProps {
+  site: Site
+  project: Blah
+  onUpdate: (project: Blah) => void
+}
+
+const ProjectSettingsPanel = ({ site, project, onUpdate }: ProjectSettingsPanelProps) => {
+  const { unit, cards } = project
+  const [name, setName] = useState<string>(() => project.name)
+  const [cardStock, setCardStock] = useState<CardStock | undefined>(() => project.cardStock)
+  const [printType, setPrintType] = useState<PrintType | undefined>(() => project.printType)
+  const [finish, setFinish] = useState<Finish | undefined>(() => project.finish)
+  const [packaging, setPackaging] = useState<Packaging | undefined>(() => project.packaging)
+
+  const onNameChange = (event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const value = event.currentTarget.value.substring(0, 32)
+    setName(value)
+  }
+
+  const onCardStockChange = (event: React.FormEvent<HTMLSelectElement>) => {
+    setCardStock(getCardStock(site, event.currentTarget.value))
+  }
+
+  const onPrintTypeChange = (event: React.FormEvent<HTMLSelectElement>) => {
+    setPrintType((getPrintType(site, unit, cardStock, event.currentTarget.value)))
+  }
+
+  const onFinishChange = (event: React.FormEvent<HTMLSelectElement>) => {
+    setFinish(getFinish(site, unit, cardStock, event.currentTarget.value))
+  }
+
+  const onPackagingChange = (event: React.FormEvent<HTMLSelectElement>) => {
+    setPackaging(getPackaging(site, unit, cardStock, event.currentTarget.value))
+  }
+
+  useEffect(() => {
+    setPrintType(getDefaultPrintType(site, unit, cardStock, printType))
+    setFinish((getDefaultFinish(site, unit, cardStock, finish)))
+    setPackaging(getDefaultPackaging(site, unit, cardStock, packaging))
+  }, [cardStock])
+
+  useEffect(() => {
+    onUpdate({
+      ...project,
+      cardStock,
+      printType,
+      finish,
+      packaging,
     })
   }, [name, cardStock, printType, finish, packaging])
 
-  const count = projects.reduce((value, it) => value + it.cards.reduce((value, it) => value + it.count, 0), 0)
+  const count = cards.reduce((value, it) => value + it.count, 0)
   const tooManyCards = count > unit.maxCards
 
   return (
-    <Modal show centered>
+    <div className='d-flex flex-column row-gap-2'>
+      <div className='d-flex flex-row gap-1'>
+        <FloatingLabel controlId='product' label='Product' style={{ flex: 1 }}>
+          <Form.Select aria-label='Product' value={unit.code} disabled>
+            <optgroup label='Recomended'>
+              {site.unitList.filter(it => it.curated !== null).map(it => (
+                <option key={it.code} value={it.code}>{it.name}</option>
+              ))}
+            </optgroup>
+            <optgroup label='Other'>
+              {site.unitList.filter(it => it.curated === null).map(it => (
+                <option key={it.code} value={it.code}>{it.name}</option>
+              ))}
+            </optgroup>
+          </Form.Select>
+        </FloatingLabel>
+        <FloatingLabel controlId='cards' label='Cards'>
+          <Form.Control aria-label='Cards' disabled value={count} />
+        </FloatingLabel>
+      </div>
+      {tooManyCards && (
+        <Form.Text muted>
+          As your project has more than {unit.maxCards} cards, it will automatically be split into multiple projects.
+        </Form.Text>
+      )}
+      <FloatingLabel controlId='name' label='Project Name'>
+        <Form.Control aria-label='Project Name' value={name ?? ''} onChange={onNameChange} />
+      </FloatingLabel>
+      <FloatingLabel controlId='cardStock' label='Card Stock'>
+        <Form.Select aria-label='Card Stock' value={cardStock?.code} onChange={onCardStockChange}>
+          {unit && site.cardStockListByUnit(unit)
+            .map(it => <option key={it.code} value={it.code}>{it.name}</option>)
+          }
+        </Form.Select>
+      </FloatingLabel>
+      <FloatingLabel controlId='printType' label='Print Type'>
+        <Form.Select aria-label='Print Type' value={printType?.code} onChange={onPrintTypeChange}>
+          {unit && cardStock && site.printTypeListByCardStock(unit, cardStock)
+            .map(it => <option key={it.code} value={it.code}>{it.name}</option>)
+          }
+        </Form.Select>
+      </FloatingLabel>
+      <FloatingLabel controlId='finish' label='Finish'>
+        <Form.Select aria-label='Finish' value={finish?.code} onChange={onFinishChange}>
+          {unit && cardStock && site.finishListByCardStock(unit, cardStock)
+            .map(it => <option key={it.code} value={it.code}>{it.name}</option>)
+          }
+        </Form.Select>
+      </FloatingLabel>
+      <FloatingLabel controlId='packaging' label='Packaging'>
+        <Form.Select aria-label='Packaging' value={packaging?.code} onChange={onPackagingChange}>
+          {unit && cardStock && site.packagingListByCardStock(unit, cardStock)
+            .map(it => <option key={it.code} value={it.code}>{it.name}</option>)
+          }
+        </Form.Select>
+      </FloatingLabel>
+    </div>
+  )
+}
+
+interface ProjectSettingsModalProps {
+  site: Site
+  projects: UploadProject[]
+  onUpload: (upload: UploadProjectSettings[]) => void
+  onClose: () => void
+}
+
+const ProjectSettingsModal = ({ site, projects, onUpload, onClose }: ProjectSettingsModalProps) => {
+  const [projectData, setProjectData] = useState<Blah[]>(() => projects.map(project => {
+    const { name, cards, unit } = project
+    const cardStock = site.cardStockListByUnit(project.unit)?.at(0)
+    const printType = getDefaultPrintType(site, unit, cardStock)
+    const finish = getDefaultFinish(site, unit, cardStock)
+    const packaging = getDefaultPackaging(site, unit, cardStock)
+    return {
+      site: site,
+      name: name,
+      cards,
+      unit,
+      cardStock,
+      printType,
+      finish,
+      packaging,
+    }
+  }))
+  const [projectSettings, setProjectSettings] = useState<(UploadProjectSettings | undefined)[]>([])
+
+  useEffect(() => {
+    setProjectSettings(projectData.map(project => getSettings(project)))
+  }, projectData)
+
+  const onUpdateProjectSettings = (project: Blah) => {
+    setProjectData(prevState => ([
+      ...prevState.map(e => e.unit == project.unit ? project : e)
+    ]))
+  }
+
+  return (
+    <Modal show fullscreen centered className='mpc-project-helper-dialog'>
       <Modal.Header>Upload Project</Modal.Header>
       <Modal.Body>
-        <div className='d-flex flex-column row-gap-2'>
-          <FloatingLabel controlId='floatingSelect1' label='Product'>
-            <Form.Select aria-label='Product' value={unit.code} disabled>
-              <optgroup label='Recomended'>
-                {site.unitList.filter(it => it.curated !== null).map(it => (
-                  <option key={it.code} value={it.code}>{it.name}</option>
+        <Tab.Container defaultActiveKey={projectData[0].unit.code}>
+          <div className='d-flex flex-row gap-2'>
+            <div className='d-flex flex-column' style={{ flex: 1 }}>
+              <Nav variant="pills" className="flex-column">
+                {projectData.map(e => (
+                  <Nav.Item key={e.unit.code}>
+                    <Nav.Link eventKey={e.unit.code} style={{ textWrap: 'nowrap' }}>{e.unit.name}</Nav.Link>
+                  </Nav.Item>
                 ))}
-              </optgroup>
-              <optgroup label='Other'>
-                {site.unitList.filter(it => it.curated === null).map(it => (
-                  <option key={it.code} value={it.code}>{it.name}</option>
+              </Nav>
+            </div>
+            <div className='d-flex flex-column' style={{ flex: 2 }}>
+              <Tab.Content>
+                {projectData.map(e => (
+                  <Tab.Pane key={e.unit.code} eventKey={e.unit.code}>
+                    <ProjectSettingsPanel site={site} project={e} onUpdate={onUpdateProjectSettings} />
+                  </Tab.Pane>
                 ))}
-              </optgroup>
-            </Form.Select>
-          </FloatingLabel>
-          {tooManyCards && (
-            <Alert variant='warning' className='m-0'>
-              As your project has more than {unit.maxCards} cards, it will automatically be split into multiple projects.
-            </Alert>
-          )}
-          <FloatingLabel controlId='floatingText' label='Project Name'>
-            <Form.Control aria-label='Project Name' value={name ?? ''} onChange={onNameChange} />
-          </FloatingLabel>
-          <FloatingLabel controlId='floatingSelect2' label='Card Stock'>
-            <Form.Select aria-label='Card Stock' value={cardStock?.code} onChange={onCardStockChange}>
-              {unit && site.cardStockListByUnit(unit)
-                .map(it => <option key={it.code} value={it.code}>{it.name}</option>)
-              }
-            </Form.Select>
-          </FloatingLabel>
-          <FloatingLabel controlId='floatingSelect3' label='Print Type'>
-            <Form.Select aria-label='Print Type' value={printType?.code} onChange={onPrintTypeChange}>
-              {unit && cardStock && site.printTypeListByCardStock(unit, cardStock)
-                .map(it => <option key={it.code} value={it.code}>{it.name}</option>)
-              }
-            </Form.Select>
-          </FloatingLabel>
-          <FloatingLabel controlId='floatingSelect4' label='Finish'>
-            <Form.Select aria-label='Finish' value={finish?.code} onChange={onFinishChange}>
-              {unit && cardStock && site.finishListByCardStock(unit, cardStock)
-                .map(it => <option key={it.code} value={it.code}>{it.name}</option>)
-              }
-            </Form.Select>
-          </FloatingLabel>
-          <FloatingLabel controlId='floatingSelect5' label='Packaging'>
-            <Form.Select aria-label='Packaging' value={packaging?.code} onChange={onPackagingChange}>
-              {unit && cardStock && site.packagingListByCardStock(unit, cardStock)
-                .map(it => <option key={it.code} value={it.code}>{it.name}</option>)
-              }
-            </Form.Select>
-          </FloatingLabel>
-        </div>
+              </Tab.Content>
+            </div>
+          </div>
+        </Tab.Container>
       </Modal.Body>
       <Modal.Footer>
         <Button
@@ -161,8 +270,8 @@ const ProjectSettingsModal = ({ site, unit, projects, onUpload, onClose }: Proje
         </Button>
         <Button
           variant='success'
-          onClick={() => onUpload(settings!, projects)}
-          disabled={!settings}
+          disabled={projectSettings.some(e => e == undefined)}
+          onClick={() => onUpload(projectSettings as UploadProjectSettings[])}
         >
           Upload
         </Button>

@@ -16,10 +16,6 @@ const ProjectTab = ({ site, projects: initialProjects }: ProjectTabProps) => {
   const [projects, setProjects] = useState<ParsedProject[]>(() => initialProjects ?? [])
   const [modal, setModal, clearModal] = useModal()
 
-  const unitCode = projects.reduce<string | undefined>((value, project) => {
-    return value == project.code ? value : undefined
-  }, projects[0]?.code)
-  const unit = site.unitList.find(e => e.code == unitCode)
   const cardCount = projects.reduce((value, project) => {
     return value + project.cards.reduce((value, card) => value + card.count, 0)
   }, 0)
@@ -35,7 +31,6 @@ const ProjectTab = ({ site, projects: initialProjects }: ProjectTabProps) => {
       <Stack className='d-flex h-100' gap={2}>
         <ProjectTabToolbar
           site={site}
-          unit={unit}
           projects={projects}
           setProjects={setProjects}
         />
@@ -46,7 +41,6 @@ const ProjectTab = ({ site, projects: initialProjects }: ProjectTabProps) => {
         />
         <CardCount
           count={cardCount}
-          unit={unit}
         />
         {modal}
       </Stack>

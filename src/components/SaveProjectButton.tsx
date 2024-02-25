@@ -1,5 +1,6 @@
 import Button from 'react-bootstrap/esm/Button'
-import { ParsedProject, ProjectV2 } from '../types/project'
+import { ParsedProject } from '../types/project'
+import { Latest } from '../types/projects'
 
 interface SaveProjectButtonProps {
   projects: ParsedProject[]
@@ -7,12 +8,22 @@ interface SaveProjectButtonProps {
 
 const SaveProjectButton = ({ projects }: SaveProjectButtonProps) => {
   const onSave = async () => {
-    const download: ProjectV2 = {
-      version: 2,
-      code: projects[0].code,
+    const download: Latest.Project = {
+      version: 3,
       parts: projects.map(e => ({
+        code: e.code,
         name: e.name,
-        cards: e.cards,
+        cards: e.cards.map(e => ({
+          ...e,
+          front: e.front ? ({
+            ...e.front,
+            Name: e.front.Name ?? e.front.ID,
+          }) : undefined,
+          back: e.back ? ({
+            ...e.back,
+            Name: e.back.Name ?? e.back.ID,
+          }) : undefined,
+        })),
       })),
     }
 

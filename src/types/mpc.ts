@@ -3,13 +3,32 @@ import mpcData from 'mpc_api/data'
 declare global {
   interface Array<T> {
     toSorted(compareFn?: ((a: T, b: T) => number) | undefined): Array<T>
+    toObject(callbackFn: (value: T) => string): { [key: string]: T }
+    groupBy(callbackFn: (value: T) => string): { [key: string]: T[] }
   }
 }
 
-Array.prototype.toSorted = function <T>(compareFn?: ((a: T, b: T) => number) | undefined): Array<T> {
+Array.prototype.toSorted = function <T>(this: T[], compareFn?: ((a: T, b: T) => number) | undefined): Array<T> {
   const copy = [...this]
   copy.sort(compareFn)
   return copy
+}
+
+Array.prototype.toObject = function <T>(this: T[], callbackFn: (value: T) => string): { [key: string]: T }  {
+  return this.reduce<{ [key: string]: T }>((group, value) => {
+    const key = callbackFn(value)
+    group[key] = value
+    return group
+  }, {})
+}
+
+Array.prototype.groupBy = function <T>(this: T[], callbackFn: (value: T) => string): { [key: string]: T[] }  {
+  return this.reduce<{ [key: string]: T[] }>((group, value) => {
+    const key = callbackFn(value)
+    group[key] ??= []
+    group[key].push(value)
+    return group
+  }, {})
 }
 
 export class Site {
