@@ -6,16 +6,14 @@
   "license": "ISC",
   "scripts": {
     "dev": "vite",
-    "build:schema": "tsx bin/build_json_schema.ts validator \"src/types/projects/union.ts\" ProjectUnion \"src/types/projects/validate.js\" validate",
-    "build": "yarn run build:schema && vite build",
+    "prebuild": "tsx bin/build_json_schema.ts validator \"src/types/projects/union.ts\" ProjectUnion \"src/types/projects/validate.js\" validate",
+    "build": "vite build",
     "zip": "yarn run build && yarn tsx bin/zip.ts"
   },
   "dependencies": {
     "@hello-pangea/dnd": "^16.5.0",
     "@popperjs/core": "^2.11.8",
-    "ajv": "^8.12.0",
     "bootstrap": "^5.3.3",
-    "commander": "^12.0.0",
     "fetch-retry": "^5.0.6",
     "mpc_api": "https://github.com/North101/mpc_api",
     "react": "^18.2.0",
@@ -31,6 +29,8 @@
     "@types/webextension-polyfill": "^0.10.7",
     "@types/wicg-file-system-access": "^2023.10.4",
     "@vitejs/plugin-react-swc": "^3.6.0",
+    "ajv": "^8.12.0",
+    "commander": "^12.0.0",
     "tsx": "^4.7.1",
     "typescript": "^5.3.3",
     "typescript-json-schema": "^0.63.0",
