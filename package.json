@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "vite",
     "build:schema": "tsx bin/build_json_schema.ts validator \"src/types/projects/union.ts\" ProjectUnion \"src/types/projects/validate.js\" validate",
-    "build": "yarn run build:schema && vite build"
+    "build": "yarn run build:schema && vite build",
+    "zip": "yarn run build && yarn tsx bin/zip.ts"
   },
   "dependencies": {
     "@hello-pangea/dnd": "^16.5.0",
@@ -35,6 +36,7 @@
     "typescript-json-schema": "^0.63.0",
     "vite": "^5.1.4",
     "vite-plugin-web-extension": "^4.1.1",
-    "webextension-polyfill": "^0.10.0"
+    "webextension-polyfill": "^0.10.0",
+    "zip-a-folder": "^3.1.6"
   }
 }
