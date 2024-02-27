@@ -6,14 +6,15 @@
   "license": "ISC",
   "scripts": {
     "dev": "vite",
-    "build:validators": "tsx build_project_validator.ts",
-    "build": "yarn run build:validators && vite build"
+    "build:schema": "tsx bin/build_json_schema.ts validator \"src/types/projects/union.ts\" ProjectUnion \"src/types/projects/validate.js\" validate",
+    "build": "yarn run build:schema && vite build"
   },
   "dependencies": {
     "@hello-pangea/dnd": "^16.5.0",
     "@popperjs/core": "^2.11.8",
     "ajv": "^8.12.0",
     "bootstrap": "^5.3.3",
+    "commander": "^12.0.0",
     "fetch-retry": "^5.0.6",
     "mpc_api": "https://github.com/North101/mpc_api",
     "react": "^18.2.0",
@@ -22,8 +23,8 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/chrome": "^0.0.261",
-    "@types/react": "^18.2.58",
+    "@types/chrome": "^0.0.262",
+    "@types/react": "^18.2.60",
     "@types/react-dom": "^18.2.19",
     "@types/uuid": "^9.0.8",
     "@types/webextension-polyfill": "^0.10.7",
