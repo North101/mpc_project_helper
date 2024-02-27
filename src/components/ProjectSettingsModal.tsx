@@ -6,10 +6,11 @@ import Modal from 'react-bootstrap/esm/Modal'
 import Nav from 'react-bootstrap/esm/Nav'
 import Tab from 'react-bootstrap/esm/Tab'
 import { CardStock, Finish, Packaging, PrintType, Site, Unit } from '../types/mpc'
-import { ProjectCard, UploadProject, UploadProjectSettings } from '../types/project'
+import { ParsedProject, ProjectCard } from '../types/project'
+import { Settings } from 'mpc_api'
 
 
-interface Blah {
+interface UploadProject {
   name: string
   unit: Unit
   cards: ProjectCard[]
@@ -19,7 +20,7 @@ interface Blah {
   packaging?: Packaging
 }
 
-const getSettings = ({ cards, unit, name, cardStock, printType, finish, packaging }: Blah): UploadProjectSettings | undefined => {
+const getSettings = ({ cards, unit, name, cardStock, printType, finish, packaging }: UploadProject): UploadProjectSettings | undefined => {
   if (cardStock === undefined || printType === undefined || finish === undefined || packaging === undefined) return
   return {
     cards,
@@ -84,8 +85,8 @@ const getPackaging = (site: Site, unit: Unit, cardStock: CardStock | undefined, 
 
 interface ProjectSettingsPanelProps {
   site: Site
-  project: Blah
-  onUpdate: (project: Blah) => void
+  project: UploadProject
+  onUpdate: (project: UploadProject) => void
 }
 
 const ProjectSettingsPanel = ({ site, project, onUpdate }: ProjectSettingsPanelProps) => {
@@ -197,38 +198,44 @@ const ProjectSettingsPanel = ({ site, project, onUpdate }: ProjectSettingsPanelP
   )
 }
 
+export interface UploadProjectSettings {
+  settings: Settings
+  cards: ProjectCard[]
+}
+
 interface ProjectSettingsModalProps {
   site: Site
-  projects: UploadProject[]
+  projects: ParsedProject[]
   onUpload: (upload: UploadProjectSettings[]) => void
   onClose: () => void
 }
 
 const ProjectSettingsModal = ({ site, projects, onUpload, onClose }: ProjectSettingsModalProps) => {
-  const [projectData, setProjectData] = useState<Blah[]>(() => projects.map(project => {
-    const { name, cards, unit } = project
-    const cardStock = site.cardStockListByUnit(project.unit)?.at(0)
-    const printType = getDefaultPrintType(site, unit, cardStock)
-    const finish = getDefaultFinish(site, unit, cardStock)
-    const packaging = getDefaultPackaging(site, unit, cardStock)
-    return {
-      site: site,
-      name: name,
-      cards,
-      unit,
-      cardStock,
-      printType,
-      finish,
-      packaging,
-    }
-  }))
+  const [projectData, setProjectData] = useState<UploadProject[]>(() => Object.entries(projects.groupBy((value) => value.code))
+    .map(([unitCode, projects]): UploadProject => {
+      const project = projects[0]
+      const unit = site.unitList.find(e => e.code == unitCode)!
+      const cardStock = site.cardStockListByUnit(unit)?.at(0)
+      const printType = getDefaultPrintType(site, unit, cardStock)
+      const finish = getDefaultFinish(site, unit, cardStock)
+      const packaging = getDefaultPackaging(site, unit, cardStock)
+      return {
+        name: project.name,
+        unit: site.unitList.find(e => e.code == unitCode)!,
+        cards: projects.flatMap(project => project.cards),
+        cardStock,
+        printType,
+        finish,
+        packaging,
+      }
+    }))
   const [projectSettings, setProjectSettings] = useState<(UploadProjectSettings | undefined)[]>([])
 
   useEffect(() => {
     setProjectSettings(projectData.map(project => getSettings(project)))
   }, projectData)
 
-  const onUpdateProjectSettings = (project: Blah) => {
+  const onUpdateProjectSettings = (project: UploadProject) => {
     setProjectData(prevState => ([
       ...prevState.map(e => e.unit == project.unit ? project : e)
     ]))

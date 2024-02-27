@@ -4,20 +4,23 @@ import Card from 'react-bootstrap/esm/Card'
 import Form from 'react-bootstrap/esm/Form'
 import Modal from 'react-bootstrap/esm/Modal'
 import { Site } from '../types/mpc'
-import { ParsedProject } from '../types/project'
+import { ParsedProject, ProjectCard } from '../types/project'
 import { replace } from '../util'
 import Stack from 'react-bootstrap/esm/Stack'
 
 interface ProjectCombineModalProps {
   site: Site
-  projects: {
-    [key: string]: ParsedProject[]
-  }
+  projects: ParsedProject[]
   setProjects: Dispatch<SetStateAction<ParsedProject[]>>
   onClose: () => void
 }
 
-const ProjectCombineModal = ({ site, projects: groupedProjects, setProjects, onClose }: ProjectCombineModalProps) => {
+const ProjectCombineModal = ({ site, projects, setProjects, onClose }: ProjectCombineModalProps) => {
+  const groupedProjects = projects.reduce<{ [key: string]: ParsedProject[] }>((group, project) => {
+    group[project.code] ??= []
+    group[project.code].push(project)
+    return group
+  }, {})
   const [checkedProjects, setCheckedProjects] = useState(() => {
     return Object.fromEntries(Object.entries(groupedProjects).map(([key, value]) => {
       return [key, value.map(() => true)]
@@ -36,21 +39,16 @@ const ProjectCombineModal = ({ site, projects: groupedProjects, setProjects, onC
     setProjects(_ => {
       const data: ParsedProject[] = []
       for (const [code, projects] of Object.entries(groupedProjects)) {
-        let combined: number | null = null
+        let combinedCards: ProjectCard[] | null = null
         for (let i = 0; i < projects.length; i++) {
           const project = projects[i]
           const checked = checkedProjects[code][i]
           if (checked) {
-            if (combined != null) {
-              data[combined] = {
-                ...data[combined],
-                cards: [
-                  ...data[combined].cards,
-                  ...project.cards,
-                ],
-              }
+            if (combinedCards != null) {
+              combinedCards.push(...project.cards)
             } else {
-              combined = data.push(project) - 1
+              combinedCards = project.cards
+              data.push(project)
             }
           } else {
             data.push(project)

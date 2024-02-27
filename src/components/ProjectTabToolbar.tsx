@@ -5,13 +5,13 @@ import Button from 'react-bootstrap/esm/Button'
 import Stack from 'react-bootstrap/esm/Stack'
 import { v4 as uuid } from 'uuid'
 import { Site } from '../types/mpc'
-import { ParsedProject, UploadProject, UploadProjectSettings } from '../types/project'
+import { ParsedProject } from '../types/project'
 import { validate } from '../types/projects'
 import { ProjectUnion } from '../types/projects/union'
 import ErrorModal from './ErrorModal'
 import LoadingModal from './LoadingModal'
 import ProjectCombineModal from './ProjectCombineModal'
-import ProjectSettingsModal from './ProjectSettingsModal'
+import ProjectSettingsModal, { UploadProjectSettings } from './ProjectSettingsModal'
 import SuccessModal from './SuccessModal'
 import { ModalContext } from './util'
 
@@ -136,11 +136,7 @@ const ProjectTabToolbar = ({ site, projects, setProjects }: ProjectTabToolbarPro
 
   const onCombine = () => setModal(<ProjectCombineModal
     site={site}
-    projects={projects.reduce<{[key: string]: ParsedProject[]}>((group, project) => {
-      group[project.code] ??= []
-      group[project.code].push(project)
-      return group
-    }, {})}
+    projects={projects}
     setProjects={setProjects}
     onClose={clearModal}
   />)
@@ -190,11 +186,7 @@ const ProjectTabToolbar = ({ site, projects, setProjects }: ProjectTabToolbarPro
 
   const onUpload = () => setModal(<ProjectSettingsModal
     site={site}
-    projects={Object.entries(projects.groupBy((value) => value.code)).map(([unitCode, projects]): UploadProject => ({
-      name: projects[0].name!,
-      unit: site.unitList.find(e => e.code == unitCode)!,
-      cards: projects.flatMap(project => project.cards),
-    }))}
+    projects={projects}
     onUpload={upload}
     onClose={clearModal}
   />)
