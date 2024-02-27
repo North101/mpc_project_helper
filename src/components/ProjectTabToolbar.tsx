@@ -58,6 +58,7 @@ interface AddButtonProps {
 }
 
 const AddButton = ({ onClick }: AddButtonProps) => {
+  const [_, setModal, clearModal] = useContext(ModalContext)
   const ref = useRef<HTMLInputElement>(null)
 
   const onOpenFiles = () => ref?.current?.click()
@@ -66,21 +67,31 @@ const AddButton = ({ onClick }: AddButtonProps) => {
     if (e.target.files == null) return
 
     const projects: ParsedProject[] = []
+    const projectErrors: string[] = []
     for (let i = 0; i < e.target.files.length; i++) {
       const file = e.target.files[i]
       try {
-        const data = JSON.parse(await file.text())
-        if (!validate(data)) continue
-
-        projects.push(...parseProject(file.name, data))
+        const data: unknown = JSON.parse(await file.text())
+        if (validate(data)) {
+          projects.push(...parseProject(file.name, data))
+        } else {
+          projectErrors.push(file.name)
+        }
       } catch (e) {
         console.log(e)
+        projectErrors.push(file.name)
       }
     }
     onClick(prevState => [
       ...prevState,
       ...projects,
     ])
+    if (projectErrors.length > 0) {
+      setModal(<ErrorModal
+        error={projectErrors.map(e => `Failed to parse "${e}"`).join('\n')}
+        onClose={clearModal}
+      />)
+    }
   }
 
   return (
